@@ -35,7 +35,9 @@ jobs:
       - name: Update
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: ls -a
+          command: |
+            ls -a
+            echo "Hi~"
           host: notes.valderfield.com
           username: root
           privateKey: ${{ secrets.ALIYUN }}
