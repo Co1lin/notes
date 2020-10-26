@@ -1,17 +1,9 @@
-# Welcome to MkDocs
+# Welcome to Colin's Notebook
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+https://notes.valderfield.com
 
-## Commands
+https://github.com/Co1lin/notes
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+This is my personal notebook, in which I will record some CS related things.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Since I can't find a satisfying notebook project which supports online editing and managing on web and using Markdown, now I use code-server to edit and this MkDocs project to publish. The files are also availiable on [GitHub](https://github.com/Co1lin/notes), so you can pull requests.
