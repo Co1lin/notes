@@ -36,8 +36,10 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: |
-            ls -a
             echo "Hi~"
+            cd /home/wwwroot/notes
+            mkdocs build
+            echo "Bye~"
           host: notes.valderfield.com
           username: root
           privateKey: ${{ secrets.ALIYUN }}
