@@ -38,7 +38,7 @@ jobs:
           command: |
             echo "Hi~"
             cd /home/wwwroot/notes
-            mkdocs build
+            /root/miniconda3/bin/mkdocs build
             echo "Bye~"
           host: notes.valderfield.com
           username: root
