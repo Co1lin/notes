@@ -33,10 +33,9 @@ jobs:
           echo test, and deploy your project.
           
       - name: Update
-        uses: docker://evaneos/ssh-action:0.1.0
+        uses: garygrossgarten/github-action-ssh@release
         with:
-          hosts: notes.valderfield.com
-          user: root
-          private_key: ${{ secrets.ALIYUN }}
-          commands: |
-            echo "Hi~"
+          command: ls -a
+          host: notes.valderfield.com
+          username: root
+          privateKey: ${{ secrets.ALIYUN }}
