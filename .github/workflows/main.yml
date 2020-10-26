@@ -38,6 +38,7 @@ jobs:
           command: |
             echo "Hi~"
             cd /home/wwwroot/notes
+            git pull
             /root/miniconda3/bin/mkdocs build
             echo "Bye~"
           host: notes.valderfield.com
