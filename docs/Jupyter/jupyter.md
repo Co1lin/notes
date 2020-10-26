@@ -3,6 +3,7 @@
 
 $\beta$
 
+$$\alpha \times \beta$$
 
 
 ## Jupyter Notebook
