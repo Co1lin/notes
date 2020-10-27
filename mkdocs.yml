@@ -1,7 +1,8 @@
 site_name: Colin's Notebook
 
 theme:
-  name: material
+  palette:
+    scheme: slate
 
 markdown_extensions:
   - pymdownx.arithmatex:
