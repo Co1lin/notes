@@ -24,7 +24,7 @@ Line: A(x1, y1) -> B(x2, y2)
 
 Point: C(x3, y3)
 
-Calculate $$\overrightarrow{AB} \times \overrightarrow{AC}$$
+Calculate $\overrightarrow{AB} \times \overrightarrow{AC}$
 
 ```cpp
 // Cross product on two vectors
