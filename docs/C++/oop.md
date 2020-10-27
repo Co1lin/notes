@@ -59,7 +59,7 @@ clean:
 例子
 
 ```c++
-int main(int argc, char** argv)
+int main(int argc, char *[]argv)
 {
 	int a, b;
 	a = atoi(argv[1]);
@@ -94,7 +94,7 @@ list 列出程序源代码
 quit 退出
 回车 重复上一条指令
 
-
+所有命令都可以缩写为前几个字母， 只要保持唯一， 如`next`可缩写为`n`。
 
 info break看断点信息
 
@@ -178,10 +178,22 @@ auto work2(const A& _array) -> MyArray < common_type_t< decltype(_array.front())
 #endif 
 ```
 
+Or
+
+```c++
+#pragma once
+```
+
+对比：
+1. 后者效率更高。 原因： 前者要每次读如整个文件来处理， 后者第二次读入相同文件的时候会直接跳过， 不会产生file io。
+   但是大部分编译器也针对前者的效率进行了优化，实际效率可能像差不多。
+2. 后者以来文件系统的文件名， 因此如果有符号链接/两个文件内容相同，则会被引入两次。
+3. 前者在标准内， 后者不在，但是被[绝大部分编译器](https://en.wikipedia.org/wiki/Pragma_once#Portability)支持。
+
 ## operator<
 
 ```c++
-bool operator< (const Computer& _y)
+bool operator< (const Computer& _y) const // const declares that this function would not modify this.
 {
 	
 }
