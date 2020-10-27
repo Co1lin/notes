@@ -59,7 +59,7 @@ clean:
 例子
 
 ```c++
-int main(int argc, char *[]argv)
+int main(int argc, char **argv)	// or char*[] argv
 {
 	int a, b;
 	a = atoi(argv[1]);
@@ -185,10 +185,10 @@ Or
 ```
 
 对比：
-1. 后者效率更高。 原因： 前者要每次读如整个文件来处理， 后者第二次读入相同文件的时候会直接跳过， 不会产生file io。
+1. 后者效率更高。 原因： 前者要每次读入整个文件来处理，后者第二次读入相同文件的时候会直接跳过， 不会产生file IO。
    但是大部分编译器也针对前者的效率进行了优化，实际效率可能像差不多。
-2. 后者以来文件系统的文件名， 因此如果有符号链接/两个文件内容相同，则会被引入两次。
-3. 前者在标准内， 后者不在，但是被[绝大部分编译器](https://en.wikipedia.org/wiki/Pragma_once#Portability)支持。
+2. 后者以来文件系统的文件名，因此如果有符号链接/两个文件内容相同，则会被引入两次。
+3. 前者在标准内，后者不在，但是被[绝大部分编译器](https://en.wikipedia.org/wiki/Pragma_once#Portability)支持。
 
 ## operator<
 
