@@ -1,6 +1,7 @@
 site_name: Colin's Notebook
 
 theme:
+  name: material
   palette:
     scheme: slate
 
