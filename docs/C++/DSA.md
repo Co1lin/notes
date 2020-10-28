@@ -14,6 +14,16 @@ inline char nchar()
 }
 ```
 
+## Data Structure
+
+### Binary Search Tree
+
+left springs <= node <= right springs
+
+inorder tranversal sequence: non-decreasing
+
+
+
 ## Algorithms
 
 ### ToLeft
