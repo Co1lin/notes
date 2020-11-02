@@ -12,6 +12,14 @@ inline char nchar()
     static char buf[bufl], *a, *b;
     return a == b && (b = (a = buf) + fread(buf, 1, bufl, stdin), a == b) ? EOF : *a++;
 }
+
+template<class T> inline T getnum()
+{	// read numbers of type T based on nchar()
+    T x = 0; bool f = 1; char c = nchar();
+    for(; !isdigit(c); c = nchar()) if (c == '-') f = 0;
+    for(; isdigit(c); c = nchar()) x = x * 10 + c - 48;
+    return f ? x : -x;
+}
 ```
 
 ## Data Structure
@@ -21,6 +29,20 @@ inline char nchar()
 left springs <= node <= right springs
 
 inorder tranversal sequence: non-decreasing
+
+#### Balanced BST
+
+
+
+#### Application
+
+##### KD-Tree
+
+###### 1D Range Query
+
+Count the number of points belong to I = (x1, x2] among P = { p1, ... pn } (or to report the points of $I \cap P$ ).
+
+
 
 
 
