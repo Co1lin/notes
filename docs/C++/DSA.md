@@ -30,7 +30,7 @@ left springs <= node <= right springs
 
 inorder tranversal sequence: non-decreasing
 
-#### Balanced BST
+### Balanced BST
 
 
 
@@ -57,15 +57,116 @@ So we need an advanced DS, 2D-Tree.
 
 #### 1D-Tree
 
+##### Data Structure
+
 A balanced binary search tree.
 
 Input data are stored in leaves. Inside nodes store the maximum value in the left child tree.
 
 ![1d-tree](DSA.assets/1d-tree.png)
 
+##### Query Algorithm
 
+Search(x): returns the maximum key not greater than x
+
+**Lowest Common Ancestor**: LCA(x, y) = sub_root
+
+Report the points inside [x, y]:
+
+```
+Starting from LCA:
+Go to x (by turn left as much as possible):
+	Ignore turning right;
+	For each turning left, report the right subtree;
+Go to y (by turn right as much as possible):
+	Ignore turning left;ss
+	For each turning right, report the left subtree;	
+```
+
+##### Complexity
+
+Preprocessing: $O(nlogn)$;
+
+Storage: $O(n)$;
+
+Query: $O(logn)$; 
 
 #### 2D-Tree
+
+##### Data Structure
+
+Balanced Binary Search Tree.
+
+Divide the k-dim space to regions dimension by dimension.
+
+##### Algorithm
+
+###### Build
+
+```
+build(set P, depth):
+	if P.size == 1:	// base
+		return createLeaf(P)
+	else:
+		root = createKdNode()
+		root->splitDirection = dimension[depth % k]
+		root->splitLine = FindMedian(root->splitDirection, P)	// nth_element; Complexity: O(n)
+		P1, P2 = Divide(P, root->splitDirection, root->splitLine)
+		root->lChild = buildKdTree(P1, d + 1)
+		root->rChild = buildKdTree(P2, d + 1)
+		return root
+```
+
+Time: $T(n) = 2*T(\frac{n}{2}) + O(n) \Rightarrow T(n) = O(nlogn)$
+
+Storage: $1 + 2 + ... + O(2^{logn}) = O(n)$
+
+**Bounding box Optimization**:
+
+
+
+###### Query - KdSearch(v, R)
+
+Search starts at v; query range is R
+
+Key idea: Recurse in when there's intersection. Report it when it is enclosed.
+
+```
+kdSearch(v, R):
+  if v is leaf:
+    if v in R:
+      report(v)
+
+  if v->lChild in R:
+    reportSubtree(v->lChild)
+  else if v->lChild have intersection with R:
+    kdSearch(v->lChild, R)
+
+  if v->rChild in R:
+    reportSubtree(v->lChild)
+  else if v->rChild have intersection with R:
+    kdSearch(v->rChild, R)
+```
+
+Time: No more than 2 of the 4 grandchildren of each node will recurse!
+
+$Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})$
+
+Report + Search: $O(r + \sqrt{n})$
+
+### Multi-Level Search Tree
+
+#### Data Structure
+
+![mlst](DSA.assets/mlst.png)
+
+#### Algorithm
+
+
+
+
+
+### Range Tree
 
 
 
