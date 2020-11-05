@@ -34,14 +34,38 @@ inorder tranversal sequence: non-decreasing
 
 
 
-#### Application
 
-##### KD-Tree
+### KD-Tree
 
-###### 1D Range Query
+#### Requirements
+
+##### 1D Range Query
 
 Count the number of points belong to I = (x1, x2] among P = { p1, ... pn } (or to report the points of $I \cap P$ ).
 
+We're not satisfied by $O(n)$ !
+
+It can be solved by **binary search** on a sorted ($O(nlogn)$) vector or array.
+
+For each query, the complexity is $O(logn + r)$.
+
+##### 2D Range Query
+
+For higher dimension occasions, the **binary search** doesn't work. Somebody may consider performing binary search on each dimension one by one. **But**, the complexity can be very bad. (You may select nearly **n** points when searching on the first dimension. However, when it comes to the 2nd dimension, the remained points may be **r << n**. But your complexity is $$O(n)$$ .)
+
+So we need an advanced DS, 2D-Tree.
+
+#### 1D-Tree
+
+A balanced binary search tree.
+
+Input data are stored in leaves. Inside nodes store the maximum value in the left child tree.
+
+![1d-tree](DSA.assets/1d-tree.png)
+
+
+
+#### 2D-Tree
 
 
 
