@@ -51,7 +51,7 @@ For each query, the complexity is $O(logn + r)$.
 
 ##### 2D Range Query
 
-For higher dimension occasions, the **binary search** doesn't work. Somebody may consider performing binary search on each dimension one by one. **But**, the complexity can be very bad. (You may select nearly **n** points when searching on the first dimension. However, when it comes to the 2nd dimension, the remained points may be **r << n**. But your complexity is $$O(n)$$ .)
+For higher dimension occasions, the **binary search** doesn't work. Somebody may consider performing binary search on each dimension one by one. **But**, the complexity can be very bad. (You may select nearly **n** points when searching on the first dimension. However, when it comes to the 2nd dimension, the remained points may be **r << n**. But your complexity is $O(n)$ , which is expensive for r.)
 
 So we need an advanced DS, 2D-Tree.
 
