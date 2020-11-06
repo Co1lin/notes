@@ -178,7 +178,7 @@ Report + Search: $O(r + \sqrt{n})$
 
 Application: Stabbing Query. Which intervals enclose the given point?
 
-<img src="DSA.assets/stabbing%20query.png" alt="stabbing query" style="zoom:25%;" />
+<img src="DSA.assets/stabbing_query.png" alt="stabbing_query" style="zoom:25%;" />
 
 #### Data Structure
 
