@@ -180,6 +180,8 @@ Application: Stabbing Query. Which intervals enclose the given point?
 
 <img src="DSA.assets/stabbing_query.png" alt="stabbing_query" style="zoom:25%;" />
 
+<img src="DSA.assets/stabbingQuery.png" alt="stabbingQuery" style="zoom:50%;" />
+
 #### Data Structure
 
 <img src="DSA.assets/interval-tree01.png" alt="interval-tree01" style="zoom:33%;" />
