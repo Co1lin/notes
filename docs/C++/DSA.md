@@ -200,6 +200,10 @@ Node
     ends = list of intervals overlapping mid_point sorted by right endpoints
 }
 
+Sort the intervals by two approaches:
+		begin points increasing
+    end points decreasing
+
 ConstructIntervalTree(vector<Interval> intervals):
     if intervals.size == 0:
         return nullptr
@@ -256,11 +260,52 @@ queryIntervalTree(Node v, Num q):
 
 #### Construction
 
+```c++
+Determine the Elementary Intervals:
+		sort the 2n endpoints	// O(nlogn)
 
+// Build the binary tree of EI:	(O(n))
+BuildSegmentTree(node, vector endpoints):
+		node.interval = range of endpoints
+    mid = median of endpoints
+    BuildSegmentTree(node.leftChild, endpoints[0 : mid])
+    BuildSegmentTree(node.rightChild, endpoints[mid : size])
+    
+// Insert intervals into the tree:
+for interval in input_intervals:	// O(nlogn)
+		InsertSegmentTree(tree.root, interval)
+
+InsertSegmentTree(node, interval_to_insert):	// O(logn)
+      if node.interval in interval_to_insert:
+					node.intervals += interval_to_insert
+      else if node.leftChild.interval intersect with interval_to_insert:
+					InsertSegmentTree(node.leftChild, interval_to_insert)
+      else if node.rightChild.interval intersect with interval_to_insert:
+					InsertSegmentTree(node.rightChild, interval_to_insert)
+```
+
+When running InsertSegmentTree, at each level, less than 4 nodes are visited (2 stores + 2 recursions). $\Rightarrow O(logn)$
+
+Total: $O(nlogn)$
 
 #### Query
 
+```c++
+QuerySegmentTree(node, qx):
+		if qx in node.interval:
+				report node.intervals
+        
+        if node has no child:
+            return
+        else if qx in node.leftChild.interval:
+            QuerySegmentTree(node.leftChild, qx)
+        else if qx in node.rightChild.interval:
+            QuerySegmentTree(node.rightChild, qx)
+```
 
+Only 1 node is visited per level, altogether $O(logn)$ nodes.
+
+Total: $O(r + logn)$
 
 
 
