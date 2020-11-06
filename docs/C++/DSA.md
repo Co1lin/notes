@@ -178,15 +178,13 @@ Report + Search: $O(r + \sqrt{n})$
 
 Application: Stabbing Query. Which intervals enclose the given point?
 
-<img src="DSA.assets/stabbing_query.png" alt="stabbing_query" style="zoom:25%;" />
-
-<img src="DSA.assets/stabbingQuery.png" alt="stabbingQuery" style="zoom:50%;" />
+![stabbing_query](DSA.assets/stabbing_query.png)
 
 #### Data Structure
 
-<img src="DSA.assets/interval-tree01.png" alt="interval-tree01" style="zoom:33%;" />
+![interval-tree01](DSA.assets/interval-tree01.png)
 
-<img src="DSA.assets/interval-tree02.png" alt="interval-tree02" style="zoom:33%;" />
+![interval-tree02](DSA.assets/interval-tree02.png)
 
 #### Construction
 
@@ -254,7 +252,7 @@ queryIntervalTree(Node v, Num q):
 
 #### Data Structure
 
-<img src="DSA.assets/seg-tree-01.png" alt="seg-tree-01" style="zoom: 33%;" />
+#### ![seg-tree-01](DSA.assets/seg-tree-01.png)
 
 #### Construction
 
@@ -308,5 +306,4 @@ x_2 & y_2 & z_2
 
 ##### Comparison Tree
 
-<img src="DSA.assets/adt.png" alt="adt" style="zoom:33%;" />
-
+![adt](DSA.assets/adt.png)
