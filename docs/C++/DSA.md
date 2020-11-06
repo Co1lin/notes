@@ -73,7 +73,7 @@ Search(x): returns the maximum key not greater than x
 
 Report the points inside [x, y]:
 
-```
+```c++
 Starting from LCA:
 Go to x (by turn left as much as possible):
 	Ignore turning right;
@@ -103,7 +103,7 @@ Divide the k-dim space to regions dimension by dimension.
 
 ###### Build
 
-```
+```c++
 build(set P, depth):
 	if P.size == 1:	// base
 		return createLeaf(P)
@@ -131,7 +131,7 @@ Search starts at v; query range is R
 
 Key idea: Recurse in when there's intersection. Report it when it is enclosed.
 
-```
+```c++
 kdSearch(v, R):
   if v is leaf:
     if v in R:
@@ -160,13 +160,107 @@ Report + Search: $O(r + \sqrt{n})$
 
 ![mlst](DSA.assets/mlst.png)
 
-#### Algorithm
+#### Construct
+
+
+
+#### Query
 
 
 
 
 
 ### Range Tree
+
+
+
+### Interval Tree
+
+Application: Stabbing Query. Which intervals enclose the given point?
+
+<img src="DSA.assets/stabbing%20query.png" alt="stabbing query" style="zoom:25%;" />
+
+#### Data Structure
+
+<img src="DSA.assets/interval-tree01.png" alt="interval-tree01" style="zoom:33%;" />
+
+<img src="DSA.assets/interval-tree02.png" alt="interval-tree02" style="zoom:33%;" />
+
+#### Construction
+
+$O(nlogn)$
+
+```c++
+Node
+{
+    Node* leftChild
+    Node* rightChild
+    mid_point
+    starts = list of intervals overlapping mid_point sorted by left endpoints
+    ends = list of intervals overlapping mid_point sorted by right endpoints
+}
+
+ConstructIntervalTree(vector<Interval> intervals):
+    if intervals.size == 0:
+        return nullptr
+    Node node
+    vector<Num> P = endpoints of intervals	// P.size = 2 * intervals.size
+    node.mid_point = median in P
+    left_intervals, right_intervals
+    for interval in intervals:
+        if interval is on the left of mid_point:
+            left_intervals += interval
+        else if interval is on the right of mid_point:
+            right_intervals += interval
+        else:		// overlapping
+            node.starts += interval, node.ends += interval
+    sort node.starts increasingly by left endpoints
+    sort node.ends decreasingly by right endpoints
+    node.leftChild = ConstructIntervalTree(left_intervals)
+    node.rightChild = ConstructIntervalTree(right_intervals)
+    return node
+```
+
+#### Query
+
+$O(r+logn)$
+
+```c++
+queryIntervalTree(Node v, Num q):
+		if (!v)		return
+		if q < v.mid_point:
+				// report intervals in v.intervals overlapping q
+				for interval in v.starts:
+						if interval.start <= q:	report interval
+						else:	break
+				queryIntervalTree(v.leftChild, q)
+		else if v.mid_point < q:
+				// report intervals in v.intervals overlapping q
+				for interval in v.ends:
+						if q <= interval.end:	report interval
+						else:	break
+				queryIntervalTree(v.rightChild, q)
+		else:
+				report v.intervals
+```
+
+
+
+
+
+### Segment Tree
+
+#### Data Structure
+
+<img src="DSA.assets/seg-tree-01.png" alt="seg-tree-01" style="zoom: 33%;" />
+
+#### Construction
+
+
+
+#### Query
+
+
 
 
 
@@ -201,4 +295,16 @@ x_1 & y_1 & z_1 \\
 x_2 & y_2 & z_2 
 \end{vmatrix}
 = (y_1 z_2 - y_2 z_1)\boldsymbol{i} - (x_1 z_2 - x_2 z_1)\boldsymbol{j} + (x_1 y_2 - x_2 y_1)\boldsymbol{k}$$
+
+## Complexity Analysis
+
+
+
+### Lower Bound
+
+#### Algebratic Decision Tree
+
+##### Comparison Tree
+
+<img src="DSA.assets/adt.png" alt="adt" style="zoom:33%;" />
 
