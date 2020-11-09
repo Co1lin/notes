@@ -24,6 +24,20 @@ template<class T> inline T getnum()
 
 ## Data Structure
 
+### Complete Binary Tree
+
+Complete binary tree can be stored as an array.
+
+#### Construction
+
+**CAUTION**: A complete tree with **n leaves** need an array with "_size" to store.
+
+$\_size = 2 * bottomSize - 1, bottomSize = 2^k$ where $2^k >= n, k \in N$.
+
+#### Visit
+
+Given a node with index i, leftChild = 2 * i + 1, rightChild = 2 * i + 2.
+
 ### Binary Search Tree
 
 left springs <= node <= right springs
@@ -168,8 +182,6 @@ Report + Search: $O(r + \sqrt{n})$
 
 
 
-
-
 ### Range Tree
 
 
@@ -248,10 +260,6 @@ queryIntervalTree(Node v, Num q):
 				report v.intervals
 ```
 
-
-
-
-
 ### Segment Tree
 
 #### Data Structure
@@ -260,50 +268,71 @@ queryIntervalTree(Node v, Num q):
 
 #### Construction
 
+Segment tree can be derived from complete binary tree.
+
+##### Determine the Elementary Intervals
+
+Given some intervals, we use **"cursors"** or partitions to determine the elementary intervals(EI). A cursor can be regarded as a partition which splits a pair of continuous number, like: $5 | 6$.
+
+**From an interval $[x_1, y_1]$, we get a pair of cursors $c_1 = x_1 - 1, c_2 = y_1$.** Compared to endpoints of an interval, cursors can be placed at the left or the right of a number, which distinguishes whether a number is used as a beginning points or an ending points. That's the advantage that matters!
+
+Then, we use sorted and deduplicated cursors to construct EIs.
+
 ```c++
-Determine the Elementary Intervals:
-		sort the 2n endpoints	// O(nlogn)
-
-// Build the binary tree of EI:	(O(n))
-BuildSegmentTree(node, vector endpoints):
-		node.interval = range of endpoints
-    mid = median of endpoints
-    BuildSegmentTree(node.leftChild, endpoints[0 : mid])
-    BuildSegmentTree(node.rightChild, endpoints[mid : size])
-    
-// Insert intervals into the tree:
-for interval in input_intervals:	// O(nlogn)
-		InsertSegmentTree(tree.root, interval)
-
-InsertSegmentTree(node, interval_to_insert):	// O(logn)
-      if node.interval in interval_to_insert:
-					node.intervals += interval_to_insert
-      else if node.leftChild.interval intersect with interval_to_insert:
-					InsertSegmentTree(node.leftChild, interval_to_insert)
-      else if node.rightChild.interval intersect with interval_to_insert:
-					InsertSegmentTree(node.rightChild, interval_to_insert)
+PreProcessing:
+		get the cursors from intervals	// the number of cursors: O(2n)
+		sort the cursors	// O(nlogn)
+		deduplicate the cursors	// O(n)
+		for each cursor c[i] (0 <= i <= number of cursors - 1):		// the number of EIs: O(2n) = O(n)
+				get an EI = [ c[i] + 1, c[i + 1] ]
 ```
+
+##### Build the Segment Tree
+
+```c++
+BuildSegmentTree(current node, subset of sorted EIs):	// O(n)
+		range of current node = range of EIs
+		if EIs.size == 1:
+				return
+		else:
+				BuildSegmentTree(left child of current node, EIs[0: medians])
+				BuildSegmentTree(right child of current node, EIs[medians : ])
+```
+
+#### Insert Intervals
+
+````c++
+InsertSegmentTree(current node, interval):
+		if interval encloses range of the node:
+				store the interval at current node
+    else:
+				if interval have intersection with range of the left child of current node:
+				InsertSegmentTree(left child, interval)
+        if interval have intersection with range of the right child of current node:
+				InsertSegmentTree(right child, interval)
+````
 
 When running InsertSegmentTree, at each level, less than 4 nodes are visited (2 stores + 2 recursions). $\Rightarrow O(logn)$
 
-Total: $O(nlogn)$
+Total costs of building: $O(nlogn)$
 
 #### Query
 
 ```c++
-QuerySegmentTree(node, qx):
-		if qx in node.interval:
-				report node.intervals
-        
-        if node has no child:
-            return
-        else if qx in node.leftChild.interval:
-            QuerySegmentTree(node.leftChild, qx)
-        else if qx in node.rightChild.interval:
-            QuerySegmentTree(node.rightChild, qx)
+QuerySegmentTree(current node, interval):
+		if interval have no intersections with range of current node:
+				return
+    if interval encloses range of current node:
+				report all intervals stored in the current node
+    if current node is a leaf:
+				return
+    if interval have intersection with range of the left child of current node:
+				QuerySegmentTree(left child, interval)
+    if ...
+      	QuerySegmentTree(right child, interval)
 ```
 
-Only 1 node is visited per level, altogether $O(logn)$ nodes.
+When query a point (degraded interval), nnly 1 node is visited per level, altogether $O(logn)$ nodes.
 
 Total: $O(r + logn)$
 
