@@ -32,7 +32,7 @@ Complete binary tree can be stored as an array.
 
 **CAUTION**: A complete tree with **n leaves** need an array with "_size" to store.
 
-$\_size = 2 * bottomSize - 1, bottomSize = 2^k$ where $2^k >= n, k \in N$.
+$\_size = 2 * bottomSize - 1, bottomSize = 2^{min(k)}$ where $2^k >= n, k \in N$.
 
 #### Visit
 
