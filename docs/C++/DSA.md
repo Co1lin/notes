@@ -32,7 +32,7 @@ Complete binary tree can be stored as an array.
 
 **CAUTION**: A complete tree with **n leaves** need an array with "_size" to store.
 
-$\_size = 2 * bottomSize - 1, bottomSize = 2^{min(k)}$ where $2^k >= n, k \in N$.
+$\_size = 2 * bottomSize - 1, bottomSize = 2^{min(k)}$ where $2^k \geq n, k \in N$.
 
 #### Visit
 
@@ -299,6 +299,8 @@ BuildSegmentTree(current node, subset of sorted EIs):	// O(n)
 				BuildSegmentTree(right child of current node, EIs[medians : ])
 ```
 
+Total costs of building: $O(nlogn)$
+
 #### Insert Intervals
 
 ````c++
@@ -313,8 +315,6 @@ InsertSegmentTree(current node, interval):
 ````
 
 When running InsertSegmentTree, at each level, less than 4 nodes are visited (2 stores + 2 recursions). $\Rightarrow O(logn)$
-
-Total costs of building: $O(nlogn)$
 
 #### Query
 
