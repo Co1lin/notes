@@ -342,7 +342,7 @@ QuerySegmentTree(current node, interval):
 				return
     if interval have intersection with range of the left child of current node:
 				QuerySegmentTree(left child, interval)
-    if ...
+    if interval have intersection with range of the right child of current node:
       	QuerySegmentTree(right child, interval)
 ```
 
