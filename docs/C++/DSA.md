@@ -22,6 +22,20 @@ template<class T> inline T getnum()
 }
 ```
 
+### Gpof - Performance Analysis Tool
+
+```shell
+g++ main.cpp -o main -pg	# use "-pg" compiler options
+./main
+gprof ./main > report.txt
+```
+
+P.S.
+
+```shell
+clang: error: the clang compiler does not support -pg option on versions of OS X 10.9 and later
+```
+
 ## Data Structure
 
 ### Complete Binary Tree
