@@ -22,7 +22,7 @@ template<class T> inline T getnum()
 }
 ```
 
-### Gpof - Performance Analysis Tool
+### Gprof - Performance Analysis Tool
 
 ```shell
 g++ main.cpp -o main -pg	# use "-pg" compiler options
@@ -34,6 +34,16 @@ P.S.
 
 ```shell
 clang: error: the clang compiler does not support -pg option on versions of OS X 10.9 and later
+```
+
+### Timespec
+
+```c++
+timespec start, end;
+clock_gettime(CLOCK_MONOTONIC, &start);
+// ...
+clock_gettime(CLOCK_MONOTONIC, &end);
+double deltaT = (end.tv_sec - start.tv_sec) * 1e3 + (end.tv_nsec - start.tv_nsec) * 1e-6;	//计算程序执行时间，单位为ms
 ```
 
 ## Data Structure
