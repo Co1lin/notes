@@ -356,9 +356,15 @@ QuerySegmentTree(current node, interval):
       	QuerySegmentTree(right child, interval)
 ```
 
-When query a point (degraded interval), nnly 1 node is visited per level, altogether $O(logn)$ nodes.
+When querying a point (degraded interval), only 1 node is visited per level, altogether $O(logn)$ nodes.
 
 Total: $O(r + logn)$
+
+### Dictionary - Unordered Map - Hash Map
+
+#### Hash Function
+
+
 
 
 
@@ -393,6 +399,20 @@ x_1 & y_1 & z_1 \\
 x_2 & y_2 & z_2 
 \end{vmatrix}
 = (y_1 z_2 - y_2 z_1)\boldsymbol{i} - (x_1 z_2 - x_2 z_1)\boldsymbol{j} + (x_1 y_2 - x_2 y_1)\boldsymbol{k}$$
+
+### Bi-Connected Components
+
+Articulation Point: cut-vertex
+
+Bi-connected graph: graph without any Articulation Point $\Rightarrow$ at least two ways between any two points ???
+
+Bi-connected components: maximal bi-connected graph;  Any connected graph **decomposes** into a tree of **biconnected components**.
+
+#### Algorithm via DFS
+
+
+
+
 
 ## Complexity Analysis
 
