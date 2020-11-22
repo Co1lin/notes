@@ -4,7 +4,7 @@
 
 ### IO
 
-```cpp
+```c++
 inline char nchar()
 {   // read a large amount of char to speed up reading
     // the codes below are widely spread and applied so the author is uncertain
@@ -20,6 +20,12 @@ template<class T> inline T getnum()
     for(; isdigit(c); c = nchar()) x = x * 10 + c - 48;
     return f ? x : -x;
 }
+```
+
+Disable the synchronization between C++ streams and standard C stream to speed up C++ streams.
+
+```c++
+std::ios::sync_with_stdio(false);
 ```
 
 ### Gprof - Performance Analysis Tool
@@ -363,6 +369,14 @@ Total: $O(r + logn)$
 ### Dictionary - Unordered Map - Hash Map
 
 #### Hash Function
+
+##### From Mod to MAD
+
+`hash(key) = (a * key + b) % M`, where M is prime.
+
+##### Polynomial: string -> int
+
+
 
 
 
