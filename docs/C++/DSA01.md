@@ -1,4 +1,4 @@
-# DSA
+# DSA01
 
 ## Tricks
 
@@ -107,7 +107,7 @@ A balanced binary search tree.
 
 Input data are stored in leaves. Inside nodes store the maximum value in the left child tree.
 
-![1d-tree](DSA.assets/1d-tree.png)
+![1d-tree](DSA01.assets/1d-tree.png)
 
 ##### Query Algorithm
 
@@ -202,7 +202,7 @@ Report + Search: $O(r + \sqrt{n})$
 
 #### Data Structure
 
-![mlst](DSA.assets/mlst.png)
+![mlst](DSA01.assets/mlst.png)
 
 #### Construct
 
@@ -220,13 +220,13 @@ Report + Search: $O(r + \sqrt{n})$
 
 Application: Stabbing Query. Which intervals enclose the given point?
 
-![stabbing_query](DSA.assets/stabbing_query.png)
+![stabbing_query](DSA01.assets/stabbing_query.png)
 
 #### Data Structure
 
-![interval-tree01](DSA.assets/interval-tree01.png)
+![interval-tree01](DSA01.assets/interval-tree01.png)
 
-![interval-tree02](DSA.assets/interval-tree02.png)
+![interval-tree02](DSA01.assets/interval-tree02.png)
 
 #### Construction
 
@@ -294,7 +294,7 @@ queryIntervalTree(Node v, Num q):
 
 #### Data Structure
 
-#### ![seg-tree-01](DSA.assets/seg-tree-01.png)
+#### ![seg-tree-01](DSA01.assets/seg-tree-01.png)
 
 #### Construction
 
@@ -438,4 +438,4 @@ Bi-connected components: maximal bi-connected graph;  Any connected graph **deco
 
 ##### Comparison Tree
 
-![adt](DSA.assets/adt.png)
+![adt](DSA01.assets/adt.png)
