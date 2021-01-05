@@ -1,5 +1,26 @@
 # DSA
 
+_Note that in this document there are some images with transparent backgound, and a bright theme may be more suitable to read them._
+
+_Click on a tile to change the color scheme_:
+
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+
 ## Basis of Performance Analysis
 
 ### Notation
@@ -281,7 +302,7 @@ $npl$的意义：**x到外部节点的最短距离**。
 
 （然而如图，左子树的高度并不一定不小于右子树。）
 
-<img src="DSA_Review.assets/Screen%20Shot%202021-01-05%20at%204.26.48%20PM.png" alt="Screen Shot 2021-01-05 at 4.26.48 PM" style="zoom:50%;" />
+![Screen Shot 2021-01-05 at 4.26.48 PM](DSA_Review.assets/Screen%20Shot%202021-01-05%20at%204.26.48%20PM.png)
 
 于是有性质：$npl(x) = 1 + npl(rc(x))$，也等于**最右侧通路的长度d**。$d = O(logn)$。
 
