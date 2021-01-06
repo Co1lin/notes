@@ -122,25 +122,83 @@ $O(n^2)$。严格大小关系就是稳定的。
 
 $O(nlogn)$。优先左边的元素进入归并，稳定。
 
-
-
-
-
 ### QuickSort
 
 $O(nlogn)$。不稳定！
 
+```c++
+QuickSort(lo, hi):
+{	// [lo, hi)
+	if (hi - lo >= 2)
+	{
+		mi = partition(lo, hi - 1)
+		QuickSort(lo, mi)
+		QuickSort(mi + 1, hi)
+	}
+}
+```
 
+#### Partition
+
+随机选择一点作为pivot（轴点），让其就位。
+
+LUG版的Partition如图所示。始终有：L = [start, lo)，U = [lo, hi]，G = (hi, end]。
+
+![image-20210106181124460](DSA_Review.assets/image-20210106181124460.png)
+
+```pseudocode
+Partition(lo, hi):
+{	// [lo, hi]
+	swap(data[lo], data[randint(lo, hi)])
+  pivot = data[lo]	// 随机选取轴点
+  
+  while (lo < hi)
+  {
+  	while (lo < hi && pivot < data[hi])	// pivot小于G区间左边待拓展节点时
+  		hi--	// 向左拓展G
+  	if (lo < hi)	// 这个判断可以删掉
+  		data[lo++] = data[hi]	// 把G区间左边小于等于pivot的数放在L右端（相当于拓展L）
+  	
+  	while (lo < hi && data[lo] < pivot)	// pivot大于L区间右边待拓展节点时
+  		lo++	// 向右拓展L
+  	if (lo < hi)	// 这个判断可以删掉
+  		data[hi--] = data[lo]	// 把L区间右边大于等于pivot的数放在G左端（相当于拓展G）
+  }	// 继续循环拓展G、L
+  // assert: lo == hi
+  return lo
+}
+```
+
+### Quick Selection
+
+```pseudocode
+QuickSelect(lo, hi, k):
+{
+	while (lo < hi)
+	{
+		// perform quick partition on [lo, hi]
+		swap(data[lo], data[randint(lo, hi)])
+		i = lo, j = hi, pivot = data[lo]
+		// ... quick partition on [i, j]
+		// finish with i == j; data[i] is the pivot
+		// shrink [lo, hi] which contains k_th element
+		if (k <= i)
+			hi = i - 1
+		if (i <= k)
+			lo = i + 1
+	}
+}
+```
+
+![Screen Shot 2021-01-06 at 7.29.51 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%207.29.51%20PM.png)
 
 ### RadixSort
 
-低位优先的基数排序。
+<u>低位优先</u>的基数排序。
 
 数据规模为n，数字位数为t，每一位的范围为$(0, M]$。
 
 **复杂度$O(t*(n+M))$。（一般优于$O(nlogn)$。）稳定！**
-
-（局限性：只有数字比较方便。）
 
 ### InsertionSort
 
@@ -224,8 +282,6 @@ Using the Master Thm.,
 $Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})$
 
 Report + Search: $O(r + \sqrt{n})$
-
-
 
 ## AVL Tree
 
