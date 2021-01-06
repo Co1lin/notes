@@ -331,7 +331,6 @@ search(value):
 
 1. 调用BST的标准search；待插入key不存在；search过程中记录了hot。
 2. 创建**红节点**x，以hot为parent，黑高度-1。
-
 3. 若x的parent p为红，则双红修正。
 
 #### Double Red Issue
@@ -342,27 +341,27 @@ search(value):
 
 1. u为black：
 
-![Screen Shot 2021-01-06 at 11.19.43 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png)
+   ![Screen Shot 2021-01-06 at 11.19.43 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png)
 
-（1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
+   （1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
 
-（2）用“3+4重构”调整其拓扑结构。
+   （2）用“3+4重构”调整其拓扑结构。
 
-调整完即结束，无缺陷传递。
+   调整完即结束，无缺陷传递。
 
 2. u为red：
 
-![Screen Shot 2021-01-06 at 11.53.30 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png)
+   ![Screen Shot 2021-01-06 at 11.53.30 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png)
 
-（借助B树的理解，即节点发生了上溢。）
+   （借助B树的理解，即节点发生了上溢。）
 
-（1）recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
+   （1）recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
 
-（拓扑结构不变）
+   （拓扑结构不变）
 
-双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
+   双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
 
-总结：时间$O(logn)$。拓扑结构改变$O(1)$。
+   总结：时间$O(logn)$。拓扑结构改变$O(1)$。
 
 #### Delete
 
@@ -372,9 +371,9 @@ search(value):
 
    若x和r同时为黑（c），则需双黑修正。若不是，分情况：
 
-（a）x为红，r为黑，无需调整。
+   （a）x为红，r为黑，无需调整。
 
-（b）x为黑，r为红，r接替x后变黑。
+   （b）x为黑，r为红，r接替x后变黑。
 
 #### Double Black Issue
 
