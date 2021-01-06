@@ -138,13 +138,23 @@ $O(nlogn)$。不稳定！
 
 数据规模为n，数字位数为t，每一位的范围为$(0, M]$。
 
-复杂度$O(t*(n+M))$。**稳定！**
+**复杂度$O(t*(n+M))$。（一般优于$O(nlogn)$。）稳定！**
 
-局限性：只能比较数字。
+（局限性：只有数字比较方便。）
+
+### InsertionSort
+
+$O(n^2)$。稳定。
+
+类似于将手中的扑克牌进行排序。
+
+前k个元素已经有序；考查第k+1个元素，从第k个元素向前遍历，寻找合适位置，将其插入其中，使得有序区间成为前k+1个元素。
 
 ### SelectionSort
 
+$O(n^2)$。如果用swap模式，**不稳定**！
 
+前k个元素已经有序；考查第k+1个位置；遍历k+1往后的所有元素，选择最小的与当前第k+1个位置的元素交换（swap）。
 
 ### ShellSort
 
@@ -159,6 +169,57 @@ $O(nlogn)$。不稳定！
 高度$height(T)$：树T的所有节点深度的最大值。只有根的树：0；空树：-1。
 
 度$degree$：children的个数。
+
+## BST
+
+中序遍历为单调不下降序列。
+
+### Delete
+
+如果是叶节点，直接删除。
+
+如果不是叶节点，找到其「直接后继」，交换两者，再删除。
+
+## k-D Tree
+
+### DS
+
+
+
+### Algorithm
+
+#### Query - KdSearch(v, R)
+
+Search starts at v; query range is R
+
+Key idea: Recurse in when there's intersection. Report it when it is enclosed.
+
+```c++
+kdSearch(v, R):
+  if v is leaf:
+    if v in R:
+      report(v)
+
+  if v->lChild in R:
+    reportSubtree(v->lChild)
+  else if v->lChild have intersection with R:
+    kdSearch(v->lChild, R)
+
+  if v->rChild in R:
+    reportSubtree(v->lChild)
+  else if v->rChild have intersection with R:
+    kdSearch(v->rChild, R)
+```
+
+Time: For each edge of R, no more than <u>2 out of the 4</u> grandchildren of each node will intersect with it, which means recursing. R has 4 edges, so multiply 4 for the upper bound complexity.
+
+Using the Master Thm.,
+
+$Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})$
+
+Report + Search: $O(r + \sqrt{n})$
+
+
 
 ## AVL Tree
 
@@ -178,13 +239,71 @@ $O(logn)$。
 
 #### Delete
 
-用BST的删除，删除x，记录hot。
+**用BST的删除**，删除x，记录hot。
 
 从hot向上，一旦发现g失衡，通过`tallerChild(tallerChild(g))`确定p，v，然后用一次3+4重构重平衡。
 
 失衡可能传播，需要一直向上，执行多次3+4重构。
 
 $O(logn)$。
+
+#### 3+4 Reconstruction
+
+各种不平衡的情况都可以按照“中序”统一平衡。
+
+![Screen Shot 2021-01-06 at 9.33.32 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.33.32%20AM.png)
+
+![Screen Shot 2021-01-06 at 9.34.01 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.34.01%20AM.png)
+
+## Splay Tree
+
+### Splay
+
+双层旋转之“顺向情况”：![Screen Shot 2021-01-06 at 9.36.14 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.36.14%20AM.png)
+
+双层旋转之“反向情况”：
+
+![Screen Shot 2021-01-06 at 9.36.41 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.36.41%20AM.png)
+
+单层旋转：当待splay至根的节点的parent为root时：
+
+![Screen Shot 2021-01-06 at 9.38.16 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.38.16%20AM.png)
+
+### Search
+
+为保证性能，需将最后访问的节点旋转至root。
+
+```c++
+search(value):
+{
+	p = searchIn(root, value, hot)
+	root = splay(p ? p : hot)
+	return root
+}
+```
+
+（hot记录了search中最后到达的节点）
+
+### Insert
+
+![Screen Shot 2021-01-06 at 9.39.39 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.39.39%20AM.png)
+
+1. 调用Splay的search算法，待插入节点不在树中，查找失败。
+2. 但“待插入位置”的父节点hot，记为t，已经被旋转至根。
+3. 根据t与要插入的数值的大小关系，将t及其子树与v重组为新的树。最后新插入的v作为root。
+
+**Corner Case:** 当<u>连续插入有序序列</u>时，Splay会呈现链状。当然，不一定完全有序，如：3，2，1，4，5，6，7，……也可以形成链状。
+
+### Delete
+
+![Screen Shot 2021-01-06 at 10.25.57 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2010.25.57%20AM.png)
+
+1. 查找（search）待删除值v，v会被Splay至root。
+2. 删除v，剩下它的两个子树$T_L$、$T_R$。
+3. 在$T_R$中查找v；这一查找必定失败，但会将$T_R$中的最小值m，即v的直接后继，旋转至子树$T_R$的根。
+4. 由于m是v的直接后继，因此$T_R$中m的左子树必为空。直接将$T_L$作为m的左子树。完成。
+
+## Red Black Tree
 
 
 
@@ -273,8 +392,6 @@ $O(h) = O(log_mN)$。
 合并出来的节点一定满足key个数的范围条件。
 
 父节点P少了一个key，可能下溢。因此下溢会传递。
-
-## Red Black Tree
 
 
 
