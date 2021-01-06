@@ -172,19 +172,25 @@ $O(n^2)$。如果用swap模式，**不稳定**！
 
 ## BST
 
+### DS
+
+左-中-右：小-中-大。
+
 中序遍历为单调不下降序列。
 
-### Delete
+### Algorithm
+
+#### Insert
+
+插入的节点必为叶节点。
+
+#### Delete
 
 如果是叶节点，直接删除。
 
 如果不是叶节点，找到其「直接后继」，交换两者，再删除。
 
 ## k-D Tree
-
-### DS
-
-
 
 ### Algorithm
 
@@ -211,7 +217,7 @@ kdSearch(v, R):
     kdSearch(v->rChild, R)
 ```
 
-Time: For each edge of R, no more than <u>2 out of the 4</u> grandchildren of each node will intersect with it, which means recursing. R has 4 edges, so multiply 4 for the upper bound complexity.
+**Complexity:** For each edge of R, no more than <u>2 out of the 4</u> grandchildren of each node will intersect with it, which means recursing. R has 4 edges, so multiply 4 for the upper bound complexity.
 
 Using the Master Thm.,
 
@@ -305,15 +311,128 @@ search(value):
 
 ## Red Black Tree
 
+### Definition
 
+0. 为所有有需要的节点引入**n+1**个外部节点，使得所有节点的左右孩子非空。
+1. 树根root：黑色
+2. 外部节点：黑色
+3. 其余节点：若为红，则只能由黑孩子（红之子，之父必为黑）
+4. 外部节点向上到根：途中黑节点数目相等（所有外部节点的**黑深度**相等）
 
+### DS
 
+**Lifting**: 将每个红节点提升，使之与其parent（必为黑）“等高”；或说，将黑节点与其红孩子视作一个大的节点。如此，将红黑树变换为了**4阶B树（(2, 4)-Tree）**。
+
+可以验证，Lifting之后的B树中，同一节点不会包含紧邻的红色key。
+
+### Algorithm
+
+#### Insert
+
+1. 调用BST的标准search；待插入key不存在；search过程中记录了hot。
+2. 创建**红节点**x，以hot为parent，黑高度-1。
+
+3. 若x的parent p为红，则双红修正。
+
+#### Double Red Issue
+
+插入x后，依次确认其祖先p，g。若p为红，则需双红修正。
+
+考查u：
+
+1. u为black：
+
+![Screen Shot 2021-01-06 at 11.19.43 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png)
+
+（1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
+
+（2）用“3+4重构”调整其拓扑结构。
+
+调整完即结束，无缺陷传递。
+
+2. u为red：
+
+![Screen Shot 2021-01-06 at 11.53.30 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png)
+
+（借助B树的理解，即节点发生了上溢。）
+
+（1）recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
+
+（拓扑结构不变）
+
+双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
+
+总结：时间$O(logn)$。拓扑结构改变$O(1)$。
+
+#### Delete
+
+1. 调用BST常规remove算法。实际删除者为x。x可能有右孩子，会“接替”x。
+
+2. ![Screen Shot 2021-01-06 at 12.21.38 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2012.21.38%20PM.png)
+
+   若x和r同时为黑（c），则需双黑修正。若不是，分情况：
+
+（a）x为红，r为黑，无需调整。
+
+（b）x为黑，r为红，r接替x后变黑。
+
+#### Double Black Issue
+
+若x和r同时为黑，考查r的兄弟s（即p的另一孩子）的颜色及s的孩子的颜色：
+
+1. 若s为black：
+
+   （1）s至少有一孩子c为red：
+
+   ![Screen Shot 2021-01-06 at 1.39.17 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%201.39.17%20PM.png)
+
+   （对应B树下溢。）
+
+   采用“3+4重构”调整拓扑结构，p、s、c三者中居中者继承p原先的颜色，其余染黑。
+
+   调整立即结束，无传递！
+
+   （2）s两孩子均为black：
+
+   （i）p为red：
+
+   ![Screen Shot 2021-01-06 at 2.36.01 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.01%20PM.png)
+
+   （对应B树下溢。）
+
+   令s为red，p为black（a→b）。无需调整拓扑结构。
+
+   调整立即结束，无传递！
+
+   （ii）p为black
+
+   ![Screen Shot 2021-01-06 at 2.36.21 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.21%20PM.png)
+
+   （对应B树，下溢引发了上层下溢，需继续递归调整。）
+
+   令s为red。
+
+   然后以p为根的整棵子树黑高度--。若p有parent g，则g的黑高度失衡。因此需递归地<u>于p处</u>进行双黑修正。
+
+   向上递归。但从红黑树来看拓扑结构不变。
+
+2. 若s为red：
+
+   ![Screen Shot 2021-01-06 at 2.44.44 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.44.44%20PM.png)
+
+   （则s‘必然是黑的）
+
+   此时，观察以p为根的子树：s‘必为黑，即情况1；而p为red，因此不会是「情况1-（2）（ii）」。于x/r处继续递归地双黑修正即可。
+
+   递归一层便结束，不会传递！
+
+   总结：对任何操作，拓扑结构的改变$O(1)$。
 
 ## B Tree
 
 ### Definition
 
-m阶B-Tree，每个节点有n<=m-1个key，n+1<=m个分支。（m>=3）
+m阶B-Tree，每个节点有$ceil(m/2) - 1 \le n \le m-1$个key，$ceil(m/2) \le n+1 \le m$个分支。（$m \ge 3$）
 
 需满足$m\ge n+1 \ge ceil(m/2)$。（**除了根节点**不能少于一半）
 
@@ -351,9 +470,11 @@ $O(logn)$。n为key的个数。
 
 #### 上溢与split
 
-上溢节点恰好有m个key。
-
 ![image-20210105112950326](DSA_Review.assets/image-20210105112950326.png)
+
+0. 上溢节点恰好有m个key。
+1. 找到上溢节点中居中的key，以之为界将节点一分为二。
+2. 将居中的key提升至原节点的parent中。
 
 上溢传递：最多传到根。如果根满了，就上溢一个元素作为新的根。
 
@@ -430,6 +551,12 @@ merge(a,b)：
 1. 通过swap确保a>b。
 2. 将$a_R$与$b$合并成新的$a_{R'}$，若新的$a_{R'}$与$a_{L}$不满足npl关系，则交换之。
 3. 维护a的npl。
+
+## Hash Table
+
+
+
+
 
 
 
