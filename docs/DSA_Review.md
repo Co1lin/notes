@@ -339,35 +339,37 @@ search(value):
 
 考查u：
 
-1. u为black：
+[1] u为black：
 
-   ![Screen Shot 2021-01-06 at 11.19.43 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png)
+![Screen Shot 2021-01-06 at 11.19.43 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png)
 
-   （1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
+（1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
 
-   （2）用“3+4重构”调整其拓扑结构。
+（2）用“3+4重构”调整其拓扑结构。
 
-   调整完即结束，无缺陷传递。
+调整完即结束，无缺陷传递。
 
-2. u为red：
+[2] u为red：
 
-   ![Screen Shot 2021-01-06 at 11.53.30 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png)
+![Screen Shot 2021-01-06 at 11.53.30 AM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png)
 
-   （借助B树的理解，即节点发生了上溢。）
+（借助B树的理解，即节点发生了上溢。）
 
-   （1）recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
+recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
 
-   （拓扑结构不变）
+（拓扑结构不变）
 
-   双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
+双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
 
-   总结：时间$O(logn)$。拓扑结构改变$O(1)$。
+总结：时间$O(logn)$。拓扑结构改变$O(1)$。
 
 #### Delete
 
 1. 调用BST常规remove算法。实际删除者为x。x可能有右孩子，会“接替”x。
 
-2. ![Screen Shot 2021-01-06 at 12.21.38 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2012.21.38%20PM.png)
+2. 
+   
+   ![Screen Shot 2021-01-06 at 12.21.38 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2012.21.38%20PM.png)
 
    若x和r同时为黑（c），则需双黑修正。若不是，分情况：
 
@@ -379,53 +381,53 @@ search(value):
 
 若x和r同时为黑，考查r的兄弟s（即p的另一孩子）的颜色及s的孩子的颜色：
 
-1. 若s为black：
+[1] 若s为black：
 
-   （1）s至少有一孩子c为red：
+（1）s至少有一孩子c为red：
 
-   ![Screen Shot 2021-01-06 at 1.39.17 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%201.39.17%20PM.png)
+![Screen Shot 2021-01-06 at 1.39.17 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%201.39.17%20PM.png)
 
-   （对应B树下溢。）
+（对应B树下溢。）
 
-   采用“3+4重构”调整拓扑结构，p、s、c三者中居中者继承p原先的颜色，其余染黑。
+采用“3+4重构”调整拓扑结构，p、s、c三者中居中者继承p原先的颜色，其余染黑。
 
-   调整立即结束，无传递！
+调整立即结束，无传递！
 
-   （2）s两孩子均为black：
+（2）s两孩子均为black：
 
-   （i）p为red：
+（i）p为red：
 
-   ![Screen Shot 2021-01-06 at 2.36.01 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.01%20PM.png)
+![Screen Shot 2021-01-06 at 2.36.01 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.01%20PM.png)
 
-   （对应B树下溢。）
+（对应B树下溢。）
 
-   令s为red，p为black（a→b）。无需调整拓扑结构。
+令s为red，p为black（a→b）。无需调整拓扑结构。
 
-   调整立即结束，无传递！
+调整立即结束，无传递！
 
-   （ii）p为black
+（ii）p为black
 
-   ![Screen Shot 2021-01-06 at 2.36.21 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.21%20PM.png)
+![Screen Shot 2021-01-06 at 2.36.21 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.21%20PM.png)
 
-   （对应B树，下溢引发了上层下溢，需继续递归调整。）
+（对应B树，下溢引发了上层下溢，需继续递归调整。）
 
-   令s为red。
+令s为red。
 
-   然后以p为根的整棵子树黑高度--。若p有parent g，则g的黑高度失衡。因此需递归地<u>于p处</u>进行双黑修正。
+然后以p为根的整棵子树黑高度--。若p有parent g，则g的黑高度失衡。因此需递归地<u>于p处</u>进行双黑修正。
 
-   向上递归。但从红黑树来看拓扑结构不变。
+向上递归。但从红黑树来看拓扑结构不变。
 
-2. 若s为red：
+[2] 若s为red：
 
-   ![Screen Shot 2021-01-06 at 2.44.44 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.44.44%20PM.png)
+![Screen Shot 2021-01-06 at 2.44.44 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.44.44%20PM.png)
 
-   （则s‘必然是黑的）
+（则s‘必然是黑的）
 
-   此时，观察以p为根的子树：s‘必为黑，即情况1；而p为red，因此不会是「情况1-（2）（ii）」。于x/r处继续递归地双黑修正即可。
+此时，观察以p为根的子树：s‘必为黑，即情况1；而p为red，因此不会是「情况[1]-（2）（ii）」。于x/r处继续递归地双黑修正即可。
 
-   递归一层便结束，不会传递！
+递归一层便结束，不会传递！
 
-   总结：对任何操作，拓扑结构的改变$O(1)$。
+总结：对任何操作，拓扑结构的改变$O(1)$。
 
 ## B Tree
 
