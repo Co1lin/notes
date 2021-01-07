@@ -1,6 +1,6 @@
 # DSA
 
-_Note that in this document there are some images with transparent backgound, and a bright theme may be more suitable to read them._
+_Note that in this document there are some images with transparent backgound, so a bright theme may be more suitable to read them._
 
 _Click on a tile to change the color scheme_:
 
@@ -664,6 +664,12 @@ heapify(size n):
 }
 ```
 
+## d-Heap
+
+多叉堆的复杂度：“上山容易下山难”。
+
+
+
 ## Leftlist Heap
 
 ### Definition
@@ -696,6 +702,8 @@ merge(a,b)：
 
 
 
+
+
 ## Skip List
 
 ### DS
@@ -723,7 +731,7 @@ merge(a,b)：
 
 考虑第k层List $S_k$，它非空，即n个可能节点中至少有一个节点存在的概率$P(|S_k| > 0) \le n \cdot p^k$。（某key值在第k层存在的概率为$p^k$。）
 
-得出：塔高度控制在$O(logn)$的概率极大。
+得出：塔高度控制在$O(logn)$的概率极大，接近于1。
 
 因此，纵向跳转次数$expected-O(logn)$。
 
