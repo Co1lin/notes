@@ -20,6 +20,11 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
+## Acknowledgement
+
+Thanks Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.
+
+Also thanks my friends for their ideas and images.
 
 ## Basis of Performance Analysis
 
@@ -501,7 +506,7 @@ m阶B-Tree，每个节点有$ceil(m/2) - 1 \le n \le m-1$个key，$ceil(m/2) \le
 
 某node中，两key之间的下级指针指向的node中的key介于两key之间。
 
-#### 最大树高
+#### Limited maximum height
 
 $\Omega(log_m N) \le h \le O(log_m N)$。
 
@@ -571,15 +576,82 @@ $O(h) = O(log_mN)$。
 
 父节点P少了一个key，可能下溢。因此下溢会传递。
 
-
-
-
-
-## Heap
+## Heap (min) (Priority Queue)
 
 上大下小，或上小下大。
 
+### Shift Up
 
+$O(logn)$。
+
+```pseudocode
+shift_up(i):	// shift up the node with index i
+{
+	while (i > 0):	// i is  not root
+	{
+		if (data[i] < data[ parent_of[i] ]):
+			break	// satisfied
+		else:	// if the parent has lower priority than data[i]
+			swap(data[i], data[ parent_of[i] ])	// shift data[i] to the upper layer
+			i = parent_of[i]	// examine the upper layer
+	}
+	return i
+}
+```
+
+### Shift Down
+
+$O(logn)$。
+
+```pseudocode
+shift_down(i):	// shift down the node with index i
+{
+	while (i != proper_parent_at(i)):
+	{
+		swap(i, proper_parent)
+		i = proper_parent
+	}
+	return i
+}
+
+proper_parent_at(i):
+// gives the maximum value among data[i], data[ left_child[i]] or data[ right_child[i] ]
+// gives parent i first if i == left_child[i] or i == right_child[i]
+```
+
+### Pop
+
+1. Delete the value at the top and replace it with the last value.
+2. Shift the current value at the top down.
+
+### Push
+
+1. Append the value to the last of the array.
+2. Shift the last value up.
+
+### Floyd Heapify
+
+$O(n)$。
+
+#### Combine
+
+Given two heaps and a node p. How to **combine** them to a new heap?
+
+Take the two heaps as childrens of p. Then **shift p down**.
+
+![Screen Shot 2021-01-07 at 1.55.40 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%201.55.40%20PM.png)
+
+#### Heapify
+
+For complete binary heap, shift the internel nodes down, which generates "sub-heap" start at the bottom. Finally a heap is constructed.
+
+```pseudocode
+heapify(size n):
+{
+	for (i = n / 2 - 1; i >= 0; i--)
+		shift_down(i)
+}
+```
 
 ## Leftlist Heap
 
@@ -613,21 +685,83 @@ merge(a,b)：
 
 
 
+## Skip List
+
 
 
 
 
 ## KMP
 
+![image-20210107111050127](DSA_Review.assets/image-20210107111050127.png)
 
+总：$O(n+m)$。
 
+（上面为一长字符串；下面为需要在上面的串中查找的模式串。黄色阴影区域表示相同的子串。）
 
+当失败时，`j`（向前）跳转至`next[j]`继续尝试匹配。而`i`始终向后，保证了**复杂度为$O(n)$**。
+
+若匹配成功，会有`j == m`跳出循环。返回值`i - j == i - m`就是匹配上的模式串在主串中的起始位置。
+
+扫描一趟$O(n)$。
+
+### Build Next Array
+
+$O(m)$。
+
+$next[j]$表示模式串pattern的$[0, j - 1]$区间内，最大公共前缀后缀的长度。
+
+![build next](DSA_Review.assets/build%20next.jpeg)
+
+（画圈的j代表在相应位置更新了next数组。）
 
 ## BM
 
+Complexity comparison:
 
+![Screen Shot 2021-01-07 at 1.21.52 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%201.21.52%20PM.png)
 
+(Brutal Force; KMP; BM with BC; BM with BC & GS)
 
+(Pr: The probability that the two characters you randomly picked from the character set are the same.)
+
+![Screen Shot 2021-01-07 at 12.18.06 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.18.06%20PM.png)
+
+### Bad Character Shift
+
+![Screen Shot 2021-01-07 at 12.19.00 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.19.00%20PM.png)
+
+（仅有BC策略复杂度为$O(nm)$）。
+
+若某处（主串字符为X，模式串为Y）匹配失败，则用BC表找到模式串P中最后一个X字符出现的位置，将这个位置对准主串进行匹配。
+
+如果P中最后一个X出现的位置在Y之前，则相当于P右移。
+
+若P中最后一个X出现的位置在Y之后，其实**无需也不能左移**。（保持P一直右移的单调性。）此时直接将P右移一个位置即可。
+
+#### Build BC Array
+
+1. BC表长度为字符集的大小。
+2. BC表初始化为每一项为-1，对应字符未出现在P中。
+3. 从左向右扫描P，令`BC[ P[i] ] = i`即可记录每个字符在P中出现的最后位置。
+
+### Good Suffix Shift
+
+![Screen Shot 2021-01-07 at 12.27.48 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.27.48%20PM.png)
+
+（利用GS表优化可使BM算法达到$O(n+m)$。）
+
+对每个后缀U，找前面出现过的与U相同的子串V。若不存在完全相同，则找能与U的后缀匹配的最长者。
+
+于是当匹配失败时，右移P，将V与U对齐。
+
+![Screen Shot 2021-01-07 at 12.30.30 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.30.30%20PM.png)
+
+#### Build GS Array
+
+GS表给出在某处失配时，P的**右移量**。
+
+（具体的构建过程略。）
 
 
 
