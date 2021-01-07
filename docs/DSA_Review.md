@@ -22,9 +22,9 @@ _Click on a tile to change the color scheme_:
 </script>
 ## Acknowledgement
 
-Thanks Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.
+Thanks for Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.
 
-Also thanks my friends for their ideas and images.
+Also thanks for my friends for their ideas and images.
 
 ## Basis of Performance Analysis
 
