@@ -643,15 +643,15 @@ $O(h) = O(log_mN)$。
 
 分情况：
 
-1. （Rotate $O(1)$）左兄弟（同parent）存在，且其key个数-1仍满足条件：
+（1）（Rotate $O(1)$）左兄弟（同parent）存在，且其key个数-1仍满足条件：
 
 ![Screen Shot 2021-01-05 at 12.02.56 PM](DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.02.56%20PM.png)
 
-2. （Rotate $O(1)$）右兄弟（同parent）存在，且其key个数-1仍满足条件：
+（2）（Rotate $O(1)$）右兄弟（同parent）存在，且其key个数-1仍满足条件：
 
 ![Screen Shot 2021-01-05 at 12.03.07 PM](DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.03.07%20PM.png)
 
-3. （Combine  $O(log_mN)$）L或R不存在（不可能同时不存在，因为一个node至少两个分支），或key的个数已达下限不能再给出：
+（3）（Combine  $O(log_mN)$）L或R不存在（不可能同时不存在，因为一个node至少两个分支），或key的个数已达下限不能再给出：
 
 ![Screen Shot 2021-01-05 at 12.07.08 PM](DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.07.08%20PM.png)
 
