@@ -66,13 +66,19 @@ NP问题：能在多项式时间内验证得出正确解的问题。
 
 即：原问题被分为a个规模均为$n/b$的子任务；（每一层）任务的划分、解的合并耗时$f(n)$。
 
-1. $f(n) = O(n^{log_b a - \epsilon}) ~ \Rightarrow T(n) = \Theta(n^{log_b a})$ （$f(n)$要小于O中的表达式，因为O是其上界）
+[1] $f(n) = O(n^{log_b a - \epsilon}) ~ \Rightarrow T(n) = \Theta(n^{log_b a})$ （$f(n)$要小于O中的表达式，因为O是其上界）
 
    e.g. kd-search: $T(n) = 2T(n/4)+O(1) = O(\sqrt{n})$
 
-2. $f(n) = O(n^{log_b a} \cdot log^k n) ~ \Rightarrow T(n) = \Theta(n^{log_b a} \cdot log^{k+1}n)$ 
+[2] $f(n) = O(n^{log_b a} \cdot log^k n) ~ \Rightarrow T(n) = \Theta(n^{log_b a} \cdot log^{k+1}n)$ 
 
-3. $f(n) = \Omega(n^{log_b a + \epsilon}) ~ \Rightarrow T(n) = \Theta(f(n))$ 
+   e.g. Binary search: $T(n) = 1T(n/2)+O(1) = O(nlogn)$
+
+   e.g. Merge Sort: $T(n) = 2T(n/2)+O(n) = O(nlogn)$
+
+[3] $f(n) = \Omega(n^{log_b a + \epsilon}) ~ \Rightarrow T(n) = \Theta(f(n))$ 
+
+   e.g. quickSelect: $T(n) = 1T(n/2)+O(n) = O(n)$
 
 ## Binary Search
 
@@ -92,7 +98,7 @@ BinarySearch(data, e, lo, hi):	// [lo, hi)
 		else // (data[median] <= e)
 			lo = mi + 1	// [mi + 1, hi) = (mi, hi)
 	}	// break when (lo == hi)
-	return (lo - 1)	
+	return (lo - 1)
 }
 ```
 
@@ -129,7 +135,7 @@ $O(nlogn)$。优先左边的元素进入归并，稳定。
 
 ### QuickSort
 
-$O(nlogn)$。**不稳定！**
+Expected - $O(nlogn)$。**不稳定！**
 
 ```c++
 QuickSort(lo, hi):
@@ -197,28 +203,6 @@ QuickSelect(lo, hi, k):
 
 ![Screen Shot 2021-01-06 at 7.29.51 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%207.29.51%20PM.png)
 
-### RadixSort
-
-<u>低位优先</u>的基数排序。
-
-数据规模为n，数字位数为t，每一位的范围为$(0, M]$。
-
-**复杂度$O(t*(n+M))$。（一般优于$O(nlogn)$。）稳定！**
-
-### InsertionSort
-
-$O(n^2)$。稳定。
-
-类似于将手中的扑克牌进行排序。
-
-前k个元素已经有序；考查第k+1个元素，从第k个元素向前遍历，寻找合适位置，将其插入其中，使得有序区间成为前k+1个元素。
-
-### SelectionSort
-
-$O(n^2)$。如果用swap模式，**不稳定**！
-
-前k个元素已经有序；考查第k+1个位置；遍历k+1往后的所有元素，选择最小的与当前第k+1个位置的元素交换（swap）。
-
 ### HeapSort
 
 ![Screen Shot 2021-01-07 at 3.48.44 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%203.48.44%20PM.png)
@@ -230,11 +214,73 @@ $O(n^2)$。如果用swap模式，**不稳定**！
 3. 【$O(logn)$】在新的堆区间，将刚换到顶的元素shift down，得到合法的堆。
 4. 将堆顶元素与堆区间的末尾元素swap，......
 
+### RadixSort
+
+<u>低位优先</u>的基数排序。
+
+数据规模为n，数字位数为t，每一位的范围为$(0, M]$。
+
+**复杂度$O(t*(n+M))$。（一般优于$O(nlogn)$。）稳定！**
+
+### SelectionSort
+
+$O(n^2)$。如果用swap模式，**不稳定**！如果用“滚动”模式，稳定。
+
+前k个元素已经有序；考查第k+1个位置；遍历k+1往后的所有元素，选择最小的与当前第k+1个位置的元素交换（swap）。
+
+### InsertionSort
+
+$O(n^2)$。稳定。
+
+类似于将手中的扑克牌进行排序。
+
+前k个元素已经有序；考查第k+1个元素，从第k个元素向前遍历，寻找合适位置，将其插入其中，使得有序区间成为前k+1个元素。
+
 ### ShellSort
 
+```pseudocode
+ShellSort(data):
+{
+	// 取某递增序列H
+	H = { w_1 = 1, w_2, w_3, ... }
+	// 选H序列中小于n的最后一项
+	k = max{i | w_i < n}
+	// 从H序列第k项往前...
+	for (t = k; t > 0; t--)
+	{
+		将data视作宽度为w_t的矩阵B_t
+		对B_t的每一列分别插入排序：B_t[i], i = 0, 1, ..., w_t - 1
+		// 排完后重新组成成一位的data形式
+	} // 最后一次循环 w_t == 1 , 意味着一维排序完成
+}
+```
+e.g. 
+组织成宽度为3的矩阵的一次排序：
+![Screen Shot 2021-01-08 at 8.34.12 PM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%208.34.12%20PM.png)
 
+#### Complexity
 
+$H_{shell}={1,2,4,8,...}$ : $O(n^2)$ （构造奇偶分别有序但所有奇均大于偶。）
 
+$H_{ps}=\{ 2^k-1 \}$ : $O(n^{3/2})$ 
+
+$H_{pratt}=\{ 2^p3^q \} = 1,2,3,4,6,8,9,12$ : $O(nlog^{2}n)$
+
+$H_{sedgewick}=\{ 9\cdot4^k - 9\cdot2^k + 1 ~|~ 4^k - 3\cdot2^k + 1 \}$ : $O(n^{4/3})$ ; Average - $O(n^{7/6})$
+
+#### Correctness
+
+Knuth's Thm. A g-ordered sequence REMAINS g-ordered after being h-sorted.
+
+Thm. A sequence is g-ordered and h-ordered $\Rightarrow$ It is $ng+mh$ - ordered. (Linear Combination)
+
+Thm. The numbers  $\ge ((g-1)(h-1) - 1)$  must be linear combinations of g and h.
+
+![Screen Shot 2021-01-08 at 8.58.28 PM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%208.58.28%20PM.png)
+
+$\Rightarrow$ The numbers that can form inversion pairs with the i-th number are limited to a decreasing interval as $h$ decrease.
+
+$\Rightarrow$ The number of inversion pairs will always keep or decrease.(?)
 
 ## Tree
 
@@ -252,6 +298,16 @@ $O(n^2)$。如果用swap模式，**不稳定**！
 
 中序遍历为单调不下降序列。
 
+Property: **Catalan Number**
+
+n个互异节点随机组成的二叉树，记共有$S(n)$棵不同的情况，则：
+
+$S(n) = Catalan(n) = \sum_{k=1}^n S(k-1)S(n-k) = {(2n)! \over (n+1)!n!}$。
+
+若各种BST等概率出现，则平均高度$\Theta(\sqrt{n})$。
+
+若n个互异词条按各种排列次序（各种排列等概率）插入，平均高度$\Theta(logn)$。
+
 ### Algorithm
 
 #### Insert
@@ -262,7 +318,9 @@ $O(n^2)$。如果用swap模式，**不稳定**！
 
 如果是叶节点，直接删除。
 
-如果不是叶节点，找到其「直接后继」，交换两者，再删除。
+如果不是叶节点，找到其（x）「直接后继」（w），交换两者；让w的右子树代替w，完成删除。
+
+
 
 ## k-D Tree
 
@@ -298,6 +356,12 @@ Using the Master Thm.,
 $Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})$
 
 Report + Search: $O(r + \sqrt{n})$
+
+总结：
+
+Query: $O(r + n^{1-1/d})$
+
+Construct: $O(nlogn)$
 
 ## AVL Tree
 
@@ -417,7 +481,7 @@ search(value):
 
 （1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；
 
-（2）用“3+4重构”调整其拓扑结构。
+（2）用<u>“3+4重构”</u>调整其拓扑结构。
 
 调整完即结束，无缺陷传递。
 
@@ -429,11 +493,13 @@ search(value):
 
 recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。
 
-（拓扑结构不变）
+<u>（拓扑结构不变）</u>
 
-双红传递：由于g的变红，可能导致双红向上传递，因此需要递归地修复。
+双红**传递**：由于g的变红，可能导致双红向上传递，因此需要递归地修复。有可能上溯至root，但由于规定root必为黑，故此处会发生<u>全树黑高度增加</u>。
 
 总结：时间$O(logn)$。拓扑结构改变$O(1)$。
+
+![Screen Shot 2021-01-08 at 11.21.33 AM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.21.33%20AM.png)
 
 #### Delete
 
@@ -499,7 +565,13 @@ recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u
 
 递归一层便结束，不会传递！
 
+删除总结：
+
+![Screen Shot 2021-01-08 at 11.19.52 AM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.19.52%20AM.png)
+
 总结：对任何操作，拓扑结构的改变$O(1)$。
+
+
 
 ## B Tree
 
@@ -630,6 +702,8 @@ proper_parent_at(i):
 // gives parent i first if i == left_child[i] or i == right_child[i]
 ```
 
+Expected - $O(1)$。
+
 ### Pop
 
 1. Delete the value at the top and replace it with the last value.
@@ -698,11 +772,68 @@ merge(a,b)：
 2. 将$a_R$与$b$合并成新的$a_{R'}$，若新的$a_{R'}$与$a_{L}$不满足npl关系，则交换之。
 3. 维护a的npl。
 
-## Hash Table
+## Hash Function
 
+评价标准与设计原则：
 
+1. 确定：同一关键码总是被映射到同一地址
+2. 快速：计算$O(1)$
+3. 满射：尽可能充分地覆盖整个散列空间
+4. 均匀：映射到各位置的概率尽量接近，避免聚集
 
+## Closed Hash Table
 
+Suggested Load Factor: $\lambda < 0.5$.
+
+Open Addressing Strategies:
+
+### Linear Probing
+
+`ht[ hash(key) % M ]` is occupied → try `ht[ (hash(key) + 1) % M ]`
+
+#### Search
+
+依次向后找，对应一个查找链。<u>当遇到空桶（且后述lazy tag为false）时，查找失败。</u>
+
+#### Delete with lazy tag
+
+删除时，如果仅仅将桶清空，则会造成查找链断裂。为此给每个桶引入lazy tag，记录这里曾经是否有过元素。
+
+#### Rehasing
+
+When the load factor is relatively large, we can rebuild the hashtable.
+
+1. **Double** the capacity of hashtable.
+2. Create new lay tags.
+3. For every item in the old table, insert it into the new hashtable.
+
+### Undirectional Quadratic Probing
+
+`ht[ hash(key) % M ]` is occupied → try `ht[ (hash(key) + j) % M ]` ($j = 0, 1, 2, ...$, which means the j-th trial)
+
+优势：试探位置的「间距」以线性速度增长；一旦发生冲突，可以尽快跳离聚集区段。
+
+#### Avoid infinite Probing
+
+一种无限循环无法找到空桶的情况（hashtable M=11, a prime number; load factor = 6/11 > 0.5）：
+
+![Screen Shot 2021-01-08 at 11.57.59 AM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.57.59%20AM.png)
+
+**Thm.** M is a prime **and** the load factor $\lambda \le 0.5 ~ \Rightarrow$ Can find an available bucket.
+
+Reason:
+
+(M is not a prime $\Rightarrow$ <u>It is possible that</u> the number of possible values of $n^2 ~ \% ~ M$ <= $ceil(M/2)$.)
+
+M is a prime $\Rightarrow$ Number of possible values of $n^2 ~ \% ~ M$ **==** $ceil(M/2)$, and they are **exactly** the first $ceil(M/2)$ values.
+
+### Bidirectional Quadratic Probing
+
+`ht[ hash(key) % M ]` is occupied → try `ht[ (hash(key) + j * (-1)^(j-1)) % M ]` ($j = 0, 1, 2, ...$, which means the j-th trial)
+
+![Screen Shot 2021-01-08 at 12.11.47 PM](DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2012.11.47%20PM.png)
+
+**Thm.** 表长取形如$M = 4k+3$的素数，则必然可以保证查找链的前M项互异，即正向与反向的查找链无公共的桶。
 
 ## Skip List
 
@@ -739,9 +870,9 @@ merge(a,b)：
 
 ![Screen Shot 2021-01-07 at 4.46.19 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%204.46.19%20PM.png)
 
-（个人认为教材上的分析不够好，可以按照原始论文的思路理解。原始论文总体计算包括横向、纵向在内的总时间复杂度。）
+（教材上先分析纵向跳转，再分析横向跳转。个人认为横向部分的分析不够好。下面按照原始论文的思路理解。原始论文总体计算包括横向、纵向在内的总时间复杂度。）
 
-对某一搜索路径，进行**反向**考察。记一个需要向上爬k层的反向搜索路径需要的操作次数为$C(k)$。
+对某一搜索路径，进行**反向**考察，即从目标节点向左上前进返回起始节点。记一个需要向上爬k层的反向搜索路径需要的操作次数为$C(k)$。
 
 ![Screen Shot 2021-01-07 at 8.57.15 PM](DSA_Review.assets/Screen%20Shot%202021-01-07%20at%208.57.15%20PM.png)
 
@@ -757,9 +888,9 @@ $C(0)=0$
 
 $C(k)=(1-p)(1+C(k))+p(1+C(k-1))$
 
-于是$C(k)=1/p+C(k-1) ~ \Rightarrow ~ C(k)=k/p$。
+于是 $C(k)=1/p+C(k-1) ~ \Rightarrow ~ C(k)=k/p$。
 
-对于任意反向搜索路径，可以拆为两部分：从0层爬到$O(logn)$层（塔高度控制在$O(logn)$的概率极大）、爬完剩下的层。粗略来看，前者时间为$C(O(logn))=O(logn)/p$；后者时间小于之。
+对于任意反向搜索路径，可以拆为两部分：从0层爬到$O(logn)$层（塔高度控制在$O(logn)$的概率极大）、爬完剩下的层。粗略考虑前者，时间为$C(O(logn))=O(logn)/p$。
 
 ## KMP
 
@@ -832,6 +963,4 @@ Complexity comparison:
 GS表给出在某处失配时，P的**右移量**。
 
 （具体的构建过程略。）
-
-
 
