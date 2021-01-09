@@ -823,7 +823,7 @@ When the load factor is relatively large, we can rebuild the hashtable.
 
 Reason:
 
-(M is not a prime $\Rightarrow$ <u>It is possible that</u> the number of possible values of $n^2 ~ \% ~ M$ <= $ceil(M/2)$.)
+(M is not a prime $\Rightarrow$ The number of possible values of $n^2 ~ \% ~ M$ <= $ceil(M/2)$.)
 
 M is a prime $\Rightarrow$ Number of possible values of $n^2 ~ \% ~ M$ **==** $ceil(M/2)$, and they are **exactly** the first $ceil(M/2)$ values.
 
