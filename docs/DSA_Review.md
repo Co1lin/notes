@@ -24,7 +24,7 @@ _Click on a tile to change the color scheme_:
 
 Thanks for Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.
 
-Also thanks for my friends for their ideas and images.
+Also thanks for my friends for their sincere help and ideas or images.
 
 ## Basis of Performance Analysis
 
@@ -473,6 +473,10 @@ search(value):
 
 插入x后，依次确认其祖先p，g。若p为红，则需双红修正。
 
+总图：
+
+![image-20210110230506234](DSA_Review.assets/image-20210110230506234.png)
+
 考查u：
 
 [1] u为black：
@@ -516,6 +520,10 @@ recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u
    （b）x为黑，r为红，r接替x后变黑。
 
 #### Double Black Issue
+
+总图：
+
+![image-20210110230541116](DSA_Review.assets/image-20210110230541116.png)
 
 若x和r同时为黑，考查r的兄弟s（即p的另一孩子）的颜色及s的孩子的颜色：
 
