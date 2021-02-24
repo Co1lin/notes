@@ -118,9 +118,9 @@ app.component('product-display', {
 </div>
 ```
 
-#### Prop
+#### Props
 
-`product-display` component needs access to data `premium` in `main.js`.
+`product-display` component needs access to data `premium` in `main.js` in order to render contents corresponding with variables in `main.js`.
 
 In other words, it needs a custom attribute (a funnel) that we can feed this data into.
 
@@ -133,6 +133,19 @@ So, we add custom attribute onto the `product-display` component where we’re u
 **Notice** how we’re using the shorthand for `v-bind` so we can reactively receive the new value of `premium` if it updates (from `true` to `false`).
 
 ![7.opt](Vue.assets/7.opt.jpg)
+
+In `ProductDisplay.js`:
+
+```js
+app.component('product-display', {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true
+    }
+  },
+  // ...
+```
 
 #### Emitting and Listening
 
@@ -428,4 +441,450 @@ methods: {
     }
   }
 ```
+
+## Vue Router
+
+Ref: [Vue Router for Everyone](https://vueschool.io/courses/vue-router-for-everyone)
+
+### Create a project with Vue Router using Vue CLI
+
+Use nvm to install node.
+
+Use npm to install vue-cli.
+
+Use `vue ui` to create a new project with GUI.
+
+![Screen Shot 2021-02-24 at 3.02.27 PM](Vue.assets/Screen%20Shot%202021-02-24%20at%203.02.27%20PM.png)
+
+### Visual Structure
+
+```
+App.vue # Single page application
+-- router-link
+-- router-view
+---- components
+```
+
+### Single File Components
+
+#### Basic Structure of a `.vue` file
+
+```js
+<template>
+  
+</template>
+
+<script>
+
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>
+```
+
+### Create routes
+
+Add nav-bar in main page:
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- use router-link component(already provided) for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+  </p>
+  <!-- route outlet -->
+  <!-- component matched by the route will render here -->
+  <router-view></router-view>
+</div>
+```
+
+Write routes in js:
+
+First, we have components.
+
+Second, we have a routes list, and third, we use it to make a router instance.
+
+Fourth, let app use the router and mount it.
+
+```js
+// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
+// and then call `Vue.use(VueRouter)`.
+
+// 1. Define route components.
+// These can be imported from other files
+const Foo = { template: '<div>foo</div>' }
+const Bar = { template: '<div>bar</div>' }
+
+// 2. Define some routes
+// Each route should map to a component. The "component" can
+// either be an actual component constructor created via
+// `Vue.extend()`, or just a component options object.
+// We'll talk about nested routes later.
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+]
+
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
+
+// 4. Create and mount the root instance.
+// Make sure to inject the router with the router option to make the
+// whole app router-aware.
+const app = new Vue({
+  router
+}).$mount('#app')
+
+// Now the app has started!
+```
+
+There are two ways to define routes of outsider components (like Single File Components, which can be identified by `.vue`):
+
+In `@/router/index.js`:
+
+```js
+import Home from "../views/Home.vue";
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home
+  }
+];
+```
+
+Recommended way (It is called lazy loading, which means the components will be loaded only when the user go to the link):
+
+```js
+const routes = [
+  {
+    path: "/about",
+    name: "About",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
+  }
+];
+```
+
+### Named routes
+
+If we define `name` prop., we can link routes derectly into HTML without specifying paths:
+
+```html
+<router-link :to="/about">About Page</router-link>
+<!-- can be changed to -->
+<router-link :to="{name: 'About'}">About Page</router-link>
+```
+
+So we can change paths later without refactoring HTML code.
+
+### Operate `this.$router`
+
+Create a GoBack component:
+
+```vue
+<template>
+  <span class="go-back">
+    <button @click="goBack">go back</button>
+  </span>
+</template>
+
+<script>
+export default {
+  methods: {
+    goBack() {
+      return this.$router.go(-1);	// there are many methods provided by `this.$router`
+    }
+  }
+};
+</script>
+
+<style scoped>
+.go-back {
+  display: flex;
+  cursor: pointer;
+}
+button {
+  border: 0;
+}
+</style>
+```
+
+### Pass Params into routed page
+
+```html
+<router-link :to="{ name: 'About', params: {id: data_list.id} }" >
+About Page
+</router-link>
+```
+
+In `About.vue`:
+
+```html
+<template>
+	<p>The id is: {{ this.$route.params.id }}</p>
+</template>
+```
+
+
+
+Before and after the snippet above, we complete the `index.js`:
+
+```js
+import { createRouter, createWebHistory } from "vue-router";
+
+// snippet above
+
+// History???
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+});
+
+// export echoes with import:
+// in main.js, we have `import router from "./router";`
+export default router;
+// `export default {};` can be regarded as providing some interfaces in some js to other js programs
+```
+
+### Dynamic Routes
+
+In HTML:
+
+```html
+<router-link
+  :to="{
+    name: 'DestinationDetails',
+    params: { slug: destination.slug }
+  }"
+>
+```
+
+In router creating:
+
+```
+{
+  path: "/destination/:slug",
+  name: "DestinationDetails",
+  props: true,
+  component: () =>
+    import(/* webpackChunkName: "DestinationDetails"*/ "./views/DestinationDetails"),
+},
+```
+
+In requested component's `.vue` file:
+
+```js
+export default {
+  props: {
+    slug: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    destination() {
+      return store.destinations.find(
+        destination => destination.slug === this.slug
+      );
+    }
+	}
+}
+```
+
+If we visit router-link which is rendered to URL  `/destination/somewhere`, `/destination/:slug` will be matched, and `somewhere` will be passed to variable `slug` through **props**. Then the computed variable `destination` will be the one which has the same `slug` value.
+
+Notice that at first we use a direct way like  `{{ this.$route.params.slug }}` to use the params, but here we use **props** to pass it.
+
+#### Reload Issue of Dynamic Routed Components
+
+If we load a components by dynamic routes, there will be some routers leading to the same components with different params. So if the user switch between these routes, Vue Router can't see the difference because they share the same component, and as a result the contents of `<router-view>` will not change.
+
+So we need to add a key to ensure the contents will be reloaded accordingly:
+
+```html
+<router-view :key="$route.path" />
+```
+
+### Avoid `#` in URL
+
+```js
+const router = new Router({
+  mode: "history",
+  // ...
+```
+
+Use router's history mode.
+
+### Nested Routes
+
+In `FatherComponent.vue`:
+
+```vue
+<router-link
+  :to="{
+    name: 'experienceDetails',
+    params: { experienceSlug: experience.slug },
+    hash: '#experience'
+  }"
+>
+{{ experience.name }}
+</router-link>
+<router-view :key="$route.path" />
+```
+
+In routes list in js file:
+
+```js
+{
+  path: "/destination/:slug",
+  name: "DestinationDetails",
+  props: true,
+  component: () =>
+    import(/* webpackChunkName: "DestinationDetails"*/ "./views/DestinationDetails"),
+  children: [
+    {
+      path: ":experienceSlug", /* attached behind the father's path */
+      name: "experienceDetails",
+      props: true,
+      component: () =>
+        import(/*webpackChunkName: "ExperienceDetails"*/ "./views/ExperienceDetails")
+    }
+  ],
+  // ...
+```
+
+In `ChildrenComponent.vue`:
+
+```vue
+<script>
+import store from "@/store.js";
+export default {
+  props: {
+    slug: {
+      type: String,
+      required: true
+    },
+    experienceSlug: {
+      type: String,
+      required: true
+    }
+  },
+  
+  computed: {
+    destination() {
+      return store.destinations.find(
+        destination => destination.slug === this.slug
+      );
+    },
+    experience() {
+      return this.destination.experiences.find(
+        experience => experience.slug === this.experienceSlug
+      );
+    }
+  }
+};
+</script>
+```
+
+### Transition
+
+Encapsulate the router-view:
+
+```vue
+<transition name="fade" mode="out-in">
+  <router-view :key="$route.path" />
+</transition>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
+```
+
+### 404 Page
+
+Start with creating a component `NotFound.vue`:
+
+```vue
+<template>
+  <div>
+    <h1>Not Found</h1>
+    <p>
+      Oops we couldn't find that page. Try going
+      <router-link :to="{ name: 'home' }">home</router-link>
+    </p>
+  </div>
+</template>
+```
+
+Add it to router:
+
+```js
+{
+  path: "*", // Use asterisks to match any paths that is not matched by previous paths
+  name: "notFound",
+  component: () =>
+    import(/* webpackChunkName: "NotFound" */
+    "./views/NotFound")
+}
+```
+
+We need to put it to the end, because the preceding paths have higher priority.
+
+To aviod a warning, we should use the code below.
+
+```
+{
+  path: "/404",
+  alias: "*",
+  name: "notFound",
+  component: () =>
+    import(/* webpackChunkName: "NotFound" */
+    "./views/NotFound")
+}
+```
+
+#### Navigation Guards
+
+```js
+path: "/destination/:slug",
+name: "DestinationDetails",
+// ...
+beforeEnter: (to, from, next) => {
+  const exists = store.destinations.find(
+    destination => destination.slug === to.params.slug
+  );
+  if (exists) {
+    next();
+  } else {
+    next({ name: "notFound" });
+  }
+}
+```
+
+In case the usr request a non-existed path of a dynamic router, we need to use the Navigation Guards to redirect it to 404.
+
+More details: [Navigation Guards](https://router.vuejs.org/guide/advanced/navigation-guards.html)
+
+
 
