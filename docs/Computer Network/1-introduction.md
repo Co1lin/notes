@@ -38,7 +38,7 @@ Framing: 从bits stream提取出frame（帧）
 
 #### Network Layer
 
-host to host: 将package跨越网络，从源设备发送到目的设备（**定位到主机**）
+host to host: 将packet跨越网络，从源设备发送到目的设备（**定位到主机**）
 
 Routing: 路由，选取转发路径
 
@@ -78,9 +78,9 @@ Ref: [TCP/IP Model](https://www.geeksforgeeks.org/tcp-ip-model/)
 
 #### Internet Layer
 
-host将package注入网络，package独立传输至目的地
+host将packet注入网络，packet独立传输至目的地
 
-定义了package的格式与协议： IPv4 and IPv6
+定义了packet的格式与协议： IPv4 and IPv6
 
 #### Network Access/Link Layer
 
