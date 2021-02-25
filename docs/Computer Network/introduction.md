@@ -16,6 +16,10 @@ Ref: [PDU](http://baike.eepw.com.cn/baike/show/word/%E5%8D%8F%E8%AE%AE%E6%95%B0%
 
 比如：物理层的PDU是数据位（bit），数据链路层的PDU是数据帧（frame）……
 
+### 服务原语
+
+两种服务：面向连接、无连接
+
 ### Reference Models
 
 #### OSI
@@ -88,6 +92,14 @@ This layer corresponds to the combination of **Data Link Layer and Physical Laye
 
 ![Screen Shot 2021-02-25 at 12.06.13 AM](introduction.assets/Screen%20Shot%202021-02-25%20at%2012.06.13%20AM.png)
 
+Data Link Layer: frame
+
+Network Layer: packet
+
+Transport Layer: segment
+
+Application Layer: message
+
 ### International Organizations
 
 ISO: International Organization for Standardization
@@ -129,4 +141,3 @@ Packet Sniffing: 嗅探
 IP spoofing: 欺骗；伪造源IP
 
 防御手段：身份验证；保密（加密技术）；完整性检查（数字签名）；访问限制（VPN）；防火墙
-
