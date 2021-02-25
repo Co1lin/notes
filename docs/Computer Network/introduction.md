@@ -1,12 +1,10 @@
-# Computer Network
+# Introduction
 
-## Introduction
-
-### 交换方式及其优劣
+## 交换方式及其优劣
 
 ![exchange_method](introduction.assets/exchange_method.jpg)
 
-### 协议分层结构
+## 协议分层结构
 
 **协议数据单元 Protocol Data Unit**
 
@@ -16,45 +14,45 @@ Ref: [PDU](http://baike.eepw.com.cn/baike/show/word/%E5%8D%8F%E8%AE%AE%E6%95%B0%
 
 比如：物理层的PDU是数据位（bit），数据链路层的PDU是数据帧（frame）……
 
-### 服务原语
+## 服务原语
 
 两种服务：面向连接、无连接
 
-### Reference Models
+## Reference Models
 
-#### OSI
+### OSI
 
 Open Systems Interconnection
 
 自下而上：
 
-##### Physical Layer
+#### Physical Layer
 
 如何在信道上传输bits stream（bits on the wire）
 
-##### Data Link Layer
+#### Data Link Layer
 
 Neighbouring: 相邻网络实体（？）间的数据传输
 
 Framing: 从bits stream提取出frame（帧）
 
-##### Network Layer
+#### Network Layer
 
 host to host: 将package跨越网络，从源设备发送到目的设备（**定位到主机**）
 
 Routing: 路由，选取转发路径
 
-##### Transport Layer
+#### Transport Layer
 
 port to port: 从源端口发送到目的端口（**进程到进程**）（定位到进程）
 
-##### Session Layer
+#### Session Layer
 
-##### Presentation Layer
+#### Presentation Layer
 
-##### Application Layer
+#### Application Layer
 
-#### TCP/IP
+### TCP/IP
 
 Transmission Control Protocol / Internet Protocol
 
@@ -68,27 +66,27 @@ Concept: Smart host & Simple Network.
 
 Ref: [TCP/IP Model](https://www.geeksforgeeks.org/tcp-ip-model/)
 
-##### Process/Application Layer
+#### Process/Application Layer
 
 应用层
 
 上面的高层协议：DNS, HTTP, FTP, SMTP, ...
 
-##### Host-to-Host/Transport Layer
+#### Host-to-Host/Transport Layer
 
 端到端传输：TCP, UDP
 
-##### Internet Layer
+#### Internet Layer
 
 host将package注入网络，package独立传输至目的地
 
 定义了package的格式与协议： IPv4 and IPv6
 
-##### Network Access/Link Layer
+#### Network Access/Link Layer
 
 This layer corresponds to the combination of **Data Link Layer and Physical Layer** of the OSI model. It looks out for **hardware** addressing and the protocols present in this layer allows for the **physical transmission** of data.
 
-#### Comparison
+### Comparison
 
 ![Screen Shot 2021-02-25 at 12.06.13 AM](introduction.assets/Screen%20Shot%202021-02-25%20at%2012.06.13%20AM.png)
 
@@ -100,7 +98,7 @@ Transport Layer: segment
 
 Application Layer: message
 
-### International Organizations
+## International Organizations
 
 ISO: International Organization for Standardization
 
@@ -108,7 +106,7 @@ IETF: Internet Engineering Task Force 互联网工程任务组（每人都可以
 
 Internet 标准以RFC (Request for Comments) 的形式公开。成为了事实标准。
 
-### Unit of measurement
+## Unit of measurement
 
 PPS: Packet Per Sec.
 
@@ -124,7 +122,7 @@ goodput 有效吞吐量（目的地正确接受到的有用信息）
 
 Jitter 时延抖动
 
-### Network Security
+## Network Security
 
 Virus: 需要用户交互不断传播（e.g. 打开email后里面的可执行代码给所有通信录再次发送）
 
