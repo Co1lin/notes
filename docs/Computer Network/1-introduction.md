@@ -1,5 +1,7 @@
 # 1 Introduction
 
+This is my notes for (self-)learning Computer Network (2021 Spring course at school), mainly following the textbook *Computer Networking - A Top Down Approach*.
+
 ## 交换方式及其优劣
 
 ![exchange_method](introduction.assets/exchange_method.jpg)
