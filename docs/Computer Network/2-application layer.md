@@ -28,7 +28,7 @@ TCP建立连接之后是全双工的。
 
 Secure Sockets Layer
 
-![SSL](../../../../Downloads/SSL.jpeg)
+![SSL](application%20layer.assets/SSL.jpeg)
 
 ### UDP
 
