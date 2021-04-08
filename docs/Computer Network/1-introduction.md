@@ -1,5 +1,24 @@
 # 1 Introduction
 
+_Click on a tile to change the color scheme_:
+
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+
 This is my notes for (self-)learning Computer Network (2021 Spring course at school), mainly following the textbook *Computer Networking - A Top Down Approach*.
 
 ## 交换方式及其优劣
