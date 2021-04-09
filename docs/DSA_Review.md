@@ -20,6 +20,7 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
+
 ## Acknowledgement
 
 Thanks for Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.
