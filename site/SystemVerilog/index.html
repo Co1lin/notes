@@ -1,0 +1,1376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>SystemVerilog - Colin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#systemverilog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Colin's Notebook
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              SystemVerilog
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Colin's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome to Colin's Notebook
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../DSA_Review/" class="md-nav__link">
+      DSA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../LaTex/" class="md-nav__link">
+      LaTeX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Linux/" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Quantitive%20Investment/" class="md-nav__link">
+      Quantitive Investment & Financial Optimization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SystemVerilog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      SystemVerilog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    1. Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-environment" class="md-nav__link">
+    2. Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-example" class="md-nav__link">
+    3. Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-basis" class="md-nav__link">
+    4. Basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-data-type" class="md-nav__link">
+    5. Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nets" class="md-nav__link">
+    5.1 Nets
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Nets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-wire" class="md-nav__link">
+    5.1.1 Wire
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-variables" class="md-nav__link">
+    5.2 Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-reg" class="md-nav__link">
+    5.2.1 Reg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-logic" class="md-nav__link">
+    5.3 logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-scalar-vector" class="md-nav__link">
+    5.4 Scalar &amp; Vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-array" class="md-nav__link">
+    5.5 Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-other-notes" class="md-nav__link">
+    5.6 Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-building-blocks" class="md-nav__link">
+    6. Building Blocks
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-module" class="md-nav__link">
+    6.1 Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-port" class="md-nav__link">
+    6.2 Port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-assign" class="md-nav__link">
+    6.3 assign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-always" class="md-nav__link">
+    6.4 always
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-initial" class="md-nav__link">
+    6.5 initial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-function" class="md-nav__link">
+    7. Function
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B/DSA01/" class="md-nav__link">
+      DSA01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B/oop/" class="md-nav__link">
+      OOP Notes for exam
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Computer Network
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Computer Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/1-introduction/" class="md-nav__link">
+      1 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/2-application%20layer/" class="md-nav__link">
+      2 Application Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/3-transport%20layer/" class="md-nav__link">
+      3 Transport Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/4-network%20layer/" class="md-nav__link">
+      4 Network Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
+      5 MAC Sublayer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Jupyter
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Jupyter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Jupyter/jupyter/" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Software Engineering
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Software Engineering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Software%20Engineering/Vue/" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Software%20Engineering/git/" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    1. Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-environment" class="md-nav__link">
+    2. Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-example" class="md-nav__link">
+    3. Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-basis" class="md-nav__link">
+    4. Basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-data-type" class="md-nav__link">
+    5. Data Type
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Data Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nets" class="md-nav__link">
+    5.1 Nets
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Nets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-wire" class="md-nav__link">
+    5.1.1 Wire
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-variables" class="md-nav__link">
+    5.2 Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-reg" class="md-nav__link">
+    5.2.1 Reg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-logic" class="md-nav__link">
+    5.3 logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-scalar-vector" class="md-nav__link">
+    5.4 Scalar &amp; Vector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-array" class="md-nav__link">
+    5.5 Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-other-notes" class="md-nav__link">
+    5.6 Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-building-blocks" class="md-nav__link">
+    6. Building Blocks
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-module" class="md-nav__link">
+    6.1 Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-port" class="md-nav__link">
+    6.2 Port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-assign" class="md-nav__link">
+    6.3 assign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-always" class="md-nav__link">
+    6.4 always
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-initial" class="md-nav__link">
+    6.5 initial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-function" class="md-nav__link">
+    7. Function
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="systemverilog">SystemVerilog</h1>
+<p><em>Click on a tile to change the color scheme</em>:</p>
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+<h2 id="1-preparation">1. Preparation</h2>
+<h2 id="2-environment">2. Environment</h2>
+<p>IDE: Quartus Lite</p>
+<p>Editor on macOS: VSCode + <a href="https://marketplace.visualstudio.com/items?itemName=mshr-h.VerilogHDL">Verilog-HDL/SystemVerilog/Bluespec SystemVerilog</a> + verilator</p>
+<p>(Install verilator by Homebrew, and then use it as the linter in the VSCode plugin configuration.)</p>
+<p>(Parameters for verilator: <code>-sv --language 1800-2012  --lint-only</code>.</p>
+<p>Example: <code>verilator -sv --language 1800-2012  --lint-only  mycode.sv</code>)</p>
+<h2 id="3-example">3. Example</h2>
+<p>A simple example of displaying the sequence "2021040907" with a 7-input digital display:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="n">seqdisplay</span> <span class="p">(</span>
+    <span class="k">input</span> <span class="kt">logic</span> <span class="n">rst</span><span class="p">,</span>
+    <span class="k">input</span> <span class="kt">logic</span> <span class="n">clk</span><span class="p">,</span>
+    <span class="k">output</span> <span class="kt">logic</span> <span class="p">[</span><span class="mh">6</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">natural</span><span class="p">,</span>
+    <span class="k">output</span> <span class="kt">logic</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">even</span><span class="p">,</span>
+    <span class="k">output</span> <span class="kt">logic</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">odd</span>
+<span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">counter</span><span class="p">;</span>
+<span class="kt">logic</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">date</span> <span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">9</span><span class="p">]</span> <span class="o">=</span> <span class="p">&#39;{</span> <span class="mh">4&#39;h2</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h2</span><span class="p">,</span> <span class="mh">4&#39;h1</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h4</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h9</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h7</span> <span class="p">};</span>
+<span class="kt">logic</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">index</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+
+<span class="k">initial</span> <span class="k">begin</span>
+    <span class="n">even</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+    <span class="n">odd</span>  <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+    <span class="c1">//date = &#39;{ 4&#39;h2, 4&#39;h0, 4&#39;h2, 4&#39;h1, 4&#39;h0, 4&#39;h4, 4&#39;h0, 4&#39;h9, 4&#39;h0, 4&#39;h7 };</span>
+    <span class="n">natural</span> <span class="o">=</span> <span class="n">digital_number</span><span class="p">(</span><span class="mh">0</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span>
+<span class="k">begin</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+        <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mh">32</span><span class="mi">&#39;d4</span><span class="n">_000_000</span><span class="p">;</span>
+        <span class="n">index</span>   <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+        <span class="n">natural</span> <span class="o">&lt;=</span> <span class="n">digital_number</span><span class="p">(</span><span class="n">date</span><span class="p">[</span><span class="mh">0</span><span class="p">]);</span> <span class="c1">// display 0</span>
+    <span class="k">end</span>
+    <span class="k">else</span> <span class="k">begin</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">counter</span> <span class="o">==</span> <span class="mh">32</span><span class="mi">&#39;d4</span><span class="n">_000_000</span><span class="p">)</span> <span class="k">begin</span>   <span class="c1">// need update</span>
+            <span class="c1">// display the next number</span>
+            <span class="n">natural</span> <span class="o">&lt;=</span> <span class="n">digital_number</span><span class="p">(</span><span class="n">date</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mh">4</span><span class="mb">&#39;b1</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="mh">10</span><span class="p">)</span> <span class="k">begin</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+            <span class="k">end</span>
+            <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
+        <span class="k">end</span>
+        <span class="k">else</span> <span class="k">begin</span>
+            <span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mh">32</span><span class="mi">&#39;d1</span><span class="p">;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="kt">logic</span><span class="p">[</span><span class="mh">6</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">digital_number</span><span class="p">(</span>
+    <span class="kt">logic</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">number</span>
+<span class="p">);</span>
+    <span class="k">case</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="mh">4&#39;h0</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1111110</span><span class="p">;</span>
+        <span class="mh">4&#39;h1</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0110000</span><span class="p">;</span>
+        <span class="mh">4&#39;h2</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1101101</span><span class="p">;</span>
+        <span class="mh">4&#39;h3</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1111001</span><span class="p">;</span>
+        <span class="mh">4&#39;h4</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0110011</span><span class="p">;</span>
+        <span class="mh">4&#39;h5</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1011011</span><span class="p">;</span>
+        <span class="mh">4&#39;h6</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1011111</span><span class="p">;</span>
+        <span class="mh">4&#39;h7</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1110000</span><span class="p">;</span>
+        <span class="mh">4&#39;h8</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1111111</span><span class="p">;</span>
+        <span class="mh">4&#39;h9</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1110011</span><span class="p">;</span>
+        <span class="mh">4&#39;ha</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1110111</span><span class="p">;</span>
+        <span class="mh">4&#39;hb</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0011111</span><span class="p">;</span>
+        <span class="mh">4&#39;hc</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1001110</span><span class="p">;</span>
+        <span class="mh">4&#39;hd</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0111101</span><span class="p">;</span>
+        <span class="mh">4&#39;he</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1001111</span><span class="p">;</span>
+        <span class="mh">4&#39;hf</span><span class="o">:</span>   <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1000111</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+                <span class="n">digital_number</span> <span class="o">=</span> <span class="mh">7</span><span class="p">&#39;</span><span class="n">bx</span><span class="p">;</span>
+    <span class="k">endcase</span>
+<span class="k">endfunction</span>
+
+<span class="k">endmodule</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="4-basis">4. Basis</h2>
+<p>C++注释风格</p>
+<p>四种基本的值来表示硬件电路中的电平逻辑:
+- 0：逻辑0或"假"
+- 1：逻辑1或"真"
+- x或X：未知
+- z或Z：高阻</p>
+<p>整数数值表示方法</p>
+<ul>
+<li>十进制('d 或 'D)，十六进制('h 或 'H)，二进制('b 或 'B)，八进制('o 或 'O)</li>
+<li>4'b1011 <em>// 4bit</em> 数值</li>
+<li>32'h3022_c0de <em>// 32bit</em> 的数值</li>
+<li>下划线表示分割符，增强可读性，只是给人看的</li>
+<li>最前面不分配位宽编译器会自动分配</li>
+</ul>
+<p>等价操作符</p>
+<ul>
+<li><code>==</code>，<code>!=</code>：不能比较x或z；当操作数包含一个 x 或 z，则结果为 x（uncertain）</li>
+<li><code>===</code>，<code>!==</code>：全等比较；可以比较x或z，结果为0或1</li>
+</ul>
+<h2 id="5-data-type">5. Data Type</h2>
+<p><img alt="data-types" src="../SystemVerilog.assets/data-types.png" /></p>
+<p>两种变量：4-state data types and 2-state data types</p>
+<p><strong><em>Nets</em> and <em>variables</em> are the two main groups of data types.</strong> Distinguishing them is the most important part to understand data types in Verilog.</p>
+<h3 id="51-nets">5.1 Nets</h3>
+<p><em>Nets</em> are used to connect between hardware entities like logic gates and hence <u>do not store any value</u> on its own.</p>
+<p>The most popular and widely used <em>net</em> in digital designs is of type <code>wire</code>.</p>
+<h4 id="511-wire">5.1.1 Wire</h4>
+<p>表示硬件单元之间的物理连线，由其连接的器件的输出端持续不断地驱动。</p>
+<p><code>wire</code>: can only be driven in <strong><code>assign</code></strong> statements （详细见后面）</p>
+<h3 id="52-variables">5.2 Variables</h3>
+<p>A variable on the other hand is an abstraction of a data storage element and <u>can hold values</u>.</p>
+<h4 id="521-reg">5.2.1 Reg</h4>
+<p>Verilog data-type <code>reg</code> can be used to model hardware registers since <u>it can hold values</u> between assignments.</p>
+<p>表示存储单元；保持数据的值直到被改写。</p>
+<p><code>reg</code>: can only be driven in procedural blocks (<code>always</code>, <code>initial</code>, <code>task</code>, <code>function</code> )（详细见后面）</p>
+<h3 id="53-logic">5.3 logic</h3>
+<p>Based on Verilog, SystemVerilog introduces <code>logic</code>. Except for <code>inout</code> port, we can use <code>logic</code> to replace nearly any <code>wire</code> or <code>reg</code> in Verilog.</p>
+<h3 id="54-scalar-vector">5.4 Scalar &amp; Vector</h3>
+<p>没有声明 range 的 wire 和 reg 默认为 1-bit wide，为scalar。声明位宽的为 vector。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 中括号内两边都为闭区间</span>
+<span class="c1">// 倒序；0为最低位</span>
+<span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>      <span class="n">counter</span> <span class="p">;</span>    <span class="c1">//声明4bit位宽的寄存器counter</span>
+<span class="kt">wire</span> <span class="p">[</span><span class="mh">32</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>  <span class="n">gpio_data</span><span class="p">;</span>   <span class="c1">//声明32bit位宽的线型变量gpio_data</span>
+<span class="c1">// 以下不常用</span>
+<span class="kt">wire</span> <span class="p">[</span><span class="mh">8</span><span class="o">:</span><span class="mh">2</span><span class="p">]</span>     <span class="n">addr</span> <span class="p">;</span>       <span class="c1">//声明7bit位宽的线型变量addr，位宽范围为8:2</span>
+<span class="kt">reg</span> <span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">31</span><span class="p">]</span>     <span class="n">data</span> <span class="p">;</span>       <span class="c1">//声明32bit位宽的寄存器变量data, 最高有效位为0</span>
+</code></pre></div>
+</td></tr></table>
+<p>切片：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="p">[</span><span class="mh">9</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">data_low</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">9</span><span class="p">]</span> <span class="p">;</span>
+<span class="n">addr_temp</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">addr</span><span class="p">[</span><span class="mh">8</span><span class="o">:</span><span class="mh">7</span><span class="p">]</span> <span class="o">+</span> <span class="mh">1</span><span class="mb">&#39;b1</span> <span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>指定起始、位宽和递增/递减方向：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//下面 2 种赋值是等效的</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="mh">31</span><span class="o">-:</span> <span class="mh">8</span><span class="p">]</span> <span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">24</span><span class="p">]</span> <span class="p">;</span>
+
+<span class="c1">//下面 2 种赋值是等效的</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="mh">0</span><span class="o">+</span> <span class="o">:</span> <span class="mh">8</span><span class="p">]</span> <span class="p">;</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">7</span><span class="p">]</span> <span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>用大括号进行拼接</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mh">4</span><span class="mb">&#39;b1010</span> <span class="p">;</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mh">1</span><span class="mb">&#39;b1</span> <span class="p">;</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="p">{</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">2</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span> <span class="mh">4&#39;h3</span> <span class="p">};</span>  <span class="c1">//结果为Y1=&#39;b1100_0011</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="p">{</span><span class="mh">4</span><span class="p">{</span><span class="n">B</span><span class="p">},</span> <span class="mh">3</span><span class="mi">&#39;d4</span><span class="p">};</span>  <span class="c1">//结果为 Y2=7&#39;b111_1100</span>
+
+<span class="kt">wire</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">temp1</span><span class="p">,</span> <span class="n">temp2</span> <span class="p">;</span>
+<span class="k">assign</span> <span class="n">temp1</span> <span class="o">=</span> <span class="p">{</span> <span class="n">byte1</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">],</span> <span class="n">data1</span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">8</span><span class="p">]</span> <span class="p">};</span>  <span class="c1">//数据拼接</span>
+<span class="k">assign</span> <span class="n">temp2</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">32</span><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span> <span class="p">};</span>  <span class="c1">//赋值32位的数值0  </span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="55-array">5.5 Array</h3>
+<p>数组大小在末尾指定。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">wire</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>       <span class="n">addr_bus</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">;</span> <span class="c1">//由4个8bit wire型变量组成的数组</span>
+<span class="kt">wire</span>             <span class="n">data_bit</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">][</span><span class="mh">5</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">;</span> <span class="c1">//声明1bit wire型变量的二维数组</span>
+</code></pre></div>
+</td></tr></table>
+<p>Array assignment or initialization:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">logic</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">date</span> <span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">9</span><span class="p">]</span> <span class="o">=</span> <span class="p">&#39;{</span> <span class="mh">4&#39;h2</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h2</span><span class="p">,</span> <span class="mh">4&#39;h1</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h4</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h9</span><span class="p">,</span> <span class="mh">4&#39;h0</span><span class="p">,</span> <span class="mh">4&#39;h7</span> <span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="56-other-notes">5.6 Other Notes</h3>
+<p>Conversion of real to int: 直接赋值会round而不是truncate</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="p">&#39;(</span><span class="mf">2.2</span> <span class="o">*</span> <span class="mf">3.5</span><span class="p">)</span> <span class="c1">// round</span>
+
+<span class="k">integer</span> <span class="nb">$rtoi</span><span class="p">(</span><span class="n">real_val</span><span class="p">)</span> <span class="c1">// use system tasks will truncate</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="6-building-blocks">6. Building Blocks</h2>
+<h3 id="61-module">6.1 Module</h3>
+<p>A <code>module</code> is a block of Verilog code that implements a certain functionality.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="p">([</span><span class="n">port_list</span><span class="p">]);</span>
+    <span class="c1">// Contents of the module</span>
+<span class="k">endmodule</span>
+
+<span class="c1">// e.g.</span>
+<span class="c1">// Module called &quot;dff&quot; has 3 inputs and 1 output port</span>
+<span class="k">module</span> <span class="n">dff</span> <span class="p">(</span>    <span class="k">input</span> <span class="n">d</span><span class="p">,</span>
+                            <span class="k">input</span> <span class="n">clk</span><span class="p">,</span>
+                            <span class="k">input</span> <span class="n">rstn</span><span class="p">,</span>
+                            <span class="k">output</span> <span class="kt">reg</span>  <span class="n">q</span><span class="p">);</span>
+    <span class="c1">// Contents of the module</span>
+    <span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rstn</span><span class="p">)</span>
+            <span class="n">q</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+</td></tr></table>
+<p>A <em>top-level</em> module is one which <em>contains</em> all other modules. A top-level module is not instantiated within any other module.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// Top-level module</span>
+<span class="k">module</span> <span class="n">design</span> <span class="p">(</span> <span class="p">[</span><span class="n">port_list</span><span class="p">]);</span> <span class="c1">// From design perspective, this is the top-level module</span>
+    <span class="kt">wire</span>    <span class="n">_net</span><span class="p">;</span>
+  <span class="n">mod1</span>  <span class="n">mod_inst1</span>   <span class="p">(</span> <span class="p">...</span> <span class="p">);</span> <span class="c1">// since it contains all other modules and sub-modules</span>
+    <span class="n">mod2</span>    <span class="n">mod_inst2</span>   <span class="p">(</span> <span class="p">...</span> <span class="p">);</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="62-port">6.2 Port</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">input</span>  <span class="p">[</span><span class="n">net_type</span><span class="p">]</span> <span class="p">[</span><span class="n">range</span><span class="p">]</span> <span class="n">list_of_names</span><span class="p">;</span>    <span class="c1">// Input port</span>
+<span class="k">inout</span>  <span class="p">[</span><span class="n">net_type</span><span class="p">]</span> <span class="p">[</span><span class="n">range</span><span class="p">]</span> <span class="n">list_of_names</span><span class="p">;</span>    <span class="c1">// Input &amp; Output port</span>
+<span class="k">output</span> <span class="p">[</span><span class="n">net_type</span><span class="p">]</span> <span class="p">[</span><span class="n">range</span><span class="p">]</span> <span class="n">list_of_names</span><span class="p">;</span>    <span class="c1">// Output port driven by a wire</span>
+<span class="k">output</span> <span class="p">[</span><span class="n">var_type</span><span class="p">]</span> <span class="p">[</span><span class="n">range</span><span class="p">]</span> <span class="n">list_of_names</span><span class="p">;</span>    <span class="c1">// Output port driven by a variable</span>
+
+<span class="k">module</span> <span class="p">(</span> <span class="k">input</span> <span class="k">signed</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>
+        <span class="k">output</span> <span class="n">c</span><span class="p">);</span>      <span class="c1">// unsigned by default</span>
+    <span class="kt">wire</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>          <span class="c1">// a, b are signed from port declaration</span>
+    <span class="kt">reg</span> <span class="k">signed</span> <span class="n">c</span><span class="p">;</span>       <span class="c1">// c is signed from reg declaration</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+</td></tr></table>
+<p>Port connection in module instantiations:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="n">mydesign</span> <span class="p">(</span> <span class="k">input</span>  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span>     <span class="c1">// x is at position 1, y at 2, x at 3 and</span>
+                  <span class="k">output</span> <span class="n">o</span><span class="p">);</span>          <span class="c1">// o is at position 4</span>
+
+<span class="k">endmodule</span>
+
+<span class="k">module</span> <span class="n">design_top</span><span class="p">;</span>
+    <span class="kt">wire</span> <span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span>  <span class="n">a</span><span class="p">;</span>
+    <span class="kt">wire</span>        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+
+    <span class="n">mydesign</span> <span class="n">d0</span>  <span class="p">(</span> <span class="p">.</span><span class="n">x</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">]),</span>    <span class="c1">// signal &quot;x&quot; in mydesign should be connected to &quot;a[0]&quot; in this module (design_top)</span>
+                   <span class="p">.</span><span class="n">y</span> <span class="p">(</span><span class="n">b</span><span class="p">),</span>       <span class="c1">// signal &quot;y&quot; in mydesign should be connected to &quot;b&quot; in this module (design_top)</span>
+                   <span class="p">.</span><span class="n">z</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">1</span><span class="p">]),</span>
+                   <span class="p">.</span><span class="n">o</span> <span class="p">(</span><span class="n">c</span><span class="p">));</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="63-assign">6.3 assign</h3>
+<p>Signals of type <code>wire</code> or a similar wire like data type requires the <u>continuous assignment</u> of a value.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">assign</span> <span class="o">&lt;</span><span class="n">net_expression</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="n">drive_strength</span><span class="p">]</span> <span class="p">[</span><span class="n">delay</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="n">of</span> <span class="n">different</span> <span class="n">signals</span> <span class="k">or</span> <span class="n">constant</span> <span class="n">value</span><span class="o">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Rule:</p>
+<ul>
+<li>LHS: scalar or vector of <strong>net</strong> (e.g. <code>wire</code>); NO reg!</li>
+<li>Whenever any operand on the RHS changes in value, LHS will be updated with the new value.</li>
+</ul>
+<p>(It is illegal to drive or assign <code>reg</code> type variables with an <code>assign</code> statement. This is because a <code>reg</code> variable <u>is capable of storing data and does not require to be driven continuously</u>. <code>reg</code> signals can only be driven in procedural blocks like <code>initial</code> and <code>always</code>.)</p>
+<h3 id="64-always">6.4 always</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="n">event1</span> <span class="k">or</span> <span class="n">event2</span><span class="p">)</span> <span class="k">begin</span>
+    <span class="p">[</span><span class="n">multiple</span> <span class="n">statements</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre></div>
+</td></tr></table>
+<p>Multiple <code>initial</code> and <code>always</code> blocks can be included in one module. But they cannot be used recursively.</p>
+<p>All of the <code>initial</code> and <code>always</code> blocks in a module are independent and <strong>parallel</strong>! (regardless of in what order they are defined)</p>
+<h3 id="65-initial">6.5 initial</h3>
+<p><code>initial</code> will be executed once at t=0.</p>
+<p><img alt="initial-flash-2" src="../SystemVerilog.assets/initial-flash-2.PNG" /></p>
+<h2 id="7-function">7. Function</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">return_type</span> <span class="n">function_name</span><span class="p">(</span>
+    <span class="n">para_type_1</span> <span class="n">para_name_1</span><span class="p">,</span> <span class="p">...</span> <span class="c1">// parameters</span>
+<span class="p">);</span>
+    <span class="c1">// function body</span>
+  <span class="cm">/* different return methods: */</span>
+  <span class="k">return</span> <span class="mh">3</span><span class="p">;</span>
+  <span class="n">function_name</span> <span class="o">=</span> <span class="mh">3</span><span class="p">;</span> <span class="c1">// assign the value to the function name</span>
+<span class="k">endfunction</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../Quantitive%20Investment/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Quantitive Investment & Financial Optimization
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../C%2B%2B/DSA01/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                DSA01
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

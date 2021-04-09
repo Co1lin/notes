@@ -1,0 +1,1053 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>4 Network Layer - Colin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-network-layer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Colin's Notebook
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              4 Network Layer
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Colin's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Welcome to Colin's Notebook
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../DSA_Review/" class="md-nav__link">
+      DSA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../LaTex/" class="md-nav__link">
+      LaTeX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Quantitive%20Investment/" class="md-nav__link">
+      Quantitive Investment & Financial Optimization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../SystemVerilog/" class="md-nav__link">
+      SystemVerilog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%2B%2B/DSA01/" class="md-nav__link">
+      DSA01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%2B%2B/oop/" class="md-nav__link">
+      OOP Notes for exam
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Computer Network
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Computer Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1-introduction/" class="md-nav__link">
+      1 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2-application%20layer/" class="md-nav__link">
+      2 Application Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3-transport%20layer/" class="md-nav__link">
+      3 Transport Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4 Network Layer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      4 Network Layer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-inside-a-router" class="md-nav__link">
+    1. Inside a router
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Inside a router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-input-port-processing-destination-based-forwarding" class="md-nav__link">
+    1.1 Input Port Processing &amp; Destination-Based Forwarding
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Input Port Processing &amp; Destination-Based Forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-netmask" class="md-nav__link">
+    1.1.1 Netmask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-routing-table" class="md-nav__link">
+    1.1.2 Routing Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-the-link-state-ls-routing-algorithm" class="md-nav__link">
+    1.1.3 The Link-State (LS) Routing Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-the-distance-vector-dv-routing-algorithm" class="md-nav__link">
+    1.1.4 The Distance-Vector (DV) Routing Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-switching" class="md-nav__link">
+    1.2 Switching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-output-port-processing" class="md-nav__link">
+    1.3 Output Port Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-queueing" class="md-nav__link">
+    1.4 Queueing
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Queueing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-input-queueing" class="md-nav__link">
+    1.4.1 Input queueing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-output-queueing" class="md-nav__link">
+    1.4.2 Output queueing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-buffer-size" class="md-nav__link">
+    1.4.3 Buffer size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-packet-scheduling" class="md-nav__link">
+    1.4.4 Packet Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-internet-protocol-ip" class="md-nav__link">
+    2. The Internet Protocol (IP)
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Internet Protocol (IP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ipv4" class="md-nav__link">
+    2.1 IPv4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-ipv4-datagram-fragmentation" class="md-nav__link">
+    2.1.1 IPv4 Datagram Fragmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-another" class="md-nav__link">
+    2.1.2 another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5-MAC%20Sublayer/" class="md-nav__link">
+      5 MAC Sublayer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Jupyter
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Jupyter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Jupyter/jupyter/" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Software Engineering
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Software Engineering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Software%20Engineering/Vue/" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Software%20Engineering/git/" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-inside-a-router" class="md-nav__link">
+    1. Inside a router
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Inside a router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-input-port-processing-destination-based-forwarding" class="md-nav__link">
+    1.1 Input Port Processing &amp; Destination-Based Forwarding
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Input Port Processing &amp; Destination-Based Forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-netmask" class="md-nav__link">
+    1.1.1 Netmask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-routing-table" class="md-nav__link">
+    1.1.2 Routing Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-the-link-state-ls-routing-algorithm" class="md-nav__link">
+    1.1.3 The Link-State (LS) Routing Algorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-the-distance-vector-dv-routing-algorithm" class="md-nav__link">
+    1.1.4 The Distance-Vector (DV) Routing Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-switching" class="md-nav__link">
+    1.2 Switching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-output-port-processing" class="md-nav__link">
+    1.3 Output Port Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-queueing" class="md-nav__link">
+    1.4 Queueing
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Queueing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-input-queueing" class="md-nav__link">
+    1.4.1 Input queueing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-output-queueing" class="md-nav__link">
+    1.4.2 Output queueing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-buffer-size" class="md-nav__link">
+    1.4.3 Buffer size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-packet-scheduling" class="md-nav__link">
+    1.4.4 Packet Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-internet-protocol-ip" class="md-nav__link">
+    2. The Internet Protocol (IP)
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Internet Protocol (IP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ipv4" class="md-nav__link">
+    2.1 IPv4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-ipv4-datagram-fragmentation" class="md-nav__link">
+    2.1.1 IPv4 Datagram Fragmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-another" class="md-nav__link">
+    2.1.2 another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="4-network-layer">4 Network Layer</h1>
+<p><em>Click on a tile to change the color scheme</em>:</p>
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+
+<p>Forwarding (data plane) and routing (control plane)</p>
+<p>Control plane: how to determine the forwarding table? Traditional approach or SDN (Software defined networking) approach.</p>
+<h2 id="1-inside-a-router">1. Inside a router</h2>
+<p><img alt="Screen Shot 2021-02-28 at 12.53.35 PM" src="../4-network%20layer.assets/Screen%20Shot%202021-02-28%20at%2012.53.35%20PM.png" /></p>
+<p>Destination-based forwarding or generalized forwarding</p>
+<p>The forwarding table is copied from the routing processor to the line cards over a separate bus. Forwarding decisions can be made locally to avoid centralized processing bottleneck.</p>
+<h3 id="11-input-port-processing-destination-based-forwarding">1.1 Input Port Processing &amp; Destination-Based Forwarding</h3>
+<p>Lookup:</p>
+<p>longest prefix matching rule</p>
+<p>on-chip DRAM and faster SRAM; Ternary Content Addressable Memories (TCAMs)</p>
+<h4 id="111-netmask">1.1.1 Netmask</h4>
+<p>Ref: https://www.hacksplaining.com/glossary/netmasks</p>
+<p>A netmask is a shorthand for <strong>describing a range of IP addresses</strong>.</p>
+<p>The left hand side of a netmask (e.g. <code>192.168.0.1</code>) specifies a the host IP address. The right hand side specifies (e.g. <code>/32</code>) how many digits of the host address are significant, when considered as a binary number. <strong>Non-significant bits in the binary form are treated as a wild-card.</strong></p>
+<h4 id="112-routing-table">1.1.2 Routing Table</h4>
+<p>Ref: https://en.wikipedia.org/wiki/Routing_table</p>
+<table>
+<thead>
+<tr>
+<th align="center">Network destination</th>
+<th align="center">Netmask</th>
+<th align="center">Gateway</th>
+<th align="center">Interface</th>
+<th align="center">Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0.0.0.0</td>
+<td align="center">0.0.0.0</td>
+<td align="center">192.168.0.1</td>
+<td align="center">192.168.0.100</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">127.0.0.0</td>
+<td align="center">255.0.0.0</td>
+<td align="center">127.0.0.1</td>
+<td align="center">127.0.0.1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">192.168.0.0</td>
+<td align="center">255.255.255.0</td>
+<td align="center">192.168.0.100</td>
+<td align="center">192.168.0.100</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">192.168.0.100</td>
+<td align="center">255.255.255.255</td>
+<td align="center">127.0.0.1</td>
+<td align="center">127.0.0.1</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">192.168.0.1</td>
+<td align="center">255.255.255.255</td>
+<td align="center">192.168.0.100</td>
+<td align="center">192.168.0.100</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The columns <strong>Network destination</strong> and <strong>Netmask</strong> <u>together describe the <strong>Network identifier</strong></u> as mentioned earlier. For example, destination <strong>192.168.0.0</strong> and netmask <strong>255.255.255.0</strong> can be written as <strong>192.168.0.0/24</strong>.</li>
+<li>The <strong>Gateway</strong> column contains the same information as the <strong>Next hop</strong>, i.e. it points to the gateway through which the network can be reached.</li>
+<li>The <strong>Interface</strong> indicates what locally available interface is responsible for reaching the gateway. In this example, gateway <strong>192.168.0.1</strong> (the internet router) can be reached through the local <u>network card</u> with address <strong>192.168.0.100</strong>.</li>
+<li>Finally, the <strong>Metric</strong> indicates the associated cost of using the indicated route.</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Routing_table#Forwarding_table">Forwarding Table</a></p>
+<h4 id="113-the-link-state-ls-routing-algorithm">1.1.3 The Link-State (LS) Routing Algorithm</h4>
+<p>Each node broadcasts link-state packets to <em>all</em> other nodes in the network.</p>
+<p>All nodes have an identical and complete view of the network.</p>
+<p>Dijkstra’s algorithm</p>
+<h4 id="114-the-distance-vector-dv-routing-algorithm">1.1.4 The Distance-Vector (DV) Routing Algorithm</h4>
+<p>Iterative, asynchronous, and distribute:</p>
+<p>It is <em>distributed</em> in that each node receives some information from one or more of its <em>directly attached</em> neighbors, performs a calculation, and then <u>distributes the results of its calculation back to its neighbors</u>. </p>
+<p>It is <em>iterative</em> in that this process continues on <u>until no more information is exchanged</u> between neighbors.</p>
+<p>The algorithm is <em>asynchronous</em> in that it does not require all of the nodes to operate in lockstep with each other.</p>
+<p><strong>Bellman-Ford equation</strong>: <span class="arithmatex">\(dist(x, end) = \min_v(w(x, v), dist(v, end))\)</span>, while <span class="arithmatex">\(v\)</span> is one of x's neighbor.</p>
+<p>The solution to the Bellman-Ford equation provides the <strong>entries in node <em>x</em>’s forwarding table</strong>.</p>
+<p>With the DV algorithm, each node <em>x</em> maintains:</p>
+<ul>
+<li>the cost <em>c</em>(<em>x, v</em>) from <em>x</em> to directly attached neighbor, v</li>
+<li>Node <em>x</em>’s <strong>distance vector</strong>, that is, <span class="arithmatex">\(D_x=[D_x(y): y \in N]\)</span>, containing <em>x</em>’s estimate of its cost to all destinations <em>y</em>, in <em>N</em></li>
+<li>Distance vectors of each of its neighbors, that is, <span class="arithmatex">\(D_v=[D_v(y): y \in N]\)</span> for each neighbor <em>v</em> of <em>x</em></li>
+</ul>
+<p><img alt="Screen Shot 2021-04-08 at 11.24.26 PM" src="../4-network%20layer.assets/Screen%20Shot%202021-04-08%20at%2011.24.26%20PM.png" /></p>
+<h3 id="12-switching">1.2 Switching</h3>
+<p>1) Switching via mem.</p>
+<p>2) Switching via a bus.</p>
+<p>3) Switching via an interconnection network.</p>
+<h3 id="13-output-port-processing">1.3 Output Port Processing</h3>
+<p>selecting, de-queueing, link- and physical-layer functions</p>
+<h3 id="14-queueing">1.4 Queueing</h3>
+<h4 id="141-input-queueing">1.4.1 Input queueing</h4>
+<p><span class="arithmatex">\(R_{switch} = N R_{line}\)</span>, negligible queuing</p>
+<p>Problem: head-of-the-line (HOL) blocking (may cause unbounded queue size)</p>
+<h4 id="142-output-queueing">1.4.2 Output queueing</h4>
+<p>Though <span class="arithmatex">\(R_{switch} = N R_{line}\)</span>, unbounded queue size!</p>
+<h4 id="143-buffer-size">1.4.3 Buffer size</h4>
+<p>Rule of thumb: <span class="arithmatex">\(RTT \times Capacity\)</span></p>
+<p>(Recent: <span class="arithmatex">\(RTT \times Capacity / \sqrt N\)</span>, where N denotes the number of TCP flows)</p>
+<h4 id="144-packet-scheduling">1.4.4 Packet Scheduling</h4>
+<p>FIFO/FCFS</p>
+<p>Priority queueing</p>
+<p>Round robin queuing -&gt; weighted fair queuing (WFQ): class i will receive a fraction <span class="arithmatex">\(w_i \over \Sigma w_j\)</span> of the bandwidth.</p>
+<h2 id="2-the-internet-protocol-ip">2. The Internet Protocol (IP)</h2>
+<h3 id="21-ipv4">2.1 IPv4</h3>
+<p><img alt="Screen Shot 2021-02-28 at 9.42.24 PM" src="../4-network%20layer.assets/Screen%20Shot%202021-02-28%20at%209.42.24%20PM.png" /></p>
+<h4 id="211-ipv4-datagram-fragmentation">2.1.1 IPv4 Datagram Fragmentation</h4>
+<h4 id="212-another">2.1.2 another</h4>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../3-transport%20layer/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 Transport Layer
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../5-MAC%20Sublayer/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5 MAC Sublayer
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

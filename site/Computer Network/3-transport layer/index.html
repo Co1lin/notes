@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>3 Transport Layer - Colin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-transport-layer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Colin's Notebook
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3 Transport Layer
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Colin's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Welcome to Colin's Notebook
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../DSA_Review/" class="md-nav__link">
+      DSA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../LaTex/" class="md-nav__link">
+      LaTeX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Quantitive%20Investment/" class="md-nav__link">
+      Quantitive Investment & Financial Optimization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../SystemVerilog/" class="md-nav__link">
+      SystemVerilog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%2B%2B/DSA01/" class="md-nav__link">
+      DSA01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%2B%2B/oop/" class="md-nav__link">
+      OOP Notes for exam
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Computer Network
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Computer Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1-introduction/" class="md-nav__link">
+      1 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2-application%20layer/" class="md-nav__link">
+      2 Application Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Transport Layer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      3 Transport Layer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-multiplexing-and-demultiplexing" class="md-nav__link">
+    1. Multiplexing and Demultiplexing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-udp" class="md-nav__link">
+    2. UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="2. UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-checksum" class="md-nav__link">
+    2.1 Checksum
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Checksum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-checking-by-receiver" class="md-nav__link">
+    2.1.1 Checking by Receiver
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-reliable-data-transfer" class="md-nav__link">
+    3. Reliable Data Transfer
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Reliable Data Transfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-stop-and-wait" class="md-nav__link">
+    3.1 Stop and wait
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Stop and wait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-rdt-20" class="md-nav__link">
+    3.1.1 rdt 2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-rdt-21" class="md-nav__link">
+    3.1.2 rdt 2.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-rdt-30" class="md-nav__link">
+    3.1.3 rdt 3.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pipelining" class="md-nav__link">
+    3.2 Pipelining
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Pipelining">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-go-back-n" class="md-nav__link">
+    3.2.1 Go-Back-N
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-selective-repeat" class="md-nav__link">
+    3.2.2 Selective Repeat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tcp" class="md-nav__link">
+    4. TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="4. TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-telnet" class="md-nav__link">
+    4.1 Telnet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-rtt-estimation-and-timeout-determination" class="md-nav__link">
+    4.2 RTT Estimation and Timeout Determination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-fast-retransmit" class="md-nav__link">
+    4.3 Fast retransmit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-selective-acknowledgement" class="md-nav__link">
+    4.4 Selective Acknowledgement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-comparison-with-gbn-and-sr" class="md-nav__link">
+    4.5 Comparison with GBN and SR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-flow-control" class="md-nav__link">
+    4.6 Flow Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-tcp-connection-management" class="md-nav__link">
+    4.7 TCP Connection Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-congestion-control" class="md-nav__link">
+    4.8 Congestion Control
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 Congestion Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#481-slow-start" class="md-nav__link">
+    4.8.1 Slow Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482-congestion-avoidance" class="md-nav__link">
+    4.8.2 Congestion Avoidance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#483-fast-recovery" class="md-nav__link">
+    4.8.3 Fast Recovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#484-fairness" class="md-nav__link">
+    4.8.4 Fairness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#485-ecn" class="md-nav__link">
+    4.8.5 ECN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4-network%20layer/" class="md-nav__link">
+      4 Network Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5-MAC%20Sublayer/" class="md-nav__link">
+      5 MAC Sublayer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Jupyter
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Jupyter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Jupyter/jupyter/" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Software Engineering
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Software Engineering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Software%20Engineering/Vue/" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Software%20Engineering/git/" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-multiplexing-and-demultiplexing" class="md-nav__link">
+    1. Multiplexing and Demultiplexing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-udp" class="md-nav__link">
+    2. UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="2. UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-checksum" class="md-nav__link">
+    2.1 Checksum
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Checksum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-checking-by-receiver" class="md-nav__link">
+    2.1.1 Checking by Receiver
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-reliable-data-transfer" class="md-nav__link">
+    3. Reliable Data Transfer
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Reliable Data Transfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-stop-and-wait" class="md-nav__link">
+    3.1 Stop and wait
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Stop and wait">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-rdt-20" class="md-nav__link">
+    3.1.1 rdt 2.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-rdt-21" class="md-nav__link">
+    3.1.2 rdt 2.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-rdt-30" class="md-nav__link">
+    3.1.3 rdt 3.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pipelining" class="md-nav__link">
+    3.2 Pipelining
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Pipelining">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-go-back-n" class="md-nav__link">
+    3.2.1 Go-Back-N
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-selective-repeat" class="md-nav__link">
+    3.2.2 Selective Repeat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tcp" class="md-nav__link">
+    4. TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="4. TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-telnet" class="md-nav__link">
+    4.1 Telnet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-rtt-estimation-and-timeout-determination" class="md-nav__link">
+    4.2 RTT Estimation and Timeout Determination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-fast-retransmit" class="md-nav__link">
+    4.3 Fast retransmit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-selective-acknowledgement" class="md-nav__link">
+    4.4 Selective Acknowledgement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-comparison-with-gbn-and-sr" class="md-nav__link">
+    4.5 Comparison with GBN and SR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-flow-control" class="md-nav__link">
+    4.6 Flow Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-tcp-connection-management" class="md-nav__link">
+    4.7 TCP Connection Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-congestion-control" class="md-nav__link">
+    4.8 Congestion Control
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 Congestion Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#481-slow-start" class="md-nav__link">
+    4.8.1 Slow Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482-congestion-avoidance" class="md-nav__link">
+    4.8.2 Congestion Avoidance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#483-fast-recovery" class="md-nav__link">
+    4.8.3 Fast Recovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#484-fairness" class="md-nav__link">
+    4.8.4 Fairness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#485-ecn" class="md-nav__link">
+    4.8.5 ECN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="3-transport-layer">3 Transport Layer</h1>
+<p><em>Click on a tile to change the color scheme</em>:</p>
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+
+<p><img alt="image-20210225163238007" src="../3-transport%20layer.assets/image-20210225163238007.png" /></p>
+<p>Transport Layer provides different <strong>processes</strong> with logic communication.</p>
+<p>Protocol of transport layer only works <strong>in the end system</strong>.</p>
+<p>Transport Layer <strong>extend</strong> the host-to- host delivery service provided by the network layer to a <strong>process-to-process</strong> delivery service for applications running on the hosts.</p>
+<p>Protocol: TCP and UDP</p>
+<h2 id="1-multiplexing-and-demultiplexing">1. Multiplexing and Demultiplexing</h2>
+<p>Port range: 16bits, 0\~65535</p>
+<p>Well-known port numbers: 0~1023</p>
+<p>UDP socket can be identified by a two-tuple.</p>
+<p>TCP socket can be identified by a quadruple.</p>
+<h2 id="2-udp">2. UDP</h2>
+<p><img alt="Screen Shot 2021-02-25 at 10.49.15 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-25%20at%2010.49.15%20PM.png" /></p>
+<p>UDP socket can be identified by a <strong>two-tuple</strong>.</p>
+<p>There's no source IP, so the receiver will treat UDP segments which has the same source port and dest. port in the same way, although their source IP may be different.</p>
+<p>(Source IP is transported by the Network Layer.)</p>
+<h3 id="21-checksum">2.1 Checksum</h3>
+<p>Ref: <a href="https://www.securitynik.com/2015/08/calculating-udp-checksum-with-taste-of.html">UDP Checksum</a></p>
+<p><img alt="" src="../3-transport%20layer.assets/UDP%20Checksum%20table.jpg" /></p>
+<p><strong>Pseudo Header</strong> is not transported. It only serves for computing the checksum.</p>
+<p>If the result overflows, we need to "<strong>wrap it around</strong>".</p>
+<p>Also note the "reserved" or "padding" zeros.</p>
+<p>If the data size is not an integral multiple of 16 bits, we need to pad zeros behind.</p>
+<h4 id="211-checking-by-receiver">2.1.1 Checking by Receiver</h4>
+<p>Add all data (certainly including the checksum computed by the sender) as 16 bits numbers together. If the result contains "0", the process must have some error. Even the result consists of "1", we can not be sure that the process is totally right.</p>
+<h2 id="3-reliable-data-transfer">3. Reliable Data Transfer</h2>
+<p>ARQ, Automatic Repeat reQuest: based on pos./neg. acknowledgment</p>
+<p>Error detection</p>
+<p>Receiver Feedback: ACK and NAK</p>
+<p>Retransmission</p>
+<h3 id="31-stop-and-wait">3.1 Stop and wait</h3>
+<p>The sender have to wait ACK and NAK before leaving the waiting status and then obtaining following data from upper layer.</p>
+<h4 id="311-rdt-20">3.1.1 rdt 2.0</h4>
+<p>Add <strong>ANK and NAK</strong> to know whether the data is delivered.</p>
+<h4 id="312-rdt-21">3.1.2 rdt 2.1</h4>
+<p>To avoid <u>the corruption of ANK and NAK</u>, add <strong>sequence number</strong>.</p>
+<h4 id="313-rdt-30">3.1.3 rdt 3.0</h4>
+<p>To address <u>the problem of packet loss</u>, introduce the <strong>countdown timer</strong> which causes resending and duplicate data packet.</p>
+<h3 id="32-pipelining">3.2 Pipelining</h3>
+<p>Stop and wait has very poor efficiency. We need to stop waiting too much and send more data.</p>
+<p>As a result, we have to:</p>
+<p>1) Increase the range of sequence numbers.
+2) (Optional) Cache in buffer.
+3) Know how to respond to lost, corrupted, and overly delayed packets (分组).</p>
+<h4 id="321-go-back-n">3.2.1 Go-Back-N</h4>
+<p>GBN, <strong>sliding-window protocol</strong>.</p>
+<p>Animation: <a href="https://media.pearsoncmg.com/ph/esm/ecs_kurose_compnetwork_8/cw/content/interactiveanimations/go-back-n-protocol/index.html">GBN</a> </p>
+<p><strong>Features</strong>: Cumulative Ack, base, nextseqnum, </p>
+<p>Typically, consider 2 situations of packet(s) loss: </p>
+<p>1) The packet of sender with sequence number <span class="arithmatex">\(i\)</span> is lost before it reaches the receiver. </p>
+<p><u>The receiver</u> expects sequence number <span class="arithmatex">\(i\)</span>, but it only receives <span class="arithmatex">\(i + 1\)</span>. So, it wil drop it (not deliver to the upper layer), and send the packet of ACK with sequence number <span class="arithmatex">\(i - 1\)</span> to the sender. </p>
+<p><u>The sender</u> receives <span class="arithmatex">\(i - 1\)</span>, so <span class="arithmatex">\(base == i\)</span> will not change (cause the reaching of <span class="arithmatex">\(i - 1\)</span> will lead to <span class="arithmatex">\(base = (i - 1) + 1 = i\)</span>). It will wait the ACK <span class="arithmatex">\(i\)</span> until timeout, and then re-send it.</p>
+<p>2) The responsive packet ACK of the receiver with sequence number <span class="arithmatex">\(i\)</span> is lost before it reaches the sender.</p>
+<p><u>The sender</u> will not receive ACK with sequence number <span class="arithmatex">\(i\)</span>. However, due to the feature of "Cumulative Ack", the reaching of ACK with sequence number <span class="arithmatex">\(i + 1\)</span> will tell the sender the successful delivery of data packet <span class="arithmatex">\(i\)</span>. Thus, the loss of ACK with sequence number <span class="arithmatex">\(i\)</span> has no effect.</p>
+<h4 id="322-selective-repeat">3.2.2 Selective Repeat</h4>
+<p>To improve the performance of GBN, because GBN will generate lots of duplicate packets when there are plenty of packets in the pipeline (may caused by the large window length or the large bandwidth-delay product).</p>
+<p><strong>The difference</strong>: The receiver will acknowledge the correctly delivered packets <strong>regardless of the order</strong> (sequence number). So there's <strong>no cumulative ACK</strong>! This leads to a big difference with GBN, which means <u>when the sender receives ACK <span class="arithmatex">\(i\)</span>, it cannot regard <span class="arithmatex">\(i - 1\)</span> as having been transmitted correctly to the receiver. So the sender should wait until timeout</u>.</p>
+<p>So it needs <strong>cache and buffer</strong> and <strong>independent timers</strong>.</p>
+<p>The sender:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">When receiving ACK:</span>
+<span class="err">        if seqnum in window:</span>
+<span class="err">                receive and &quot;ACK&quot; it!</span>
+<span class="err">        if seqnum == send_base:</span>
+<span class="err">                window move forward to min(seqnum that hasn&#39;t yet ACK&#39;d)</span>
+</code></pre></div>
+</td></tr></table>
+<p>The receiver:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">window</span><span class="p">:</span> <span class="p">[</span><span class="n">rcv_base</span><span class="p">,</span> <span class="n">rcv_base</span> <span class="o">+</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="k">When</span> <span class="n">receiving</span> <span class="n">packet</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">seqnum</span> <span class="k">in</span> <span class="n">window</span><span class="p">:</span>
+                <span class="n">send</span> <span class="n">corresponding</span> <span class="n">ACK</span>
+                <span class="k">if</span> <span class="n">seqnum</span><span class="o">/</span><span class="n">packet</span> <span class="k">is</span> <span class="k">not</span> <span class="n">received</span> <span class="k">before</span><span class="p">:</span>
+                        <span class="k">cache</span> <span class="n">it</span>
+                <span class="k">if</span> <span class="n">seqnum</span> <span class="o">==</span> <span class="n">rcv_base</span><span class="p">:</span>
+                        <span class="n">deliver</span> <span class="err">{</span><span class="n">packets</span> <span class="n">whose</span> <span class="n">seqnum</span> <span class="n">starting</span> <span class="k">with</span> <span class="n">rcv_base</span><span class="p">,</span> <span class="k">until</span> <span class="n">the</span> <span class="k">last</span> <span class="n">cached</span> <span class="n">one</span><span class="err">}</span> <span class="k">to</span> <span class="n">the</span> <span class="k">upper</span> <span class="n">layer</span>
+        <span class="n">elif</span> <span class="n">seqnum</span> <span class="k">in</span> <span class="p">[</span><span class="n">rcv_base</span> <span class="o">-</span> <span class="n">N</span><span class="p">,</span> <span class="n">rcv_base</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">send</span> <span class="n">corresponding</span> <span class="n">ACK</span><span class="o">!!!</span>
+        <span class="k">else</span><span class="p">:</span>
+                <span class="k">do</span> <span class="k">nothing</span> <span class="p">(</span><span class="k">ignore</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Note for "!!!": If doing nothing there, the window of sender will not be able to move forward, since the moving forward can only be triggered by <code>seqnum == send_base</code>. Such case will happen when an ACK is lost on the way coming back to sender, and then timeout of this "seqnum" will cause re-sending. So the receiver must respond to this re-sent packet although it has already cached it.</p>
+<p>Issue: The window size must be <strong>less than or equal to half the size</strong> of the sequence number space for SR protocols!</p>
+<h2 id="4-tcp">4. TCP</h2>
+<p><strong>three-way handshake</strong></p>
+<p><strong>maximum segment size (MSS)</strong>: the maximum amount of <strong>application-layer data</strong> in the segment, not the maximum size of the TCP segment including headers.</p>
+<p><strong>maximum transmission unit, MTU</strong>: the length of the <strong>largest link-layer frame</strong> that can be sent by the local sending host; <u>setting the MSS based on the path MTU value</u></p>
+<p>How many flags ???</p>
+<p><img alt="Screen Shot 2021-02-26 at 10.34.21 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-26%20at%2010.34.21%20PM.png" /></p>
+<p><strong>Sequence number for a segment</strong> is the serial number (序号) (in the whole byte-stream) of the first byte of the segment.</p>
+<p>???"Ack. number" in TCP is different from "seq. num" of ACK packets in GBN or SR!!! <em>The acknowledgment number that Host A puts in its segment is the sequence number of the next byte Host A is expecting from Host B.</em> (<strong>Cumulative Acknowledgments</strong>)</p>
+<h3 id="41-telnet">4.1 Telnet</h3>
+<p><img alt="Screen Shot 2021-02-27 at 10.07.08 AM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%2010.07.08%20AM.png" /></p>
+<p>Note that the acknowledgment for client-to-server data is carried in a segment carrying server-to-client data; this acknowledgment is said to be <strong>piggybacked</strong> on the server-to-client data segment.</p>
+<h3 id="42-rtt-estimation-and-timeout-determination">4.2 RTT Estimation and Timeout Determination</h3>
+<p>SampleRTT: the amount of time between when the segment is sent (that is, passed to IP) and when</p>
+<p>an acknowledgment for the segment is received.</p>
+<p>2 Rules: The <em>SampleRTT</em> is being estimated for only one of the <strong>transmitted but currently unacknowledged</strong> segments, and for segments that have been transmitted <strong>once</strong>.</p>
+<p><span class="arithmatex">\(EstimatedRTT=(1−α)⋅EstimatedRTT+α⋅SampleRTT\)</span>; recommended <span class="arithmatex">\(\alpha = 0.125\)</span></p>
+<p>???EstimatedRTT puts more weight on recent samples than on old samples. <strong>Exponential weighted moving average (EWMA)</strong>.</p>
+<p><span class="arithmatex">\(DevRTT=(1−β)⋅DevRTT+β⋅|SampleRTT−EstimatedRTT|\)</span>; recommended <span class="arithmatex">\(\beta = 0.25\)</span></p>
+<p><strong>Determine</strong> <span class="arithmatex">\(TimeoutInterval=EstimatedRTT+4⋅DevRTT\)</span></p>
+<p>(Init: 1s; When a timeout occurs, the value of <em>TimeoutInterval</em> is <strong>doubled</strong>; Updated when <em>EstimatedRTT</em> is updated)</p>
+<h3 id="43-fast-retransmit">4.3 Fast retransmit</h3>
+<p>??? The reason that the sending side has to wait until the third duplicate ACK is described in <a href="https://www.isi.edu/nsnam/DIRECTED_RESEARCH/DR_WANIDA/DR/testfiles/rfc2001.html">RFC2001</a> as follows:</p>
+<blockquote>
+<p>" Since TCP does not know whether a duplicate ACK is caused by a lost segment or just a reordering of segments, it waits for a small number of duplicate ACKs to be received. It is assumed that if there is just a reordering of the segments, there will be only one or two duplicate ACKs before the reordered segment is processed, which will then generate a new ACK. If three or more duplicate ACKs are received in a row, it is a strong indication that a segment has been lost. "</p>
+</blockquote>
+<p><img alt="image-20210227195617321" src="../3-transport%20layer.assets/image-20210227195617321.png" /></p>
+<h3 id="44-selective-acknowledgement">4.4 Selective Acknowledgement</h3>
+<p>Ref: <a href="https://packetlife.net/blog/2010/jun/17/tcp-selective-acknowledgments-sack/">SACK</a></p>
+<p>SACK dedicates to avoid the unnecessary retransmission.</p>
+<p><strong>TCP uses cumulative Ack.</strong> By implementing GBN, the lost of packet 2 will lead to retransmission of packet 3, 4, ... The receiver has no way to tell the sender that it has received packet 3, 4 or the following ones correctly. So TCP appends a <strong>SACK option</strong> in ACK packets to deliver these informations about the following ones. (See ref. for an example.)</p>
+<h3 id="45-comparison-with-gbn-and-sr">4.5 Comparison with GBN and SR</h3>
+<p>TCP is a hybrid protocol of GBN and SR.</p>
+<p>Ref: <a href="http://www.bytes.xin/2020/02/15/GBN%E5%8D%8F%E8%AE%AE%E3%80%81SR%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8ATCP%E5%8D%8F%E8%AE%AE%E5%8C%BA%E5%88%AB/">An article about comparison</a></p>
+<h3 id="46-flow-control">4.6 Flow Control</h3>
+<p>Animation: <a href="https://media.pearsoncmg.com/ph/esm/ecs_kurose_compnetwork_8/cw/content/interactiveanimations/flow-control/index.html">Flow Control</a></p>
+<p>For the receiver, <span class="arithmatex">\(rwnd=RcvBuffer−[LastByteRcvd−LastByteRead]\)</span></p>
+<p><img alt="Screen Shot 2021-02-27 at 2.33.16 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%202.33.16%20PM.png" /></p>
+<p>The receiver tells the sender how much spare room it has in the connection buffer by placing its current value of <span class="arithmatex">\(rwnd\)</span> in the receive window field ("Window Size" in the TCP segment figure before) of every segment it sends to the sender.</p>
+<p>For the sender, <span class="arithmatex">\(LastByteSent – LastByteAcked\)</span>, is the amount of unacknowledged data that A has sent into the connection.</p>
+<p>Thus, it makes sure throughout the connection’s life that <span class="arithmatex">\(LastByteSent−LastByteAcked≤rwnd\)</span></p>
+<p><strong>Issue Addressing</strong>: The TCP specification requires Host A to continue to send segments with one data byte when B’s receive window is zero.</p>
+<h3 id="47-tcp-connection-management">4.7 TCP Connection Management</h3>
+<p><img alt="Screen Shot 2021-02-27 at 3.18.20 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%203.18.20%20PM.png" /></p>
+<p>1) SYN: SYN = 1; 2) SYNACK: SYN = 1; 3) SYN = 0</p>
+<p>(SYN: synchronize)</p>
+<p><img alt="Screen Shot 2021-02-27 at 3.18.37 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%203.18.37%20PM.png" /></p>
+<p>When receiving a segment at wrong ports, the host will send <strong>RST (reset)</strong>.</p>
+<h3 id="48-congestion-control">4.8 Congestion Control</h3>
+<p>Animation: <a href="https://media.pearsoncmg.com/ph/esm/ecs_kurose_compnetwork_8/cw/content/interactiveanimations/tcp-congestion/index.html">Congestion Control</a></p>
+<p>End-to-end congestion control</p>
+<p>Network-assisted congestion control</p>
+<p>Congestion window: <span class="arithmatex">\(cwnd\)</span></p>
+<p><span class="arithmatex">\(LastByteSent - LastByteAcked \le min\{cwnd, rwnd\}\)</span></p>
+<p>1) limit: adjusting the value of <span class="arithmatex">\(cwnd\)</span></p>
+<p>2) perceive: "loss event": timeout or 4 ACKs (1 original + 3 duplicate)</p>
+<p>3) change: increase/decrease <span class="arithmatex">\(cwnd\)</span> according to the rate at which ACKs arrive (<strong>self-clocking</strong>)</p>
+<p>How to determine the rate? Guiding Principles:</p>
+<p>1) Lost segments, lower rate</p>
+<p>2) ACK segments, higher rate</p>
+<p>3) Keep probing the bandwidth</p>
+<h4 id="481-slow-start">4.8.1 Slow Start</h4>
+<p>ssthresh: slow start threshold</p>
+<h4 id="482-congestion-avoidance">4.8.2 Congestion Avoidance</h4>
+<h4 id="483-fast-recovery">4.8.3 Fast Recovery</h4>
+<p><strong>FSM Summary</strong>:</p>
+<p>The additive-increase/multiplicative-decrease (<em>AIMD</em>) feedback control algorithm</p>
+<p><img alt="Screen Shot 2021-02-27 at 8.51.09 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%208.51.09%20PM.png" /></p>
+<p>Throughput: associated with loss rate</p>
+<p>High-bandwidth: average throughput ~ loss rate (L), RTT, maximum segment size (MSS): <span class="arithmatex">\(aver(throughput) = {1.22MSS \over RTT \sqrt L}\)</span></p>
+<h4 id="484-fairness">4.8.4 Fairness</h4>
+<p>Ideal model with same MSS and RTT for a single associated TCP connection:</p>
+<p><img alt="Screen Shot 2021-02-27 at 10.37.08 PM" src="../3-transport%20layer.assets/Screen%20Shot%202021-02-27%20at%2010.37.08%20PM.png" /></p>
+<p>In real world, those sessions with <strong>a smaller RTT</strong> will enjoy higher throughput. (open their congestion windows faster ???)</p>
+<p>It is possible for UDP sources to crowd out TCP traffic.</p>
+<p>There is nothing to stop a TCP-based application from using <strong>multiple parallel connections</strong>.</p>
+<h4 id="485-ecn">4.8.5 ECN</h4>
+<p>Explicit Congestion Notification</p>
+<p>Need recent extensions to work.</p>
+<p>2 bits "Type of Service" field of the IP datagram header are used for ECN. </p>
+<p>One for the router, another for the sending host (to inform routers the ECN capability).</p>
+<p>When the receiving host receives an ECN indication, it will setting the <strong>ECE (Explicit Congestion Notification Echo)</strong> bit in TCP ACK segment.</p>
+<p>Then the TCP sender, reacts to an ACK with an ECE congestion indication by <strong>halving the congestion window</strong>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../2-application%20layer/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                2 Application Layer
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../4-network%20layer/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                4 Network Layer
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

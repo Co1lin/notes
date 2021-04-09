@@ -8,6 +8,9 @@ theme:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - codehilite:
+      guess_lang: true
+      linenums: true
 
 extra_javascript:
   - javascripts/config.js
