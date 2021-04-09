@@ -43,9 +43,11 @@ on-chip DRAM and faster SRAM; Ternary Content Addressable Memories (TCAMs)
 
 Ref: https://www.hacksplaining.com/glossary/netmasks
 
-A netmask is a shorthand for **describing a range of IP addresses**.
+A netmask is a shorthand for **describing a range of IP addresses**, e.g. `192.168.0.1/32`.
 
 The left hand side of a netmask (e.g. `192.168.0.1`) specifies a the host IP address. The right hand side specifies (e.g. `/32`) how many digits of the host address are significant, when considered as a binary number. **Non-significant bits in the binary form are treated as a wild-card.**
+
+Apparently, the left part of a subnet mask consists of **consecutive 1**, and the right part consists of **consecutive 0**.
 
 #### Routing Table
 
