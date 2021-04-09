@@ -1,0 +1,3016 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>DSA - Colin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dsa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Colin's Notebook
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              DSA
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Colin's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome to Colin's Notebook
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        DSA
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      DSA
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-acknowledgement" class="md-nav__link">
+    1. Acknowledgement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basis-of-performance-analysis" class="md-nav__link">
+    2. Basis of Performance Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Basis of Performance Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-notation" class="md-nav__link">
+    2.1 Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-np-p" class="md-nav__link">
+    2.2 NP = P ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-series-and-corresponding-complexity" class="md-nav__link">
+    2.3 Series and Corresponding Complexity
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Series and Corresponding Complexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1 常用级数：算术、幂、几何、对数等
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2 不常见的分数级数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-master-thm" class="md-nav__link">
+    2.4 Master Thm.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binary-search" class="md-nav__link">
+    3. Binary Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sort-algorithms" class="md-nav__link">
+    4. Sort Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sort Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bubblesort" class="md-nav__link">
+    4.1 BubbleSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 BubbleSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-improvement" class="md-nav__link">
+    4.1.1 Improvement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-mergesort" class="md-nav__link">
+    4.2 MergeSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-quicksort" class="md-nav__link">
+    4.3 QuickSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 QuickSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-partition" class="md-nav__link">
+    4.3.1 Partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-quick-selection" class="md-nav__link">
+    4.4 Quick Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-heapsort" class="md-nav__link">
+    4.5 HeapSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-radixsort" class="md-nav__link">
+    4.6 RadixSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-selectionsort" class="md-nav__link">
+    4.7 SelectionSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-insertionsort" class="md-nav__link">
+    4.8 InsertionSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-shellsort" class="md-nav__link">
+    4.9 ShellSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9 ShellSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#491-complexity" class="md-nav__link">
+    4.9.1 Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#492-correctness" class="md-nav__link">
+    4.9.2 Correctness
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tree" class="md-nav__link">
+    5. Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bst" class="md-nav__link">
+    6. BST
+  </a>
+  
+    <nav class="md-nav" aria-label="6. BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ds" class="md-nav__link">
+    6.1 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-algorithm" class="md-nav__link">
+    6.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-insert" class="md-nav__link">
+    6.2.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-delete" class="md-nav__link">
+    6.2.2 Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-k-d-tree" class="md-nav__link">
+    7. k-D Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="7. k-D Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-algorithm" class="md-nav__link">
+    7.1 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-query-kdsearchv-r" class="md-nav__link">
+    7.1.1 Query - KdSearch(v, R)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-avl-tree" class="md-nav__link">
+    8. AVL Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="8. AVL Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-definition" class="md-nav__link">
+    8.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-algorithm" class="md-nav__link">
+    8.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821-insert" class="md-nav__link">
+    8.2.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-delete" class="md-nav__link">
+    8.2.2 Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823-34-reconstruction" class="md-nav__link">
+    8.2.3 3+4 Reconstruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-splay-tree" class="md-nav__link">
+    9. Splay Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Splay Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-splay" class="md-nav__link">
+    9.1 Splay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-search" class="md-nav__link">
+    9.2 Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-insert" class="md-nav__link">
+    9.3 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-delete" class="md-nav__link">
+    9.4 Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-red-black-tree" class="md-nav__link">
+    10. Red Black Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Red Black Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-definition" class="md-nav__link">
+    10.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ds" class="md-nav__link">
+    10.2 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-algorithm" class="md-nav__link">
+    10.3 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-insert" class="md-nav__link">
+    10.3.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-double-red-issue" class="md-nav__link">
+    10.3.2 Double Red Issue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033-delete" class="md-nav__link">
+    10.3.3 Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034-double-black-issue" class="md-nav__link">
+    10.3.4 Double Black Issue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-b-tree" class="md-nav__link">
+    11. B Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="11. B Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-definition" class="md-nav__link">
+    11.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-ds" class="md-nav__link">
+    11.2 DS
+  </a>
+  
+    <nav class="md-nav" aria-label="11.2 DS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-limited-maximum-height" class="md-nav__link">
+    11.2.1 Limited maximum height
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-algorithm" class="md-nav__link">
+    11.3 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="11.3 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-find" class="md-nav__link">
+    11.3.1 Find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-insert" class="md-nav__link">
+    11.3.2 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-split" class="md-nav__link">
+    11.3.3 上溢与split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134" class="md-nav__link">
+    11.3.4 删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1135" class="md-nav__link">
+    11.3.5 下溢
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-heap-min-priority-queue" class="md-nav__link">
+    12. Heap (min) (Priority Queue)
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Heap (min) (Priority Queue)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-shift-up" class="md-nav__link">
+    12.1 Shift Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-shift-down" class="md-nav__link">
+    12.2 Shift Down
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-pop" class="md-nav__link">
+    12.3 Pop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-push" class="md-nav__link">
+    12.4 Push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-floyd-heapify" class="md-nav__link">
+    12.5 Floyd Heapify
+  </a>
+  
+    <nav class="md-nav" aria-label="12.5 Floyd Heapify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1251-combine" class="md-nav__link">
+    12.5.1 Combine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1252-heapify" class="md-nav__link">
+    12.5.2 Heapify
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-d-heap" class="md-nav__link">
+    13. d-Heap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-leftlist-heap" class="md-nav__link">
+    14. Leftlist Heap
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Leftlist Heap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-definition" class="md-nav__link">
+    14.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-algorithm" class="md-nav__link">
+    14.2 Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-hash-function" class="md-nav__link">
+    15. Hash Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-closed-hash-table" class="md-nav__link">
+    16. Closed Hash Table
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Closed Hash Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-linear-probing" class="md-nav__link">
+    16.1 Linear Probing
+  </a>
+  
+    <nav class="md-nav" aria-label="16.1 Linear Probing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1611-search" class="md-nav__link">
+    16.1.1 Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1612-delete-with-lazy-tag" class="md-nav__link">
+    16.1.2 Delete with lazy tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1613-rehasing" class="md-nav__link">
+    16.1.3 Rehasing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-undirectional-quadratic-probing" class="md-nav__link">
+    16.2 Undirectional Quadratic Probing
+  </a>
+  
+    <nav class="md-nav" aria-label="16.2 Undirectional Quadratic Probing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1621-avoid-infinite-probing" class="md-nav__link">
+    16.2.1 Avoid infinite Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-bidirectional-quadratic-probing" class="md-nav__link">
+    16.3 Bidirectional Quadratic Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-skip-list" class="md-nav__link">
+    17. Skip List
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Skip List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-ds" class="md-nav__link">
+    17.1 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-algorithm" class="md-nav__link">
+    17.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="17.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1721-search" class="md-nav__link">
+    17.2.1 Search
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-kmp" class="md-nav__link">
+    18. KMP
+  </a>
+  
+    <nav class="md-nav" aria-label="18. KMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-build-next-array" class="md-nav__link">
+    18.1 Build Next Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-bm" class="md-nav__link">
+    19. BM
+  </a>
+  
+    <nav class="md-nav" aria-label="19. BM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-bad-character-shift" class="md-nav__link">
+    19.1 Bad Character Shift
+  </a>
+  
+    <nav class="md-nav" aria-label="19.1 Bad Character Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1911-build-bc-array" class="md-nav__link">
+    19.1.1 Build BC Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-good-suffix-shift" class="md-nav__link">
+    19.2 Good Suffix Shift
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 Good Suffix Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1921-build-gs-array" class="md-nav__link">
+    19.2.1 Build GS Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../LaTex/" class="md-nav__link">
+      LaTeX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Linux/" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Python/" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Quantitive%20Investment/" class="md-nav__link">
+      Quantitive Investment & Financial Optimization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../SystemVerilog/" class="md-nav__link">
+      SystemVerilog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B/DSA01/" class="md-nav__link">
+      DSA01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B/oop/" class="md-nav__link">
+      OOP Notes for exam
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Computer Network
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Computer Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/1-introduction/" class="md-nav__link">
+      1 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/2-application%20layer/" class="md-nav__link">
+      2 Application Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/3-transport%20layer/" class="md-nav__link">
+      3 Transport Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/4-network%20layer/" class="md-nav__link">
+      4 Network Layer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
+      5 MAC Sublayer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Jupyter
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Jupyter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Jupyter/jupyter/" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Software Engineering
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
+        Software Engineering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Software%20Engineering/Vue/" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Software%20Engineering/git/" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-acknowledgement" class="md-nav__link">
+    1. Acknowledgement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basis-of-performance-analysis" class="md-nav__link">
+    2. Basis of Performance Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Basis of Performance Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-notation" class="md-nav__link">
+    2.1 Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-np-p" class="md-nav__link">
+    2.2 NP = P ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-series-and-corresponding-complexity" class="md-nav__link">
+    2.3 Series and Corresponding Complexity
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Series and Corresponding Complexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1 常用级数：算术、幂、几何、对数等
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2 不常见的分数级数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-master-thm" class="md-nav__link">
+    2.4 Master Thm.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binary-search" class="md-nav__link">
+    3. Binary Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sort-algorithms" class="md-nav__link">
+    4. Sort Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sort Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bubblesort" class="md-nav__link">
+    4.1 BubbleSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 BubbleSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-improvement" class="md-nav__link">
+    4.1.1 Improvement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-mergesort" class="md-nav__link">
+    4.2 MergeSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-quicksort" class="md-nav__link">
+    4.3 QuickSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 QuickSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-partition" class="md-nav__link">
+    4.3.1 Partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-quick-selection" class="md-nav__link">
+    4.4 Quick Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-heapsort" class="md-nav__link">
+    4.5 HeapSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-radixsort" class="md-nav__link">
+    4.6 RadixSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-selectionsort" class="md-nav__link">
+    4.7 SelectionSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-insertionsort" class="md-nav__link">
+    4.8 InsertionSort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-shellsort" class="md-nav__link">
+    4.9 ShellSort
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9 ShellSort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#491-complexity" class="md-nav__link">
+    4.9.1 Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#492-correctness" class="md-nav__link">
+    4.9.2 Correctness
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tree" class="md-nav__link">
+    5. Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bst" class="md-nav__link">
+    6. BST
+  </a>
+  
+    <nav class="md-nav" aria-label="6. BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ds" class="md-nav__link">
+    6.1 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-algorithm" class="md-nav__link">
+    6.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-insert" class="md-nav__link">
+    6.2.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-delete" class="md-nav__link">
+    6.2.2 Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-k-d-tree" class="md-nav__link">
+    7. k-D Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="7. k-D Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-algorithm" class="md-nav__link">
+    7.1 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-query-kdsearchv-r" class="md-nav__link">
+    7.1.1 Query - KdSearch(v, R)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-avl-tree" class="md-nav__link">
+    8. AVL Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="8. AVL Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-definition" class="md-nav__link">
+    8.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-algorithm" class="md-nav__link">
+    8.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821-insert" class="md-nav__link">
+    8.2.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-delete" class="md-nav__link">
+    8.2.2 Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823-34-reconstruction" class="md-nav__link">
+    8.2.3 3+4 Reconstruction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-splay-tree" class="md-nav__link">
+    9. Splay Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Splay Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-splay" class="md-nav__link">
+    9.1 Splay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-search" class="md-nav__link">
+    9.2 Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-insert" class="md-nav__link">
+    9.3 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-delete" class="md-nav__link">
+    9.4 Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-red-black-tree" class="md-nav__link">
+    10. Red Black Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Red Black Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-definition" class="md-nav__link">
+    10.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ds" class="md-nav__link">
+    10.2 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-algorithm" class="md-nav__link">
+    10.3 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-insert" class="md-nav__link">
+    10.3.1 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-double-red-issue" class="md-nav__link">
+    10.3.2 Double Red Issue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033-delete" class="md-nav__link">
+    10.3.3 Delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034-double-black-issue" class="md-nav__link">
+    10.3.4 Double Black Issue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-b-tree" class="md-nav__link">
+    11. B Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="11. B Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-definition" class="md-nav__link">
+    11.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-ds" class="md-nav__link">
+    11.2 DS
+  </a>
+  
+    <nav class="md-nav" aria-label="11.2 DS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-limited-maximum-height" class="md-nav__link">
+    11.2.1 Limited maximum height
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-algorithm" class="md-nav__link">
+    11.3 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="11.3 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-find" class="md-nav__link">
+    11.3.1 Find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-insert" class="md-nav__link">
+    11.3.2 Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-split" class="md-nav__link">
+    11.3.3 上溢与split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134" class="md-nav__link">
+    11.3.4 删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1135" class="md-nav__link">
+    11.3.5 下溢
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-heap-min-priority-queue" class="md-nav__link">
+    12. Heap (min) (Priority Queue)
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Heap (min) (Priority Queue)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-shift-up" class="md-nav__link">
+    12.1 Shift Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-shift-down" class="md-nav__link">
+    12.2 Shift Down
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-pop" class="md-nav__link">
+    12.3 Pop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-push" class="md-nav__link">
+    12.4 Push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-floyd-heapify" class="md-nav__link">
+    12.5 Floyd Heapify
+  </a>
+  
+    <nav class="md-nav" aria-label="12.5 Floyd Heapify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1251-combine" class="md-nav__link">
+    12.5.1 Combine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1252-heapify" class="md-nav__link">
+    12.5.2 Heapify
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-d-heap" class="md-nav__link">
+    13. d-Heap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-leftlist-heap" class="md-nav__link">
+    14. Leftlist Heap
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Leftlist Heap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-definition" class="md-nav__link">
+    14.1 Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-algorithm" class="md-nav__link">
+    14.2 Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-hash-function" class="md-nav__link">
+    15. Hash Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-closed-hash-table" class="md-nav__link">
+    16. Closed Hash Table
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Closed Hash Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-linear-probing" class="md-nav__link">
+    16.1 Linear Probing
+  </a>
+  
+    <nav class="md-nav" aria-label="16.1 Linear Probing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1611-search" class="md-nav__link">
+    16.1.1 Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1612-delete-with-lazy-tag" class="md-nav__link">
+    16.1.2 Delete with lazy tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1613-rehasing" class="md-nav__link">
+    16.1.3 Rehasing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-undirectional-quadratic-probing" class="md-nav__link">
+    16.2 Undirectional Quadratic Probing
+  </a>
+  
+    <nav class="md-nav" aria-label="16.2 Undirectional Quadratic Probing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1621-avoid-infinite-probing" class="md-nav__link">
+    16.2.1 Avoid infinite Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-bidirectional-quadratic-probing" class="md-nav__link">
+    16.3 Bidirectional Quadratic Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-skip-list" class="md-nav__link">
+    17. Skip List
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Skip List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-ds" class="md-nav__link">
+    17.1 DS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-algorithm" class="md-nav__link">
+    17.2 Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="17.2 Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1721-search" class="md-nav__link">
+    17.2.1 Search
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-kmp" class="md-nav__link">
+    18. KMP
+  </a>
+  
+    <nav class="md-nav" aria-label="18. KMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-build-next-array" class="md-nav__link">
+    18.1 Build Next Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-bm" class="md-nav__link">
+    19. BM
+  </a>
+  
+    <nav class="md-nav" aria-label="19. BM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-bad-character-shift" class="md-nav__link">
+    19.1 Bad Character Shift
+  </a>
+  
+    <nav class="md-nav" aria-label="19.1 Bad Character Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1911-build-bc-array" class="md-nav__link">
+    19.1.1 Build BC Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-good-suffix-shift" class="md-nav__link">
+    19.2 Good Suffix Shift
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 Good Suffix Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1921-build-gs-array" class="md-nav__link">
+    19.2.1 Build GS Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="dsa">DSA</h1>
+<p><em>Note that in this document there are some images with transparent backgound, so a bright theme may be more suitable to read them.</em></p>
+<p><em>Click on a tile to change the color scheme</em>:</p>
+<div class="tx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span:nth-child(7)")
+      name.textContent = attr
+    })
+  })
+</script>
+
+<h2 id="1-acknowledgement">1. Acknowledgement</h2>
+<p>Thanks for Data Structure and Algorithm Course of CST, THU. Most of the content are extracted from the course material.</p>
+<p>Also thanks for my friends for their sincere help and ideas or images.</p>
+<h2 id="2-basis-of-performance-analysis">2. Basis of Performance Analysis</h2>
+<h3 id="21-notation">2.1 Notation</h3>
+<p><span class="arithmatex">\(T(n)\)</span>：为求解规模为n的问题，所需执行的基本操作的次数。</p>
+<p><span class="arithmatex">\(O(f(n))\)</span>：<span class="arithmatex">\(T(n) = O(f(n)) ~ \Leftrightarrow T(n) &lt; c \cdot f(n)\)</span>，i.e. <span class="arithmatex">\(f(n)\)</span>是上界。</p>
+<p><span class="arithmatex">\(\Omega(f(n))\)</span>：<span class="arithmatex">\(T(n) = \Omega(f(n)) ~ \Leftrightarrow T(n) &gt; c \cdot f(n)\)</span>，i.e. <span class="arithmatex">\(f(n)\)</span>是下界。</p>
+<p><span class="arithmatex">\(\Theta(f(n))\)</span>：<span class="arithmatex">\(T(n) = \Theta(f(n)) ~ \Leftrightarrow c_1 \cdot f(n)&gt; T(n) &gt; c_2 \cdot f(n)\)</span>，i.e. <span class="arithmatex">\(f(n)\)</span>与<span class="arithmatex">\(T(n)\)</span>同阶。</p>
+<p><img alt="notation" src="../DSA_Review.assets/notation.png" /></p>
+<h3 id="22-np-p">2.2 NP = P ?</h3>
+<p>P问题：可以在多项式时间内求解。</p>
+<p>NP问题：能在多项式时间内验证得出正确解的问题。</p>
+<h3 id="23-series-and-corresponding-complexity">2.3 Series and Corresponding Complexity</h3>
+<h4 id="231">2.3.1 常用级数：算术、幂、几何、对数等</h4>
+<p><img alt="Screen Shot 2020-12-27 at 9.16.16 PM" src="../DSA_Review.assets/Screen%20Shot%202020-12-27%20at%209.16.16%20PM.png" /></p>
+<p><img alt="Screen Shot 2020-12-27 at 9.18.13 PM" src="../DSA_Review.assets/Screen%20Shot%202020-12-27%20at%209.18.13%20PM.png" /></p>
+<h4 id="232">2.3.2 不常见的分数级数</h4>
+<p><img alt="Screen Shot 2020-12-27 at 9.16.48 PM" src="../DSA_Review.assets/Screen%20Shot%202020-12-27%20at%209.16.48%20PM.png" /></p>
+<h3 id="24-master-thm">2.4 Master Thm.</h3>
+<p>不同分治对应的复杂度：</p>
+<p>分治通常递推形式：<span class="arithmatex">\(T(n) = a \cdot T(\frac{n}{b}) + O(f(n))\)</span></p>
+<p>即：原问题被分为a个规模均为<span class="arithmatex">\(n/b\)</span>的子任务；（每一层）任务的划分、解的合并耗时<span class="arithmatex">\(f(n)\)</span>。</p>
+<p>[1] <span class="arithmatex">\(f(n) = O(n^{log_b a - \epsilon}) ~ \Rightarrow T(n) = \Theta(n^{log_b a})\)</span> （<span class="arithmatex">\(f(n)\)</span>要小于O中的表达式，因为O是其上界）</p>
+<p>e.g. kd-search: <span class="arithmatex">\(T(n) = 2T(n/4)+O(1) = O(\sqrt{n})\)</span></p>
+<p>[2] <span class="arithmatex">\(f(n) = O(n^{log_b a} \cdot log^k n) ~ \Rightarrow T(n) = \Theta(n^{log_b a} \cdot log^{k+1}n)\)</span> </p>
+<p>e.g. Binary search: <span class="arithmatex">\(T(n) = 1T(n/2)+O(1) = O(nlogn)\)</span></p>
+<p>e.g. Merge Sort: <span class="arithmatex">\(T(n) = 2T(n/2)+O(n) = O(nlogn)\)</span></p>
+<p>[3] <span class="arithmatex">\(f(n) = \Omega(n^{log_b a + \epsilon}) ~ \Rightarrow T(n) = \Theta(f(n))\)</span> </p>
+<p>e.g. quickSelect: <span class="arithmatex">\(T(n) = 1T(n/2)+O(n) = O(n)\)</span></p>
+<h2 id="3-binary-search">3. Binary Search</h2>
+<p>Optimization:</p>
+<ol>
+<li>Only one comparison in each loop.</li>
+<li>Return the maximum element that is not greater than e.</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">BinarySearch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>  <span class="c1">// [lo, hi)</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">median</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">median</span><span class="p">])</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="n">mi</span> <span class="c1">// [lo, mi)</span>
+        <span class="k">else</span> <span class="c1">// (data[median] &lt;= e)</span>
+            <span class="n">lo</span> <span class="o">=</span> <span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// [mi + 1, hi) = (mi, hi)</span>
+    <span class="p">}</span>   <span class="c1">// break when (lo == hi)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Correctness:</p>
+<p>以下陈述在算法执行全过程中总是对的：</p>
+<ol>
+<li><code>A[lo - 1]</code>是已知的小于等于e的数（<code>A[0] ~ A[lo - 1]</code>）中最大的</li>
+<li><code>A[hi]</code>是已知的大于e的数（<code>A[hi] ~ A[n]</code>）中最小的</li>
+</ol>
+<p>据此，可以以初始状态成立为基，进行数学归纳；按照循环中的两个分支分别归纳，发现无论哪个分支，两个条件仍然是对的。因此最后<code>A[lo - 1]</code>是已知的小于等于e的数中最大的。</p>
+<p><img alt="Screen Shot 2020-12-27 at 10.11.49 PM" src="../DSA_Review.assets/Screen%20Shot%202020-12-27%20at%2010.11.49%20PM.png" /></p>
+<h2 id="4-sort-algorithms">4. Sort Algorithms</h2>
+<h3 id="41-bubblesort">4.1 BubbleSort</h3>
+<p><span class="arithmatex">\(O(n^2)\)</span>。严格不等关系才交换（相等不交换）就是稳定的。</p>
+<p><img alt="image-20210105100906401" src="../DSA_Review.assets/image-20210105100906401.png" /></p>
+<h4 id="411-improvement">4.1.1 Improvement</h4>
+<p>若某一趟扫描未发现逆序对，则说明已经都有序排列了，可以提前终止。</p>
+<p>进一步改进：虽然红色unsorted部分未有序，但是它的某个后缀可能有序。维护一个last值，初始值为lo，每次发现逆序对i，i+1时，就令<code>last=i</code>。如此从前向后扫描一趟之后，last记录的就是最后一个逆序对的位置。如此，逆序对只可能存在于<code>[lo, last)</code>中。特殊地，如果整趟扫描没有发现逆序对，则last仍然为lo值。之后的<code>hi=last</code>操作会使<code>hi == lo</code>，从而终止循环。</p>
+<p><img alt="Screen Shot 2021-01-05 at 10.17.48 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2010.17.48%20AM.png" /></p>
+<h3 id="42-mergesort">4.2 MergeSort</h3>
+<p><span class="arithmatex">\(O(nlogn)\)</span>。优先左边的元素进入归并，稳定。</p>
+<h3 id="43-quicksort">4.3 QuickSort</h3>
+<p>Expected - <span class="arithmatex">\(O(nlogn)\)</span>。<strong>不稳定！</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>
+<span class="p">{</span>   <span class="c1">// [lo, hi)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mi</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">mi</span><span class="p">)</span>
+        <span class="n">QuickSort</span><span class="p">(</span><span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="431-partition">4.3.1 Partition</h4>
+<p>随机选择一点作为pivot（轴点），让其就位。</p>
+<p>LUG版的Partition如图所示。始终有：L = [start, lo)，U = [lo, hi]，G = (hi, end]。</p>
+<p><img alt="image-20210106181124460" src="../DSA_Review.assets/image-20210106181124460.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">Partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="err">{</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">randint(lo, hi)</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">随机选取轴点</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">pivot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">hi</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">pivot小于G区间左边待拓展节点时</span><span class="w"></span>
+<span class="w">        </span><span class="n">hi</span><span class="o">--</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">向左拓展G</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">这个判断可以删掉</span><span class="w"></span>
+<span class="w">        </span><span class="k">data</span><span class="o">[</span><span class="n">lo++</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">hi</span><span class="o">]</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">把G区间左边小于等于pivot的数放在L右端</span><span class="err">（</span><span class="n">相当于拓展L</span><span class="err">）</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">pivot</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">pivot大于L区间右边待拓展节点时</span><span class="w"></span>
+<span class="w">        </span><span class="n">lo</span><span class="o">++</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">向右拓展L</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">这个判断可以删掉</span><span class="w"></span>
+<span class="w">        </span><span class="k">data</span><span class="o">[</span><span class="n">hi--</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">把L区间右边大于等于pivot的数放在G左端</span><span class="err">（</span><span class="n">相当于拓展G</span><span class="err">）</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">继续循环拓展G</span><span class="err">、</span><span class="n">L</span><span class="w"></span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nl">assert</span><span class="p">:</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">hi</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">lo</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="44-quick-selection">4.4 Quick Selection</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">QuickSelect</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">perform</span><span class="w"> </span><span class="n">quick</span><span class="w"> </span><span class="k">partition</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"></span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">randint(lo, hi)</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w"></span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">quick</span><span class="w"> </span><span class="k">partition</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">[</span><span class="n">i, j</span><span class="o">]</span><span class="w"></span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">finish</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">pivot</span><span class="w"></span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">shrink</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="n">k_th</span><span class="w"> </span><span class="k">element</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="Screen Shot 2021-01-06 at 7.29.51 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%207.29.51%20PM.png" /></p>
+<h3 id="45-heapsort">4.5 HeapSort</h3>
+<p><img alt="Screen Shot 2021-01-07 at 3.48.44 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%203.48.44%20PM.png" /></p>
+<p>总复杂度<span class="arithmatex">\((n + nlogn) = O(nlogn)\)</span>。<strong>不稳定！</strong></p>
+<ol>
+<li>【<span class="arithmatex">\(O(n)\)</span>】就地 Floyd Heapify；堆区间（前面）为整个数组；已排序区间（后面）为空。</li>
+<li>将第0个元素（堆顶元素；top()）与堆区间的末尾元素swap，堆的区间--，已排序区间++。</li>
+<li>【<span class="arithmatex">\(O(logn)\)</span>】在新的堆区间，将刚换到顶的元素shift down，得到合法的堆。</li>
+<li>将堆顶元素与堆区间的末尾元素swap，......</li>
+</ol>
+<h3 id="46-radixsort">4.6 RadixSort</h3>
+<p><u>低位优先</u>的基数排序。</p>
+<p>数据规模为n，数字位数为t，每一位的范围为<span class="arithmatex">\((0, M]\)</span>。</p>
+<p><strong>复杂度<span class="arithmatex">\(O(t*(n+M))\)</span>。（一般优于<span class="arithmatex">\(O(nlogn)\)</span>。）稳定！</strong></p>
+<h3 id="47-selectionsort">4.7 SelectionSort</h3>
+<p><span class="arithmatex">\(O(n^2)\)</span>。如果用swap模式，<strong>不稳定</strong>！如果用“滚动”模式，稳定。</p>
+<p>前k个元素已经有序；考查第k+1个位置；遍历k+1往后的所有元素，选择最小的与当前第k+1个位置的元素交换（swap）。</p>
+<h3 id="48-insertionsort">4.8 InsertionSort</h3>
+<p><span class="arithmatex">\(O(n^2)\)</span>。稳定。</p>
+<p>类似于将手中的扑克牌进行排序。</p>
+<p>前k个元素已经有序；考查第k+1个元素，从第k个元素向前遍历，寻找合适位置，将其插入其中，使得有序区间成为前k+1个元素。</p>
+<h3 id="49-shellsort">4.9 ShellSort</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ShellSort</span><span class="p">(</span><span class="k">data</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">取某递增序列H</span><span class="w"></span>
+<span class="w">    </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">w_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">w_2</span><span class="p">,</span><span class="w"> </span><span class="n">w_3</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">选H序列中小于n的最后一项</span><span class="w"></span>
+<span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="err">{</span><span class="n">i</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">w_i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">从H序列第k项往前</span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">将data视作宽度为w_t的矩阵B_t</span><span class="w"></span>
+<span class="w">        </span><span class="n">对B_t的每一列分别插入排序</span><span class="err">：</span><span class="n">B_t</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">w_t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">排完后重新组成成一位的data形式</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">最后一次循环</span><span class="w"> </span><span class="n">w_t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">意味着一维排序完成</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>e.g. 
+组织成宽度为3的矩阵的一次排序：
+<img alt="Screen Shot 2021-01-08 at 8.34.12 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%208.34.12%20PM.png" /></p>
+<h4 id="491-complexity">4.9.1 Complexity</h4>
+<p><span class="arithmatex">\(H_{shell}={1,2,4,8,...}\)</span> : <span class="arithmatex">\(O(n^2)\)</span> （构造奇偶分别有序但所有奇均大于偶。）</p>
+<p><span class="arithmatex">\(H_{ps}=\{ 2^k-1 \}\)</span> : <span class="arithmatex">\(O(n^{3/2})\)</span> </p>
+<p><span class="arithmatex">\(H_{pratt}=\{ 2^p3^q \} = 1,2,3,4,6,8,9,12\)</span> : <span class="arithmatex">\(O(nlog^{2}n)\)</span></p>
+<p><span class="arithmatex">\(H_{sedgewick}=\{ 9\cdot4^k - 9\cdot2^k + 1 ~|~ 4^k - 3\cdot2^k + 1 \}\)</span> : <span class="arithmatex">\(O(n^{4/3})\)</span> ; Average - <span class="arithmatex">\(O(n^{7/6})\)</span></p>
+<h4 id="492-correctness">4.9.2 Correctness</h4>
+<p>Knuth's Thm. A g-ordered sequence REMAINS g-ordered after being h-sorted.</p>
+<p>Thm. A sequence is g-ordered and h-ordered <span class="arithmatex">\(\Rightarrow\)</span> It is <span class="arithmatex">\(ng+mh\)</span> - ordered. (Linear Combination)</p>
+<p>Thm. The numbers  <span class="arithmatex">\(\ge ((g-1)(h-1) - 1)\)</span>  must be linear combinations of g and h.</p>
+<p><img alt="Screen Shot 2021-01-08 at 8.58.28 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%208.58.28%20PM.png" /></p>
+<p><span class="arithmatex">\(\Rightarrow\)</span> The numbers that can form inversion pairs with the i-th number are limited to a decreasing interval as <span class="arithmatex">\(h\)</span> decrease.</p>
+<p><span class="arithmatex">\(\Rightarrow\)</span> The number of inversion pairs will always keep or decrease.(?)</p>
+<h2 id="5-tree">5. Tree</h2>
+<p>深度<span class="arithmatex">\(depth(v)=|path(v)|\)</span>，到根节点的路径的<strong>边的数目</strong>。<span class="arithmatex">\(depth(root)=0\)</span>。</p>
+<p>高度<span class="arithmatex">\(height(T)\)</span>：树T的所有节点深度的最大值。只有根的树：0；空树：-1。</p>
+<p>度<span class="arithmatex">\(degree\)</span>：children的个数。</p>
+<h2 id="6-bst">6. BST</h2>
+<h3 id="61-ds">6.1 DS</h3>
+<p>左-中-右：小-中-大。</p>
+<p>中序遍历为单调不下降序列。</p>
+<p>Property: <strong>Catalan Number</strong></p>
+<p>n个互异节点随机组成的二叉树，记共有<span class="arithmatex">\(S(n)\)</span>棵不同的情况，则：</p>
+<p><span class="arithmatex">\(S(n) = Catalan(n) = \sum_{k=1}^n S(k-1)S(n-k) = {(2n)! \over (n+1)!n!}\)</span>。</p>
+<p>若各种BST等概率出现，则平均高度<span class="arithmatex">\(\Theta(\sqrt{n})\)</span>。</p>
+<p>若n个互异词条按各种排列次序（各种排列等概率）插入，平均高度<span class="arithmatex">\(\Theta(logn)\)</span>。</p>
+<h3 id="62-algorithm">6.2 Algorithm</h3>
+<h4 id="621-insert">6.2.1 Insert</h4>
+<p>插入的节点必为叶节点。</p>
+<h4 id="622-delete">6.2.2 Delete</h4>
+<p>如果是叶节点，直接删除。</p>
+<p>如果不是叶节点，找到其（x）「直接后继」（w），交换两者；让w的右子树代替w，完成删除。</p>
+<h2 id="7-k-d-tree">7. k-D Tree</h2>
+<h3 id="71-algorithm">7.1 Algorithm</h3>
+<h4 id="711-query-kdsearchv-r">7.1.1 Query - KdSearch(v, R)</h4>
+<p>Search starts at v; query range is R</p>
+<p>Key idea: Recurse in when there's intersection. Report it when it is enclosed.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span><span class="o">:</span>
+  <span class="k">if</span> <span class="n">v</span> <span class="n">is</span> <span class="nl">leaf</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+      <span class="n">report</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
+    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
+    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Complexity:</strong> For each edge of R, no more than <u>2 out of the 4</u> grandchildren of each node will intersect with it, which means recursing. R has 4 edges, so multiply 4 for the upper bound complexity.</p>
+<p>Using the Master Thm.,</p>
+<p><span class="arithmatex">\(Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})\)</span></p>
+<p>Report + Search: <span class="arithmatex">\(O(r + \sqrt{n})\)</span></p>
+<p>总结：</p>
+<p>Query: <span class="arithmatex">\(O(r + n^{1-1/d})\)</span></p>
+<p>Construct: <span class="arithmatex">\(O(nlogn)\)</span></p>
+<h2 id="8-avl-tree">8. AVL Tree</h2>
+<h3 id="81-definition">8.1 Definition</h3>
+<p>平衡因子=左子树高度-右子树高度，绝对值在1内</p>
+<h3 id="82-algorithm">8.2 Algorithm</h3>
+<h4 id="821-insert">8.2.1 Insert</h4>
+<p>从插入节点（叶子）的parent（hot）开始网上走，维护高度，直到第一个失衡节点g；通过<code>tallerChild(tallerChild(g))</code>确定p，v，然后用一次3+4重构重平衡。</p>
+<p>由于<strong>“高度复原”</strong>性质，整个insert最多1次3+4重构（2次rotate）。</p>
+<p><span class="arithmatex">\(O(logn)\)</span>。</p>
+<h4 id="822-delete">8.2.2 Delete</h4>
+<p><strong>用BST的删除</strong>，删除x，记录hot。</p>
+<p>从hot向上，一旦发现g失衡，通过<code>tallerChild(tallerChild(g))</code>确定p，v，然后用一次3+4重构重平衡。</p>
+<p>失衡可能传播，需要一直向上，执行多次3+4重构。</p>
+<p><span class="arithmatex">\(O(logn)\)</span>。</p>
+<h4 id="823-34-reconstruction">8.2.3 3+4 Reconstruction</h4>
+<p>各种不平衡的情况都可以按照“中序”统一平衡。</p>
+<p><img alt="Screen Shot 2021-01-06 at 9.33.32 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.33.32%20AM.png" /></p>
+<p><img alt="Screen Shot 2021-01-06 at 9.34.01 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.34.01%20AM.png" /></p>
+<h2 id="9-splay-tree">9. Splay Tree</h2>
+<h3 id="91-splay">9.1 Splay</h3>
+<p>双层旋转之“顺向情况”：<img alt="Screen Shot 2021-01-06 at 9.36.14 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.36.14%20AM.png" /></p>
+<p>双层旋转之“反向情况”：</p>
+<p><img alt="Screen Shot 2021-01-06 at 9.36.41 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.36.41%20AM.png" /></p>
+<p>单层旋转：当待splay至根的节点的parent为root时：</p>
+<p><img alt="Screen Shot 2021-01-06 at 9.38.16 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.38.16%20AM.png" /></p>
+<h3 id="92-search">9.2 Search</h3>
+<p>为保证性能，需将最后访问的节点旋转至root。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">search</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">:</span>
+<span class="p">{</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">searchIn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">hot</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">splay</span><span class="p">(</span><span class="n">p</span> <span class="o">?</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">hot</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">root</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>（hot记录了search中最后到达的节点）</p>
+<h3 id="93-insert">9.3 Insert</h3>
+<p><img alt="Screen Shot 2021-01-06 at 9.39.39 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.39.39%20AM.png" /></p>
+<ol>
+<li>调用Splay的search算法，待插入节点不在树中，查找失败。</li>
+<li>但“待插入位置”的父节点hot，记为t，已经被旋转至根。</li>
+<li>根据t与要插入的数值的大小关系，将t及其子树与v重组为新的树。最后新插入的v作为root。</li>
+</ol>
+<p><strong>Corner Case:</strong> 当<u>连续插入有序序列</u>时，Splay会呈现链状。当然，不一定完全有序，如：3，2，1，4，5，6，7，……也可以形成链状。</p>
+<h3 id="94-delete">9.4 Delete</h3>
+<p><img alt="Screen Shot 2021-01-06 at 10.25.57 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2010.25.57%20AM.png" /></p>
+<ol>
+<li>查找（search）待删除值v，v会被Splay至root。</li>
+<li>删除v，剩下它的两个子树<span class="arithmatex">\(T_L\)</span>、<span class="arithmatex">\(T_R\)</span>。</li>
+<li>在<span class="arithmatex">\(T_R\)</span>中查找v；这一查找必定失败，但会将<span class="arithmatex">\(T_R\)</span>中的最小值m，即v的直接后继，旋转至子树<span class="arithmatex">\(T_R\)</span>的根。</li>
+<li>由于m是v的直接后继，因此<span class="arithmatex">\(T_R\)</span>中m的左子树必为空。直接将<span class="arithmatex">\(T_L\)</span>作为m的左子树。完成。</li>
+</ol>
+<h2 id="10-red-black-tree">10. Red Black Tree</h2>
+<h3 id="101-definition">10.1 Definition</h3>
+<ol>
+<li>为所有有需要的节点引入<strong>n+1</strong>个外部节点，使得所有节点的左右孩子非空。</li>
+<li>树根root：黑色</li>
+<li>外部节点：黑色</li>
+<li>其余节点：若为红，则只能有黑孩子（红之子，之父必为黑）</li>
+<li>外部节点向上到根：途中黑节点数目相等（所有外部节点的<strong>黑深度</strong>相等）</li>
+</ol>
+<h3 id="102-ds">10.2 DS</h3>
+<p><strong>Lifting</strong>: 将每个红节点提升，使之与其parent（必为黑）“等高”；或说，将黑节点与其红孩子视作一个大的节点。如此，将红黑树变换为了<strong>4阶B树（(2, 4)-Tree）</strong>。</p>
+<p>可以验证，Lifting之后的B树中，同一节点不会包含紧邻的红色key。</p>
+<h3 id="103-algorithm">10.3 Algorithm</h3>
+<h4 id="1031-insert">10.3.1 Insert</h4>
+<ol>
+<li>调用BST的标准search；待插入key不存在；search过程中记录了hot。</li>
+<li>创建<strong>红节点</strong>x，以hot为parent，黑高度-1。</li>
+<li>若x的parent p为红，则双红修正。</li>
+</ol>
+<h4 id="1032-double-red-issue">10.3.2 Double Red Issue</h4>
+<p>插入x后，依次确认其祖先p，g。若p为红，则需双红修正。</p>
+<p>总图：</p>
+<p><img alt="image-20210110230506234" src="../DSA_Review.assets/image-20210110230506234.png" /></p>
+<p>考查u：</p>
+<p>[1] u为black：</p>
+<p><img alt="Screen Shot 2021-01-06 at 11.19.43 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.19.43%20AM.png" /></p>
+<p>（1）recolor（重新染色）：无论顺向（a）还是反向（b），按中序遍历，让x，p，g中，在<u>中间的为black，两侧的为red</u>；</p>
+<p>（2）用<u>“3+4重构”</u>调整其拓扑结构。</p>
+<p>调整完即结束，无缺陷传递。</p>
+<p>[2] u为red：</p>
+<p><img alt="Screen Shot 2021-01-06 at 11.53.30 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2011.53.30%20AM.png" /></p>
+<p>（借助B树的理解，即节点发生了上溢。）</p>
+<p>recolor：无论是顺向还是反向，均只需：将p，u由红转黑（p、u黑高度++），将g由黑转红。</p>
+<p><u>（拓扑结构不变）</u></p>
+<p>双红<strong>传递</strong>：由于g的变红，可能导致双红向上传递，因此需要递归地修复。有可能上溯至root，但由于规定root必为黑，故此处会发生<u>全树黑高度增加</u>。</p>
+<p>总结：时间<span class="arithmatex">\(O(logn)\)</span>。拓扑结构改变<span class="arithmatex">\(O(1)\)</span>。</p>
+<p><img alt="Screen Shot 2021-01-08 at 11.21.33 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.21.33%20AM.png" /></p>
+<h4 id="1033-delete">10.3.3 Delete</h4>
+<ol>
+<li>
+<p>调用BST常规remove算法。实际删除者为x。x可能有右孩子，会“接替”x。</p>
+</li>
+<li></li>
+</ol>
+<p><img alt="Screen Shot 2021-01-06 at 12.21.38 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%2012.21.38%20PM.png" /></p>
+<p>若x和r同时为黑（c），则需双黑修正。若不是，分情况：</p>
+<p>（a）x为红，r为黑，无需调整。</p>
+<p>（b）x为黑，r为红，r接替x后变黑。</p>
+<h4 id="1034-double-black-issue">10.3.4 Double Black Issue</h4>
+<p>总图：</p>
+<p><img alt="image-20210110230541116" src="../DSA_Review.assets/image-20210110230541116.png" /></p>
+<p>若x和r同时为黑，考查r的兄弟s（即p的另一孩子）的颜色及s的孩子的颜色：</p>
+<p>[1] 若s为black：</p>
+<p>（1）s至少有一孩子c为red：</p>
+<p><img alt="Screen Shot 2021-01-06 at 1.39.17 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%201.39.17%20PM.png" /></p>
+<p>（对应B树下溢。）</p>
+<p>采用“3+4重构”调整拓扑结构，p、s、c三者中居中者继承p原先的颜色，其余染黑。</p>
+<p>调整立即结束，无传递！</p>
+<p>（2）s两孩子均为black：</p>
+<p>（i）p为red：</p>
+<p><img alt="Screen Shot 2021-01-06 at 2.36.01 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.01%20PM.png" /></p>
+<p>（对应B树下溢。）</p>
+<p>令s为red，p为black（a→b）。无需调整拓扑结构。</p>
+<p>调整立即结束，无传递！</p>
+<p>（ii）p为black</p>
+<p><img alt="Screen Shot 2021-01-06 at 2.36.21 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.36.21%20PM.png" /></p>
+<p>（对应B树，下溢引发了上层下溢，需继续递归调整。）</p>
+<p>令s为red。</p>
+<p>然后以p为根的整棵子树黑高度--。若p有parent g，则g的黑高度失衡。因此需递归地<u>于p处</u>进行双黑修正。</p>
+<p>向上递归。但从红黑树来看拓扑结构不变。</p>
+<p>[2] 若s为red：</p>
+<p><img alt="Screen Shot 2021-01-06 at 2.44.44 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%202.44.44%20PM.png" /></p>
+<p>（则s‘必然是黑的）</p>
+<p>此时，观察以p为根的子树：s‘必为黑，即情况1；而p为red，因此不会是「情况[1]-（2）（ii）」。于x/r处继续递归地双黑修正即可。</p>
+<p>递归一层便结束，不会传递！</p>
+<p>删除总结：</p>
+<p><img alt="Screen Shot 2021-01-08 at 11.19.52 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.19.52%20AM.png" /></p>
+<p>总结：对任何操作，拓扑结构的改变<span class="arithmatex">\(O(1)\)</span>。</p>
+<h2 id="11-b-tree">11. B Tree</h2>
+<h3 id="111-definition">11.1 Definition</h3>
+<p>m阶B-Tree，每个节点有<span class="arithmatex">\(ceil(m/2) - 1 \le n \le m-1\)</span>个key，<span class="arithmatex">\(ceil(m/2) \le n+1 \le m\)</span>个分支。（<span class="arithmatex">\(m \ge 3\)</span>）</p>
+<p>需满足<span class="arithmatex">\(m\ge n+1 \ge ceil(m/2)\)</span>。（<strong>除了根节点</strong>不能少于一半）</p>
+<p>也称 (ceil(m/2), m)-Tree。</p>
+<h3 id="112-ds">11.2 DS</h3>
+<p>每个节点两个Vector，分别存储key，指针。<img alt="Screen Shot 2021-01-05 at 10.59.38 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2010.59.38%20AM.png" /></p>
+<p>某node中，两key之间的下级指针指向的node中的key介于两key之间。</p>
+<h4 id="1121-limited-maximum-height">11.2.1 Limited maximum height</h4>
+<p><span class="arithmatex">\(\Omega(log_m N) \le h \le O(log_m N)\)</span>。</p>
+<h3 id="113-algorithm">11.3 Algorithm</h3>
+<h4 id="1131-find">11.3.1 Find</h4>
+<p>每一层内部顺序查找。但因为顺序局部访问很快，时间可以忽略。</p>
+<p>当找不到时，转入下一层查找。</p>
+<p><span class="arithmatex">\(O(logn)\)</span>。n为key的个数。</p>
+<h4 id="1132-insert">11.3.2 Insert</h4>
+<p>先插入v：</p>
+<ol>
+<li>
+<p>寻找v，确认其不存在，寻找过程中记录了hot（查找失败的最后一个node的parent）。</p>
+</li>
+<li>
+<p>在hot里插入v。</p>
+</li>
+</ol>
+<p>视情况做<strong>分裂</strong>。</p>
+<h4 id="1133-split">11.3.3 上溢与split</h4>
+<p><img alt="image-20210105112950326" src="../DSA_Review.assets/image-20210105112950326.png" /></p>
+<ol>
+<li>上溢节点恰好有m个key。</li>
+<li>找到上溢节点中居中的key，以之为界将节点一分为二。</li>
+<li>将居中的key提升至原节点的parent中。</li>
+</ol>
+<p>上溢传递：最多传到根。如果根满了，就上溢一个元素作为新的根。</p>
+<p>显然上溢传递次数是有界的。</p>
+<p><span class="arithmatex">\(O(h) = O(log_mN)\)</span>。</p>
+<h4 id="1134">11.3.4 删除</h4>
+<p><img alt="image-20210105115300598" src="../DSA_Review.assets/image-20210105115300598.png" /></p>
+<ol>
+<li>找直接后继的数：对于非叶节点需先找直接后继节点：先往右下一次，然后一路向左，直到叶节点。</li>
+<li>交换</li>
+<li>删除交换后的，需要删除的，已经在叶节点中的数</li>
+</ol>
+<p>删除后需要处理下溢。</p>
+<h4 id="1135">11.3.5 下溢</h4>
+<p>下溢节点恰好有<span class="arithmatex">\(O(ceil(m/2) - 2)\)</span>个key。</p>
+<p>分情况：</p>
+<p>（1）（Rotate <span class="arithmatex">\(O(1)\)</span>）左兄弟（同parent）存在，且其key个数-1仍满足条件：</p>
+<p><img alt="Screen Shot 2021-01-05 at 12.02.56 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.02.56%20PM.png" /></p>
+<p>（2）（Rotate <span class="arithmatex">\(O(1)\)</span>）右兄弟（同parent）存在，且其key个数-1仍满足条件：</p>
+<p><img alt="Screen Shot 2021-01-05 at 12.03.07 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.03.07%20PM.png" /></p>
+<p>（3）（Combine  <span class="arithmatex">\(O(log_mN)\)</span>）L或R不存在（不可能同时不存在，因为一个node至少两个分支），或key的个数已达下限不能再给出：</p>
+<p><img alt="Screen Shot 2021-01-05 at 12.07.08 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%2012.07.08%20PM.png" /></p>
+<p>合并出来的节点一定满足key个数的范围条件。</p>
+<p>父节点P少了一个key，可能下溢。因此下溢会传递。</p>
+<h2 id="12-heap-min-priority-queue">12. Heap (min) (Priority Queue)</h2>
+<p>上大下小，或上小下大。</p>
+<h3 id="121-shift-up">12.1 Shift Up</h3>
+<p><span class="arithmatex">\(O(logn)\)</span>。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">shift_up</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">is</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="n">root</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> parent_of[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">satisfied</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="nf">lower</span><span class="w"> </span><span class="n">priority</span><span class="w"> </span><span class="k">than</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+<span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> parent_of[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">upper</span><span class="w"> </span><span class="n">layer</span><span class="w"></span>
+<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent_of</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">upper</span><span class="w"> </span><span class="n">layer</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="122-shift-down">12.2 Shift Down</h3>
+<p><span class="arithmatex">\(O(logn)\)</span>。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">shift_down</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">proper_parent_at</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">proper_parent</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">proper_parent</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="n">proper_parent_at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="o">//</span><span class="w"> </span><span class="n">gives</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="n">among</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> left_child[i</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> right_child[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="w"></span>
+<span class="o">//</span><span class="w"> </span><span class="n">gives</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">left_child</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">right_child</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>Expected - <span class="arithmatex">\(O(1)\)</span>。</p>
+<h3 id="123-pop">12.3 Pop</h3>
+<ol>
+<li>Delete the value at the top and replace it with the last value.</li>
+<li>Shift the current value at the top down.</li>
+</ol>
+<h3 id="124-push">12.4 Push</h3>
+<ol>
+<li>Append the value to the last of the array.</li>
+<li>Shift the last value up.</li>
+</ol>
+<h3 id="125-floyd-heapify">12.5 Floyd Heapify</h3>
+<p><span class="arithmatex">\(O(n)\)</span>。</p>
+<h4 id="1251-combine">12.5.1 Combine</h4>
+<p>Given two heaps and a node p. How to <strong>combine</strong> them to a new heap?</p>
+<p>Take the two heaps as childrens of p. Then <strong>shift p down</strong>.</p>
+<p><img alt="Screen Shot 2021-01-07 at 1.55.40 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%201.55.40%20PM.png" /></p>
+<h4 id="1252-heapify">12.5.2 Heapify</h4>
+<p>For complete binary heap, shift the internel nodes down, which generates "sub-heap" start at the bottom. Finally a heap is constructed.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">heapify(size n):</span>
+<span class="err">{</span>
+<span class="err">    for (i = n / 2 - 1; i &gt;= 0; i--)</span>
+<span class="err">        shift_down(i)</span>
+<span class="err">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="13-d-heap">13. d-Heap</h2>
+<p>多叉堆的复杂度：“上山容易下山难”。</p>
+<h2 id="14-leftlist-heap">14. Leftlist Heap</h2>
+<h3 id="141-definition">14.1 Definition</h3>
+<p>Null path length: </p>
+<p>若x为外部节点，则<span class="arithmatex">\(npl(x) = 0\)</span>；否则，<span class="arithmatex">\(npl(x) = 1 + min(~npl(~lc(x)~), npl(~rc(x)~)~)\)</span></p>
+<p><span class="arithmatex">\(npl\)</span>的意义：<strong>x到外部节点的最短距离</strong>。</p>
+<p><strong>左式堆</strong>：<span class="arithmatex">\(\forall x, npl(~lc(x)~) \ge npl(~rc(x)~)\)</span>。</p>
+<p>即，对npl值，任意内部节点的左孩子不小于右孩子。</p>
+<p>（然而如图，左子树的高度并不一定不小于右子树。）</p>
+<p><img alt="Screen Shot 2021-01-05 at 4.26.48 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-05%20at%204.26.48%20PM.png" /></p>
+<p>于是有性质：<span class="arithmatex">\(npl(x) = 1 + npl(rc(x))\)</span>，也等于<strong>最右侧通路的长度d</strong>。<span class="arithmatex">\(d = O(logn)\)</span>。</p>
+<h3 id="142-algorithm">14.2 Algorithm</h3>
+<p>merge(a,b)：</p>
+<ol>
+<li>通过swap确保a&gt;b。</li>
+<li>将<span class="arithmatex">\(a_R\)</span>与<span class="arithmatex">\(b\)</span>合并成新的<span class="arithmatex">\(a_{R'}\)</span>，若新的<span class="arithmatex">\(a_{R'}\)</span>与<span class="arithmatex">\(a_{L}\)</span>不满足npl关系，则交换之。</li>
+<li>维护a的npl。</li>
+</ol>
+<h2 id="15-hash-function">15. Hash Function</h2>
+<p>评价标准与设计原则：</p>
+<ol>
+<li>确定：同一关键码总是被映射到同一地址</li>
+<li>快速：计算<span class="arithmatex">\(O(1)\)</span></li>
+<li>满射：尽可能充分地覆盖整个散列空间</li>
+<li>均匀：映射到各位置的概率尽量接近，避免聚集</li>
+</ol>
+<h2 id="16-closed-hash-table">16. Closed Hash Table</h2>
+<p>Suggested Load Factor: <span class="arithmatex">\(\lambda &lt; 0.5\)</span>.</p>
+<p>Open Addressing Strategies:</p>
+<h3 id="161-linear-probing">16.1 Linear Probing</h3>
+<p><code>ht[ hash(key) % M ]</code> is occupied → try <code>ht[ (hash(key) + 1) % M ]</code></p>
+<h4 id="1611-search">16.1.1 Search</h4>
+<p>依次向后找，对应一个查找链。<u>当遇到空桶（且后述lazy tag为false）时，查找失败。</u></p>
+<h4 id="1612-delete-with-lazy-tag">16.1.2 Delete with lazy tag</h4>
+<p>删除时，如果仅仅将桶清空，则会造成查找链断裂。为此给每个桶引入lazy tag，记录这里曾经是否有过元素。</p>
+<h4 id="1613-rehasing">16.1.3 Rehasing</h4>
+<p>When the load factor is relatively large, we can rebuild the hashtable.</p>
+<ol>
+<li><strong>Double</strong> the capacity of hashtable.</li>
+<li>Create new lay tags.</li>
+<li>For every item in the old table, insert it into the new hashtable.</li>
+</ol>
+<h3 id="162-undirectional-quadratic-probing">16.2 Undirectional Quadratic Probing</h3>
+<p><code>ht[ hash(key) % M ]</code> is occupied → try <code>ht[ (hash(key) + j) % M ]</code> (<span class="arithmatex">\(j = 0, 1, 2, ...\)</span>, which means the j-th trial)</p>
+<p>优势：试探位置的「间距」以线性速度增长；一旦发生冲突，可以尽快跳离聚集区段。</p>
+<h4 id="1621-avoid-infinite-probing">16.2.1 Avoid infinite Probing</h4>
+<p>一种无限循环无法找到空桶的情况（hashtable M=11, a prime number; load factor = 6/11 &gt; 0.5）：</p>
+<p><img alt="Screen Shot 2021-01-08 at 11.57.59 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2011.57.59%20AM.png" /></p>
+<p><strong>Thm.</strong> M is a prime <strong>and</strong> the load factor <span class="arithmatex">\(\lambda \le 0.5 ~ \Rightarrow\)</span> Can find an available bucket.</p>
+<p>Reason:</p>
+<p>(M is not a prime <span class="arithmatex">\(\Rightarrow\)</span> The number of possible values of <span class="arithmatex">\(n^2 ~ \% ~ M\)</span> &lt;= <span class="arithmatex">\(ceil(M/2)\)</span>.)</p>
+<p>M is a prime <span class="arithmatex">\(\Rightarrow\)</span> Number of possible values of <span class="arithmatex">\(n^2 ~ \% ~ M\)</span> <strong>==</strong> <span class="arithmatex">\(ceil(M/2)\)</span>, and they are <strong>exactly</strong> the first <span class="arithmatex">\(ceil(M/2)\)</span> values.</p>
+<h3 id="163-bidirectional-quadratic-probing">16.3 Bidirectional Quadratic Probing</h3>
+<p><code>ht[ hash(key) % M ]</code> is occupied → try <code>ht[ (hash(key) + j * (-1)^(j-1)) % M ]</code> (<span class="arithmatex">\(j = 0, 1, 2, ...\)</span>, which means the j-th trial)</p>
+<p><img alt="Screen Shot 2021-01-08 at 12.11.47 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%2012.11.47%20PM.png" /></p>
+<p><strong>Thm.</strong> 表长取形如<span class="arithmatex">\(M = 4k+3\)</span>的素数，则必然可以保证查找链的前M项互异，即正向与反向的查找链无公共的桶。</p>
+<h2 id="17-skip-list">17. Skip List</h2>
+<h3 id="171-ds">17.1 DS</h3>
+<p><img alt="Screen Shot 2021-01-07 at 4.03.19 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%204.03.19%20PM.png" /></p>
+<ol>
+<li>对每个数，它<u>继续在下一层存在的概率</u><span class="arithmatex">\(p = 0.5\)</span>。于是各纵向塔的高度服从几何分布<span class="arithmatex">\(P(h = k) = p^{k-1}(1-p)\)</span>。因此<strong>期望高度</strong>不过<span class="arithmatex">\(E(h) = {1 \over 1-p} = 2\)</span>。由此导出Skip List的<strong>期望空间复杂度</strong>：<span class="arithmatex">\(expected-O(n)\)</span>。</li>
+<li>左右为哨兵节点，方便实现。</li>
+<li>每个节点存储了上下左右四个指针。</li>
+<li>对内部，同层节点关键码有序；对外部，无需有序，只需判等。</li>
+</ol>
+<h3 id="172-algorithm">17.2 Algorithm</h3>
+<h4 id="1721-search">17.2.1 Search</h4>
+<ol>
+<li>从顶层的第一个节点出发。</li>
+<li>向右下方向前进：在每一层向右查找；若遇到相等的key则成功；若遇到key值大于查找key的节点，或碰到哨兵，则转入下一层。若穿到了-1层，则失败。</li>
+<li>返回值总为不大于查找值的最大者。</li>
+</ol>
+<p>复杂度：<span class="arithmatex">\(expected-O(logn)\)</span>：</p>
+<p>1）纵向跳转：</p>
+<p>考查某一座塔的高度：<span class="arithmatex">\(P(h \ge k) = p^k\)</span>。</p>
+<p>考虑第k层List <span class="arithmatex">\(S_k\)</span>，它非空，即n个可能节点中至少有一个节点存在的概率<span class="arithmatex">\(P(|S_k| &gt; 0) \le n \cdot p^k\)</span>。（某key值在第k层存在的概率为<span class="arithmatex">\(p^k\)</span>。）</p>
+<p>得出：塔高度控制在<span class="arithmatex">\(O(logn)\)</span>的概率极大，接近于1。</p>
+<p>因此，纵向跳转次数<span class="arithmatex">\(expected-O(logn)\)</span>。</p>
+<p>2）~~横向跳转~~总体：</p>
+<p><img alt="Screen Shot 2021-01-07 at 4.46.19 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%204.46.19%20PM.png" /></p>
+<p>（教材上先分析纵向跳转，再分析横向跳转。个人认为横向部分的分析不够好。下面按照原始论文的思路理解。原始论文总体计算包括横向、纵向在内的总时间复杂度。）</p>
+<p>对某一搜索路径，进行<strong>反向</strong>考察，即从目标节点向左上前进返回起始节点。记一个需要向上爬k层的反向搜索路径需要的操作次数为<span class="arithmatex">\(C(k)\)</span>。</p>
+<p><img alt="Screen Shot 2021-01-07 at 8.57.15 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%208.57.15%20PM.png" /></p>
+<p>设当前在某节点x，还需向上爬k层。有两种可能：</p>
+<p>i）x是塔顶，概率为<span class="arithmatex">\(1-p\)</span>。此时反向走搜索路径，必然是向左移动一次；移动后还需要向上爬k层。</p>
+<p>ii）x不是塔顶，概率为p。此时反向走搜索路径，必然是向上爬一层；爬完还需要向上爬k-1层。</p>
+<p>综上有：</p>
+<p><span class="arithmatex">\(C(0)=0\)</span></p>
+<p><span class="arithmatex">\(C(k)=(1-p)(1+C(k))+p(1+C(k-1))\)</span></p>
+<p>于是 <span class="arithmatex">\(C(k)=1/p+C(k-1) ~ \Rightarrow ~ C(k)=k/p\)</span>。</p>
+<p>对于任意反向搜索路径，可以拆为两部分：从0层爬到<span class="arithmatex">\(O(logn)\)</span>层（塔高度控制在<span class="arithmatex">\(O(logn)\)</span>的概率极大）、爬完剩下的层。粗略考虑前者，时间为<span class="arithmatex">\(C(O(logn))=O(logn)/p\)</span>。</p>
+<h2 id="18-kmp">18. KMP</h2>
+<p><img alt="image-20210107111050127" src="../DSA_Review.assets/image-20210107111050127.png" /></p>
+<p>总：<span class="arithmatex">\(O(n+m)\)</span>。</p>
+<p>（上面为一长字符串；下面为需要在上面的串中查找的模式串。黄色阴影区域表示相同的子串。）</p>
+<p>当失败时，<code>j</code>（向前）跳转至<code>next[j]</code>继续尝试匹配。而<code>i</code>始终向后，保证了<strong>复杂度为<span class="arithmatex">\(O(n)\)</span></strong>。</p>
+<p>若匹配成功，会有<code>j == m</code>跳出循环。返回值<code>i - j == i - m</code>就是匹配上的模式串在主串中的起始位置。</p>
+<p>扫描一趟<span class="arithmatex">\(O(n)\)</span>。</p>
+<h3 id="181-build-next-array">18.1 Build Next Array</h3>
+<p><span class="arithmatex">\(O(m)\)</span>。</p>
+<p><span class="arithmatex">\(next[j]\)</span>表示模式串pattern的<span class="arithmatex">\([0, j - 1]\)</span>区间内，最大公共前缀后缀的长度。</p>
+<p><img alt="build next" src="../DSA_Review.assets/build%20next.jpeg" /></p>
+<p>（画圈的j代表在相应位置更新了next数组。）</p>
+<h2 id="19-bm">19. BM</h2>
+<p>Complexity comparison:</p>
+<p><img alt="Screen Shot 2021-01-07 at 1.21.52 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%201.21.52%20PM.png" /></p>
+<p>(Brutal Force; KMP; BM with BC; BM with BC &amp; GS)</p>
+<p>(Pr: The probability that the two characters you randomly picked from the character set are the same.)</p>
+<p><img alt="Screen Shot 2021-01-07 at 12.18.06 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.18.06%20PM.png" /></p>
+<h3 id="191-bad-character-shift">19.1 Bad Character Shift</h3>
+<p><img alt="Screen Shot 2021-01-07 at 12.19.00 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.19.00%20PM.png" /></p>
+<p>（仅有BC策略复杂度为<span class="arithmatex">\(O(nm)\)</span>）。</p>
+<p>若某处（主串字符为X，模式串为Y）匹配失败，则用BC表找到模式串P中最后一个X字符出现的位置，将这个位置对准主串进行匹配。</p>
+<p>如果P中最后一个X出现的位置在Y之前，则相当于P右移。</p>
+<p>若P中最后一个X出现的位置在Y之后，其实<strong>无需也不能左移</strong>。（保持P一直右移的单调性。）此时直接将P右移一个位置即可。</p>
+<h4 id="1911-build-bc-array">19.1.1 Build BC Array</h4>
+<ol>
+<li>BC表长度为字符集的大小。</li>
+<li>BC表初始化为每一项为-1，对应字符未出现在P中。</li>
+<li>从左向右扫描P，令<code>BC[ P[i] ] = i</code>即可记录每个字符在P中出现的最后位置。</li>
+</ol>
+<h3 id="192-good-suffix-shift">19.2 Good Suffix Shift</h3>
+<p><img alt="Screen Shot 2021-01-07 at 12.27.48 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.27.48%20PM.png" /></p>
+<p>（利用GS表优化可使BM算法达到<span class="arithmatex">\(O(n+m)\)</span>。）</p>
+<p>对每个后缀U，找前面出现过的与U相同的子串V。若不存在完全相同，则找能与U的后缀匹配的最长者。</p>
+<p>于是当匹配失败时，右移P，将V与U对齐。</p>
+<p><img alt="Screen Shot 2021-01-07 at 12.30.30 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%2012.30.30%20PM.png" /></p>
+<h4 id="1921-build-gs-array">19.2.1 Build GS Array</h4>
+<p>GS表给出在某处失配时，P的<strong>右移量</strong>。</p>
+<p>（具体的构建过程略。）</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome to Colin's Notebook
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../LaTex/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                LaTeX
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
