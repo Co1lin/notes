@@ -20,7 +20,7 @@ _Click on a tile to change the color scheme_:
 </script>
 ## Preparation
 
-## Environment
+### Environment
 
 IDE: Quartus Lite
 
@@ -32,7 +32,7 @@ Editor on macOS: VSCode + [Verilog-HDL/SystemVerilog/Bluespec SystemVerilog](htt
 
 Example: `verilator -sv --language 1800-2012  --lint-only  mycode.sv`)
 
-## Example
+### Example
 
 A simple example of displaying the sequence "2021040907" with a 7-input digital display:
 
