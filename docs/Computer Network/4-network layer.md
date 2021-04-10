@@ -98,6 +98,37 @@ With the DV algorithm, each node *x* maintains:
 
 ![Screen Shot 2021-04-08 at 11.24.26 PM](4-network%20layer.assets/Screen%20Shot%202021-04-08%20at%2011.24.26%20PM.png)
 
+#### Routing Information Protocol
+
+Based on UDP. Relationship and position in the network packets:
+
+```
+IP Header (e.g. 20Bytes)
+  UDP Header (8 Bytes)
+    RIP Packet
+```
+
+Structure of RIPv2 (Ref: [RFC 2453](https://datatracker.ietf.org/doc/rfc2453/?include_text=1)):
+
+```
+0                   1                   2                   3 
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  command (1)  |  version (1)  |       must be zero (2)        |	// header (4 Bytes)
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Address Family Identifier (2) |        Route Tag (2)          |	// entry follows
++-------------------------------+-------------------------------+
+|                         IP Address (4)                        |
++---------------------------------------------------------------+
+|                         Subnet Mask (4)                       |
++---------------------------------------------------------------+
+|                         Next Hop (4)                          |
++---------------------------------------------------------------+
+|                         Metric (4)                            |	// total: 24 Bytes
++---------------------------------------------------------------+
+// more entries (total <= 25) may follow
+```
+
 ### Switching
 
 1) Switching via mem.
@@ -140,11 +171,13 @@ Round robin queuing -> weighted fair queuing (WFQ): class i will receive a fract
 
 ### IPv4
 
-![Screen Shot 2021-02-28 at 9.42.24 PM](4-network%20layer.assets/Screen%20Shot%202021-02-28%20at%209.42.24%20PM.png)
+Ref: [IPv4 - Wikipedia](https://en.wikipedia.org/wiki/IPv4)
+
+![Screen Shot 2021-04-10 at 11.11.38 AM](4-network%20layer.assets/Screen%20Shot%202021-04-10%20at%2011.11.38%20AM.png)
+
+Internet Header Length (IHL): [20, 60] Bytes
 
 #### IPv4 Datagram Fragmentation
-
-#### another
 
 
 
