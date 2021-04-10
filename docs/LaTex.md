@@ -15,6 +15,21 @@ A Simple template:
 \usepackage{enumerate}
 \usepackage{float}
 \usepackage{longtable}
+\usepackage{listings} 
+\usepackage{xcolor}
+\lstset{
+  frame=shadowbox, %把代码用带有阴影的框圈起来
+  rulesepcolor=\color{red!20!green!20!blue!20},%代码块边框为淡青色
+  keywordstyle=\color{blue!90}\bfseries, %代码关键字的颜色为蓝色，粗体
+  commentstyle=\color{red!10!green!70}\textit,    % 设置代码注释的颜色
+  showstringspaces=false,%不显示代码字符串中间的空格标记
+  numbers=left, % 显示行号
+  numberstyle=\tiny,    % 行号字体
+  stringstyle=\ttfamily, % 代码字符串的特殊格式
+  breaklines=true, %对过长的代码自动换行
+  extendedchars=false,  %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+  %escapebegin=\begin{CJK*},escapeend=\end{CJK*},      % 代码中出现中文必须加上，否则报错
+  texcl=true}
 \usepackage{caption}
 \usepackage{subfigure}
 \usepackage{amsmath}
@@ -60,7 +75,16 @@ A Simple template:
 %		}
 %	\end{table}
 
-	
+%\begin{lstlisting}[language=c++]
+%	// example
+%	#include <iostream>
+%	
+%	int main()
+%	{
+%		return 0;
+%	}
+%\end{lstlisting}
+
 \section{Section}
 	
 	
