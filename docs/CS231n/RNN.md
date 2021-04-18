@@ -137,5 +137,15 @@ Pros compared with vanilla RNN:
 - Forget gate can vary from each time step, unlike the W is consistent in the vanilla RNN. So the model can avoid gradient explosion or vanishing.
 - Sigmoid for f, so the output falls in $(0, 1)$.
 
+[漫谈LSTM系列的梯度问题](https://zhuanlan.zhihu.com/p/36101196)
+
+[LSTM单元梯度的详细的数学推导](https://blog.csdn.net/deephub/article/details/107033684)
+
 #### GRU
+
+Use only one gate to balance the history and the new data.
+
+Performs similarly to LSTM but is computationally cheaper.
+
+![image-20210418161549195](RNN.assets/image-20210418161549195.png)
 
