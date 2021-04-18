@@ -35,11 +35,11 @@ Process sequences and build models with various inputs or outputs:
 - Process entries of vector x as a sequence
 - Add dense layer taking all of the h as input to yield an output
 
-### vanilla RNN
+## vanilla RNN
 
 ![Screen Shot 2021-04-18 at 1.25.57 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%201.25.57%20AM.png)
 
-#### Character-level Language Model
+### Character-level Language Model
 
 ![Screen Shot 2021-04-18 at 1.30.18 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%201.30.18%20AM.png)
 
@@ -52,17 +52,17 @@ Question:
 - Why <u>sampling according to the probability distribution given by softmax</u>, instead of taking the letter with the highest score?
   - Softmax sampling increases the diversity of the outputs
 
-#### Truncated BP through time
+### Truncated BP through time
 
 ![Screen Shot 2021-04-18 at 1.43.05 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%201.43.05%20AM.png)
 
 This is like a sliding window mechanism. We only focus on the data in a window during an iteration.
 
-### Case study
+## Case study
 
 We want the model to learn to predict the following characters, but it also learns many things about the **structural** features of the input data.
 
-#### Image to description
+### Image to description
 
 
 
@@ -79,7 +79,7 @@ We want the model to learn to predict the following characters, but it also lear
   - Once sampling a END token, stop generation.
 - Available dataset: COCO from Microsoft
 
-#### Attention
+### Attention
 
 RNN focuses its attention at a **different** spatial location when generating **each** word.
 
@@ -126,7 +126,7 @@ Notes for [Soft & hard attention](https://jhui.github.io/2017/03/15/Soft-and-har
     - Related to RL; Estimate the gradient by Monte Carlo method
     - 
 
-#### Visual Question Answering: RNN with attention
+### Visual Question Answering: RNN with attention
 
 ![Screen Shot 2021-04-18 at 10.19.56 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%2010.19.56%20AM.png)
 
@@ -145,21 +145,21 @@ Notes for [Soft & hard attention](https://jhui.github.io/2017/03/15/Soft-and-har
 - Output and decoding:
   - At the decoding stage, it computes the **log-likelihood of **<u>**an answer**</u> (while in the encoding stage we feed the question in the model) by a **dot product** (which can reflect the similarity of two vectors) between its transformed visual feature (fc7 from CNN) and <u>the last LSTM hidden state</u>.
 
-### Multilayer RNN
+## Multilayer RNN
 
 ![Screen Shot 2021-04-18 at 10.21.54 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%2010.21.54%20AM.png)
 
 Usually 2~4 layers for RNN is good enough.
 
-### Gradient flow
+## Gradient flow
 
 Problem: too many W in the gradient! (especially for $h_0$)
 
-#### Gradient explosion and vanishing gradient
+### Gradient explosion and vanishing gradient
 
 ![Screen Shot 2021-04-18 at 10.32.31 AM](RNN.assets/Screen%20Shot%202021-04-18%20at%2010.32.31%20AM.png)
 
-#### LSTM (Long Short Term Memory)
+### LSTM (Long Short Term Memory)
 
 Four gates:
 
@@ -184,7 +184,7 @@ Pros compared with vanilla RNN:
 
 [LSTM单元梯度的详细的数学推导](https://blog.csdn.net/deephub/article/details/107033684)
 
-#### GRU
+### GRU
 
 Use only one gate to balance the history and the new data.
 
