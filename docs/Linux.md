@@ -40,3 +40,9 @@ PermitRootLogin yes
 PasswordAuthentication no
 ```
 
+### SSH Tunnel
+
+```sh
+ssh -N -f -L 8008:localhost:8008 user@serverip
+```
+
