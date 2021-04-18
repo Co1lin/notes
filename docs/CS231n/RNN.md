@@ -117,14 +117,12 @@ Notes for [Soft & hard attention](https://jhui.github.io/2017/03/15/Soft-and-har
     - The accuracy is subject to <u>the assumption</u> that the <u>weighted average is a good representation for the area of attention</u>
   
 - Hard attention
-
   - Instead of a weighted average, hard attention uses $\alpha_i$ as a **sample** rate to pick one $x_i$ as the input to the LSTM.
   - So finally we only choose (by sampling!) **one** part of the image, $x_i$, instead of a weighted average.
   - **How to calculate the gradient descent correctly?**
-    - Perform samplings and average our results using the **Monte Carlo method**
-    - The accuracy is subject to <u>how many samplings are performed</u> and <u>how well it is sampled</u>
-    - Related to RL; Estimate the gradient by Monte Carlo method
-    - 
+    - Perform samplings and average our results using the **Monte Carlo method**.
+    - The accuracy is subject to <u>how many samplings are performed</u> and <u>how well it is sampled</u>.
+    - Related to RL; **Estimate** the gradient by Monte Carlo method.
 
 ### Visual Question Answering: RNN with attention
 
