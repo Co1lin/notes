@@ -18,3 +18,15 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
+
+
+## Visualizing and Understanding
+
+### First Layer
+
+Find edges between different colors.
+
+### Last Layer: Dimensionality Reduction
+
+t-SNE
+

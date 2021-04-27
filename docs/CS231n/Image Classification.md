@@ -21,20 +21,6 @@ _Click on a tile to change the color scheme_:
 
 ## Some Basis of ML
 
-### Validation set
-
-The correct way to set hyperparameters is to split your training data into two: a training set and a **fake test set**, which we call **validation set**.
-
-### Cross-validation
-
-If the lack of training data is a concern
-
-![crossval](Image Classification.assets/crossval.jpg)
-
-e.g. 5 folds Cross-validation: 每次用一个作为validation set，轮换5次，取平均
-
-![cvplot](Image%20Classification.assets/cvplot.png)
-
 ## KNN
 
 k - Nearest Neighbor Classifier

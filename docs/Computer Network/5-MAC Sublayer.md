@@ -96,6 +96,10 @@ _Click on a tile to change the color scheme_:
 
 ![Screen Shot 2021-04-17 at 12.40.07 PM](5-MAC%20Sublayer.assets/Screen%20Shot%202021-04-17%20at%2012.40.07%20PM.png)
 
+**最小有效帧长度：64 Bytes。**凡是低于此值的，均视为因冲突而异常中止的帧。
+
+该值是由上述的$2 \tau$决定的：802.3规范中的10Mbps以太网，长度2500m，在$2 \tau \approx 50 \mu s$的时间内能发送500bits，加上安全余量增加至512bits = 64Bytes。
+
 缺点：电缆很长而帧的长度又很短时，冲突不仅降低了带宽，而且使得发送一个帧的时间变得动荡不定。
 
 #### 无冲突协议
