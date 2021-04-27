@@ -119,7 +119,9 @@ Common: `w = np.random.randn(n) / sqrt(n)`, where `n` is the number of its input
 
 `w = np.random.randn(n) * sqrt(2.0/n)` is the current recommendation for use in practice in the specific case of neural networks with **ReLU neurons**.
 
-#### ![Screen Shot 2021-04-27 at 10.06.42 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.06.42%20AM.png)For ReLU
+![Screen Shot 2021-04-27 at 10.06.42 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.06.42%20AM.png)
+
+#### For ReLU
 
 ![Screen Shot 2021-04-27 at 10.09.59 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.09.59%20AM.png)
 
