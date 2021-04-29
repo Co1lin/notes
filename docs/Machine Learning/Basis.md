@@ -231,11 +231,25 @@ $\alpha$ is not hard-coded! It can be learned!
 
 ![Screen Shot 2021-04-27 at 2.57.17 PM](Basis.assets/Screen%20Shot%202021-04-27%20at%202.57.17%20PM.png)
 
-Summary:
+### Batch Understanding:
+
+<u>Input data $\mathbf{x}$s are not independent! $\mathbf{x}$s in a (mini-)batch are related to each other. So we need to treat the whole (mini-)batch as a large network!</u>
+
+### Recovery
+
+Sometimes we use a linear equation to **recover**:
+
+(Initialize $\gamma$ with $\mathbf{1}$ and $\beta$ with $\mathbf0$; after training for some time, the loss function gets to some good **error surface**, then we can cancel the constraint of normalization.)
+
+![Screen Shot 2021-04-27 at 5.36.30 PM](Basis.assets/Screen%20Shot%202021-04-27%20at%205.36.30%20PM.png)
+
+### Pros and Corns:
 
 ![Screen Shot 2021-04-27 at 10.30.27 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.30.27%20AM.png)
 
-![Screen Shot 2021-04-27 at 10.31.05 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.31.05%20AM.png)
+### Test-Time
+
+![Screen Shot 2021-04-27 at 5.55.44 PM](Basis.assets/Screen%20Shot%202021-04-27%20at%205.55.44%20PM.png)
 
 ![Screen Shot 2021-04-27 at 10.31.19 AM](Basis.assets/Screen%20Shot%202021-04-27%20at%2010.31.19%20AM.png)
 
