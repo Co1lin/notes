@@ -150,6 +150,10 @@ The most popular and widely used *net* in digital designs is of type `wire`.
 
 `wire`: can only be driven in **`assign`** statements （详细见后面）
 
+```verilog
+assign output = x;
+```
+
 ### Variables
 
 A variable on the other hand is an abstraction of a data storage element and <u>can hold values</u>.
