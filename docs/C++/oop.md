@@ -1,7 +1,7 @@
 # OOP Notes for exam
 ## 基本写法
 
-### makefile
+### Makefile
 
 常规版：
 
@@ -35,21 +35,17 @@ clean:	# clean不是第一个的依赖因此不会自动运行，所以需要mak
 ####################################
 cc = g++
 FLAG = 
-CXXFLAGS = -O2 --std=c++17
+DEF =
+CXXFLAGS = -std=c++17 -O3
 prom = main
-deps = $(shell find . -maxdepth 1 -name "*.h")
-src = $(shell find . -maxdepth 1 -name "*.cpp")
+deps = $(shell find . -maxdepth 10 -name "*.h" -or -name "*.hpp")
+src = $(shell find . -maxdepth 10 -name "*.cpp")
 obj = $(src:%.cpp=%.o) 
- 
 $(prom): $(obj)
 	$(cc) -o $(prom) $(obj)
- 
-%.o: %.cpp $(deps)
-	$(cc) $(CXXFLAGS) $(FLAG) -c $< -o $@
-# $< 指代（冒号后）第一个前置条件，这里是.cpp
-# $@指代当前目标，这里就是.o
-
-.PHONY: clean # 伪目标，避免有个文件叫做clean
+%.o: %.cpp
+	$(cc) $(CXXFLAGS) $(FLAG) $(DEF) -c $< -o $@
+.PHONY: clean 
 clean:
 	rm -rf $(prom) $(obj)
 ```
@@ -2147,5 +2143,4 @@ http://tool.chinaz.com/regex/
 ```c++
 isdigit('3');	// 参数接收一个int；接收到EOF返回false可用于判断读入结束
 ```
-
 

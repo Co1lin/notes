@@ -68,7 +68,7 @@ Not scalable. Must compute Q(s,a) **for every state-action pair**. If state is e
 
 ![Screen Shot 2021-04-25 at 9.22.57 PM](Reinforcement%20Learning.assets/Screen%20Shot%202021-04-25%20at%209.22.57%20PM.png)
 
-Problem: The Q-function can be very complicated!
+ 
 
 Example: a robot grasping an object has a very high-dimensional state => hard to learn exact value of every (state, action) pair
 

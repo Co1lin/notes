@@ -73,3 +73,23 @@ https://gluebenchmark.com/
 
 When does BERT know POS tagging, syntactic parsing, semantics?
 
+## Features & Interesting things
+
+### Contextualized word embedding
+
+
+
+### Protein
+
+![Screen Shot 2021-05-11 at 9.52.06 AM](BERT.assets/Screen%20Shot%202021-05-11%20at%209.52.06%20AM.png)
+
+### Multi-lingual BERT
+
+Training a BERT model by many different languages.
+
+![Screen Shot 2021-05-11 at 9.56.58 AM](BERT.assets/Screen%20Shot%202021-05-11%20at%209.56.58%20AM.png)
+
+#### Language Information
+
+![Screen Shot 2021-05-11 at 10.08.09 AM](BERT.assets/Screen%20Shot%202021-05-11%20at%2010.08.09%20AM.png)
+

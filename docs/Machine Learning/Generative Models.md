@@ -18,8 +18,6 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
-
-
 ![Screen Shot 2021-04-25 at 3.44.33 PM](Generative%20Models.assets/Screen%20Shot%202021-04-25%20at%203.44.33%20PM.png)
 
 Formulate as **density estimation** problems**:**
