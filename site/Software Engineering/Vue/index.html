@@ -8,8 +8,9 @@
       
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -17,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -28,9 +29,9 @@
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -44,14 +45,18 @@
   
     
     
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
       
-        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
-      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -67,49 +72,73 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-header__button md-logo" aria-label="Colin's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Colin's Notebook
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Vue
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -126,6 +155,19 @@
 </div>
     
     
+      <div class="md-header__source">
+        
+<a href="https://github.com/Co1lin/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -138,21 +180,36 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+    <a href="../.." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     Colin's Notebook
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Co1lin/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -160,258 +217,345 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
-      Welcome to Colin's Notebook
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../DSA_Review/" class="md-nav__link">
-      DSA
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to Colin's Notebook
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../LaTex/" class="md-nav__link">
-      LaTeX
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../Linux/" class="md-nav__link">
-      Linux
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DSA_Review/" class="md-nav__link">
+        DSA
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../Python/" class="md-nav__link">
-      Python
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../Quantitive%20Investment/" class="md-nav__link">
-      Quantitive Investment & Financial Optimization
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTex/" class="md-nav__link">
+        LaTeX
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../SystemVerilog/" class="md-nav__link">
-      SystemVerilog
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantitive%20Investment/" class="md-nav__link">
+        Quantitive Investment & Financial Optimization
+      </a>
+    </li>
+  
+
     
-    <label class="md-nav__link" for="nav-8">
-      C++
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="C++" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon"></span>
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SystemVerilog/" class="md-nav__link">
+        SystemVerilog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
         C++
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../C%2B%2B/DSA01/" class="md-nav__link">
-      DSA01
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../C%2B%2B/oop/" class="md-nav__link">
-      OOP Notes for exam
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Computer Network
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/DSA01/" class="md-nav__link">
+        DSA01
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/oop/" class="md-nav__link">
+        OOP Notes for exam
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
         Computer Network
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Computer%20Network/1-introduction/" class="md-nav__link">
-      1 Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Computer%20Network/2-application%20layer/" class="md-nav__link">
-      2 Application Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Computer%20Network/3-transport%20layer/" class="md-nav__link">
-      3 Transport Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Computer%20Network/4-network%20layer/" class="md-nav__link">
-      4 Network Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
-      5 MAC Sublayer
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      Jupyter
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/1-introduction/" class="md-nav__link">
+        1 Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/2-application%20layer/" class="md-nav__link">
+        2 Application Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/3-transport%20layer/" class="md-nav__link">
+        3 Transport Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/4-network%20layer/" class="md-nav__link">
+        4 Network Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
+        5 MAC Sublayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Network/6-Data%20Link%20Layer/" class="md-nav__link">
+        6 Data Link Layer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Deep RL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Deep RL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Deep RL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20RL/Policy%20Gradient/" class="md-nav__link">
+        Policy Gradient
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
         Jupyter
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Jupyter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Jupyter/jupyter/" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Jupyter/jupyter/" class="md-nav__link">
-      Jupyter
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -419,49 +563,239 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
-    
-    <label class="md-nav__link" for="nav-11">
-      Software Engineering
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Machine Learning
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Machine Learning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Attention/" class="md-nav__link">
+        Self-Attention
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Auto-encoder/" class="md-nav__link">
+        Auto-encoder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/BERT/" class="md-nav__link">
+        BERT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Basis/" class="md-nav__link">
+        Basis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/CNN/" class="md-nav__link">
+        CNN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Detection%20%26%20Segmentation/" class="md-nav__link">
+        Detection & Segmentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/GPT/" class="md-nav__link">
+        GPT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Generative%20Models/" class="md-nav__link">
+        Generative Models
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Image%20Classification/" class="md-nav__link">
+        Image Classification
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/LLL/" class="md-nav__link">
+        Life Long Learning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/RNN/" class="md-nav__link">
+        RNN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Reinforcement%20Learning/" class="md-nav__link">
+        Reinforcement Learning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Transformer/" class="md-nav__link">
+        Transformer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
         Software Engineering
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Vue
         <span class="md-nav__icon md-icon"></span>
       </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
     
-    <a href="./" class="md-nav__link md-nav__link--active">
-      Vue
-    </a>
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Vue
+      </a>
+      
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -471,7 +805,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-basis" class="md-nav__link">
@@ -789,25 +1123,27 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../git/" class="md-nav__link">
-      Git
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -817,11 +1153,13 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -831,7 +1169,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-basis" class="md-nav__link">
@@ -1154,9 +1492,14 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+  
+                
+                  <a href="https://github.com/Co1lin/notes/edit/master/docs/Software Engineering/Vue.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
                 <h1 id="vue">Vue</h1>
@@ -1166,569 +1509,327 @@
 <p>Import Vue.js in head tag via a CDN link to use Vue.</p>
 <p>Import <code>main.js</code> in body tag to import Vue app.</p>
 <p>Mount the app into DOM by a method <code>mount</code> that requires a DOM selector as an argument: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="kr">const</span> <span class="nx">mountedApp</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="kr">const</span> <span class="nx">mountedApp</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>Display the data by use div with specific id:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ product }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ product }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="12-mainjs">1.2 <code>main.js</code></h3>
 <p>Create a Vue app:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">product</span><span class="o">:</span> <span class="s1">&#39;Socks&#39;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">cartList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>            <span class="nx">product</span><span class="o">:</span> <span class="s1">&#39;Socks&#39;</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">},</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>            <span class="k">this</span><span class="p">.</span><span class="nx">cartList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">})</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="13-computed-properties">1.3 Computed Properties</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">image</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">variants</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedVariant</span><span class="p">].</span><span class="nx">image</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nx">image</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">variants</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedVariant</span><span class="p">].</span><span class="nx">image</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-bind:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-bind:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="14-components">1.4 Components</h3>
 <h4 id="141-define">1.4.1 Define</h4>
 <p><code>components/ProductDisplay.js</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;product-display&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">premium</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-    <span class="p">},</span>
-
-    <span class="nx">template</span><span class="o">:</span>
-    <span class="cm">/*html*/</span>
-    <span class="sb">`</span>
-<span class="sb">    &lt;!-- ... --&gt;</span>
-<span class="sb">    `</span><span class="p">,</span>
-
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-
-        <span class="p">}</span>
-    <span class="p">},</span>
-
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-
-    <span class="p">},</span>
-
-    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-
-    <span class="p">}</span>
-
-<span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;product-display&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="nx">premium</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">},</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nx">template</span><span class="o">:</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="cm">/*html*/</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="sb">`</span>
+<span class="linenos" data-linenos="12 "></span><span class="sb">    &lt;!-- ... --&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="sb">    `</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">},</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>    <span class="p">},</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span>
+<span class="linenos" data-linenos="27 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="p">})</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="142-import">1.4.2 Import</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">&lt;!-- Import Components --&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./components/ProductDisplay.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c">&lt;!-- Import Components --&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./components/ProductDisplay.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="143-use">1.4.3 Use</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cart&quot;</span><span class="p">&gt;</span>Cart({{ cart }})<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">product-display</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>   <span class="c">&lt;!-- Use the component! --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">product-display</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>   <span class="c">&lt;!-- Use again! --&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cart&quot;</span><span class="p">&gt;</span>Cart({{ cart }})<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>  <span class="p">&lt;</span><span class="nt">product-display</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>   <span class="c">&lt;!-- Use the component! --&gt;</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="p">&lt;</span><span class="nt">product-display</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>   <span class="c">&lt;!-- Use again! --&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="144-props">1.4.4 Props</h4>
 <p><code>product-display</code> component needs access to data <code>premium</code> in <code>main.js</code> in order to render contents corresponding with variables in <code>main.js</code>.</p>
 <p>In other words, it needs a custom attribute (a funnel) that we can feed this data into.</p>
 <p>So, we add custom attribute onto the <code>product-display</code> component where we’re using it.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">product-display</span> <span class="na">:premium</span><span class="o">=</span><span class="s">&quot;premium&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">product-display</span> <span class="na">:premium</span><span class="o">=</span><span class="s">&quot;premium&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p><strong>Notice</strong> how we’re using the shorthand for <code>v-bind</code> so we can reactively receive the new value of <code>premium</code> if it updates (from <code>true</code> to <code>false</code>).</p>
 <p><img alt="7.opt" src="../Vue.assets/7.opt.jpg" /></p>
 <p>In <code>ProductDisplay.js</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;product-display&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">premium</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="c1">// ...</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;product-display&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nx">premium</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>      <span class="nx">type</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span>      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span>  <span class="p">},</span>
+<span class="linenos" data-linenos="8 "></span>  <span class="c1">// ...</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="145-emitting-and-listening">1.4.5 Emitting and Listening</h4>
 <p>Something happened in one component, and we need to inform other components by emitting an event.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-  <span class="nx">addToCart</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;add-to-cart&#39;</span><span class="p">)</span>
-  <span class="p">},</span>
-  <span class="c1">// ...</span>
- <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="nx">addToCart</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;add-to-cart&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="p">},</span>
+<span class="linenos" data-linenos="5 "></span>  <span class="c1">// ...</span>
+<span class="linenos" data-linenos="6 "></span> <span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">product-display</span> <span class="na">:premium</span><span class="o">=</span><span class="s">&quot;premium&quot;</span> <span class="err">@</span><span class="na">add-to-cart</span><span class="o">=</span><span class="s">&quot;updateCart&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">product-display</span> <span class="na">:premium</span><span class="o">=</span><span class="s">&quot;premium&quot;</span> <span class="err">@</span><span class="na">add-to-cart</span><span class="o">=</span><span class="s">&quot;updateCart&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">product-display</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="15-v-bind">1.5 v-bind</h3>
 <p>Dynamically bind an attribute to an expression.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-bind:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span> <span class="cp">&lt;! -- src attribute bound to the image data --&gt;</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="na">:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span> <span class="cp">&lt;! abbr./shorthand --&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-bind:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span> <span class="cp">&lt;! -- src attribute bound to the image data --&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">:src</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span> <span class="cp">&lt;! abbr./shorthand --&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="16-v-if-v-show">1.6 v-if / v-show</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;inStock&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span><span class="p">&gt;</span>Out of Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;inStock&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;inventory &gt; 10&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;inventory &lt;= 10 &amp;&amp; inventory &gt; 0&quot;</span><span class="p">&gt;</span>Almost sold out!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span><span class="p">&gt;</span>Out of Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;inStock&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span><span class="p">&gt;</span>Out of Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;inStock&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;inventory &gt; 10&quot;</span><span class="p">&gt;</span>In Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;inventory &lt;= 10 &amp;&amp; inventory &gt; 0&quot;</span><span class="p">&gt;</span>Almost sold out!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span><span class="p">&gt;</span>Out of Stock<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="17-v-for">1.7 v-for</h3>
 <p>In <code>main.js</code> we have:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="p">...</span>
-            <span class="nx">details</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;50% cotton&#39;</span><span class="p">,</span> <span class="s1">&#39;30% wool&#39;</span><span class="p">,</span> <span class="s1">&#39;20% polyester&#39;</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>            <span class="p">...</span>
+<span class="linenos" data-linenos="5 "></span>            <span class="nx">details</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;50% cotton&#39;</span><span class="p">,</span> <span class="s1">&#39;30% wool&#39;</span><span class="p">,</span> <span class="s1">&#39;20% polyester&#39;</span><span class="p">]</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">})</span>
 </code></pre></div>
-</td></tr></table>
 <p>Then,</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;detail in details&quot;</span><span class="p">&gt;</span>{{ detail }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;detail in details&quot;</span><span class="p">&gt;</span>{{ detail }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="171-key-attribute">1.7.1 key attribute</h4>
 <p>Bind each DOM element to corresponding list item.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="p">...</span>
-    <span class="nx">variants</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mf">2234</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mf">2235</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span> <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">...</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nx">variants</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="5 "></span>      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mf">2234</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span> <span class="p">},</span>
+<span class="linenos" data-linenos="6 "></span>      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mf">2235</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span> <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">]</span>
+<span class="linenos" data-linenos="8 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span><span class="p">&gt;</span>{{ variant.color }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span><span class="p">&gt;</span>{{ variant.color }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>By saying <code>:key="variant.id"</code>, we’re using the shorthand for <code>v-bind</code> to bind the variant’s <code>id</code> to the <code>key</code> attribute.</p>
 <h3 id="18-event">1.8 Event</h3>
 <h4 id="181-click">1.8.1 Click</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;logic to run&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;cart += 1&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;addToCart&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;logic to run&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;cart += 1&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;addToCart&quot;</span><span class="p">&gt;</span>Add to Cart<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
-  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">cart</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-      <span class="p">...</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">addToCart</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">cart</span> <span class="o">+=</span> <span class="mf">1</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="nx">cart</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>      <span class="p">...</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">},</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nx">addToCart</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">cart</span> <span class="o">+=</span> <span class="mf">1</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">})</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="182-mouseover">1.8.2 Mouseover</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span> <span class="err">@</span><span class="na">mouseover</span><span class="o">=</span><span class="s">&quot;updateImage(variant.image)&quot;</span><span class="p">&gt;</span>{{ variant.color }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span> <span class="err">@</span><span class="na">mouseover</span><span class="o">=</span><span class="s">&quot;updateImage(variant.image)&quot;</span><span class="p">&gt;</span>{{ variant.color }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="19-style">1.9 Style</h3>
 <p>Use <code>v-bind</code> to bind parameters of styles to variables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> 
-  <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> 
-  <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span> 
-  <span class="err">@</span><span class="na">mouseover</span><span class="o">=</span><span class="s">&quot;updateImage(variant.image)&quot;</span> 
-  <span class="na">class</span><span class="o">=</span><span class="s">&quot;color-circle&quot;</span> 
-  <span class="na">:style</span><span class="o">=</span><span class="s">&quot;{ backgroundColor: variant.color }&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> 
+<span class="linenos" data-linenos="2 "></span>  <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;variant in variants&quot;</span> 
+<span class="linenos" data-linenos="3 "></span>  <span class="na">:key</span><span class="o">=</span><span class="s">&quot;variant.id&quot;</span> 
+<span class="linenos" data-linenos="4 "></span>  <span class="err">@</span><span class="na">mouseover</span><span class="o">=</span><span class="s">&quot;updateImage(variant.image)&quot;</span> 
+<span class="linenos" data-linenos="5 "></span>  <span class="na">class</span><span class="o">=</span><span class="s">&quot;color-circle&quot;</span> 
+<span class="linenos" data-linenos="6 "></span>  <span class="na">:style</span><span class="o">=</span><span class="s">&quot;{ backgroundColor: variant.color }&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p><strong>Camel vs Kebab</strong></p>
 <p>In JavaScript, <code>-</code> would have been interpreted by as a minus sign, so we can't use it as a variable's name.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">:style</span><span class="o">=</span><span class="s">&quot;{ backgroundColor: variant.color }&gt;&lt;/div&gt;</span>
-<span class="s">&lt;div :style=&quot;</span><span class="err">{</span> <span class="err">&#39;</span><span class="na">background-color</span><span class="err">&#39;</span><span class="na">:</span> <span class="na">variant</span><span class="err">.</span><span class="na">color</span> <span class="err">}</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">:style</span><span class="o">=</span><span class="s">&quot;{ backgroundColor: variant.color }&gt;&lt;/div&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="s">&lt;div :style=&quot;</span><span class="err">{</span> <span class="err">&#39;</span><span class="na">background-color</span><span class="err">&#39;</span><span class="na">:</span> <span class="na">variant</span><span class="err">.</span><span class="na">color</span> <span class="err">}</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>Bind a style to an entire style object.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> :style=&quot;styles&quot;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> :style=&quot;styles&quot;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">styles</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="nx">styles</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>            <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="110-class">1.10 Class</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> 
-  <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> 
-  <span class="na">:class</span><span class="o">=</span><span class="s">&quot;{ disabledButton: !inStock }&quot;</span> 
-  <span class="na">:disabled</span><span class="o">=</span><span class="s">&quot;!inStock&quot;</span> 
-  <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;addToCart&quot;</span><span class="p">&gt;</span>
-  Add to Cart
-<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">button</span> 
+<span class="linenos" data-linenos="2 "></span>  <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span> 
+<span class="linenos" data-linenos="3 "></span>  <span class="na">:class</span><span class="o">=</span><span class="s">&quot;{ disabledButton: !inStock }&quot;</span> 
+<span class="linenos" data-linenos="4 "></span>  <span class="na">:disabled</span><span class="o">=</span><span class="s">&quot;!inStock&quot;</span> 
+<span class="linenos" data-linenos="5 "></span>  <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;addToCart&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>  Add to Cart
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>If <code>inStock == false</code>, then this element will have double classes, "button" and "disabledButton".</p>
 <p><strong>Note</strong>: The class that is defined later in CSS file can <strong>override</strong> the class that is defined before it when both of them are the classes of a single element.</p>
 <p>Ref: https://www.zhihu.com/question/28976590</p>
 <h4 id="1101-ternary-operators-inline">1.10.1 Ternary Operators (inline)</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> :class=&quot;[isActive ? activeClass : &#39;&#39;]&quot;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> :class=&quot;[isActive ? activeClass : &#39;&#39;]&quot;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>(The second class is empty, no class.)</p>
 <h3 id="111-v-model">1.11 v-model</h3>
 <p>When using a form, we need to bind from the template to the data. It is the reverse of <code>v-bind</code>.</p>
 <p>We want to bind these input fields to their respective data properties so that when the user fills out the form, we store their data locally.</p>
 <p>In <code>ReviewForm.js</code>, add the <code>v-model</code> directive:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;review-form&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">template</span><span class="o">:</span>
-  <span class="cm">/*html*/</span>
-  <span class="sb">`&lt;form class=&quot;review-form&quot; @submit.prevent=&quot;onSubmit&quot;&gt;</span>
-<span class="sb">    &lt;h3&gt;Leave a review&lt;/h3&gt;</span>
-<span class="sb">    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;</span>
-<span class="sb">    &lt;input id=&quot;name&quot; v-model=&quot;name&quot;&gt;</span>
-
-<span class="sb">    &lt;label for=&quot;review&quot;&gt;Review:&lt;/label&gt;      </span>
-<span class="sb">    &lt;textarea id=&quot;review&quot; v-model=&quot;review&quot;&gt;&lt;/textarea&gt;</span>
-
-<span class="sb">    &lt;label for=&quot;rating&quot;&gt;Rating:&lt;/label&gt;</span>
-<span class="sb">    &lt;select id=&quot;rating&quot; v-model.number=&quot;rating&quot;&gt;</span>
-<span class="sb">      &lt;option&gt;5&lt;/option&gt;</span>
-<span class="sb">      &lt;option&gt;4&lt;/option&gt;</span>
-<span class="sb">      &lt;option&gt;3&lt;/option&gt;</span>
-<span class="sb">      &lt;option&gt;2&lt;/option&gt;</span>
-<span class="sb">      &lt;option&gt;1&lt;/option&gt;</span>
-<span class="sb">    &lt;/select&gt;</span>
-
-<span class="sb">    &lt;input class=&quot;button&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  </span>
-<span class="sb">  &lt;/form&gt;`</span><span class="p">,</span>
-  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-      <span class="nx">review</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-      <span class="nx">rating</span><span class="o">:</span> <span class="kc">null</span>
-  <span class="p">},</span>
-  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-   <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
-     <span class="kd">let</span> <span class="nx">productReview</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-       <span class="nx">review</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span><span class="p">,</span>
-       <span class="nx">rating</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span><span class="p">,</span>
-     <span class="p">}</span>
-     <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;review-submitted&#39;</span><span class="p">,</span> <span class="nx">productReview</span><span class="p">)</span>
-
-     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-     <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-     <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">=</span> <span class="kc">null</span>
-   <span class="p">}</span>
- <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;review-form&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">template</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="cm">/*html*/</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="sb">`&lt;form class=&quot;review-form&quot; @submit.prevent=&quot;onSubmit&quot;&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="sb">    &lt;h3&gt;Leave a review&lt;/h3&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="sb">    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="sb">    &lt;input id=&quot;name&quot; v-model=&quot;name&quot;&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="sb">    &lt;label for=&quot;review&quot;&gt;Review:&lt;/label&gt;      </span>
+<span class="linenos" data-linenos="10 "></span><span class="sb">    &lt;textarea id=&quot;review&quot; v-model=&quot;review&quot;&gt;&lt;/textarea&gt;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="sb">    &lt;label for=&quot;rating&quot;&gt;Rating:&lt;/label&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="sb">    &lt;select id=&quot;rating&quot; v-model.number=&quot;rating&quot;&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="sb">      &lt;option&gt;5&lt;/option&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="sb">      &lt;option&gt;4&lt;/option&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="sb">      &lt;option&gt;3&lt;/option&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="sb">      &lt;option&gt;2&lt;/option&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="sb">      &lt;option&gt;1&lt;/option&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="sb">    &lt;/select&gt;</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="sb">    &lt;input class=&quot;button&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  </span>
+<span class="linenos" data-linenos="22 "></span><span class="sb">  &lt;/form&gt;`</span><span class="p">,</span>
+<span class="linenos" data-linenos="23 "></span>  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span>      <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="26 "></span>      <span class="nx">review</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="27 "></span>      <span class="nx">rating</span><span class="o">:</span> <span class="kc">null</span>
+<span class="linenos" data-linenos="28 "></span>  <span class="p">},</span>
+<span class="linenos" data-linenos="29 "></span>  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="30 "></span>   <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span>     <span class="kd">let</span> <span class="nx">productReview</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span>       <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="linenos" data-linenos="33 "></span>       <span class="nx">review</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span><span class="p">,</span>
+<span class="linenos" data-linenos="34 "></span>       <span class="nx">rating</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span><span class="p">,</span>
+<span class="linenos" data-linenos="35 "></span>     <span class="p">}</span>
+<span class="linenos" data-linenos="36 "></span>     <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;review-submitted&#39;</span><span class="p">,</span> <span class="nx">productReview</span><span class="p">)</span>
+<span class="linenos" data-linenos="37 "></span>
+<span class="linenos" data-linenos="38 "></span>     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="linenos" data-linenos="39 "></span>     <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="linenos" data-linenos="40 "></span>     <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="linenos" data-linenos="41 "></span>   <span class="p">}</span>
+<span class="linenos" data-linenos="42 "></span> <span class="p">}</span>
+<span class="linenos" data-linenos="43 "></span><span class="p">})</span>
 </code></pre></div>
-</td></tr></table>
 <p>(Remember to import it.)</p>
 <p><code>ProductDisplay.js</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">template</span><span class="o">:</span> 
-  <span class="cm">/*html*/</span>
-  <span class="sb">`&lt;div class=&quot;product-display&quot;&gt;</span>
-<span class="sb">    &lt;div class=&quot;product-container&quot;&gt;</span>
-<span class="sb">     ...</span>
-<span class="sb">    &lt;/div&gt;</span>
-<span class="sb">    &lt;review-form @review-submitted=&quot;addReview&quot;&gt;&lt;/review-form&gt;</span>
-<span class="sb">  &lt;/div&gt;`</span>
-<span class="p">}),</span>
-<span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="p">...</span>
-    <span class="nx">reviews</span><span class="o">:</span> <span class="p">[]</span>
-   <span class="p">}</span>
- <span class="p">},</span>
-<span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">addReview</span><span class="p">(</span><span class="nx">review</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">reviews</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">review</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">},</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">template</span><span class="o">:</span> 
+<span class="linenos" data-linenos=" 2 "></span>  <span class="cm">/*html*/</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="sb">`&lt;div class=&quot;product-display&quot;&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="sb">    &lt;div class=&quot;product-container&quot;&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="sb">     ...</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="sb">    &lt;/div&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="sb">    &lt;review-form @review-submitted=&quot;addReview&quot;&gt;&lt;/review-form&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="sb">  &lt;/div&gt;`</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">}),</span>
+<span class="linenos" data-linenos="10 "></span><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="k">return</span> <span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">...</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nx">reviews</span><span class="o">:</span> <span class="p">[]</span>
+<span class="linenos" data-linenos="14 "></span>   <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span> <span class="p">},</span>
+<span class="linenos" data-linenos="16 "></span><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="p">...</span>
+<span class="linenos" data-linenos="18 "></span>  <span class="nx">addReview</span><span class="p">(</span><span class="nx">review</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="k">this</span><span class="p">.</span><span class="nx">reviews</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">review</span><span class="p">)</span>
+<span class="linenos" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">},</span>
 </code></pre></div>
-</td></tr></table>
 <p><strong>Validation</strong>:</p>
 <p><code>ReviewForm.js</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Review is incomplete. Please fill out every field.&#39;</span><span class="p">)</span>
-        <span class="k">return</span>
-      <span class="p">}</span>
-
-      <span class="kd">let</span> <span class="nx">productReview</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-        <span class="nx">review</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span><span class="p">,</span>
-        <span class="nx">rating</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span><span class="p">,</span>
-        <span class="nx">recommend</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="c1">// solution</span>
-
-      <span class="p">}</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;review-submitted&#39;</span><span class="p">,</span> <span class="nx">productReview</span><span class="p">)</span>
-
-      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">=</span> <span class="kc">null</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="o">=</span> <span class="kc">null</span> <span class="c1">// solution</span>
-
-    <span class="p">}</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nx">onSubmit</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Review is incomplete. Please fill out every field.&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="k">return</span>
+<span class="linenos" data-linenos=" 6 "></span>      <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>      <span class="kd">let</span> <span class="nx">productReview</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="nx">review</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">review</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="nx">rating</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">rating</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="nx">recommend</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="c1">// solution</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>      <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;review-submitted&#39;</span><span class="p">,</span> <span class="nx">productReview</span><span class="p">)</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="linenos" data-linenos="18 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">review</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="linenos" data-linenos="19 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">rating</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="linenos" data-linenos="20 "></span>      <span class="k">this</span><span class="p">.</span><span class="nx">recommend</span> <span class="o">=</span> <span class="kc">null</span> <span class="c1">// solution</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span>  <span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <h2 id="2-vue-router">2. Vue Router</h2>
 <p>Ref: <a href="https://vueschool.io/courses/vue-router-for-everyone">Vue Router for Everyone</a></p>
 <h3 id="21-create-a-project-with-vue-router-using-vue-cli">2.1 Create a project with Vue Router using Vue CLI</h3>
@@ -1737,608 +1838,351 @@
 <p>Use <code>vue ui</code> to create a new project with GUI.</p>
 <p><img alt="Screen Shot 2021-02-24 at 3.02.27 PM" src="../Vue.assets/Screen%20Shot%202021-02-24%20at%203.02.27%20PM.png" /></p>
 <h3 id="22-visual-structure">2.2 Visual Structure</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">App.vue # Single page application</span>
-<span class="err">-- router-link</span>
-<span class="err">-- router-view</span>
-<span class="err">---- components</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>App.vue # Single page application
+<span class="linenos" data-linenos="2 "></span>-- router-link
+<span class="linenos" data-linenos="3 "></span>-- router-view
+<span class="linenos" data-linenos="4 "></span>---- components
 </code></pre></div>
-</td></tr></table>
 <h3 id="23-single-file-components">2.3 Single File Components</h3>
 <h4 id="231-basic-structure-of-a-vue-file">2.3.1 Basic Structure of a <code>.vue</code> file</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="err">/template&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-
-<span class="c">&lt;!--</span> <span class="nx">Add</span> <span class="s2">&quot;scoped&quot;</span> <span class="nx">attribute</span> <span class="nx">to</span> <span class="nx">limit</span> <span class="nx">CSS</span> <span class="nx">to</span> <span class="k">this</span> <span class="nx">component</span> <span class="nx">only</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">style</span> <span class="nx">scoped</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="err">/style&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="o">&lt;</span><span class="err">/template&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c">&lt;!--</span> <span class="nx">Add</span> <span class="s2">&quot;scoped&quot;</span> <span class="nx">attribute</span> <span class="nx">to</span> <span class="nx">limit</span> <span class="nx">CSS</span> <span class="nx">to</span> <span class="k">this</span> <span class="nx">component</span> <span class="nx">only</span> <span class="o">--&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="o">&lt;</span><span class="nx">style</span> <span class="nx">scoped</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="o">&lt;</span><span class="err">/style&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="24-create-routes">2.4 Create routes</h3>
 <p>Add nav-bar in main page:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue/dist/vue.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello App!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="c">&lt;!-- use router-link component(already provided) for navigation. --&gt;</span>
-    <span class="c">&lt;!-- specify the link by passing the `to` prop. --&gt;</span>
-    <span class="c">&lt;!-- `&lt;router-link&gt;` will be rendered as an `&lt;a&gt;` tag by default --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">to</span><span class="o">=</span><span class="s">&quot;/foo&quot;</span><span class="p">&gt;</span>Go to Foo<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">to</span><span class="o">=</span><span class="s">&quot;/bar&quot;</span><span class="p">&gt;</span>Go to Bar<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-  <span class="c">&lt;!-- route outlet --&gt;</span>
-  <span class="c">&lt;!-- component matched by the route will render here --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">router-view</span><span class="p">&gt;&lt;/</span><span class="nt">router-view</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue/dist/vue.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello App!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="c">&lt;!-- use router-link component(already provided) for navigation. --&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c">&lt;!-- specify the link by passing the `to` prop. --&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="c">&lt;!-- `&lt;router-link&gt;` will be rendered as an `&lt;a&gt;` tag by default --&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">to</span><span class="o">=</span><span class="s">&quot;/foo&quot;</span><span class="p">&gt;</span>Go to Foo<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">to</span><span class="o">=</span><span class="s">&quot;/bar&quot;</span><span class="p">&gt;</span>Go to Bar<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="c">&lt;!-- route outlet --&gt;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="c">&lt;!-- component matched by the route will render here --&gt;</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="p">&lt;</span><span class="nt">router-view</span><span class="p">&gt;&lt;/</span><span class="nt">router-view</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>Write routes in js:</p>
 <p>First, we have components.</p>
 <p>Second, we have a routes list, and third, we use it to make a router instance.</p>
 <p>Fourth, let app use the router and mount it.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter</span>
-<span class="c1">// and then call `Vue.use(VueRouter)`.</span>
-
-<span class="c1">// 1. Define route components.</span>
-<span class="c1">// These can be imported from other files</span>
-<span class="kr">const</span> <span class="nx">Foo</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div&gt;foo&lt;/div&gt;&#39;</span> <span class="p">}</span>
-<span class="kr">const</span> <span class="nx">Bar</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div&gt;bar&lt;/div&gt;&#39;</span> <span class="p">}</span>
-
-<span class="c1">// 2. Define some routes</span>
-<span class="c1">// Each route should map to a component. The &quot;component&quot; can</span>
-<span class="c1">// either be an actual component constructor created via</span>
-<span class="c1">// `Vue.extend()`, or just a component options object.</span>
-<span class="c1">// We&#39;ll talk about nested routes later.</span>
-<span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/foo&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">Foo</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/bar&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">Bar</span> <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="c1">// 3. Create the router instance and pass the `routes` option</span>
-<span class="c1">// You can pass in additional options here, but let&#39;s</span>
-<span class="c1">// keep it simple for now.</span>
-<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
-  <span class="nx">routes</span> <span class="c1">// short for `routes: routes`</span>
-<span class="p">})</span>
-
-<span class="c1">// 4. Create and mount the root instance.</span>
-<span class="c1">// Make sure to inject the router with the router option to make the</span>
-<span class="c1">// whole app router-aware.</span>
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="nx">router</span>
-<span class="p">}).</span><span class="nx">$mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
-
-<span class="c1">// Now the app has started!</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// and then call `Vue.use(VueRouter)`.</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1">// 1. Define route components.</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// These can be imported from other files</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kr">const</span> <span class="nx">Foo</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div&gt;foo&lt;/div&gt;&#39;</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kr">const</span> <span class="nx">Bar</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div&gt;bar&lt;/div&gt;&#39;</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// 2. Define some routes</span>
+<span class="linenos" data-linenos="10 "></span><span class="c1">// Each route should map to a component. The &quot;component&quot; can</span>
+<span class="linenos" data-linenos="11 "></span><span class="c1">// either be an actual component constructor created via</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">// `Vue.extend()`, or just a component options object.</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">// We&#39;ll talk about nested routes later.</span>
+<span class="linenos" data-linenos="14 "></span><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/foo&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">Foo</span> <span class="p">},</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/bar&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">Bar</span> <span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">]</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="c1">// 3. Create the router instance and pass the `routes` option</span>
+<span class="linenos" data-linenos="20 "></span><span class="c1">// You can pass in additional options here, but let&#39;s</span>
+<span class="linenos" data-linenos="21 "></span><span class="c1">// keep it simple for now.</span>
+<span class="linenos" data-linenos="22 "></span><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+<span class="linenos" data-linenos="23 "></span>  <span class="nx">routes</span> <span class="c1">// short for `routes: routes`</span>
+<span class="linenos" data-linenos="24 "></span><span class="p">})</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="c1">// 4. Create and mount the root instance.</span>
+<span class="linenos" data-linenos="27 "></span><span class="c1">// Make sure to inject the router with the router option to make the</span>
+<span class="linenos" data-linenos="28 "></span><span class="c1">// whole app router-aware.</span>
+<span class="linenos" data-linenos="29 "></span><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<span class="linenos" data-linenos="30 "></span>  <span class="nx">router</span>
+<span class="linenos" data-linenos="31 "></span><span class="p">}).</span><span class="nx">$mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos="32 "></span>
+<span class="linenos" data-linenos="33 "></span><span class="c1">// Now the app has started!</span>
 </code></pre></div>
-</td></tr></table>
 <p>There are two ways to define routes of outsider components (like Single File Components, which can be identified by <code>.vue</code>):</p>
 <p>In <code>@/router/index.js</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="nx">Home</span> <span class="nx">from</span> <span class="s2">&quot;../views/Home.vue&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Home&quot;</span><span class="p">,</span>
-    <span class="nx">component</span><span class="o">:</span> <span class="nx">Home</span>
-  <span class="p">}</span>
-<span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kr">import</span> <span class="nx">Home</span> <span class="nx">from</span> <span class="s2">&quot;../views/Home.vue&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Home&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="nx">component</span><span class="o">:</span> <span class="nx">Home</span>
+<span class="linenos" data-linenos="7 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">];</span>
 </code></pre></div>
-</td></tr></table>
 <p>Recommended way (It is called lazy loading, which means the components will be loaded only when the user go to the link):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/about&quot;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;About&quot;</span><span class="p">,</span>
-    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
-      <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;about&quot; */</span> <span class="s2">&quot;../views/About.vue&quot;</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/about&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;About&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="linenos" data-linenos="6 "></span>      <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;about&quot; */</span> <span class="s2">&quot;../views/About.vue&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">];</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="25-named-routes">2.5 Named routes</h3>
 <p>If we define <code>name</code> prop., we can link routes derectly into HTML without specifying paths:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- can be changed to --&gt;</span>
-<span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{name: &#39;About&#39;}&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c">&lt;!-- can be changed to --&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{name: &#39;About&#39;}&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>So we can change paths later without refactoring HTML code.</p>
 <h3 id="26-operate-thisrouter">2.6 Operate <code>this.$router</code></h3>
 <p>Create a GoBack component:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">&lt;template&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;go-back&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">&quot;goBack&quot;</span><span class="nt">&gt;</span>go back<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/template&gt;</span>
-
-<span class="nt">&lt;script&gt;</span>
-export default {
-  methods: {
-    goBack() {
-      return this.$router.go(-1);   // there are many methods provided by `this.$router`
-    }
-  }
-};
-<span class="nt">&lt;/script&gt;</span>
-
-<span class="nt">&lt;style</span> <span class="err">scoped</span><span class="nt">&gt;</span>
-.go-back {
-  display: flex;
-  cursor: pointer;
-}
-button {
-  border: 0;
-}
-<span class="nt">&lt;/style&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;template&gt;
+<span class="linenos" data-linenos=" 2 "></span>  &lt;span class=&quot;go-back&quot;&gt;
+<span class="linenos" data-linenos=" 3 "></span>    &lt;button @click=&quot;goBack&quot;&gt;go back&lt;/button&gt;
+<span class="linenos" data-linenos=" 4 "></span>  &lt;/span&gt;
+<span class="linenos" data-linenos=" 5 "></span>&lt;/template&gt;
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>&lt;script&gt;
+<span class="linenos" data-linenos=" 8 "></span>export default {
+<span class="linenos" data-linenos=" 9 "></span>  methods: {
+<span class="linenos" data-linenos="10 "></span>    goBack() {
+<span class="linenos" data-linenos="11 "></span>      return this.$router.go(-1);   // there are many methods provided by `this.$router`
+<span class="linenos" data-linenos="12 "></span>    }
+<span class="linenos" data-linenos="13 "></span>  }
+<span class="linenos" data-linenos="14 "></span>};
+<span class="linenos" data-linenos="15 "></span>&lt;/script&gt;
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>&lt;style scoped&gt;
+<span class="linenos" data-linenos="18 "></span>.go-back {
+<span class="linenos" data-linenos="19 "></span>  display: flex;
+<span class="linenos" data-linenos="20 "></span>  cursor: pointer;
+<span class="linenos" data-linenos="21 "></span>}
+<span class="linenos" data-linenos="22 "></span>button {
+<span class="linenos" data-linenos="23 "></span>  border: 0;
+<span class="linenos" data-linenos="24 "></span>}
+<span class="linenos" data-linenos="25 "></span>&lt;/style&gt;
 </code></pre></div>
-</td></tr></table>
 <h3 id="27-pass-params-into-routed-page">2.7 Pass Params into routed page</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{ name: &#39;About&#39;, params: {id: data_list.id} }&quot;</span> <span class="p">&gt;</span>
-About Page
-<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{ name: &#39;About&#39;, params: {id: data_list.id} }&quot;</span> <span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>About Page
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>In <code>About.vue</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The id is: {{ this.$route.params.id }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The id is: {{ this.$route.params.id }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>Before and after the snippet above, we complete the <code>index.js</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;vue-router&quot;</span><span class="p">;</span>
-
-<span class="c1">// snippet above</span>
-
-<span class="c1">// History???</span>
-<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createRouter</span><span class="p">({</span>
-  <span class="nx">history</span><span class="o">:</span> <span class="nx">createWebHistory</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">BASE_URL</span><span class="p">),</span>
-  <span class="nx">routes</span>
-<span class="p">});</span>
-
-<span class="c1">// export echoes with import:</span>
-<span class="c1">// in main.js, we have `import router from &quot;./router&quot;;`</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
-<span class="c1">// `export default {};` can be regarded as providing some interfaces in some js to other js programs</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;vue-router&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// snippet above</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// History???</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createRouter</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">history</span><span class="o">:</span> <span class="nx">createWebHistory</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">BASE_URL</span><span class="p">),</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">routes</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="c1">// export echoes with import:</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">// in main.js, we have `import router from &quot;./router&quot;;`</span>
+<span class="linenos" data-linenos="13 "></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="c1">// `export default {};` can be regarded as providing some interfaces in some js to other js programs</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="28-dynamic-routes">2.8 Dynamic Routes</h3>
 <p>In HTML:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">router-link</span>
-  <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{</span>
-<span class="s">    name: &#39;DestinationDetails&#39;,</span>
-<span class="s">    params: { slug: destination.slug }</span>
-<span class="s">  }&quot;</span>
-<span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">router-link</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="na">:to</span><span class="o">=</span><span class="s">&quot;{</span>
+<span class="linenos" data-linenos="3 "></span><span class="s">    name: &#39;DestinationDetails&#39;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="s">    params: { slug: destination.slug }</span>
+<span class="linenos" data-linenos="5 "></span><span class="s">  }&quot;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <p>In router creating:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">{</span>
-<span class="err">  path: &quot;/destination/:slug&quot;,</span>
-<span class="err">  name: &quot;DestinationDetails&quot;,</span>
-<span class="err">  props: true,</span>
-<span class="err">  component: () =&gt;</span>
-<span class="err">    import(/* webpackChunkName: &quot;DestinationDetails&quot;*/ &quot;./views/DestinationDetails&quot;),</span>
-<span class="err">},</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{
+<span class="linenos" data-linenos="2 "></span>  path: &quot;/destination/:slug&quot;,
+<span class="linenos" data-linenos="3 "></span>  name: &quot;DestinationDetails&quot;,
+<span class="linenos" data-linenos="4 "></span>  props: true,
+<span class="linenos" data-linenos="5 "></span>  component: () =&gt;
+<span class="linenos" data-linenos="6 "></span>    import(/* webpackChunkName: &quot;DestinationDetails&quot;*/ &quot;./views/DestinationDetails&quot;),
+<span class="linenos" data-linenos="7 "></span>},
 </code></pre></div>
-</td></tr></table>
 <p>In requested component's <code>.vue</code> file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">slug</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
-      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">destination</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">store</span><span class="p">.</span><span class="nx">destinations</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
-        <span class="nx">destination</span> <span class="p">=&gt;</span> <span class="nx">destination</span><span class="p">.</span><span class="nx">slug</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">slug</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nx">slug</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">},</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nx">destination</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>      <span class="k">return</span> <span class="nx">store</span><span class="p">.</span><span class="nx">destinations</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="nx">destination</span> <span class="p">=&gt;</span> <span class="nx">destination</span><span class="p">.</span><span class="nx">slug</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">slug</span>
+<span class="linenos" data-linenos="12 "></span>      <span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <p>If we visit router-link which is rendered to URL  <code>/destination/somewhere</code>, <code>/destination/:slug</code> will be matched, and <code>somewhere</code> will be passed to variable <code>slug</code> through <strong>props</strong>. Then the computed variable <code>destination</code> will be the one which has the same <code>slug</code> value.</p>
 <p>Notice that at first we use a direct way like  <code>{{ this.$route.params.slug }}</code> to use the params, but here we use <strong>props</strong> to pass it.</p>
 <h4 id="281-reload-issue-of-dynamic-routed-components">2.8.1 Reload Issue of Dynamic Routed Components</h4>
 <p>If we load a components by dynamic routes, there will be some routers leading to the same components with different params. So if the user switch between these routes, Vue Router can't see the difference because they share the same component, and as a result the contents of <code>&lt;router-view&gt;</code> will not change.</p>
 <p>So we need to add a key to ensure the contents will be reloaded accordingly:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">router-view</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;$route.path&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">router-view</span> <span class="na">:key</span><span class="o">=</span><span class="s">&quot;$route.path&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
-</td></tr></table>
 <h3 id="29-avoid-in-url">2.9 Avoid <code>#</code> in URL</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
-  <span class="nx">mode</span><span class="o">:</span> <span class="s2">&quot;history&quot;</span><span class="p">,</span>
-  <span class="c1">// ...</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="nx">mode</span><span class="o">:</span> <span class="s2">&quot;history&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="c1">// ...</span>
 </code></pre></div>
-</td></tr></table>
 <p>Use router's history mode.</p>
 <h3 id="210-nested-routes">2.10 Nested Routes</h3>
 <p>In <code>FatherComponent.vue</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">&lt;router-link</span>
-  <span class="na">:to=</span><span class="s">&quot;{</span>
-<span class="s">    name: &#39;experienceDetails&#39;,</span>
-<span class="s">    params: { experienceSlug: experience.slug },</span>
-<span class="s">    hash: &#39;#experience&#39;</span>
-<span class="s">  }&quot;</span>
-<span class="nt">&gt;</span>
-<span class="cp">{{</span> <span class="nv">experience.name</span> <span class="cp">}}</span>
-<span class="nt">&lt;/router-link&gt;</span>
-<span class="nt">&lt;router-view</span> <span class="na">:key=</span><span class="s">&quot;$route.path&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;router-link
+<span class="linenos" data-linenos=" 2 "></span>  :to=&quot;{
+<span class="linenos" data-linenos=" 3 "></span>    name: &#39;experienceDetails&#39;,
+<span class="linenos" data-linenos=" 4 "></span>    params: { experienceSlug: experience.slug },
+<span class="linenos" data-linenos=" 5 "></span>    hash: &#39;#experience&#39;
+<span class="linenos" data-linenos=" 6 "></span>  }&quot;
+<span class="linenos" data-linenos=" 7 "></span>&gt;
+<span class="linenos" data-linenos=" 8 "></span>{{ experience.name }}
+<span class="linenos" data-linenos=" 9 "></span>&lt;/router-link&gt;
+<span class="linenos" data-linenos="10 "></span>&lt;router-view :key=&quot;$route.path&quot; /&gt;
 </code></pre></div>
-</td></tr></table>
 <p>In routes list in js file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">{</span>
-  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/destination/:slug&quot;</span><span class="p">,</span>
-  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;DestinationDetails&quot;</span><span class="p">,</span>
-  <span class="nx">props</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
-    <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;DestinationDetails&quot;*/</span> <span class="s2">&quot;./views/DestinationDetails&quot;</span><span class="p">),</span>
-  <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;:experienceSlug&quot;</span><span class="p">,</span> <span class="cm">/* attached behind the father&#39;s path */</span>
-      <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;experienceDetails&quot;</span><span class="p">,</span>
-      <span class="nx">props</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
-        <span class="kr">import</span><span class="p">(</span><span class="cm">/*webpackChunkName: &quot;ExperienceDetails&quot;*/</span> <span class="s2">&quot;./views/ExperienceDetails&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="c1">// ...</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/destination/:slug&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;DestinationDetails&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nx">props</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;DestinationDetails&quot;*/</span> <span class="s2">&quot;./views/DestinationDetails&quot;</span><span class="p">),</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;:experienceSlug&quot;</span><span class="p">,</span> <span class="cm">/* attached behind the father&#39;s path */</span>
+<span class="linenos" data-linenos="10 "></span>      <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;experienceDetails&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>      <span class="nx">props</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>      <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="kr">import</span><span class="p">(</span><span class="cm">/*webpackChunkName: &quot;ExperienceDetails&quot;*/</span> <span class="s2">&quot;./views/ExperienceDetails&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="p">],</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="c1">// ...</span>
 </code></pre></div>
-</td></tr></table>
 <p>In <code>ChildrenComponent.vue</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
-<span class="kn">import</span> <span class="nn">store</span> <span class="nn">from</span> <span class="s2">&quot;@/store.js&quot;</span><span class="p">;</span>
-<span class="n">export</span> <span class="n">default</span> <span class="p">{</span>
-  <span class="n">props</span><span class="p">:</span> <span class="p">{</span>
-    <span class="n">slug</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nb">type</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
-      <span class="n">required</span><span class="p">:</span> <span class="n">true</span>
-    <span class="p">},</span>
-    <span class="n">experienceSlug</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nb">type</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
-      <span class="n">required</span><span class="p">:</span> <span class="n">true</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-
-  <span class="n">computed</span><span class="p">:</span> <span class="p">{</span>
-    <span class="n">destination</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">store</span><span class="o">.</span><span class="n">destinations</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
-        <span class="n">destination</span> <span class="o">=&gt;</span> <span class="n">destination</span><span class="o">.</span><span class="n">slug</span> <span class="o">===</span> <span class="n">this</span><span class="o">.</span><span class="n">slug</span>
-      <span class="p">);</span>
-    <span class="p">},</span>
-    <span class="n">experience</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">destination</span><span class="o">.</span><span class="n">experiences</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
-        <span class="n">experience</span> <span class="o">=&gt;</span> <span class="n">experience</span><span class="o">.</span><span class="n">slug</span> <span class="o">===</span> <span class="n">this</span><span class="o">.</span><span class="n">experienceSlug</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;script&gt;
+<span class="linenos" data-linenos=" 2 "></span>import store from &quot;@/store.js&quot;;
+<span class="linenos" data-linenos=" 3 "></span>export default {
+<span class="linenos" data-linenos=" 4 "></span>  props: {
+<span class="linenos" data-linenos=" 5 "></span>    slug: {
+<span class="linenos" data-linenos=" 6 "></span>      type: String,
+<span class="linenos" data-linenos=" 7 "></span>      required: true
+<span class="linenos" data-linenos=" 8 "></span>    },
+<span class="linenos" data-linenos=" 9 "></span>    experienceSlug: {
+<span class="linenos" data-linenos="10 "></span>      type: String,
+<span class="linenos" data-linenos="11 "></span>      required: true
+<span class="linenos" data-linenos="12 "></span>    }
+<span class="linenos" data-linenos="13 "></span>  },
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>  computed: {
+<span class="linenos" data-linenos="16 "></span>    destination() {
+<span class="linenos" data-linenos="17 "></span>      return store.destinations.find(
+<span class="linenos" data-linenos="18 "></span>        destination =&gt; destination.slug === this.slug
+<span class="linenos" data-linenos="19 "></span>      );
+<span class="linenos" data-linenos="20 "></span>    },
+<span class="linenos" data-linenos="21 "></span>    experience() {
+<span class="linenos" data-linenos="22 "></span>      return this.destination.experiences.find(
+<span class="linenos" data-linenos="23 "></span>        experience =&gt; experience.slug === this.experienceSlug
+<span class="linenos" data-linenos="24 "></span>      );
+<span class="linenos" data-linenos="25 "></span>    }
+<span class="linenos" data-linenos="26 "></span>  }
+<span class="linenos" data-linenos="27 "></span>};
+<span class="linenos" data-linenos="28 "></span>&lt;/script&gt;
 </code></pre></div>
-</td></tr></table>
 <h3 id="211-transition">2.11 Transition</h3>
 <p>Encapsulate the router-view:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">&lt;transition</span> <span class="na">name=</span><span class="s">&quot;fade&quot;</span> <span class="na">mode=</span><span class="s">&quot;out-in&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;router-view</span> <span class="na">:key=</span><span class="s">&quot;$route.path&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/transition&gt;</span>
-
-<span class="nt">&lt;style&gt;</span>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-<span class="nt">&lt;/style&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;transition name=&quot;fade&quot; mode=&quot;out-in&quot;&gt;
+<span class="linenos" data-linenos=" 2 "></span>  &lt;router-view :key=&quot;$route.path&quot; /&gt;
+<span class="linenos" data-linenos=" 3 "></span>&lt;/transition&gt;
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>&lt;style&gt;
+<span class="linenos" data-linenos=" 6 "></span>.fade-enter-active,
+<span class="linenos" data-linenos=" 7 "></span>.fade-leave-active {
+<span class="linenos" data-linenos=" 8 "></span>  transition: opacity 0.3s;
+<span class="linenos" data-linenos=" 9 "></span>}
+<span class="linenos" data-linenos="10 "></span>.fade-enter,
+<span class="linenos" data-linenos="11 "></span>.fade-leave-to {
+<span class="linenos" data-linenos="12 "></span>  opacity: 0;
+<span class="linenos" data-linenos="13 "></span>}
+<span class="linenos" data-linenos="14 "></span>&lt;/style&gt;
 </code></pre></div>
-</td></tr></table>
 <h3 id="212-404-page">2.12 404 Page</h3>
 <p>Start with creating a component <code>NotFound.vue</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">&lt;template&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Not Found<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-      Oops we couldn&#39;t find that page. Try going
-      <span class="nt">&lt;router-link</span> <span class="na">:to=</span><span class="s">&quot;{ name: &#39;home&#39; }&quot;</span><span class="nt">&gt;</span>home<span class="nt">&lt;/router-link&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/template&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;template&gt;
+<span class="linenos" data-linenos="2 "></span>  &lt;div&gt;
+<span class="linenos" data-linenos="3 "></span>    &lt;h1&gt;Not Found&lt;/h1&gt;
+<span class="linenos" data-linenos="4 "></span>    &lt;p&gt;
+<span class="linenos" data-linenos="5 "></span>      Oops we couldn&#39;t find that page. Try going
+<span class="linenos" data-linenos="6 "></span>      &lt;router-link :to=&quot;{ name: &#39;home&#39; }&quot;&gt;home&lt;/router-link&gt;
+<span class="linenos" data-linenos="7 "></span>    &lt;/p&gt;
+<span class="linenos" data-linenos="8 "></span>  &lt;/div&gt;
+<span class="linenos" data-linenos="9 "></span>&lt;/template&gt;
 </code></pre></div>
-</td></tr></table>
 <p>Add it to router:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">{</span>
-  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="c1">// Use asterisks to match any paths that is not matched by previous paths</span>
-  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;notFound&quot;</span><span class="p">,</span>
-  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
-    <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;NotFound&quot; */</span>
-    <span class="s2">&quot;./views/NotFound&quot;</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="c1">// Use asterisks to match any paths that is not matched by previous paths</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;notFound&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="kr">import</span><span class="p">(</span><span class="cm">/* webpackChunkName: &quot;NotFound&quot; */</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="s2">&quot;./views/NotFound&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <p>We need to put it to the end, because the preceding paths have higher priority.</p>
 <p>To aviod a warning, we should use the code below.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">{</span>
-<span class="err">  path: &quot;/404&quot;,</span>
-<span class="err">  alias: &quot;*&quot;,</span>
-<span class="err">  name: &quot;notFound&quot;,</span>
-<span class="err">  component: () =&gt;</span>
-<span class="err">    import(/* webpackChunkName: &quot;NotFound&quot; */</span>
-<span class="err">    &quot;./views/NotFound&quot;)</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{
+<span class="linenos" data-linenos="2 "></span>  path: &quot;/404&quot;,
+<span class="linenos" data-linenos="3 "></span>  alias: &quot;*&quot;,
+<span class="linenos" data-linenos="4 "></span>  name: &quot;notFound&quot;,
+<span class="linenos" data-linenos="5 "></span>  component: () =&gt;
+<span class="linenos" data-linenos="6 "></span>    import(/* webpackChunkName: &quot;NotFound&quot; */
+<span class="linenos" data-linenos="7 "></span>    &quot;./views/NotFound&quot;)
+<span class="linenos" data-linenos="8 "></span>}
 </code></pre></div>
-</td></tr></table>
 <h4 id="2121-navigation-guards">2.12.1 Navigation Guards</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/destination/:slug&quot;</span><span class="p">,</span>
-<span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;DestinationDetails&quot;</span><span class="p">,</span>
-<span class="c1">// ...</span>
-<span class="nx">beforeEnter</span><span class="o">:</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">exists</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">destinations</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
-    <span class="nx">destination</span> <span class="p">=&gt;</span> <span class="nx">destination</span><span class="p">.</span><span class="nx">slug</span> <span class="o">===</span> <span class="nx">to</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">slug</span>
-  <span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">exists</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">next</span><span class="p">();</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">next</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;notFound&quot;</span> <span class="p">});</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/destination/:slug&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;DestinationDetails&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// ...</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="nx">beforeEnter</span><span class="o">:</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="kr">const</span> <span class="nx">exists</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">destinations</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nx">destination</span> <span class="p">=&gt;</span> <span class="nx">destination</span><span class="p">.</span><span class="nx">slug</span> <span class="o">===</span> <span class="nx">to</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">slug</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">exists</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nx">next</span><span class="p">();</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nx">next</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;notFound&quot;</span> <span class="p">});</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <p>In case the usr request a non-existed path of a dynamic router, we need to use the Navigation Guards to redirect it to 404.</p>
 <p>More details: <a href="https://router.vuejs.org/guide/advanced/navigation-guards.html">Navigation Guards</a></p>
                 
               
+
+  
+    <div class="md-source-date">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:hnpengjj@gmail.com'>Co1lin</a> (48.2%), <a href='mailto:colin@ColinsMacBook-Pro.local'>Colin</a> (51.8%)</span>
+      </small>
+    </div>
+  
+
               
                 
 
@@ -2347,45 +2191,48 @@ About Page
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../../Jupyter/jupyter/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../Machine%20Learning/Transformer/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Transformer
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Jupyter
-              </div>
+          </div>
+        </a>
+      
+      
+        <a href="../git/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Git
             </div>
-          </a>
-        
-        
-          <a href="../git/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Git
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2395,6 +2242,7 @@ About Page
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
     </div>
@@ -2402,19 +2250,13 @@ About Page
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../../javascripts/config.js"></script>
       

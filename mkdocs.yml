@@ -1,16 +1,34 @@
 site_name: Colin's Notebook
-
+repo_url: https://github.com/Co1lin/notes
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
-    scheme: preference
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+
+  features:
+    - navigation.top
 
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  - codehilite:
-      guess_lang: true
+  #- codehilite:
+  #    guess_lang: true
+  #    linenums: true
+  - pymdownx.highlight:
       linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
 
 extra_javascript:
   - javascripts/config.js
@@ -22,3 +40,5 @@ plugins:
     - add-number:
         strict_mode: False
         order: 2
+    - git-authors:
+        show_contribution: true

@@ -8,8 +8,9 @@
       
       
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -17,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -28,9 +29,9 @@
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -44,14 +45,18 @@
   
     
     
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
       
-        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
-      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -67,49 +72,73 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Colin&#39;s Notebook" class="md-header-nav__button md-logo" aria-label="Colin's Notebook">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Colin&#39;s Notebook" class="md-header__button md-logo" aria-label="Colin's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Colin's Notebook
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               DSA
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -126,6 +155,19 @@
 </div>
     
     
+      <div class="md-header__source">
+        
+<a href="https://github.com/Co1lin/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -138,21 +180,36 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook">
+    <a href=".." title="Colin&#39;s Notebook" class="md-nav__button md-logo" aria-label="Colin's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
     Colin's Notebook
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Co1lin/notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -160,12 +217,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href=".." class="md-nav__link">
-      Welcome to Colin's Notebook
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to Colin's Notebook
+      </a>
+    </li>
+  
 
     
       
@@ -173,26 +233,30 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active">
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DSA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         DSA
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
-      DSA
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -202,7 +266,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-acknowledgement" class="md-nav__link">
@@ -1038,292 +1102,564 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../LaTex/" class="md-nav__link">
-      LaTeX
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../Linux/" class="md-nav__link">
-      Linux
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LaTex/" class="md-nav__link">
+        LaTeX
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../Python/" class="md-nav__link">
-      Python
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../Quantitive%20Investment/" class="md-nav__link">
-      Quantitive Investment & Financial Optimization
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../SystemVerilog/" class="md-nav__link">
-      SystemVerilog
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantitive%20Investment/" class="md-nav__link">
+        Quantitive Investment & Financial Optimization
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemVerilog/" class="md-nav__link">
+        SystemVerilog
+      </a>
+    </li>
+  
+
     
-    <label class="md-nav__link" for="nav-8">
-      C++
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="C++" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon"></span>
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
         C++
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../C%2B%2B/DSA01/" class="md-nav__link">
-      DSA01
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../C%2B%2B/oop/" class="md-nav__link">
-      OOP Notes for exam
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Computer Network
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B/DSA01/" class="md-nav__link">
+        DSA01
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B/oop/" class="md-nav__link">
+        OOP Notes for exam
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
         Computer Network
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Computer%20Network/1-introduction/" class="md-nav__link">
-      1 Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Computer%20Network/2-application%20layer/" class="md-nav__link">
-      2 Application Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Computer%20Network/3-transport%20layer/" class="md-nav__link">
-      3 Transport Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Computer%20Network/4-network%20layer/" class="md-nav__link">
-      4 Network Layer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
-      5 MAC Sublayer
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      Jupyter
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Computer Network" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/1-introduction/" class="md-nav__link">
+        1 Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/2-application%20layer/" class="md-nav__link">
+        2 Application Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/3-transport%20layer/" class="md-nav__link">
+        3 Transport Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/4-network%20layer/" class="md-nav__link">
+        4 Network Layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/5-MAC%20Sublayer/" class="md-nav__link">
+        5 MAC Sublayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Network/6-Data%20Link%20Layer/" class="md-nav__link">
+        6 Data Link Layer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Deep RL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Deep RL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Deep RL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deep%20RL/Policy%20Gradient/" class="md-nav__link">
+        Policy Gradient
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
         Jupyter
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Jupyter/jupyter/" class="md-nav__link">
-      Jupyter
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
-    
-    <label class="md-nav__link" for="nav-11">
-      Software Engineering
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
         <span class="md-nav__icon md-icon"></span>
-        Software Engineering
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Jupyter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Jupyter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jupyter/jupyter/" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Machine Learning
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Machine Learning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Attention/" class="md-nav__link">
+        Self-Attention
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Software%20Engineering/Vue/" class="md-nav__link">
-      Vue
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Auto-encoder/" class="md-nav__link">
+        Auto-encoder
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/BERT/" class="md-nav__link">
+        BERT
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Basis/" class="md-nav__link">
+        Basis
+      </a>
+    </li>
+  
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/CNN/" class="md-nav__link">
+        CNN
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../Software%20Engineering/git/" class="md-nav__link">
-      Git
-    </a>
-  </li>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Detection%20%26%20Segmentation/" class="md-nav__link">
+        Detection & Segmentation
+      </a>
+    </li>
+  
 
-        
-      </ul>
-    </nav>
-  </li>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/GPT/" class="md-nav__link">
+        GPT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Generative%20Models/" class="md-nav__link">
+        Generative Models
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Image%20Classification/" class="md-nav__link">
+        Image Classification
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/LLL/" class="md-nav__link">
+        Life Long Learning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/RNN/" class="md-nav__link">
+        RNN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Reinforcement%20Learning/" class="md-nav__link">
+        Reinforcement Learning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine%20Learning/Transformer/" class="md-nav__link">
+        Transformer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Software Engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software Engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Software Engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Engineering/Vue/" class="md-nav__link">
+        Vue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Engineering/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1333,11 +1669,13 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -1347,7 +1685,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-acknowledgement" class="md-nav__link">
@@ -2188,9 +2526,14 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+  
+                
+                  <a href="https://github.com/Co1lin/notes/edit/master/docs/DSA_Review.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
                 <h1 id="dsa">DSA</h1>
@@ -2249,31 +2592,19 @@
 <li>Only one comparison in each loop.</li>
 <li>Return the maximum element that is not greater than e.</li>
 </ol>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">BinarySearch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>  <span class="c1">// [lo, hi)</span>
-<span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">median</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">median</span><span class="p">])</span>
-            <span class="n">hi</span> <span class="o">=</span> <span class="n">mi</span> <span class="c1">// [lo, mi)</span>
-        <span class="k">else</span> <span class="c1">// (data[median] &lt;= e)</span>
-            <span class="n">lo</span> <span class="o">=</span> <span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// [mi + 1, hi) = (mi, hi)</span>
-    <span class="p">}</span>   <span class="c1">// break when (lo == hi)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">BinarySearch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>  <span class="c1">// [lo, hi)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="n">median</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">median</span><span class="p">])</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="n">hi</span> <span class="o">=</span> <span class="n">mi</span> <span class="c1">// [lo, mi)</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="k">else</span> <span class="c1">// (data[median] &lt;= e)</span>
+<span class="linenos" data-linenos=" 9 "></span>            <span class="n">lo</span> <span class="o">=</span> <span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// [mi + 1, hi) = (mi, hi)</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>   <span class="c1">// break when (lo == hi)</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="k">return</span> <span class="p">(</span><span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <p>Correctness:</p>
 <p>以下陈述在算法执行全过程中总是对的：</p>
 <ol>
@@ -2294,104 +2625,59 @@
 <p><span class="arithmatex">\(O(nlogn)\)</span>。优先左边的元素进入归并，稳定。</p>
 <h3 id="43-quicksort">4.3 QuickSort</h3>
 <p>Expected - <span class="arithmatex">\(O(nlogn)\)</span>。<strong>不稳定！</strong></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>
-<span class="p">{</span>   <span class="c1">// [lo, hi)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">mi</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">mi</span><span class="p">)</span>
-        <span class="n">QuickSort</span><span class="p">(</span><span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="o">:</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>   <span class="c1">// [lo, hi)</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="n">mi</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="n">QuickSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">mi</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span>        <span class="n">QuickSort</span><span class="p">(</span><span class="n">mi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <h4 id="431-partition">4.3.1 Partition</h4>
 <p>随机选择一点作为pivot（轴点），让其就位。</p>
 <p>LUG版的Partition如图所示。始终有：L = [start, lo)，U = [lo, hi]，G = (hi, end]。</p>
 <p><img alt="image-20210106181124460" src="../DSA_Review.assets/image-20210106181124460.png" /></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">Partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="err">{</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">randint(lo, hi)</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">随机选取轴点</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">pivot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">hi</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">pivot小于G区间左边待拓展节点时</span><span class="w"></span>
-<span class="w">        </span><span class="n">hi</span><span class="o">--</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">向左拓展G</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">这个判断可以删掉</span><span class="w"></span>
-<span class="w">        </span><span class="k">data</span><span class="o">[</span><span class="n">lo++</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">hi</span><span class="o">]</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">把G区间左边小于等于pivot的数放在L右端</span><span class="err">（</span><span class="n">相当于拓展L</span><span class="err">）</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">pivot</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">pivot大于L区间右边待拓展节点时</span><span class="w"></span>
-<span class="w">        </span><span class="n">lo</span><span class="o">++</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">向右拓展L</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">这个判断可以删掉</span><span class="w"></span>
-<span class="w">        </span><span class="k">data</span><span class="o">[</span><span class="n">hi--</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">把L区间右边大于等于pivot的数放在G左端</span><span class="err">（</span><span class="n">相当于拓展G</span><span class="err">）</span><span class="w"></span>
-<span class="w">  </span><span class="err">}</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">继续循环拓展G</span><span class="err">、</span><span class="n">L</span><span class="w"></span>
-<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nl">assert</span><span class="p">:</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">hi</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">lo</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Partition(lo, hi):
+<span class="linenos" data-linenos=" 2 "></span>{   // [lo, hi]
+<span class="linenos" data-linenos=" 3 "></span>    swap(data[lo], data[randint(lo, hi)])
+<span class="linenos" data-linenos=" 4 "></span>  pivot = data[lo]  // 随机选取轴点
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>  while (lo &lt; hi)
+<span class="linenos" data-linenos=" 7 "></span>  {
+<span class="linenos" data-linenos=" 8 "></span>    while (lo &lt; hi &amp;&amp; pivot &lt; data[hi]) // pivot小于G区间左边待拓展节点时
+<span class="linenos" data-linenos=" 9 "></span>        hi--    // 向左拓展G
+<span class="linenos" data-linenos="10 "></span>    if (lo &lt; hi)    // 这个判断可以删掉
+<span class="linenos" data-linenos="11 "></span>        data[lo++] = data[hi]   // 把G区间左边小于等于pivot的数放在L右端（相当于拓展L）
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>    while (lo &lt; hi &amp;&amp; data[lo] &lt; pivot) // pivot大于L区间右边待拓展节点时
+<span class="linenos" data-linenos="14 "></span>        lo++    // 向右拓展L
+<span class="linenos" data-linenos="15 "></span>    if (lo &lt; hi)    // 这个判断可以删掉
+<span class="linenos" data-linenos="16 "></span>        data[hi--] = data[lo]   // 把L区间右边大于等于pivot的数放在G左端（相当于拓展G）
+<span class="linenos" data-linenos="17 "></span>  } // 继续循环拓展G、L
+<span class="linenos" data-linenos="18 "></span>  // assert: lo == hi
+<span class="linenos" data-linenos="19 "></span>  return lo
+<span class="linenos" data-linenos="20 "></span>}
 </code></pre></div>
-</td></tr></table>
 <h3 id="44-quick-selection">4.4 Quick Selection</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">QuickSelect</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">perform</span><span class="w"> </span><span class="n">quick</span><span class="w"> </span><span class="k">partition</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"></span>
-<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">randint(lo, hi)</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="k">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">lo</span><span class="o">]</span><span class="w"></span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">quick</span><span class="w"> </span><span class="k">partition</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">[</span><span class="n">i, j</span><span class="o">]</span><span class="w"></span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">finish</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">pivot</span><span class="w"></span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">shrink</span><span class="w"> </span><span class="o">[</span><span class="n">lo, hi</span><span class="o">]</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="n">k_th</span><span class="w"> </span><span class="k">element</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>QuickSelect(lo, hi, k):
+<span class="linenos" data-linenos=" 2 "></span>{
+<span class="linenos" data-linenos=" 3 "></span>    while (lo &lt; hi)
+<span class="linenos" data-linenos=" 4 "></span>    {
+<span class="linenos" data-linenos=" 5 "></span>        // perform quick partition on [lo, hi]
+<span class="linenos" data-linenos=" 6 "></span>        swap(data[lo], data[randint(lo, hi)])
+<span class="linenos" data-linenos=" 7 "></span>        i = lo, j = hi, pivot = data[lo]
+<span class="linenos" data-linenos=" 8 "></span>        // ... quick partition on [i, j]
+<span class="linenos" data-linenos=" 9 "></span>        // finish with i == j; data[i] is the pivot
+<span class="linenos" data-linenos="10 "></span>        // shrink [lo, hi] which contains k_th element
+<span class="linenos" data-linenos="11 "></span>        if (k &lt;= i)
+<span class="linenos" data-linenos="12 "></span>            hi = i - 1
+<span class="linenos" data-linenos="13 "></span>        if (i &lt;= k)
+<span class="linenos" data-linenos="14 "></span>            lo = i + 1
+<span class="linenos" data-linenos="15 "></span>    }
+<span class="linenos" data-linenos="16 "></span>}
 </code></pre></div>
-</td></tr></table>
 <p><img alt="Screen Shot 2021-01-06 at 7.29.51 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%207.29.51%20PM.png" /></p>
 <h3 id="45-heapsort">4.5 HeapSort</h3>
 <p><img alt="Screen Shot 2021-01-07 at 3.48.44 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%203.48.44%20PM.png" /></p>
@@ -2414,36 +2700,22 @@
 <p>类似于将手中的扑克牌进行排序。</p>
 <p>前k个元素已经有序；考查第k+1个元素，从第k个元素向前遍历，寻找合适位置，将其插入其中，使得有序区间成为前k+1个元素。</p>
 <h3 id="49-shellsort">4.9 ShellSort</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ShellSort</span><span class="p">(</span><span class="k">data</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">取某递增序列H</span><span class="w"></span>
-<span class="w">    </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">w_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">w_2</span><span class="p">,</span><span class="w"> </span><span class="n">w_3</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">选H序列中小于n的最后一项</span><span class="w"></span>
-<span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="err">{</span><span class="n">i</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">w_i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="err">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">从H序列第k项往前</span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">将data视作宽度为w_t的矩阵B_t</span><span class="w"></span>
-<span class="w">        </span><span class="n">对B_t的每一列分别插入排序</span><span class="err">：</span><span class="n">B_t</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">w_t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">排完后重新组成成一位的data形式</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">最后一次循环</span><span class="w"> </span><span class="n">w_t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">意味着一维排序完成</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>ShellSort(data):
+<span class="linenos" data-linenos=" 2 "></span>{
+<span class="linenos" data-linenos=" 3 "></span>    // 取某递增序列H
+<span class="linenos" data-linenos=" 4 "></span>    H = { w_1 = 1, w_2, w_3, ... }
+<span class="linenos" data-linenos=" 5 "></span>    // 选H序列中小于n的最后一项
+<span class="linenos" data-linenos=" 6 "></span>    k = max{i | w_i &lt; n}
+<span class="linenos" data-linenos=" 7 "></span>    // 从H序列第k项往前...
+<span class="linenos" data-linenos=" 8 "></span>    for (t = k; t &gt; 0; t--)
+<span class="linenos" data-linenos=" 9 "></span>    {
+<span class="linenos" data-linenos="10 "></span>        将data视作宽度为w_t的矩阵B_t
+<span class="linenos" data-linenos="11 "></span>        对B_t的每一列分别插入排序：B_t[i], i = 0, 1, ..., w_t - 1
+<span class="linenos" data-linenos="12 "></span>        // 排完后重新组成成一位的data形式
+<span class="linenos" data-linenos="13 "></span>    } // 最后一次循环 w_t == 1 , 意味着一维排序完成
+<span class="linenos" data-linenos="14 "></span>}
 </code></pre></div>
-</td></tr></table>
-<p>e.g. 
+e.g. 
 组织成宽度为3的矩阵的一次排序：
 <img alt="Screen Shot 2021-01-08 at 8.34.12 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-08%20at%208.34.12%20PM.png" /></p>
 <h4 id="491-complexity">4.9.1 Complexity</h4>
@@ -2482,35 +2754,21 @@
 <h4 id="711-query-kdsearchv-r">7.1.1 Query - KdSearch(v, R)</h4>
 <p>Search starts at v; query range is R</p>
 <p>Key idea: Recurse in when there's intersection. Report it when it is enclosed.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span><span class="o">:</span>
-  <span class="k">if</span> <span class="n">v</span> <span class="n">is</span> <span class="nl">leaf</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">v</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
-      <span class="n">report</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
-    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
-    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
-    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
-    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="k">if</span> <span class="n">v</span> <span class="n">is</span> <span class="nl">leaf</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="n">v</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="n">report</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>  <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">in</span> <span class="nl">R</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">reportSubtree</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">lChild</span><span class="p">)</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span> <span class="n">have</span> <span class="n">intersection</span> <span class="n">with</span> <span class="nl">R</span><span class="p">:</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">kdSearch</span><span class="p">(</span><span class="n">v</span><span class="o">-&gt;</span><span class="n">rChild</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
 </code></pre></div>
-</td></tr></table>
 <p><strong>Complexity:</strong> For each edge of R, no more than <u>2 out of the 4</u> grandchildren of each node will intersect with it, which means recursing. R has 4 edges, so multiply 4 for the upper bound complexity.</p>
 <p>Using the Master Thm.,</p>
 <p><span class="arithmatex">\(Q(n) = 2 + 2Q(n/4), Q(1) = O(1) \Rightarrow Q(n) = O(\sqrt{n})\)</span></p>
@@ -2544,19 +2802,13 @@
 <p><img alt="Screen Shot 2021-01-06 at 9.38.16 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.38.16%20AM.png" /></p>
 <h3 id="92-search">9.2 Search</h3>
 <p>为保证性能，需将最后访问的节点旋转至root。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">search</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">:</span>
-<span class="p">{</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">searchIn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">hot</span><span class="p">)</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">splay</span><span class="p">(</span><span class="n">p</span> <span class="o">?</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">hot</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">root</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">search</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">:</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">p</span> <span class="o">=</span> <span class="n">searchIn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">hot</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">root</span> <span class="o">=</span> <span class="n">splay</span><span class="p">(</span><span class="n">p</span> <span class="o">?</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">hot</span><span class="p">)</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">return</span> <span class="n">root</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 <p>（hot记录了search中最后到达的节点）</p>
 <h3 id="93-insert">9.3 Insert</h3>
 <p><img alt="Screen Shot 2021-01-06 at 9.39.39 AM" src="../DSA_Review.assets/Screen%20Shot%202021-01-06%20at%209.39.39%20AM.png" /></p>
@@ -2711,60 +2963,35 @@
 <p>上大下小，或上小下大。</p>
 <h3 id="121-shift-up">12.1 Shift Up</h3>
 <p><span class="arithmatex">\(O(logn)\)</span>。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">shift_up</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">is</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="n">root</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> parent_of[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">            </span><span class="k">break</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">satisfied</span><span class="w"></span>
-<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="nf">lower</span><span class="w"> </span><span class="n">priority</span><span class="w"> </span><span class="k">than</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
-<span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> parent_of[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">upper</span><span class="w"> </span><span class="n">layer</span><span class="w"></span>
-<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent_of</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">upper</span><span class="w"> </span><span class="n">layer</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>shift_up(i):    // shift up the node with index i
+<span class="linenos" data-linenos=" 2 "></span>{
+<span class="linenos" data-linenos=" 3 "></span>    while (i &gt; 0):  // i is  not root
+<span class="linenos" data-linenos=" 4 "></span>    {
+<span class="linenos" data-linenos=" 5 "></span>        if (data[i] &lt; data[ parent_of[i] ]):
+<span class="linenos" data-linenos=" 6 "></span>            break   // satisfied
+<span class="linenos" data-linenos=" 7 "></span>        else:   // if the parent has lower priority than data[i]
+<span class="linenos" data-linenos=" 8 "></span>            swap(data[i], data[ parent_of[i] ]) // shift data[i] to the upper layer
+<span class="linenos" data-linenos=" 9 "></span>            i = parent_of[i]    // examine the upper layer
+<span class="linenos" data-linenos="10 "></span>    }
+<span class="linenos" data-linenos="11 "></span>    return i
+<span class="linenos" data-linenos="12 "></span>}
 </code></pre></div>
-</td></tr></table>
 <h3 id="122-shift-down">12.2 Shift Down</h3>
 <p><span class="arithmatex">\(O(logn)\)</span>。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">shift_down</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">proper_parent_at</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">proper_parent</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">proper_parent</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
-
-<span class="n">proper_parent_at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="o">//</span><span class="w"> </span><span class="n">gives</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="n">among</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> left_child[i</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n"> right_child[i</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="w"></span>
-<span class="o">//</span><span class="w"> </span><span class="n">gives</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">left_child</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">right_child</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>shift_down(i):  // shift down the node with index i
+<span class="linenos" data-linenos=" 2 "></span>{
+<span class="linenos" data-linenos=" 3 "></span>    while (i != proper_parent_at(i)):
+<span class="linenos" data-linenos=" 4 "></span>    {
+<span class="linenos" data-linenos=" 5 "></span>        swap(i, proper_parent)
+<span class="linenos" data-linenos=" 6 "></span>        i = proper_parent
+<span class="linenos" data-linenos=" 7 "></span>    }
+<span class="linenos" data-linenos=" 8 "></span>    return i
+<span class="linenos" data-linenos=" 9 "></span>}
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>proper_parent_at(i):
+<span class="linenos" data-linenos="12 "></span>// gives the maximum value among data[i], data[ left_child[i]] or data[ right_child[i] ]
+<span class="linenos" data-linenos="13 "></span>// gives parent i first if i == left_child[i] or i == right_child[i]
 </code></pre></div>
-</td></tr></table>
 <p>Expected - <span class="arithmatex">\(O(1)\)</span>。</p>
 <h3 id="123-pop">12.3 Pop</h3>
 <ol>
@@ -2784,17 +3011,12 @@
 <p><img alt="Screen Shot 2021-01-07 at 1.55.40 PM" src="../DSA_Review.assets/Screen%20Shot%202021-01-07%20at%201.55.40%20PM.png" /></p>
 <h4 id="1252-heapify">12.5.2 Heapify</h4>
 <p>For complete binary heap, shift the internel nodes down, which generates "sub-heap" start at the bottom. Finally a heap is constructed.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">heapify(size n):</span>
-<span class="err">{</span>
-<span class="err">    for (i = n / 2 - 1; i &gt;= 0; i--)</span>
-<span class="err">        shift_down(i)</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>heapify(size n):
+<span class="linenos" data-linenos="2 "></span>{
+<span class="linenos" data-linenos="3 "></span>    for (i = n / 2 - 1; i &gt;= 0; i--)
+<span class="linenos" data-linenos="4 "></span>        shift_down(i)
+<span class="linenos" data-linenos="5 "></span>}
 </code></pre></div>
-</td></tr></table>
 <h2 id="13-d-heap">13. d-Heap</h2>
 <p>多叉堆的复杂度：“上山容易下山难”。</p>
 <h2 id="14-leftlist-heap">14. Leftlist Heap</h2>
@@ -2928,6 +3150,15 @@
 <p>（具体的构建过程略。）</p>
                 
               
+
+  
+    <div class="md-source-date">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:hnpengjj@gmail.com'>Co1lin</a> (99.9%), <a href='mailto:mailbox@valderfield.com'>Colin</a> (0.1%)</span>
+      </small>
+    </div>
+  
+
               
                 
 
@@ -2936,45 +3167,48 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome to Colin's Notebook
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Welcome to Colin's Notebook
-              </div>
+          </div>
+        </a>
+      
+      
+        <a href="../LaTex/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              LaTeX
             </div>
-          </a>
-        
-        
-          <a href="../LaTex/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                LaTeX
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2984,6 +3218,7 @@
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
     </div>
@@ -2991,19 +3226,13 @@
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
-      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "..",
-          features: [],
-          search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/config.js"></script>
       
