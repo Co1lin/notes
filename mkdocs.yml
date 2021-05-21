@@ -19,6 +19,7 @@ theme:
     - navigation.top
 
 markdown_extensions:
+  - admonition
   - pymdownx.arithmatex:
       generic: true
   #- codehilite:

@@ -1472,6 +1472,27 @@
 </code></pre></div>
 <p>Multiple <code>initial</code> and <code>always</code> blocks can be included in one module. But they cannot be used recursively.</p>
 <p>All of the <code>initial</code> and <code>always</code> blocks in a module are independent and <strong>parallel</strong>! (regardless of in what order they are defined)</p>
+<div class="admonition danger">
+<p class="admonition-title"><strong>ATTENTION</strong>: There is an confusing error that we need to avoid:</p>
+<p>(Ref: <a href="https://stackoverflow.com/questions/16889672/cannot-use-an-input-for-if-statement-in-verilog">cannot use an input for if statement in Verilog</a>)</p>
+<p>Avoid writing this:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="k">if</span><span class="p">(</span><span class="n">some_var</span> <span class="o">==</span> <span class="mh">0</span><span class="p">)</span> <span class="k">begin</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="c1">// ...</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="k">end</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">end</span>
+</code></pre></div>
+<p>Because, when there are multiple conditional statements in the always conditions, the top "if-else" statement should and can only use the <strong>same</strong> conditional variables as always statement. (Don't know why.)</p>
+<p>Instead, we can split the always block into multiple ones:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="k">end</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="k">always</span> <span class="p">@</span> <span class="p">(</span><span class="k">negedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="k">end</span>
+</code></pre></div>
+</div>
 <h3 id="45-initial">4.5 initial</h3>
 <p><code>initial</code> will be executed once at t=0.</p>
 <p><img alt="initial-flash-2" src="../SystemVerilog.assets/initial-flash-2.PNG" /></p>
@@ -1491,7 +1512,7 @@
   
     <div class="md-source-date">
       <small>
-          Authors: <span class='git-page-authors git-authors'><a href='mailto:mailbox@valderfield.com'>Colin</a></span>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:mailbox@valderfield.com'>Co1lin</a> (93.06%), <a href='mailto:not.committed.yet'>Not Committed Yet</a> (6.94%)</span>
       </small>
     </div>
   
