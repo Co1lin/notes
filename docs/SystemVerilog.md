@@ -340,33 +340,33 @@ Multiple `initial` and `always` blocks can be included in one module. But they c
 
 All of the `initial` and `always` blocks in a module are independent and **parallel**! (regardless of in what order they are defined)
 
-> **ATTENTION**: There is an confusing error that we need to avoid:
->
-> (Ref: [cannot use an input for if statement in Verilog](https://stackoverflow.com/questions/16889672/cannot-use-an-input-for-if-statement-in-verilog))
->
-> Avoid writing this:
->
-> ```verilog
-> always @ (posedge clk or negedge rst) begin
->   if(some_var == 0) begin
->     // ...
->   end
-> end
-> ```
->
-> Because, when there are multiple conditional statements in the always conditions, the top "if-else" statement should and can only use the **same** conditional variables as always statement. (Don't know why.)
->
-> Instead, we can split the always block into multiple ones:
->
-> ```verilog
-> always @ (posedge clk) begin
-> 
-> end
-> 
-> always @ (negedge rst) begin
-> 
-> end
-> ```
+!!! danger  **ATTENTION**: There is an confusing error that we need to avoid:
+
+ (Ref: [cannot use an input for if statement in Verilog](https://stackoverflow.com/questions/16889672/cannot-use-an-input-for-if-statement-in-verilog))
+
+ Avoid writing this:
+
+ ```verilog
+ always @ (posedge clk or negedge rst) begin
+   if(some_var == 0) begin
+     // ...
+   end
+ end
+ ```
+
+ Because, when there are multiple conditional statements in the always conditions, the top "if-else" statement should and can only use the **same** conditional variables as always statement. (Don't know why.)
+
+ Instead, we can split the always block into multiple ones:
+
+ ```verilog
+ always @ (posedge clk) begin
+ 
+ end
+ 
+ always @ (negedge rst) begin
+ 
+ end
+ ```
 
 ### initial
 
