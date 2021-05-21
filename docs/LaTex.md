@@ -17,6 +17,11 @@ A Simple template:
 \usepackage{longtable}
 \usepackage{listings} 
 \usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{makecell}
+\usepackage{url}
 \lstset{
   frame=shadowbox, %把代码用带有阴影的框圈起来
   rulesepcolor=\color{red!20!green!20!blue!20},%代码块边框为淡青色
@@ -30,10 +35,6 @@ A Simple template:
   extendedchars=false,  %解决代码跨页时，章节标题，页眉等汉字不显示的问题
   %escapebegin=\begin{CJK*},escapeend=\end{CJK*},      % 代码中出现中文必须加上，否则报错
   texcl=true}
-\usepackage{caption}
-\usepackage{subfigure}
-\usepackage{amsmath}
-\usepackage{makecell}
 \newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 \def\celsius{\ensuremath{^\circ\hspace{-0.09em}\mathrm{C}}}
 \geometry{a4paper, scale = 0.8}
@@ -86,8 +87,8 @@ A Simple template:
 %\end{lstlisting}
 
 \section{Section}
-	
-	
+
+
 \end{CJK}
 \end{document}
 ```
