@@ -18,6 +18,14 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
+![Screen Shot 2021-05-24 at 7.04.11 PM](CNN.assets/Screen%20Shot%202021-05-24%20at%207.04.11%20PM.png)
+
+
+
+![Screen Shot 2021-05-24 at 7.05.03 PM](CNN.assets/Screen%20Shot%202021-05-24%20at%207.05.03%20PM.png)
+
+
+
 
 
 ## Visualizing and Understanding

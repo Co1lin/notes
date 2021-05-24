@@ -40,6 +40,7 @@ A Simple template:
 \geometry{a4paper, scale = 0.8}
 \begin{document}
 \begin{CJK}{UTF8}{gbsn}
+\bibliographystyle{plain}
 
 \title{LaTeX Example}
 \author{Colin}
