@@ -84,41 +84,45 @@ KKT条件将 Lagrange乘数法（Lagrange multipliers）所处理涉及等式的
 与等式的最大区别：<u>不等式乘上的 Lagrange Multiplier 多了一个非负的限制条件</u>。
 
 > **完整的 KKT 条件**：
-  如果想解优化问题：
+> 
+> 如果想解优化问题：
+>
+> $$
+> \begin{aligned}
+> &\min f(\boldsymbol{x}) \\
+> \text{s.t.} ~ 
+> g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
+> h_k(\boldsymbol{x}) &\le 0 ~ (k = 1, \dots, p)
+> \end{aligned}
+> $$
+> 
+> 则定义 Lagrangian Function ：$L(\boldsymbol{x}, \lambda, \mu) = f(\boldsymbol{x}) + \sum_j \lambda_j g_j(\boldsymbol{x}) + \sum_k \mu_k h_k(\boldsymbol{x})$
+> 
+> 根据最佳解满足的 KKT 必要条件：
+> 
+> $$
+> \begin{aligned}
+> \nabla L &= 0 \\
+> g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
+> h_k(\boldsymbol{x}) &\le 0 \\
+> \mu_k &\ge 0 \\
+> \mu_k h_k(\boldsymbol{x}) &= 0 ~ (k = 1, \dots, p)
+> \end{aligned}
+> $$
 
-  $$
-  \begin{aligned}
-  &\min f(\boldsymbol{x}) \\
-  \text{s.t.} ~ 
-  g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
-  h_k(\boldsymbol{x}) &\le 0 ~ (k = 1, \dots, p)
-  \end{aligned}
-  $$
-
-  则定义 Lagrangian Function ：$L(\boldsymbol{x}, \lambda, \mu) = f(\boldsymbol{x}) + \sum_j \lambda_j g_j(\boldsymbol{x}) + \sum_k \mu_k h_k(\boldsymbol{x})$
-  根据最佳解满足的 KKT 必要条件：
-
-  $$
-  \begin{aligned}
-  \nabla L &= 0 \\
-  g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
-  h_k(\boldsymbol{x}) &\le 0 \\
-  \mu_k &\ge 0 \\
-  \mu_k h_k(\boldsymbol{x}) &= 0 ~ (k = 1, \dots, p)
-  \end{aligned}
-  $$
-
-  可以解出相关的参数。
+> 可以解出相关的参数。
 
 于是这里有：
 
 $$
-  L(\boldsymbol{w}, b, \boldsymbol{\alpha}) = 
-  {1 \over 2} ||\boldsymbol{w}||^2 +
-  \sum_{i=1}^{N} \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] \\
-  \alpha_i \ge 0, ~ 
-  1 - y_i (\boldsymbol{w^T x_i} + b) \le 0, \\
-  \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] = 0
+\begin{aligned}
+L(\boldsymbol{w}, b, \boldsymbol{\alpha}) = 
+{1 \over 2} ||\boldsymbol{w}||^2 +
+\sum_{i=1}^{N} \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] \\
+\alpha_i \ge 0, ~ 
+1 - y_i (\boldsymbol{w^T x_i} + b) \le 0, \\
+\alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] = 0
+\end{aligned}
 $$
 
 （最后一个等式为「**互补松弛性**」（complementary slackness），
@@ -149,6 +153,7 @@ $$
 根据：弱对偶关系：「极大的极小 ≥ 极小的极大」（“凤尾 ≥ 鸡头”），有：
 
 $$
+\begin{aligned}
 \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
 L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
 \max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \\
@@ -156,6 +161,7 @@ L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
 \max_{\boldsymbol{\alpha}} \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) 
 \le
 \min_{\boldsymbol{w}, b} \max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha})
+\end{aligned}
 $$
 
 而满足 KKT 条件时不等号变为等号，即强对偶成立，因此原问题最终转化为：
@@ -166,16 +172,16 @@ $$
 
 #### Solution
 
-1. $L$ 对 $\boldsymbol{w}, b$ 分别求偏导，令结果为0，产生两个等式。
+1) $L$ 对 $\boldsymbol{w}, b$ 分别求偏导，令结果为0，产生两个等式。
 
-2. 将两个等式代入 $L$ ，等价变形，可将优化问题转化为：
+2) 将两个等式代入 $L$ ，等价变形，可将优化问题转化为：
    
    $$
    \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \\
    \text{s.t.}~ \alpha_i \ge 0, ~ \sum_{i=1}^N \alpha_i y_i = 0
    $$
 
-3. 利用第二行的约束条件，可以求解 α ：
+3) 利用第二行的约束条件，可以求解 α ：
 
    先利用样本标签与 α 乘积求和的式子消去一个 α 。
 
@@ -187,7 +193,7 @@ $$
 
    2）若不满足每个 α  非负，说明最小值<u>在边界上</u>！那么就需要检查每个 α = 0 的边界情况，从中选取使得 $s$ 最小的一组 α 。
 
-4. 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
+4) 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
    
 $$
    \begin{aligned}
@@ -200,4 +206,4 @@ $$
 
    i.e. 选定某 $\alpha_k \neq 0$ ，将其对应的样本代入“固定”，然后再根据求和符号遍历所有样本，计算出 $b^*$ 。
 
-5. 写出超平面，以及决策函数。
+5) 写出超平面，以及决策函数。
