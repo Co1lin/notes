@@ -184,12 +184,12 @@ $$
 
 2) 将两个等式代入 $L$ ，等价变形，可将优化问题转化为：
    
-   $$
+$$
    \begin{aligned}
    \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \\
    \text{s.t.}~ \alpha_i \ge 0, ~ \sum_{i=1}^N \alpha_i y_i = 0
    \end{aligned}
-   $$
+$$
 
 3) 利用第二行的约束条件，可以求解 α ：
 
@@ -205,12 +205,12 @@ $$
 
 4) 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
    
-   $$
+$$
    \begin{aligned}
    \boldsymbol{w^*} &= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
    b^* &= y_k - \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i}^T \boldsymbol{x_k}
    \end{aligned}
-   $$
+$$
    
    其中，$(\boldsymbol{x_k}, y_k)$ 为某 $\alpha_k \neq 0$ 对应的样本。
 
