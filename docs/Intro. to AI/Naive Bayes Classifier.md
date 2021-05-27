@@ -53,6 +53,7 @@ P(X^{(j)} = x^{(j)} | Y = c_k)
 &= {\text{Count}(X^{(j)} = x^{(j)} , Y = c_k) + \lambda \over \text{Count}(Y = c_k) + S_j \lambda}
 \end{aligned}
 $$
+
 $S_j$ 为第 $j$ 维对应特征的所有可能的取值的数目。
 
 $\lambda$ 通常取1。
