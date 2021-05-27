@@ -84,8 +84,6 @@ _Click on a tile to change the color scheme_:
 
 ![Screen Shot 2021-04-17 at 12.22.00 AM](6-Data%20Link%20Layer.assets/Screen%20Shot%202021-04-17%20at%2012.22.00%20AM.png)
 
-
-
 ## 纠错
 
 Codeword：n位码字，m个消息位和r个校验位，$n = m + r$。
@@ -156,7 +154,7 @@ Hamming distance为d的编码方案：最短的两个合法的编码之间的距
   - 接收方由此判断这是个新帧还是应该被丢弃的重复帧
 - 缺点：只能有一个没有被确认的帧在发送中；信道利用率很低
 
-ARQ：Automatic Repeat reQuest：发送方在前移到下一个数据 之前必须等待一个肯定确认
+ARQ：Automatic Repeat request：发送方在前移到下一个数据 之前必须等待一个肯定确认
 
 PAR：Positive Acknowledgement with Retransmission：带有重传的肯定确认
 
