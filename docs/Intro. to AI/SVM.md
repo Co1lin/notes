@@ -86,19 +86,19 @@ KKT条件将 Lagrange乘数法（Lagrange multipliers）所处理涉及等式的
 > **完整的 KKT 条件**：
   如果想解优化问题：
 
-$$
+  $$
   \begin{aligned}
   &\min f(\boldsymbol{x}) \\
   \text{s.t.} ~ 
   g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
   h_k(\boldsymbol{x}) &\le 0 ~ (k = 1, \dots, p)
   \end{aligned}
-$$
+  $$
 
   则定义 Lagrangian Function ：$L(\boldsymbol{x}, \lambda, \mu) = f(\boldsymbol{x}) + \sum_j \lambda_j g_j(\boldsymbol{x}) + \sum_k \mu_k h_k(\boldsymbol{x})$
   根据最佳解满足的 KKT 必要条件：
 
-$$
+  $$
   \begin{aligned}
   \nabla L &= 0 \\
   g_j(\boldsymbol{x}) &= 0 ~ (j = 1, \dots, m) \\
@@ -106,14 +106,14 @@ $$
   \mu_k &\ge 0 \\
   \mu_k h_k(\boldsymbol{x}) &= 0 ~ (k = 1, \dots, p)
   \end{aligned}
-$$
+  $$
 
   可以解出相关的参数。
 
 于是这里有：
 
 $$
-L(\boldsymbol{w}, b, \boldsymbol{\alpha}) = 
+  L(\boldsymbol{w}, b, \boldsymbol{\alpha}) = 
   {1 \over 2} ||\boldsymbol{w}||^2 +
   \sum_{i=1}^{N} \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] \\
   \alpha_i \ge 0, ~ 
@@ -151,8 +151,7 @@ $$
 $$
 \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
 L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
-\max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) 
-\\
+\max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \\
 \Rightarrow
 \max_{\boldsymbol{\alpha}} \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) 
 \le
@@ -190,18 +189,15 @@ $$
 
 4. 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
    
-   $$
+$$
    \begin{aligned}
    \boldsymbol{w^*} &= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
    b^* &= y_k - \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i}^T \boldsymbol{x_k}
    \end{aligned}
-   $$
+$$
    
    其中，$(\boldsymbol{x_k}, y_k)$ 为某 $\alpha_k \neq 0$ 对应的样本。
 
    i.e. 选定某 $\alpha_k \neq 0$ ，将其对应的样本代入“固定”，然后再根据求和符号遍历所有样本，计算出 $b^*$ 。
 
 5. 写出超平面，以及决策函数。
-
-
-

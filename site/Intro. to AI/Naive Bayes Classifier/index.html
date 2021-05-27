@@ -14,7 +14,7 @@
     
     
       
-        <title>Image Classification - Colin's Notebook</title>
+        <title>Naive Bayes Classifier - Colin's Notebook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#image-classification" class="md-skip">
+        <a href="#naive-bayes-classifier" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image Classification
+              Naive Bayes Classifier
             
           </span>
         </div>
@@ -522,12 +522,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
       
       <label class="md-nav__link" for="__nav_11">
         Intro. to AI
@@ -543,11 +545,85 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Intro.%20to%20AI/Naive%20Bayes%20Classifier/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Naive Bayes Classifier
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Naive Bayes Classifier
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bayes-thm" class="md-nav__link">
+    1. Bayes' Thm.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bayes-classifier" class="md-nav__link">
+    2. Bayes Classifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-naive-bayes-classifier" class="md-nav__link">
+    3. Naive Bayes Classifier
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Naive Bayes Classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-laplace-smoothing" class="md-nav__link">
+    3.1 Laplace Smoothing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-practice" class="md-nav__link">
+    4. Practice
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -557,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Intro.%20to%20AI/SVM/" class="md-nav__link">
+      <a href="../SVM/" class="md-nav__link">
         SVM
       </a>
     </li>
@@ -618,14 +694,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
       
       <label class="md-nav__link" for="__nav_13">
         Machine Learning
@@ -643,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Attention/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Attention/" class="md-nav__link">
         Self-Attention
       </a>
     </li>
@@ -655,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Auto-encoder/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Auto-encoder/" class="md-nav__link">
         Auto-encoder
       </a>
     </li>
@@ -667,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../BERT/" class="md-nav__link">
+      <a href="../../Machine%20Learning/BERT/" class="md-nav__link">
         BERT
       </a>
     </li>
@@ -679,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basis/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Basis/" class="md-nav__link">
         Basis
       </a>
     </li>
@@ -691,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CNN/" class="md-nav__link">
+      <a href="../../Machine%20Learning/CNN/" class="md-nav__link">
         CNN
       </a>
     </li>
@@ -703,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Detection%20%26%20Segmentation/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Detection%20%26%20Segmentation/" class="md-nav__link">
         Detection & Segmentation
       </a>
     </li>
@@ -715,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../../Machine%20Learning/GPT/" class="md-nav__link">
         GPT
       </a>
     </li>
@@ -727,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Generative%20Models/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Generative%20Models/" class="md-nav__link">
         Generative Models
       </a>
     </li>
@@ -737,78 +811,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Image Classification
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Image%20Classification/" class="md-nav__link">
         Image Classification
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-some-basis-of-ml" class="md-nav__link">
-    1. Some Basis of ML
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-knn" class="md-nav__link">
-    2. KNN
-  </a>
-  
-    <nav class="md-nav" aria-label="2. KNN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pros-and-cons" class="md-nav__link">
-    2.1 Pros and Cons
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-promotion" class="md-nav__link">
-    2.2 Promotion
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -818,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLL/" class="md-nav__link">
+      <a href="../../Machine%20Learning/LLL/" class="md-nav__link">
         Life Long Learning
       </a>
     </li>
@@ -830,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RNN/" class="md-nav__link">
+      <a href="../../Machine%20Learning/RNN/" class="md-nav__link">
         RNN
       </a>
     </li>
@@ -842,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reinforcement%20Learning/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Reinforcement%20Learning/" class="md-nav__link">
         Reinforcement Learning
       </a>
     </li>
@@ -854,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Transformer/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Transformer/" class="md-nav__link">
         Transformer
       </a>
     </li>
@@ -947,36 +954,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-some-basis-of-ml" class="md-nav__link">
-    1. Some Basis of ML
+  <a href="#1-bayes-thm" class="md-nav__link">
+    1. Bayes' Thm.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-knn" class="md-nav__link">
-    2. KNN
-  </a>
-  
-    <nav class="md-nav" aria-label="2. KNN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pros-and-cons" class="md-nav__link">
-    2.1 Pros and Cons
+  <a href="#2-bayes-classifier" class="md-nav__link">
+    2. Bayes Classifier
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#3-naive-bayes-classifier" class="md-nav__link">
+    3. Naive Bayes Classifier
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Naive Bayes Classifier">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#22-promotion" class="md-nav__link">
-    2.2 Promotion
+  <a href="#31-laplace-smoothing" class="md-nav__link">
+    3.1 Laplace Smoothing
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-practice" class="md-nav__link">
+    4. Practice
+  </a>
   
 </li>
       
@@ -993,47 +1007,71 @@
               
   
                 
-                  <a href="https://github.com/Co1lin/notes/edit/master/docs/Machine Learning/Image Classification.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Co1lin/notes/edit/master/docs/Intro. to AI/Naive Bayes Classifier.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="image-classification">Image Classification</h1>
-<p><em>Click on a tile to change the color scheme</em>:</p>
-<div class="tx-switch">
-  <button data-md-color-scheme="default"><code>default</code></button>
-  <button data-md-color-scheme="slate"><code>slate</code></button>
-</div>
-
-<script>
-  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
-  buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      var attr = this.getAttribute("data-md-color-scheme")
-      document.body.setAttribute("data-md-color-scheme", attr)
-      var name = document.querySelector("#__code_0 code span:nth-child(7)")
-      name.textContent = attr
-    })
-  })
-</script>
-
-<h2 id="1-some-basis-of-ml">1. Some Basis of ML</h2>
-<h2 id="2-knn">2. KNN</h2>
-<p>k - Nearest Neighbor Classifier</p>
-<h3 id="21-pros-and-cons">2.1 Pros and Cons</h3>
-<p>Pros:</p>
+                <h1 id="naive-bayes-classifier">Naive Bayes Classifier</h1>
+<h2 id="1-bayes-thm">1. Bayes' Thm.</h2>
+<div class="arithmatex">\[
+\begin{aligned}
+P(Y = c_k | X = x) 
+&amp;= {P(Y = c_k, X = x) \over P(X = x)} \\
+&amp;= {P(X = x | Y = c_k)P(Y = c_k) \over P(X = x)}
+\end{aligned}
+\]</div>
+<p>事件 X 是由原因 <span class="arithmatex">\(Y = c_k\)</span> 引起的概率。</p>
+<h2 id="2-bayes-classifier">2. Bayes Classifier</h2>
+<p>给定X（一个n维向量，每一维代表一个特征），判断它是类别集合Y中的哪一类。</p>
+<p>那么就要<u>选取一个类别 <span class="arithmatex">\(c_k \in Y\)</span> ，使得 <span class="arithmatex">\(P(Y = c_k | X = x)\)</span> 最大</u>。</p>
+<p>（下面用Y代表类别变量；X代表输入样本变量；y是预测的类别）</p>
+<div class="arithmatex">\[
+\begin{aligned}
+y &amp;= \arg\max_{c_k} P(Y = c_k | X = x) \\
+&amp;= \arg\max_{c_k} {P(X = x | Y = c_k)P(Y = c_k) \over P(X = x)} \\
+&amp;= \arg\max_{c_k} {P(X = x | Y = c_k)P(Y = c_k)}
+\end{aligned}
+\]</div>
+<h2 id="3-naive-bayes-classifier">3. Naive Bayes Classifier</h2>
+<p>想求 <span class="arithmatex">\(P(X = x | Y = c_k)\)</span> ，但是参数太多，没法算，因为这相当于在给定类别的条件下，寻找恰好符合一组特征的样本。输入样本为n维向量，对应n个特征，每个特征又对应不同的取值，这就产生了一个n维的联合分布，空间是很大的。</p>
+<p>因此做出「独立性假设」简化之：假设特征之间的取值相互独立！于是：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+y &amp;= \arg\max_{c_k} {P(X = x | Y = c_k)P(Y = c_k)} \\
+&amp;= \arg\max_{c_k} P(Y = c_k) ~ \prod_{j=1}^n P(X^{(j)} = x^{(j)} | Y = c_k)
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(P(X^{(j)} = x^{(j)} | Y = c_k)\)</span> 表示类别为 <span class="arithmatex">\(c_k\)</span> 的所有的样本中，特征的第 <span class="arithmatex">\(j\)</span> 维是 <span class="arithmatex">\(x^{(j)}\)</span> ，i.e. 输入样本第 <span class="arithmatex">\(j\)</span> 个特征的值，的概率。</p>
+<h3 id="31-laplace-smoothing">3.1 Laplace Smoothing</h3>
+<p>为了避免 <span class="arithmatex">\(P(X^{(j)} = x^{(j)} | Y = c_k)\)</span> 由于训练集覆盖不全面而为0，进而导致整个概率为0，加入 Laplace Smoothing 进行修正：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(X^{(j)} = x^{(j)} | Y = c_k) 
+&amp;= {\text{Count}(X^{(j)} = x^{(j)} , Y = c_k) + \lambda \over \text{Count}(Y = c_k) + S_j \lambda}
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(S_j\)</span> 为第 <span class="arithmatex">\(j\)</span> 维对应特征的所有可能的取值的数目。</p>
+<p><span class="arithmatex">\(\lambda\)</span> 通常取1。</p>
+<p>本质上，就是对于第 <span class="arithmatex">\(j\)</span> 维对应特征所有可能的取值情况，都加了个1，i.e. 保证第 <span class="arithmatex">\(j\)</span> 维每种可能的取值都至少有1个样本。</p>
+<h2 id="4-practice">4. Practice</h2>
+<p>给定：</p>
 <ul>
-<li>easy to build</li>
-<li>may sometimes be a good choice in some settings (especially if the data is <strong>low-dimensional</strong>)</li>
+<li>训练集；每个样本为 <span class="arithmatex">\((x^{(1)}, x^{(2)}, \dots, x^{(n)}, c)\)</span> ，即具有 n 个特征的样本对应一个实际类别 c 。</li>
+<li>待预测样本 <span class="arithmatex">\(x\)</span> ；需要求出预测类别 y 。</li>
 </ul>
-<p>Cons:</p>
+<p>利用公式计算：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+y 
+&amp;= \arg\max_{c_k} P(Y = c_k) ~ \Pi_{j=1}^n P(X^{(j)} = x^{(j)} | Y = c_k) \\
+&amp;= \arg\max_{c_k} {\text{Count}(Y = c_k) \over |\text{Training Set}|} ~ \prod_{j=1}^n
+{\text{Count}(X^{(j)} = x^{(j)} , Y = c_k) + \lambda \over \text{Count}(Y = c_k) + S_j \lambda}
+\end{aligned}
+\]</div>
 <ul>
-<li>too slow to get the result of tests</li>
-</ul>
-<h3 id="22-promotion">2.2 Promotion</h3>
-<ul>
-<li>Approximate Nearest Neighbor (ANN)</li>
-<li>k-means</li>
+<li>需要代入每种 <span class="arithmatex">\(c_k\)</span> ，最后 y 取让后面的概率最大的 <span class="arithmatex">\(c_k\)</span></li>
+<li>遍历 n 维特征算连乘</li>
 </ul>
                 
               
@@ -1066,7 +1104,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Generative%20Models/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../Deep%20RL/Policy%20Gradient/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1075,19 +1113,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Generative Models
+              Policy Gradient
             </div>
           </div>
         </a>
       
       
-        <a href="../LLL/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../SVM/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Life Long Learning
+              SVM
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>Image Classification - Colin's Notebook</title>
+        <title>SVM - Colin's Notebook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#image-classification" class="md-skip">
+        <a href="#svm" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image Classification
+              SVM
             
           </span>
         </div>
@@ -522,12 +522,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
       
       <label class="md-nav__link" for="__nav_11">
         Intro. to AI
@@ -545,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Intro.%20to%20AI/Naive%20Bayes%20Classifier/" class="md-nav__link">
+      <a href="../Naive%20Bayes%20Classifier/" class="md-nav__link">
         Naive Bayes Classifier
       </a>
     </li>
@@ -555,11 +557,132 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Intro.%20to%20AI/SVM/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SVM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SVM
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-linear-separable" class="md-nav__link">
+    1. Linear Separable
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Linear Separable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 函数间隔
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 几何间隔
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 优化：间隔最大化
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 优化：间隔最大化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    1.3.1 从最大化到最小化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-lagrangian-function" class="md-nav__link">
+    1.3.2 Lagrangian Function
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.2 Lagrangian Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321-lagrange-multiplier-method" class="md-nav__link">
+    1.3.2.1 Lagrange Multiplier Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322-kkt" class="md-nav__link">
+    1.3.2.2 KKT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-duality" class="md-nav__link">
+    1.3.3 Duality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-solution" class="md-nav__link">
+    1.3.4 Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -618,14 +741,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
       
       <label class="md-nav__link" for="__nav_13">
         Machine Learning
@@ -643,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Attention/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Attention/" class="md-nav__link">
         Self-Attention
       </a>
     </li>
@@ -655,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Auto-encoder/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Auto-encoder/" class="md-nav__link">
         Auto-encoder
       </a>
     </li>
@@ -667,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../BERT/" class="md-nav__link">
+      <a href="../../Machine%20Learning/BERT/" class="md-nav__link">
         BERT
       </a>
     </li>
@@ -679,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basis/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Basis/" class="md-nav__link">
         Basis
       </a>
     </li>
@@ -691,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CNN/" class="md-nav__link">
+      <a href="../../Machine%20Learning/CNN/" class="md-nav__link">
         CNN
       </a>
     </li>
@@ -703,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Detection%20%26%20Segmentation/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Detection%20%26%20Segmentation/" class="md-nav__link">
         Detection & Segmentation
       </a>
     </li>
@@ -715,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../../Machine%20Learning/GPT/" class="md-nav__link">
         GPT
       </a>
     </li>
@@ -727,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Generative%20Models/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Generative%20Models/" class="md-nav__link">
         Generative Models
       </a>
     </li>
@@ -737,78 +858,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Image Classification
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Image%20Classification/" class="md-nav__link">
         Image Classification
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-some-basis-of-ml" class="md-nav__link">
-    1. Some Basis of ML
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-knn" class="md-nav__link">
-    2. KNN
-  </a>
-  
-    <nav class="md-nav" aria-label="2. KNN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pros-and-cons" class="md-nav__link">
-    2.1 Pros and Cons
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-promotion" class="md-nav__link">
-    2.2 Promotion
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -818,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLL/" class="md-nav__link">
+      <a href="../../Machine%20Learning/LLL/" class="md-nav__link">
         Life Long Learning
       </a>
     </li>
@@ -830,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RNN/" class="md-nav__link">
+      <a href="../../Machine%20Learning/RNN/" class="md-nav__link">
         RNN
       </a>
     </li>
@@ -842,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reinforcement%20Learning/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Reinforcement%20Learning/" class="md-nav__link">
         Reinforcement Learning
       </a>
     </li>
@@ -854,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Transformer/" class="md-nav__link">
+      <a href="../../Machine%20Learning/Transformer/" class="md-nav__link">
         Transformer
       </a>
     </li>
@@ -947,31 +1001,85 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-some-basis-of-ml" class="md-nav__link">
-    1. Some Basis of ML
+  <a href="#1-linear-separable" class="md-nav__link">
+    1. Linear Separable
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-knn" class="md-nav__link">
-    2. KNN
-  </a>
-  
-    <nav class="md-nav" aria-label="2. KNN">
+    <nav class="md-nav" aria-label="1. Linear Separable">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-pros-and-cons" class="md-nav__link">
-    2.1 Pros and Cons
+  <a href="#11" class="md-nav__link">
+    1.1 函数间隔
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-promotion" class="md-nav__link">
-    2.2 Promotion
+  <a href="#12" class="md-nav__link">
+    1.2 几何间隔
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 优化：间隔最大化
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 优化：间隔最大化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    1.3.1 从最大化到最小化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-lagrangian-function" class="md-nav__link">
+    1.3.2 Lagrangian Function
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.2 Lagrangian Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321-lagrange-multiplier-method" class="md-nav__link">
+    1.3.2.1 Lagrange Multiplier Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322-kkt" class="md-nav__link">
+    1.3.2.2 KKT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-duality" class="md-nav__link">
+    1.3.3 Duality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-solution" class="md-nav__link">
+    1.3.4 Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -993,55 +1101,170 @@
               
   
                 
-                  <a href="https://github.com/Co1lin/notes/edit/master/docs/Machine Learning/Image Classification.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Co1lin/notes/edit/master/docs/Intro. to AI/SVM.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="image-classification">Image Classification</h1>
-<p><em>Click on a tile to change the color scheme</em>:</p>
-<div class="tx-switch">
-  <button data-md-color-scheme="default"><code>default</code></button>
-  <button data-md-color-scheme="slate"><code>slate</code></button>
-</div>
-
-<script>
-  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
-  buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      var attr = this.getAttribute("data-md-color-scheme")
-      document.body.setAttribute("data-md-color-scheme", attr)
-      var name = document.querySelector("#__code_0 code span:nth-child(7)")
-      name.textContent = attr
-    })
-  })
-</script>
-
-<h2 id="1-some-basis-of-ml">1. Some Basis of ML</h2>
-<h2 id="2-knn">2. KNN</h2>
-<p>k - Nearest Neighbor Classifier</p>
-<h3 id="21-pros-and-cons">2.1 Pros and Cons</h3>
-<p>Pros:</p>
+                <h1 id="svm">SVM</h1>
+<p><img alt="Screen Shot 2021-05-27 at 11.08.29 AM" src="../SVM.assets/Screen%20Shot%202021-05-27%20at%2011.08.29%20AM.png" /></p>
+<h2 id="1-linear-separable">1. Linear Separable</h2>
+<p>线性可分训练集：</p>
 <ul>
-<li>easy to build</li>
-<li>may sometimes be a good choice in some settings (especially if the data is <strong>low-dimensional</strong>)</li>
+<li>类标记只有 +1、-1 两种取值，即 <span class="arithmatex">\(y_i \in \{+1, -1\}\)</span></li>
+<li>通过间隔最大化得到分类超平面 <span class="arithmatex">\(\boldsymbol{w^T}\boldsymbol{x} + b = 0\)</span></li>
+<li>决策函数 <span class="arithmatex">\(f(\boldsymbol{x}) = \text{sign} (\boldsymbol{w^T}\boldsymbol{x} + b)\)</span></li>
 </ul>
-<p>Cons:</p>
-<ul>
-<li>too slow to get the result of tests</li>
-</ul>
-<h3 id="22-promotion">2.2 Promotion</h3>
-<ul>
-<li>Approximate Nearest Neighbor (ANN)</li>
-<li>k-means</li>
-</ul>
+<h3 id="11">1.1 函数间隔</h3>
+<p>超平面关于样本点的函数间隔为</p>
+<div class="arithmatex">\[
+\hat{\gamma_i} = y_i (\boldsymbol{w^T}\boldsymbol{x_i} + b)
+\]</div>
+<p>超平面关于训练集 T 的函数间隔为：</p>
+<div class="arithmatex">\[
+\hat{\gamma} = \min_i \hat{\gamma_i}
+\]</div>
+<h3 id="12">1.2 几何间隔</h3>
+<p>类比函数间隔，除掉 w 的模长：</p>
+<div class="arithmatex">\[
+\hat{\gamma_i} = y_i ({\boldsymbol{w^T} \over ||w||} \cdot \boldsymbol{x_i} + {b \over ||w||}) \\
+\gamma = \min_i \gamma_i
+\]</div>
+<h3 id="13">1.3 优化：间隔最大化</h3>
+<h4 id="131">1.3.1 从最大化到最小化</h4>
+<p>目的：选取 <span class="arithmatex">\((w, b)\)</span> ，使得超平面到两侧样本点的最小距离最大。</p>
+<p>点到超平面的距离：</p>
+<div class="arithmatex">\[
+{|\boldsymbol{w^T x} + b| \over |\boldsymbol{w}|}
+\]</div>
+<p>优化式：</p>
+<div class="arithmatex">\[
+\max_{\boldsymbol{w}, b} \min_{x_i} {1 \over ||\boldsymbol{w}||} y_i (\boldsymbol{w^T x_i} + b) \\
+= \max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \min_{x_i} y_i (\boldsymbol{w^T x_i} + b)
+\]</div>
+<p>由于后面的函数间隔的式子其实是可以随意缩放的，所以不妨把它固定为1（约束为1），最后得到的 <span class="arithmatex">\((w,b)\)</span> 是一样的；于是优化式等价于：</p>
+<div class="arithmatex">\[
+\max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \\
+\text{s.t.} ~ \min_{x_i} y_i (\boldsymbol{w^T x_i} + b) = 1 \\
+\text{i.e.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge 1 ~ (\forall i)
+\]</div>
+<p>继续等价变形：</p>
+<div class="arithmatex">\[
+\min_{\boldsymbol{w}, b} {1 \over 2} ||\boldsymbol{w}||^2,~
+\text{s.t.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge ~ 1 (\forall i, i = 1, 2, \dots N)
+\]</div>
+<p><strong>支持向量</strong>：使约束条件等号成立的点构成支持向量。表现在图上就是两侧距离最优分界面最近的那些点。</p>
+<h4 id="132-lagrangian-function">1.3.2 Lagrangian Function</h4>
+<h5 id="1321-lagrange-multiplier-method">1.3.2.1 Lagrange Multiplier Method</h5>
+<p>拉格朗日乘数法与上述优化问题的区别是，前者的约束条件时等式，而现在却是不等式。</p>
+<h5 id="1322-kkt">1.3.2.2 KKT</h5>
+<p>Karush-Kuhn-Tucker（KKT）条件是非线性规划（nonlinear programming）最佳解的<strong>必要条件</strong>。</p>
+<p>KKT条件将 Lagrange乘数法（Lagrange multipliers）所处理涉及等式的约束优化问题<strong>推广至不等式</strong>。</p>
+<p>与等式的最大区别：<u>不等式乘上的 Lagrange Multiplier 多了一个非负的限制条件</u>。</p>
+<blockquote>
+<p><strong>完整的 KKT 条件</strong>：
+  如果想解优化问题：</p>
+</blockquote>
+<p>$$
+  \begin{aligned}
+  &amp;\min f(\boldsymbol{x}) \
+  \text{s.t.} ~ 
+  g_j(\boldsymbol{x}) &amp;= 0 ~ (j = 1, \dots, m) \
+  h_k(\boldsymbol{x}) &amp;\le 0 ~ (k = 1, \dots, p)
+  \end{aligned}
+  $$</p>
+<p>则定义 Lagrangian Function ：<span class="arithmatex">\(L(\boldsymbol{x}, \lambda, \mu) = f(\boldsymbol{x}) + \sum_j \lambda_j g_j(\boldsymbol{x}) + \sum_k \mu_k h_k(\boldsymbol{x})\)</span>
+  根据最佳解满足的 KKT 必要条件：</p>
+<p>$$
+  \begin{aligned}
+  \nabla L &amp;= 0 \
+  g_j(\boldsymbol{x}) &amp;= 0 ~ (j = 1, \dots, m) \
+  h_k(\boldsymbol{x}) &amp;\le 0 \
+  \mu_k &amp;\ge 0 \
+  \mu_k h_k(\boldsymbol{x}) &amp;= 0 ~ (k = 1, \dots, p)
+  \end{aligned}
+  $$</p>
+<p>可以解出相关的参数。</p>
+<p>于是这里有：</p>
+<div class="arithmatex">\[
+  L(\boldsymbol{w}, b, \boldsymbol{\alpha}) = 
+  {1 \over 2} ||\boldsymbol{w}||^2 +
+  \sum_{i=1}^{N} \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] \\
+  \alpha_i \ge 0, ~ 
+  1 - y_i (\boldsymbol{w^T x_i} + b) \le 0, \\
+  \alpha_i [1 - y_i (\boldsymbol{w^T x_i} + b)] = 0
+\]</div>
+<p>（最后一个等式为「<strong>互补松弛性</strong>」（complementary slackness），</p>
+<p>意思是要么是 <span class="arithmatex">\(\alpha_i = 0\)</span> ，要么是样本 <span class="arithmatex">\((\boldsymbol{x_i}, y_i)\)</span> 使后面的中括号等于0。）</p>
+<p><strong>建立 Lagrange 函数与原优化问题的关系</strong>：</p>
+<p>因为后面的约束项是 ≤ 0 的，而 α 又非负，因此后面的求和项最大也不过是0。考虑：</p>
+<div class="arithmatex">\[
+\max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha})
+\]</div>
+<p>如果 ≤ 0 的约束满足，那么该最大值为 <span class="arithmatex">\(\min_{\boldsymbol{w}, b} {1 \over 2} ||\boldsymbol{w}||^2\)</span> ；如果不满足，则为 <span class="arithmatex">\(+\infty\)</span> 。因此，对该最大值再取最小值的结果是统一的：</p>
+<div class="arithmatex">\[
+\min_{\boldsymbol{w}, b} \max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha})
+= \min_{\boldsymbol{w}, b} {1 \over 2} ||\boldsymbol{w}||^2
+\]</div>
+<p>至此，我们找到了原优化问题的等价式！</p>
+<h4 id="133-duality">1.3.3 Duality</h4>
+<p>但其实上面的先取 max 再取 min 的东西还不好算，因此继续转化为「<strong>对偶问题</strong>」。</p>
+<p>根据：弱对偶关系：「极大的极小 ≥ 极小的极大」（“凤尾 ≥ 鸡头”），有：</p>
+<div class="arithmatex">\[
+\min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
+L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \le
+\max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) \\
+\Rightarrow
+\max_{\boldsymbol{\alpha}} \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) 
+\le
+\min_{\boldsymbol{w}, b} \max_{\boldsymbol{\alpha}} L(\boldsymbol{w}, b, \boldsymbol{\alpha})
+\]</div>
+<p>而满足 KKT 条件时不等号变为等号，即强对偶成立，因此原问题最终转化为：</p>
+<div class="arithmatex">\[
+\max_{\boldsymbol{\alpha}} \min_{\boldsymbol{w}, b} L(\boldsymbol{w}, b, \boldsymbol{\alpha}) 
+\]</div>
+<h4 id="134-solution">1.3.4 Solution</h4>
+<ol>
+<li>
+<p><span class="arithmatex">\(L\)</span> 对 <span class="arithmatex">\(\boldsymbol{w}, b\)</span> 分别求偏导，令结果为0，产生两个等式。</p>
+</li>
+<li>
+<p>将两个等式代入 <span class="arithmatex">\(L\)</span> ，等价变形，可将优化问题转化为：</p>
+</li>
+</ol>
+<p>$$
+   \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \
+   \text{s.t.}~ \alpha_i \ge 0, ~ \sum_{i=1}^N \alpha_i y_i = 0
+   $$</p>
+<ol>
+<li>利用第二行的约束条件，可以求解 α ：</li>
+</ol>
+<p>先利用样本标签与 α 乘积求和的式子消去一个 α 。</p>
+<p>再代入第一行，得到关于 α 的：<span class="arithmatex">\(s(\alpha_i, \dots, \alpha_{n-1})\)</span> 表达式。</p>
+<p>通过令偏导等于0，可以求出极值点 <span class="arithmatex">\((\alpha_i, \dots, \alpha_{n-1})\)</span> 。</p>
+<p>1）若极值点满足每个 α  非负，则找到了一组 α 。</p>
+<p>2）若不满足每个 α  非负，说明最小值<u>在边界上</u>！那么就需要检查每个 α = 0 的边界情况，从中选取使得 <span class="arithmatex">\(s\)</span> 最小的一组 α 。</p>
+<ol>
+<li>确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：</li>
+</ol>
+<div class="arithmatex">\[
+   \begin{aligned}
+   \boldsymbol{w^*} &amp;= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
+   b^* &amp;= y_k - \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i}^T \boldsymbol{x_k}
+   \end{aligned}
+\]</div>
+<p>其中，<span class="arithmatex">\((\boldsymbol{x_k}, y_k)\)</span> 为某 <span class="arithmatex">\(\alpha_k \neq 0\)</span> 对应的样本。</p>
+<p>i.e. 选定某 <span class="arithmatex">\(\alpha_k \neq 0\)</span> ，将其对应的样本代入“固定”，然后再根据求和符号遍历所有样本，计算出 <span class="arithmatex">\(b^*\)</span> 。</p>
+<ol>
+<li>写出超平面，以及决策函数。</li>
+</ol>
                 
               
 
   
     <div class="md-source-date">
       <small>
-          Authors: <span class='git-page-authors git-authors'><a href='mailto:mailbox@valderfield.com'>Co1lin</a></span>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:mailbox@valderfield.com'>Co1lin</a> (96.06%), <a href='mailto:not.committed.yet'>Not Committed Yet</a> (3.94%)</span>
       </small>
     </div>
   
@@ -1066,7 +1289,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Generative%20Models/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../Naive%20Bayes%20Classifier/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1075,19 +1298,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Generative Models
+              Naive Bayes Classifier
             </div>
           </div>
         </a>
       
       
-        <a href="../LLL/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../Jupyter/jupyter/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Life Long Learning
+              Jupyter
             </div>
           </div>
           <div class="md-footer__button md-icon">
