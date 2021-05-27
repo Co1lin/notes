@@ -60,9 +60,9 @@ $$
 
 $$
 \begin{aligned}
-\max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \\
-\text{s.t.} ~ \min_{x_i} y_i (\boldsymbol{w^T x_i} + b) = 1 \\
-\text{i.e.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge 1 ~ (\forall i)
+& \max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \\
+\text{s.t.} ~ & \min_{x_i} y_i (\boldsymbol{w^T x_i} + b) = 1 \\
+\text{i.e.} ~ & y_i (\boldsymbol{w^T x_i} + b) \ge 1 ~ (\forall i)
 \end{aligned}
 $$
 
