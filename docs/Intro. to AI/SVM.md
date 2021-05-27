@@ -29,8 +29,10 @@ $$
 类比函数间隔，除掉 w 的模长：
 
 $$
+\begin{aligned}
 \hat{\gamma_i} = y_i ({\boldsymbol{w^T} \over ||w||} \cdot \boldsymbol{x_i} + {b \over ||w||}) \\
 \gamma = \min_i \gamma_i
+\end{aligned}
 $$
 
 ### 优化：间隔最大化
@@ -48,23 +50,29 @@ $$
 优化式：
 
 $$
+\begin{aligned}
 \max_{\boldsymbol{w}, b} \min_{x_i} {1 \over ||\boldsymbol{w}||} y_i (\boldsymbol{w^T x_i} + b) \\
 = \max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \min_{x_i} y_i (\boldsymbol{w^T x_i} + b)
+\end{aligned}
 $$
 
 由于后面的函数间隔的式子其实是可以随意缩放的，所以不妨把它固定为1（约束为1），最后得到的 $(w,b)$ 是一样的；于是优化式等价于：
 
 $$
+\begin{aligned}
 \max_{\boldsymbol{w}, b} {1 \over ||\boldsymbol{w}||} \\
 \text{s.t.} ~ \min_{x_i} y_i (\boldsymbol{w^T x_i} + b) = 1 \\
 \text{i.e.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge 1 ~ (\forall i)
+\end{aligned}
 $$
 
 继续等价变形：
 
 $$
+\begin{aligned}
 \min_{\boldsymbol{w}, b} {1 \over 2} ||\boldsymbol{w}||^2,~
 \text{s.t.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge ~ 1 (\forall i, i = 1, 2, \dots N)
+\end{aligned}
 $$
 
 **支持向量**：使约束条件等号成立的点构成支持向量。表现在图上就是两侧距离最优分界面最近的那些点。
@@ -177,8 +185,10 @@ $$
 2) 将两个等式代入 $L$ ，等价变形，可将优化问题转化为：
    
    $$
+   \begin{aligned}
    \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \\
    \text{s.t.}~ \alpha_i \ge 0, ~ \sum_{i=1}^N \alpha_i y_i = 0
+   \end{aligned}
    $$
 
 3) 利用第二行的约束条件，可以求解 α ：
@@ -195,12 +205,12 @@ $$
 
 4) 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
    
-$$
+   $$
    \begin{aligned}
    \boldsymbol{w^*} &= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
    b^* &= y_k - \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i}^T \boldsymbol{x_k}
    \end{aligned}
-$$
+   $$
    
    其中，$(\boldsymbol{x_k}, y_k)$ 为某 $\alpha_k \neq 0$ 对应的样本。
 
