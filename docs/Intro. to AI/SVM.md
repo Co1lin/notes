@@ -300,3 +300,47 @@ $$
 
 ![Screen Shot 2021-05-30 at 6.47.39 PM](SVM.assets/Screen%20Shot%202021-05-30%20at%206.47.39%20PM.png)
 
+## Multi-class Classification
+
+一对多：某类为正类，其余为负。最后选取的分类是具有最大分类函数值的那类。
+
+一对一：任意两类构造一个 SVM 分类。最后用「投票法」决定分类。
+
+层次法：所有类先分为两大类，每大类再各分两子类……
+
+## Related Application
+
+Text classification:
+
+每个文本可以表示为一个向量：
+
+$$
+(w_{1,j}, w_{2,j}, w_{3,j}, \dots, w_{n,j})^\text{T}
+$$
+
+其中， $w_{i, j}$ 表示词项 $i$ 在文档 $j$ 中的权重。
+
+### TF 权重
+
+**Term Frequency** ： $\text{tf}_{ij}$ 表示词项 $i$ 在文档 $j$ 中出现的**次数**。
+
+### DF、IDF 权重
+
+**Document Frequency** 文档频率： $\text{df}_{i}$ 表示出现词项 $i$ 的**文档数**
+
+**Inverse Document Frequency** 逆文档频率： $\text{idf}_{i} = \log({N \over \text{df}_i})$ ，其中 $N$ 是总文档数。
+
+- 常用词的 IDF 小，非常用词的 IDF 大（分母小，特征强）。
+
+### TF-IDF
+
+即 $\text{tf}_{i} \cdot \text{idf}_{i}$ 。
+
+某一特定文件内的高词语频率，
+
+以及该词语在整个文件集合中的低文件频率，
+
+可以产生出高 TF-IDF 。
+
+
+
