@@ -206,6 +206,7 @@ $$
 4) 确定了 α ，接下来求解超平面。
 
   结合 KKT 条件，可以得到：
+
 $$
    \begin{aligned}
    \boldsymbol{w^*} &= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
@@ -289,7 +290,7 @@ $$
 $$
 则原来优化式中的 $\boldsymbol{x_i}^T \boldsymbol{x_j}$ 变为 $\phi(\boldsymbol{x_i})^T  \phi(\boldsymbol{x_j})$ 。
 
-引入**核函数** $K(\boldsymbol{x}, \boldsymbol{z})$ ：核函数需满足 $\exist ~ \phi, ~ \text{s.t.} K(\boldsymbol{x}, \boldsymbol{z}) = \phi(\boldsymbol{x})^T \phi(\boldsymbol{z})$ 。
+引入**核函数** $K(\boldsymbol{x}, \boldsymbol{z})$ ：核函数需满足 $\exists ~ \phi, ~ \text{s.t.} K(\boldsymbol{x}, \boldsymbol{z}) = \phi(\boldsymbol{x})^T \phi(\boldsymbol{z})$ 。
 
 则原来优化式和求解过程中的 $\boldsymbol{x_i}^T \boldsymbol{x_j}$ 变为 $K(\boldsymbol{x_i},\boldsymbol{x_j})$ ，i.e. <u>把所有样本之间的点积换成核函数</u>。
 
