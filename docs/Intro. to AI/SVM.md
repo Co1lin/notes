@@ -2,7 +2,7 @@
 
 ![Screen Shot 2021-05-27 at 11.08.29 AM](SVM.assets/Screen%20Shot%202021-05-27%20at%2011.08.29%20AM.png)
 
-## Linear Separable
+## Linearly Separable
 
 线性可分训练集：
 
@@ -71,7 +71,7 @@ $$
 $$
 \begin{aligned}
 \min_{\boldsymbol{w}, b} {1 \over 2} ||\boldsymbol{w}||^2,~
-\text{s.t.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge ~ 1 (\forall i, i = 1, 2, \dots N)
+\text{s.t.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge 1 ~ (\forall i, i = 1, 2, \dots N)
 \end{aligned}
 $$
 
@@ -183,9 +183,9 @@ $$
 1) $L$ 对 $\boldsymbol{w}, b$ 分别求偏导，令结果为0，产生两个等式。
 
 2) 将两个等式代入 $L$ ，等价变形，可将优化问题转化为：
-   
+
 $$
-   \begin{aligned}
+\begin{aligned}
    \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \\
    \text{s.t.}~ \alpha_i \ge 0, ~ \sum_{i=1}^N \alpha_i y_i = 0
    \end{aligned}
@@ -203,17 +203,99 @@ $$
 
    ii）若不满足每个 α  非负，说明最小值<u>在边界上</u>！那么就需要检查每个 α = 0 的边界情况，从中选取使得 $s$ 最小的一组 α 。
 
-4) 确定了 α ，接下来求解超平面。结合 KKT 条件，可以得到：
-   
+4) 确定了 α ，接下来求解超平面。
+
+  结合 KKT 条件，可以得到：
 $$
    \begin{aligned}
    \boldsymbol{w^*} &= \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i} \\
    b^* &= y_k - \sum_{i=1}^N \alpha_i^* y_i \boldsymbol{x_i}^T \boldsymbol{x_k}
    \end{aligned}
 $$
-   
+
    其中，$(\boldsymbol{x_k}, y_k)$ 为某 $\alpha_k \neq 0$ 对应的样本。
 
-   i.e. 选定某 $\alpha_k \neq 0$ ，将其对应的样本代入“固定”，然后再根据求和符号遍历所有样本，计算出 $b^*$ 。
+   i.e. <u>**选定某** $\alpha_k \neq 0$</u> ，将其对应的样本代入“固定”，然后再根据求和符号遍历所有样本，计算出 $b^*$ 。
 
 5) 写出超平面，以及决策函数。
+
+## Linearly Inseparable
+
+### Slack Variable 松弛变量
+
+**Slack variable** 松弛变量 $\xi$ 表示无法满足“函数距离大于1”的样本距离满足该条件还差的最小“距离”。
+
+![Screen Shot 2021-05-30 at 5.15.30 PM](SVM.assets/Screen%20Shot%202021-05-30%20at%205.15.30%20PM.png)
+
+线性不可分时，比存在 $\xi_i > 0$ ，因此将优化问题改为让 $\xi_i$ 求和最小，也就是离完全分开差得最少。
+
+### Soft Margin Maximization 软间隔最大化
+
+类比线性可分的情况，此时优化问题为：
+
+$$
+\begin{aligned}
+&\min_{\boldsymbol{w}, b}( {1 \over 2} ||\boldsymbol{w}||^2 
++ C \sum_{i=1}^N \xi_i)\\
+&\text{s.t.} ~ y_i (\boldsymbol{w^T x_i} + b) \ge 1 - \xi_i \\&(\forall i, i = 1, 2, \dots N, ~ \xi_i \ge 0)
+\end{aligned}
+$$
+
+其中，$C > 0$ 是对误分类的惩罚程度。
+
+同样地，通过简化，优化问题可变形为：
+
+$$
+\begin{aligned}
+&   \min_{\alpha} ~~{1\over 2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \boldsymbol{x_i}^T \boldsymbol{x_j} - \sum_{i=1}^N \alpha_i \\
+&   \text{s.t.}~ 0 \le \alpha_i \le C, ~ \sum_{i=1}^N \alpha_i y_i = 0
+   \end{aligned}
+$$
+
+（线性可分对应 $C \rightarrow +\infty$ ，意思是对 $\alpha$ 无上限约束。）
+
+在实际求解过程中，与之前线性可分求解过程的区别：
+
+将选取某 $\alpha_k \neq 0$ 改为<u>**选取某 $0 < \alpha_k < C$ **</u>，然后代入其对应的样本，求解 $b^*$ 。
+
+### Support Vector 支持向量
+
+![image-20210530181350631](SVM.assets/image-20210530181350631.png)
+
+**所有 $\alpha > 0$ 对应的样本都是支持向量。** i.e. 除了不在间隔边界上的正确样本，都是支持向量。
+
+从（正确分类的）外到内，依次有：
+
+- 不在间隔边界上的正确样本， $\alpha = 0, ~ \xi = 0?$ ，不是支持向量。
+- 在间隔边界上的正确样本， $0 < \alpha < C, ~ \xi = 0$ ，是（硬）支持向量。
+- 在间隔边界之间，恒有 $\alpha = C$ ：
+    - 间隔边界与超平面之间的正确样本， $0 < \xi < 1$ 。
+    - 超平面上， $\xi = 1$ 。
+    - 间隔边界与超平面之间的错误样本， $\xi > 1$ 。
+
+例题： ![FpUYOJYG7izhmecBp0ml5woa5-zg](SVM.assets/FpUYOJYG7izhmecBp0ml5woa5-zg.png)
+
+除了 D 都是。注意蓝色样本都是分类错误的。
+
+![FpQI9JlrY1azE-OWFJ5iS8W44sAl](SVM.assets/FpQI9JlrY1azE-OWFJ5iS8W44sAl.png)
+
+（BCD。D：$C$ 选取很小，会导致无法满足 $0 < \alpha < C$ ，产生软支持向量。）
+
+## Nonlinear classification 非线性分类
+
+用一个**映射函数**将输入空间 $X$ 映射到 $H$ ：
+$$
+\phi(\boldsymbol{x}): ~ X \rightarrow H
+$$
+则原来优化式中的 $\boldsymbol{x_i}^T \boldsymbol{x_j}$ 变为 $\phi(\boldsymbol{x_i})^T  \phi(\boldsymbol{x_j})$ 。
+
+引入**核函数** $K(\boldsymbol{x}, \boldsymbol{z})$ ：核函数需满足 $\exist ~ \phi, ~ \text{s.t.} K(\boldsymbol{x}, \boldsymbol{z}) = \phi(\boldsymbol{x})^T \phi(\boldsymbol{z})$ 。
+
+则原来优化式和求解过程中的 $\boldsymbol{x_i}^T \boldsymbol{x_j}$ 变为 $K(\boldsymbol{x_i},\boldsymbol{x_j})$ ，i.e. <u>把所有样本之间的点积换成核函数</u>。
+
+数学上可以根据定理直接判断一个函数是否是核函数，而不必寻找 $\phi$ 。
+
+常用的核函数：
+
+![Screen Shot 2021-05-30 at 6.47.39 PM](SVM.assets/Screen%20Shot%202021-05-30%20at%206.47.39%20PM.png)
+
