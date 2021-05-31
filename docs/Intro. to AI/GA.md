@@ -36,8 +36,8 @@ $$
 
 - 先选择整数部分，向下取整；一共： $\sum\lfloor e(x_i) \rfloor$
 
-- 如何选取剩下的 $N - \sum_{i=1}^N\lfloor e(x_i)$ ？
-
+- 如何选取剩下的 $N - \sum_{i=1}^N\lfloor e(x_i) \rfloor$ ？
+  
   对 $e_i - \lfloor e(x_i) \rfloor$ <u>从大到小</u>排序，依次选出。相当于优先选整数部分与期望值差得多的。
 
 ### 交叉
