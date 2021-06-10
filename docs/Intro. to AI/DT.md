@@ -146,6 +146,7 @@ C_a(T) &= C(T) + a|T| \\
 &= - \sum_{t=1}^{|T|} \sum_{k=1}^K N_{tk} \log_2 {N_{tk} \over N_t} + a|T|
 \end{align}
 $$
+
 （ $a \ge 0$ 为参数。）
 
 选择损失函数最小的模型。
