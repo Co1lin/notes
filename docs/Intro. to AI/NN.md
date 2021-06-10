@@ -1,6 +1,6 @@
 # Neural Network
 
- ## Backpropagation
+## Backpropagation
 
 利用链式法则推导反向传播：
 
