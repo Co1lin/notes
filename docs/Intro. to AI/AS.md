@@ -46,11 +46,47 @@ e.g.
 剪枝原则：
 
 - 对 min 节点维护极大值 $\beta$ ，对 max 节点维护极小值 $\alpha$ 。
-- 在 min 节点处，发现极大值 $\beta$ ≤ 父节点的极小值 $\alpha$ ，剪枝。（该节点其余子树不必搜索，因为其父节点不会再减小了。）
-- 在 max 节点处，发现极小值 $\alpha$ ≥ 父节点的极大值 $\beta$ ，剪枝。（该节点其余子树不必搜索，因为其父节点不会再增大了。）
+- 在 min 节点处，发现极大值 $\beta$ ≤ 祖先节点的极小值 $\alpha$ ，剪枝。（该节点其余子树不必搜索，因为其祖先节点不会再减小了。）
+- 在 max 节点处，发现极小值 $\alpha$ ≥ 祖先节点的极大值 $\beta$ ，剪枝。（该节点其余子树不必搜索，因为其祖先节点不会再增大了。）
+- P.S. 上述“祖先”节点指的是该节点上面所有的祖先节点，包括但不限于直接父节点。
 
 简记：
-极小 ≤ 极大，或极大 ≥ 极小，剪枝。
+
+- 极小 ≤ 极大， $\beta$ 剪枝；
+- 极大 ≥ 极小， $\alpha$ 剪枝。
+
+算法：向下搜索时，将用于剪枝的约束性区间 $[\alpha, \beta]$ 向下传递。
+
+```pseudocode
+def dfs(cur_node, alpha, beta):
+{
+    if cur_node.is_leaf is True:
+        return cur_node.value
+    
+    l_val = dfs(cur_node.left_child, alpha, beta)
+    cur_node.value = l_val
+    if cur_node.type == 'min':
+    {
+        if alpha >= cur_node.value:
+            return cur_node.value  /* pruning */
+        beta = min(beta, cur_node.value)
+    }
+    else
+    {
+        if beta <= cur_node.value:
+            return cur_node.value  /* pruning */
+        alpha = max(alpha, cur_node.value)
+    }
+    
+    r_val = dfs(cur_node.right_child, alpha, beta)
+    if cur_node.type == 'min':
+        cur_node.value = min(cur_node.value, r_val)
+    else
+        cur_node.value = max(cur_node.value, r_val)
+    
+    return cur_node.val
+}
+```
 
 ## Monte Carlo
 
