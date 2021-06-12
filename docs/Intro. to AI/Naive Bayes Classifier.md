@@ -72,7 +72,7 @@ $\lambda$ 通常取1。
 $$
 \begin{aligned}
 y 
-&= \arg\max_{c_k} P(Y = c_k) ~ \Pi_{j=1}^n P(X^{(j)} = x^{(j)} | Y = c_k) \\
+&= \arg\max_{c_k} P(Y = c_k) ~ \prod_{j=1}^n P(X^{(j)} = x^{(j)} | Y = c_k) \\
 &= \arg\max_{c_k} {\text{Count}(Y = c_k) \over |\text{Training Set}|} ~ \prod_{j=1}^n
 {\text{Count}(X^{(j)} = x^{(j)} , Y = c_k) + \lambda \over \text{Count}(Y = c_k) + S_j \lambda}
 \end{aligned}
