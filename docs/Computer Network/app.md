@@ -1,6 +1,6 @@
 # Application Layer
 
- ## DNS
+## DNS
 
 ### DNS 服务器分层
 
