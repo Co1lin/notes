@@ -187,7 +187,7 @@ e.g. 电话网络
     
     报文交换的延时：
     
-    从主机发送到链路上： $t_0 = {\text{Data Size} \over \text{bit rate}$ 。
+    从主机发送到链路上： $t_0 = {\text{Data Size} \over \text{bit rate}}$ 。
     
     每次存储转发，转发时发送到链路上仍为： $t_0$ 。
     
