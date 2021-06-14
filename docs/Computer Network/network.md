@@ -121,7 +121,7 @@ E类：是保留地址。该类IP地址的最前面为“1111”，所以地址�
 
 方法：缩短网络前缀。
 
- ## Address Resolve Protocol
+## Address Resolve Protocol
 
 从目的 IP 获取目的 MAC ：
 
