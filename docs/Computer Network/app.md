@@ -101,3 +101,18 @@ Connection: Close
 Cookie: 123456
 ```
 
+## 流媒体传输
+
+如何应对网络传输的抖动特性：
+
+- 接收端先缓存一段时间，然后恒定速率播放。（缓冲机制）
+- 增加了时延。
+
+### DASH
+
+Dynamic Adaptive Streaming over HTTP
+
+核心思想：动态选择合适码率进行传输的协议。
+
+![Screen Shot 2021-06-16 at 10.18.04 AM](app.assets/Screen%20Shot%202021-06-16%20at%2010.18.04%20AM.png)
+
