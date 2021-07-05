@@ -30,8 +30,12 @@ tmux rename-session -t 0 <new-name>
 tmux split-window -h
 ```
 
-- `Ctrl+b %`：划分左右两个窗格。
-- `Ctrl+b "`：划分上下两个窗格。
+- `Ctrl+b c`：创建 window 。
+- `Ctrl+b n`：显示下一个 window 。
+- `Ctrl+b p`：显示上一个 window 。
+- `Ctrl+b %`：划分左右两个 pane 。
+- `Ctrl+b "`：划分上下两个 pane 。
+- `Ctrl+b &`：kill 当前 window 。
 - `Ctrl+b q`：显示窗格编号。
 - `Ctrl+b x`：关闭当前窗格。
 - `Ctrl+b {`：当前窗格与上一个窗格交换位置。
