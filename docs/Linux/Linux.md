@@ -33,14 +33,19 @@ tmux split-window -h
 - `Ctrl+b c`：创建 window 。
 - `Ctrl+b n`：显示下一个 window 。
 - `Ctrl+b p`：显示上一个 window 。
-- `Ctrl+b %`：划分左右两个 pane 。
-- `Ctrl+b "`：划分上下两个 pane 。
+- `Ctrl+b :rename-window <name>`：重命名 window 。
 - `Ctrl+b &`：kill 当前 window 。
 - `Ctrl+b q`：显示窗格编号。
 - `Ctrl+b x`：关闭当前窗格。
 - `Ctrl+b {`：当前窗格与上一个窗格交换位置。
 - `Ctrl+b }`：当前窗格与下一个窗格交换位置。
 - `Ctrl+b !`：将当前窗格拆分为一个独立窗口。
+
+pane 相关：
+
+- `Ctrl+b %`：划分左右两个 pane 。
+- `Ctrl+b "`：划分上下两个 pane 。
+- `Ctrl+b Alt+Up/Down`： `resize-pane -U/D 10` 调整 pane 的大小
 
 ## Disk Related
 
