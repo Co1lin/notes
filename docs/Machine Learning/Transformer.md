@@ -18,7 +18,7 @@ _Click on a tile to change the color scheme_:
     })
   })
 </script>
-(Ref: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/))
+(Ref: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) [图解 Transformer](https://www.cnblogs.com/d0main/p/10164192.html))
 
 ## Seq2seq
 
@@ -32,7 +32,15 @@ syntactic parsing, multi-label classification, even object detection
 
 ## Encoder
 
-Overall:
+Summary: 
+
+- 输入，进行 positional encoding ；
+- 经过多个相同结构的特征提取「模块」，包括：
+    - multi-head self-attention
+    - residual addition & norm
+    - feed forward
+    - residual addition & norm
+- 最后得到输出
 
 ![Screen Shot 2021-05-10 at 7.00.04 PM](Transformer.assets/Screen%20Shot%202021-05-10%20at%207.00.04%20PM.png)
 
@@ -51,6 +59,16 @@ Detail of a **block** in an encoder:
 ![Screen Shot 2021-05-10 at 8.40.49 PM](Transformer.assets/Screen%20Shot%202021-05-10%20at%208.40.49%20PM.png)
 
 ## Decoder
+
+Summary:
+
+- 输入是「顺序迭代型」的，即一开始底部输入 \<BOS\> ，输出一个 token ，然后把这个 token 作为第二个输入。
+- 输入，首先是 positional encoding 。
+- 然后是几层结构相同的「模块」，包括：
+    - masked multi-head attention (with residual addition & norm)
+    - multi-head **cross**-attention (with residual addition & norm)
+    - FFN (with residual addition & norm)
+- 最后通过 softmax 输出每个 token 可能性的预测。
 
 ### Autoregressive
 

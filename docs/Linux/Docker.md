@@ -21,3 +21,21 @@ docker image prune -a --filter "until=24h"
 docker container prune
 ```
 
+## Build
+
+```shell
+docker build --network host /dir/contains/dockerfile
+
+docker tag img name:tag
+
+docker commit container name:tag
+```
+
+## Run
+
+```shell
+docker run --name test -h hostname --network host -itd -v /abs/path:/abs/path imgname:tag
+
+docker exec -it test bash
+```
+
