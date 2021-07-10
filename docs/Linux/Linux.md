@@ -118,3 +118,30 @@ xvfb enables you to run graphical applications without a display.
 xvfb-run
 ```
 
+## find
+
+https://www.runoob.com/linux/linux-comm-find.html
+
+```shell
+# find <path> <option>
+
+find . -name "*.c"
+find . -type f
+```
+
+删除空文件夹：先找到空的，然后再借助 `xargs` 删除：
+
+```shell
+find -type d -empty | xargs -n 1 rm -rf
+```
+
+## xargs
+
+```shell
+# <some cmd> | xargs <options> <cmd>
+
+# -n <num> : 每次执行 <cmd> 时用前面管道给的几个参数（空格隔开）；默认是全部
+# 下面 -n 1 使得 rm -rf 每次用前面的一个参数，执行多次直到把参数用完。
+find -type d -empty | xargs -n 1 rm -rf
+```
+
