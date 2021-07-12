@@ -145,3 +145,17 @@ find -type d -empty | xargs -n 1 rm -rf
 find -type d -empty | xargs -n 1 rm -rf
 ```
 
+## ln
+
+Hard link: \~ shared_ptr in C++; 只有当最后一个链接被删除后才能删除。
+
+```shell
+ln <src> <dest>
+```
+
+Symbolic link:
+
+```shell
+ln -s <src> <dest>
+```
+
