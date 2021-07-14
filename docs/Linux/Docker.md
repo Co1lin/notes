@@ -39,3 +39,6 @@ docker run --name test -h hostname --network host -itd -v /abs/path:/abs/path im
 docker exec -it test bash
 ```
 
+## Restart without killing containers
+
+https://stackoverflow.com/questions/63434189/does-restarting-docker-service-kills-all-containers
