@@ -64,6 +64,14 @@ mkfs -t ext4 /dev/sdb2
 mount -t ext4 /dev/sdb2 /data
 ```
 
+Permanently mount:
+
+```shell
+sudo nano /etc/fstab
+
+/dev/sdb2 /data ext4 defaults 1 1
+```
+
 ## apt
 
 Disable IPv6:

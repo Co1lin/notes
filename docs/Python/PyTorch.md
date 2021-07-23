@@ -9,6 +9,28 @@ np.random.seed(config['seed'])
 random.seed(config['seed'])
 ```
 
+Dataloader seed workers:
+
+https://pytorch.org/docs/master/notes/randomness.html#dataloader
+
+```python
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    numpy.random.seed(worker_seed)
+    random.seed(worker_seed)
+
+g = torch.Generator()
+g.manual_seed(0)
+
+DataLoader(
+    train_dataset,
+    batch_size=batch_size,
+    num_workers=num_workers,
+    worker_init_fn=seed_worker
+    generator=g,
+)
+```
+
 ## Distributed
 
 Env:
