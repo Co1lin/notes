@@ -11,7 +11,7 @@ random.seed(config['seed'])
 
 Dataloader seed workers:
 
-https://pytorch.org/docs/master/notes/randomness.html#dataloader
+[REPRODUCIBILITY - DataLoader](https://pytorch.org/docs/master/notes/randomness.html#dataloader)
 
 ```python
 def seed_worker(worker_id):
@@ -84,5 +84,13 @@ torch.backends.cudnn.enabled = True
 torch.backends.cudnn.benchmark = True
 # fix the algorithm for convolution
 # torch.backends.cudnn.deterministic = True
+```
+
+## TORCH_CUDA_ARCH_LIST
+
+To fix `nvcc fatal   : Unsupported gpu architecture 'compute_86'`:
+
+```shell
+export TORCH_CUDA_ARCH_LIST="7.5"
 ```
 
