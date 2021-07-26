@@ -26,3 +26,11 @@ self.writer.add_scalar('loss', loss, update_time)
 export TORCH_CUDA_ARCH_LIST="7.5"
 ```
 
+## Show Processes
+
+Show dead processes that cannot be shown by `nvidia-smi`.
+
+```shell
+fuser -v /dev/nvidia*
+```
+
