@@ -38,7 +38,7 @@ fuser -v /dev/nvidia*
 
 ```shell
 conda activate base
-conda pack -n my_env
+conda pack -n my_env --ignore-editable-packages
 # at last move the uncompressed dir my_env into conda env dir
 ```
 

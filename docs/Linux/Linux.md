@@ -167,3 +167,40 @@ Symbolic link:
 ln -s <src> <dest>
 ```
 
+## Compress
+
+### tar
+
+```shell
+# -z   filter the archive through gzip
+# -v   verbosely list files processed
+# -f, --file=ARCHIVE         use archive file or device ARCHIVE
+
+# -c  create a new archive
+tar -czvf <target archive> <dir to compress>
+
+# -x  extract files from an archive
+tar -xzvf <archive>
+
+# -t  list the contents of an archive
+tar -tzvf <archive>
+```
+
+### pigz
+
+!!! tip "Tips about the usage"
+  `pigz` itself is dedicated to deal with files, not directory!
+
+```shell
+# -9  best quality
+# -p<num_processes>  processes
+tar cf - <dir> | pigz -9 -p4 > output.tar.gz
+
+# -d decompress a file
+# -k keep the original file
+pigz -dk -p4 <archive.tar.gz>
+
+# -l list the content
+pigz -l <archive.tar.gz>
+```
+
