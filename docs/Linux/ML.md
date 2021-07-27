@@ -34,3 +34,11 @@ Show dead processes that cannot be shown by `nvidia-smi`.
 fuser -v /dev/nvidia*
 ```
 
+## conda pack
+
+```shell
+conda activate base
+conda pack -n my_env
+# at last move the uncompressed dir my_env into conda env dir
+```
+
