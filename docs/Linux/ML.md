@@ -42,3 +42,22 @@ conda pack -n my_env --ignore-editable-packages
 # at last move the uncompressed dir my_env into conda env dir
 ```
 
+## Nvidia
+
+### driver
+
+```shell
+dpkg -l | grep nvidia
+
+# remove driver
+sudo apt remove --purge 'nvidia-.*'
+sudo apt-get autoremove
+```
+
+```shell
+# to fix: ERROR: Unable to find the kernel source tree for the currently running kernel. Please make sure you have installed the kernel source files for your kernel and that they are properly configured; on Red Hat Linux systems, for example, be sure you have the 'kernel-source' or 'kernel-devel' RPM installed. If you know the correct kernel source files are installed, you may specify the kernel source path with the '--kernel-source-path' command line option.
+
+apt install linux-source
+apt install linux-headers-$(uname -r)
+```
+

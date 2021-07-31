@@ -4,6 +4,8 @@
 
 [Tmux 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/10/tmux.html)
 
+https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
+
 ```shell
 tmux list-session
 
@@ -189,7 +191,7 @@ tar -tzvf <archive>
 ### pigz
 
 !!! tip "Tips about the usage"
-  `pigz` itself is dedicated to deal with files, not directory!
+    `pigz` itself is dedicated to deal with files, not directory!
 
 ```shell
 # -9  best quality
