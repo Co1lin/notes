@@ -66,11 +66,11 @@ Truncation is mod:
 
 ### Arithmetic
 
+#### Addition
+
 ![Screen Shot 2021-08-09 at 3.04.11 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%203.04.11%20PM.png)
 
 ![Screen Shot 2021-08-09 at 3.04.37 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%203.04.37%20PM.png)
-
-
 
 ![Screen Shot 2021-08-09 at 3.07.13 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%203.07.13%20PM.png)
 
@@ -80,8 +80,43 @@ Add the two's-complement form of the numbers directly, and illustrate the result
 
 ![Screen Shot 2021-08-09 at 3.17.43 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%203.17.43%20PM.png)
 
+#### Negation
+
+![Screen Shot 2021-08-09 at 10.48.19 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%2010.48.19%20PM.png)
+
+At bit-level,
+
+```c
+int8_t x = 12;	// 0000 1100
+x = -x;					// 1111 0100
+
+```
+
+![Screen Shot 2021-08-09 at 10.55.35 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%2010.55.35%20PM.png)
+
+At bit-level, `-x == ~x + 1`:
+
+```c
+uint8_t x = 12;	// 0000 1100
+x = -x;					// 1111 0100
+
+uint8_t x = -12;	// 1111 0100
+x = -x;						// 0000 1100
+```
+
+#### Multiplication
+
+![Screen Shot 2021-08-10 at 11.40.39 AM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-10%20at%2011.40.39%20AM.png)
+
+*Given that integer multiplication is more costly than shifting and adding, many C compilers try to remove many cases where an integer is being multiplied by a constant with combinations of shifting, adding, and subtracting.*
+
+For example, suppose a program contains the expression x*14. Recognizing that 14 = 23 + 22 + 21, the compiler can rewrite the multiplication as (x<<3) + (x<<2) + (x<<1) .
+
+#### Division
+
 !!! danger "Rounding to zero and rounding up/down"
     
+
     For Python,
     
     ```python
@@ -110,4 +145,8 @@ Add the two's-complement form of the numbers directly, and illustrate the result
     ![Screen Shot 2021-08-09 at 4.14.16 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%204.14.16%20PM.png)
 
 ![image-20210809161448105](1%20Representing%20and%20Manipulating%20Information.assets/image-20210809161448105.png)
+
+
+
+## Floating Point
 
