@@ -2,7 +2,7 @@
 
 integer arithmetic: associative and commutative
 
-floating-point arithmetic: not associative (and commutative) (big number eats small number)
+floating-point arithmetic: not associative (but also commutative) (big number eats small number)
 
 
 
@@ -114,6 +114,14 @@ For example, suppose a program contains the expression x*14. Recognizing that 14
 
 #### Division
 
+!!! danger "Shifting right of negative two's-complement"
+    
+    ```
+    1001 0000 >> 1 =
+    1100 1000
+    ```
+    Keep the sign bit, and padding 1 to the left of the remaining bits.
+
 !!! danger "Rounding to zero and rounding up/down"
     
 
@@ -146,7 +154,71 @@ For example, suppose a program contains the expression x*14. Recognizing that 14
 
 ![image-20210809161448105](1%20Representing%20and%20Manipulating%20Information.assets/image-20210809161448105.png)
 
-
-
 ## Floating Point
+
+### IEEE Floating-Point Representation
+
+![image-20210810120020515](1%20Representing%20and%20Manipulating%20Information.assets/image-20210810120020515.png)
+
+**CAUTION: $f = 0.f_{n-1} \dots f_0 = {f_{n-1} \dots f_0 \over 2^n}$**
+
+![image-20210810120349142](1%20Representing%20and%20Manipulating%20Information.assets/image-20210810120349142.png)
+
+(NaN: not a number; e.g. $\sqrt{-1}$, $\infty - \infty$)
+
+#### Floating Point Representation → Value
+
+```
+0 1110 101
+s  e    f
+
+Bias = 2^(4-1) - 1 = 7
+E = e - 7 = 14 - 7 = 7
+e != 0 => M = f + 1 = 5/2^3 + 1 = 13/8
+Value = (-1)^0 * M * 2^E = 13/8 * 2^7 = 13*16 = 208
+```
+
+#### Value → Floating Point Representation
+
+```
+129
+10000001
+
+1.0000001 * 2^7
+0 (e,E=e-Bias) (f,M=f+1) = M * 2^E
+Bias = 2^(4-1) - 1 = 7
+e = E+Bias = 7+7 = 14 -> 1110(bin)
+f = M-1 = 0.0000001
+
+0 1110 000
+```
+
+### Rounding
+
+![Screen Shot 2021-08-10 at 2.36.23 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-10%20at%202.36.23%20PM.png)
+
+Round-to-**even** is also called round-to-nearest .
+
+```
+Round to quater:
+10.11100 -> 11.00
+10.10100 -> 10.10
+```
+
+### Operations
+
+No associative property!
+
+Satisfies:
+
+1. closure of addition or multiplication: 
+    - although 0 * inf yields *NaN*
+2. commutative: x\*y = y\*x, x+y = y+x
+3. monotonicity: 
+    - if a≥b ,then x+a ≥ x+b for any values of a, b, and x other than *NaN*
+    - ![Screen Shot 2021-08-10 at 2.54.45 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-10%20at%202.54.45%20PM.png)
+
+
+
+
 
