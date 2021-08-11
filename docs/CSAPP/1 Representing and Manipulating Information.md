@@ -4,8 +4,6 @@ integer arithmetic: associative and commutative
 
 floating-point arithmetic: not associative (but also commutative) (big number eats small number)
 
-
-
 ![Screen Shot 2021-08-09 at 1.51.46 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-09%20at%201.51.46%20PM.png)
 
 - Big endian: lower address contains more significant byte
@@ -160,7 +158,8 @@ For example, suppose a program contains the expression x*14. Recognizing that 14
 
 ![image-20210810120020515](1%20Representing%20and%20Manipulating%20Information.assets/image-20210810120020515.png)
 
-**CAUTION: $f = 0.f_{n-1} \dots f_0 = {f_{n-1} \dots f_0 \over 2^n}$**
+- e is the unsigned number
+- **CAUTION: $f = 0.f_{n-1} \dots f_0 = {f_{n-1} \dots f_0 \over 2^n}$​**
 
 ![image-20210810120349142](1%20Representing%20and%20Manipulating%20Information.assets/image-20210810120349142.png)
 
