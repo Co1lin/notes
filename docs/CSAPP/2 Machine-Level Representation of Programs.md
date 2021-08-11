@@ -146,6 +146,8 @@ a set of 16 *general-purpose registers* storing 64-bit values
 
 ![image-20210811014731793](2%20Machine-Level%20Representation%20of%20Programs.assets/image-20210811014731793.png)
 
+**NOTE:** $s = 1,2,4,8$
+
 ### Data Movement Instructions
 
 The instructions in a class perform the same operation but with different operand sizes.
@@ -205,4 +207,234 @@ movq %rax, (%rsp)	# Store %rbp on stack
 movq (%rsp), %rax		# Read %rax from stack
 addq $8, (%rsp)			# Increment stack pointer
 ```
+
+### Arithmetic and Logical Operations
+
+![Screen Shot 2021-08-11 at 11.29.52 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2011.29.52%20AM.png)
+
+- `leaq (%rdx), %rax` copies the effective address (but not the value stored in the address) to the destination.
+- Shift
+    - `<shift instruction> <imm value / single-byte register %cl>` (only allowing this speciﬁc register `%cl` as the operand)
+    - a shift instruction operating on data values that are $w$ bits long determines the shift amount from the low-order $m$ bits of register `%cl`, where $2^m = w$​. The higher-order bits are ignored.
+        - So, for example, when register `%cl` has hexadecimal value `0xFF`, then instruction `salb` would shift by 7, while `salw` would shift by 15, `sall` would shift by 31, and `salq` would shift by 63.
+    - Different right shift instructions: 
+        - `SAR` performs an arithmetic shift (ﬁll with copies of the **sign bit**)
+        - `SHR` performs a logical shift (ﬁll with **zeros**)
+
+**Special Arithmetic Operations:**
+
+oct word: 8 words, 16-byte
+
+![Screen Shot 2021-08-11 at 12.49.05 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2012.49.05%20PM.png)
+
+!!! danger "Byte Order"
+    ![Screen Shot 2021-08-11 at 2.01.55 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%202.01.55%20PM.png)
+    
+    The code above is generated for little-endian machine, on which the high-order (more significant) bytes are stored at higher addresses.
+
+## Control
+
+### Condition Codes
+
+a set of single-bit condition code registers
+
+- CF: Carry ﬂag. The most recent operation generated **a carry out of the most signiﬁcant bit**. Used to <u>detect overﬂow for unsigned operations</u>.
+- ZF: Zero ﬂag. The most recent operation yielded zero.
+- SF: Sign ﬂag. The most recent operation yielded a negative value.
+- OF: Overﬂow ﬂag. The most recent operation caused a two’s-complement overﬂow—either negative or positive.
+- `leaq` instruction does not alter any condition codes, since it is intended to be used in address computations.
+- **Otherwise, all of the instructions listed in Figure 3.10 cause the condition codes to be set.**
+
+![Screen Shot 2021-08-11 at 2.49.09 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%202.49.09%20PM.png)
+
+### Accessing the Condition Codes
+
+![Screen Shot 2021-08-11 at 2.53.28 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%202.53.28%20PM.png)
+
+e.g. Compute `a < b ` with data type `long`:
+
+![Screen Shot 2021-08-11 at 4.09.42 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%204.09.42%20PM.png)
+
+- `cmpq %rsi %rdi` ~ `%rdi - %rsi` ~ `a - b`
+- `a < b` ~ `a - b < 0` ~ `SF=1 && OF=0 || SF=0 && OF=1`
+
+### Jump Instructions
+
+![Screen Shot 2021-08-11 at 4.37.58 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%204.37.58%20PM.png)
+
+Different encodings for target instruction of jumps:
+
+- PC relative: the difference between the address of the target instruction and the address of the instruction immediately following the jump
+    - the instructions can be compactly encoded (requiring just 2 bytes)
+    - the object code can be shifted to different positions in memory without alteration
+- Absolute address: using 4 bytes to directly specify the target
+
+```c
+if (test_expr)
+  then_statement;
+else
+  else_statement;
+```
+
+is equivalent to assembly code written in C:
+
+```c
+t = test_expr;
+if (!t)
+	goto false;
+then_statement;
+goto done;
+false:
+	else_statement;
+done:
+```
+
+### Implementing Conditional Branches with Conditional Moves
+
+![Screen Shot 2021-08-11 at 5.56.18 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%205.56.18%20PM.png)
+
+- The source and destination values can be 16, 32, or 64 bits long. Single-byte conditional moves are not supported.
+- The assembler can infer the operand length of a conditional move instruction from the name of the destination register, and so the same instruction name can be used for all operand lengths.
+
+e.g. 
+
+![Screen Shot 2021-08-11 at 5.55.22 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%205.55.22%20PM.png)
+
+### Loop
+
+Loop gets turned into a lower-level combination of tests and conditional jumps.
+
+#### do-while
+
+```c
+loop:
+	body_statement;
+	t = test_expr;
+	if (t)
+  	goto loop;
+```
+
+#### while
+
+the 1st way: jump to middle (`-Og`)
+
+```c
+	goto test;
+loop:
+	body_statement;
+test:
+	t = test_expr;
+	if (t)
+    goto loop;
+```
+
+the 2nd way: guarded do (`-O1`)
+
+```c
+	t = test_expr;
+	if (!t)
+    goto done;
+	do
+    body_statement;
+	while (test_expr);
+done:
+```
+
+Using this implementation strategy, the compiler can often optimize the initial test, for example, determining that the test condition will always hold.
+
+#### for
+
+```c
+for (init-expr; test-expr; update-expr)
+	body-statement;
+
+// is equivalent to
+
+init-expr;
+while (test-expr) {
+  body-statement;
+  update-expr;
+}
+```
+
+### switch
+
+jump table `jt`
+
+**The use of a jump table allows a very efficient way to implement a multiway branch!**
+
+The authors of gcc created a new operator `&&` to create a pointer for a code location.
+
+```c
+void switch_eg(long x, long n,
+               long *dest)
+{
+    long val = x;
+    switch (n)
+    {
+    case 100:
+        val *= 13;
+        break;
+    case 102:
+        val += 10;
+    /* Fall through */
+    case 103:
+        val += 11;
+        break;
+    case 104:
+    case 106:
+        val *= val;
+        break;
+    default:
+        val = 0;
+    }
+    *dest = val;
+}
+
+// is translated to
+
+void switch_eg_impl(long x, long n,
+                    long *dest)
+{
+    /* Table of code pointers */
+    static void *jt[7] = {
+        &&loc_A, &&loc_def, &&loc_B,
+        &&loc_C, &&loc_D, &&loc_def,
+        &&loc_D};
+    unsigned long index = n - 100;
+    long val;
+
+    if (index > 6)
+        goto loc_def;
+    /* Multiway branch */
+    goto *jt[index];
+
+loc_A: /* Case 100 */
+    val = x * 13;
+    goto done;
+loc_B: /* Case 102 */
+    x = x + 10;
+/* Fall through */
+loc_C: /* Case 103 */
+    val = x + 11;
+    goto done;
+loc_D: /* Cases 104, 106 */
+    val = x * x;
+    goto done;
+loc_def: /* Default case */
+    val = 0;
+done:
+    *dest = val;
+}
+```
+
+![Screen Shot 2021-08-11 at 11.02.32 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2011.02.32%20PM.png)
+
+Declarations of jump table:
+
+![Screen Shot 2021-08-11 at 11.02.56 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2011.02.56%20PM.png)
+
+
+
+
 
