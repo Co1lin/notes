@@ -80,5 +80,100 @@ linux> gdb mstore.o
 0x10 <multstore+16>:    0x5b    0xc3    Cannot access memory at address 0x12
 ```
 
-display (abbreviated ‘x’) 14 hex-formatted (also ‘x’) bytes (‘b’) starting at the address where function **multstore** is located
+`x/20xb multstore`: display (abbreviated ‘x’) 14 hex-formatted (also ‘x’) bytes (‘b’) starting at the address where function **multstore** is located
+
+- x86-64 instructions can range in length from 1 to 15 bytes.
+
+Add `main.c`:
+
+```c
+#include <stdio.h>
+
+void multstore(long, long, long *);
+int main() {
+    long d;
+    multstore(2, 3, &d);
+    printf("2 * 3 --> %ld\n", d);
+    return 0;
+}
+
+long mult2(long a, long b) {
+    long s = a * b;
+    return s;
+}
+```
+
+```shell
+gcc -Og -o prog main.c mstore.c
+objdump -d prog
+```
+
+The outputs contains:
+
+```assembly
+00000000000011d5 <multstore>:
+    11d5:       f3 0f 1e fa             endbr64 
+    11d9:       53                      push   %rbx
+    11da:       48 89 d3                mov    %rdx,%rbx
+    11dd:       e8 e7 ff ff ff          callq  11c9 <mult2>
+    11e2:       48 89 03                mov    %rax,(%rbx)
+    11e5:       5b                      pop    %rbx
+    11e6:       c3                      retq   
+    11e7:       66 0f 1f 84 00 00 00    nopw   0x0(%rax,%rax,1)
+    11ee:       00 00
+```
+
+The addresses listed along the left are different— the linker has shifted the location of this code to a different range of addresses.
+
+Combining assembly code with C programs
+
+## Data Formats
+
+![Screen Shot 2021-08-11 at 1.27.33 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%201.27.33%20AM.png)
+
+- word: 2 Bytes
+- l (long words) for int: 4 Bytes; for double: 8 Bytes
+- s for float: 4 Bytes
+- q (quad words) for long or char\*: 8 Bytes
+
+## Accessing Info.
+
+a set of 16 *general-purpose registers* storing 64-bit values
+
+![Screen Shot 2021-08-11 at 1.35.51 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%201.35.51%20AM.png)
+
+### Operand Speciﬁers
+
+![image-20210811014731793](2%20Machine-Level%20Representation%20of%20Programs.assets/image-20210811014731793.png)
+
+### Data Movement Instructions
+
+The instructions in a class perform the same operation but with different operand sizes.
+
+#### Simple
+
+![image-20210811020313509](2%20Machine-Level%20Representation%20of%20Programs.assets/image-20210811020313509.png)
+
+- A move instruction **cannot** have **both** operands refer to **memory** locations!
+    - Copying a value from one memory location to another requires two instructions—the ﬁrst to load the source value into a register, and the second to write this register value to the destination.
+- The size of the register must match the size designated by the last character of the instruction!
+- For most cases, the `mov` instructions will only update the speciﬁc register bytes or memory locations indicated by the destination operand (**with the remaining bytes unchanged**).
+    - Except for `movl` (long word is 4 Bytes, half of the 64-bit register), it will also set the high-order 4 bytes of the register to **0**.
+
+- The regular `movq` instruction can only have **immediate** source operands that can be represented as **32**-bit two’s-complement numbers. (This value is then sign extended to produce the 64-bit value for the destination.)
+    - The `movabsq` instruction can have an arbitrary **64**-bit **immediate** value as its source operand and can only have a **register** as a destination. (I → R)
+
+#### Zero-extending
+
+![Screen Shot 2021-08-11 at 2.35.18 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%202.35.18%20AM.png)
+
+- size designators as its ﬁnal two characters—the ﬁrst specifying the source size, and the second specifying the destination size
+
+#### Sign-extending
+
+![Screen Shot 2021-08-11 at 2.38.52 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%202.38.52%20AM.png)
+
+- Note the absence of an explicit instruction to zero-extend a 4-byte source value to an 8-byte destination in Figure 3.5. Such an instruction would logically be named movzlq, but this instruction does not exist. Instead, this type of data movement can be implemented using a movl instruction having a register as the destination. This technique takes advantage of the property that an instruction generating a 4-byte value with a register as the destination will ﬁll the upper 4 bytes with zeros.
+
+- `cltq` has no operands—it always uses register %eax as its source and %rax as the destination for the sign-extended result. It therefore has the exact same effect as the instruction movslq %eax, %rax, but it has a more compact encoding.
 
