@@ -177,3 +177,32 @@ The instructions in a class perform the same operation but with different operan
 
 - `cltq` has no operands—it always uses register %eax as its source and %rax as the destination for the sign-extended result. It therefore has the exact same effect as the instruction movslq %eax, %rax, but it has a more compact encoding.
 
+Data Movement Example:
+
+![image-20210811102633515](2%20Machine-Level%20Representation%20of%20Programs.assets/image-20210811102633515.png)
+
+Two features:
+
+- Dereferencing a pointer involves copying that pointer (addr) into a register (`%rdi`), and then using this register in a memory reference (`(%rdi)`).
+- Local variables such as x are often kept in registers rather than stored in memory locations.
+
+#### Stack Operation
+
+![Screen Shot 2021-08-11 at 10.34.36 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2010.34.36%20AM.png)
+
+The stack pointer `%rsp` holds the address of the top stack element.
+
+`pushq %rax` is equivalent to:
+
+```assembly
+subq $8, %rsp			# Decrement stack pointer Store
+movq %rax, (%rsp)	# Store %rbp on stack
+```
+
+`popq %rax` is equivalent to:
+
+```assembly
+movq (%rsp), %rax		# Read %rax from stack
+addq $8, (%rsp)			# Increment stack pointer
+```
+
