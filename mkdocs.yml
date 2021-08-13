@@ -1,5 +1,7 @@
 site_name: Colin's Notebook
 repo_url: https://github.com/Co1lin/notes
+edit_uri: edit/main/docs/
+
 theme:
   name: material
   custom_dir: docs/overrides
@@ -13,10 +15,12 @@ theme:
       scheme: slate
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
+        name: Switch to light mode
 
   features:
-    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
 
 markdown_extensions:
   - admonition
