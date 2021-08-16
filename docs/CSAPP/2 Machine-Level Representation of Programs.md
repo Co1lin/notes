@@ -434,7 +434,104 @@ Declarations of jump table:
 
 ![Screen Shot 2021-08-11 at 11.02.56 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%2011.02.56%20PM.png)
 
+## Procedures
 
+![Screen Shot 2021-08-16 at 6.59.06 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%206.59.06%20PM.png)
+
+Features:
+
+- x86-64 stack grows toward **lower** addresses
+- stack pointer `%rsp` points to the top element of the stack
+- stack frame structure
+- When procedure P calls procedure Q, it will <u>push the return address onto the stack</u>, indicating <u>where</u> within P the program <u>should resume</u> execution once Q returns
+
+### Control Transfer
+
+call: 
+
+- <u>pushes</u> an address A (return address) onto the stack and <u>sets</u> the PC to the beginning of Q
+- return address is computed as the address of the instruction immediately <u>following</u> the call instruction
+
+ret:
+
+- <u>pops</u> an address A off the stack and <u>sets</u> the PC to A
+
+![Screen Shot 2021-08-16 at 5.45.49 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%205.45.49%20PM.png)
+
+### Data Transfer
+
+![Screen Shot 2021-08-16 at 6.29.49 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%206.29.49%20PM.png)
+
+When passing parameters on the stack, all data sizes are rounded up to be multiples of eight.
+
+With the arguments in place, the program can then execute a call instruction to transfer control to procedure Q.
+
+![Screen Shot 2021-08-16 at 6.34.42 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%206.34.42%20PM.png)
+
+Except the first 6 args, others are allocated within the stack frame (with higher addresses than the stack pointer `%rsp` ).
+
+### Local Storage on the Stack
+
+At times, however, local data must be stored in memory:
+
+- There are not enough registers to hold
+- The address operator `&` is applied to a local variable (must generate an address)
+- arrays or structures
+
+A procedure allocates space on the stack frame by **decrementing** the stack pointer.
+
+### Local Storage in Registers
+
+By convention, registers `%rbx`, `%rbp`, and `%r12`–`%r15` are classified as **callee-saved registers**. When procedure P calls procedure Q, Q must **preserve** the values of these registers.
+
+All other registers, except for the stack pointer `%rsp`, are classified as **caller-saved registers**. (<u>They can be modified by any function!</u>)
+
+`push` and `pop` decrement and increment the stack pointer, respectively.
+
+## Array Allocation and Access
+
+![Screen Shot 2021-08-16 at 7.46.26 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%207.46.26%20PM.png)
+
+### Pointer Arithmetic
+
+$p$ is a pointer to data of type T , and the value of $p$ is $x_p$, then the expression $p+i$ has value $x_p + L \cdot i$, where $L$ is the size of data type T.
+
+The array reference `A[i]` is identical to the expression `*(A+i)`.
+
+### Nested Arrays
+
+![Screen Shot 2021-08-16 at 8.00.00 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%208.00.00%20PM.png)
+
+### Array Access Optimization
+
+Fix-sized:
+
+![Screen Shot 2021-08-16 at 8.15.57 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%208.19.42%20PM.png)
+
+Variable-sized:
+
+![Screen Shot 2021-08-16 at 8.20.17 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%208.20.17%20PM.png)
+
+## Heterogeneous Data Structures
+
+All of the components of a structure are stored in a contiguous region of memory and a pointer to a structure is the address of its first byte.
+
+![Screen Shot 2021-08-16 at 9.46.05 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%209.46.05%20PM.png)
+
+The selection of the different fields of a structure is handled completely at compile time. (The machine code contains no information about the field declarations or the names of the fields.)
+
+### Data Alignment
+
+The x86-64 hardware will work correctly regardless of the alignment of data. However, Intel recommends that data be aligned to improve memory system performance.
+
+- Any primitive object of K bytes must have an **address that is a multiple of K**.
+- For struct:
+    - Each structure element should satisfy its alignment requirement.
+    - Any pointer of the struct satisfies a K-byte alignment. (K is the maximum size of its members.) (The total size of the struct should be a multiple of K.)
+
+## Combining Control and Data in Machine-Level Programs
+
+The value of a function pointer is the address of the first instruction in the machine-code representation of the function.
 
 
 
