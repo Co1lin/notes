@@ -163,7 +163,9 @@ For example, suppose a program contains the expression x*14. Recognizing that 14
 
 ![image-20210810120349142](1%20Representing%20and%20Manipulating%20Information.assets/image-20210810120349142.png)
 
-(NaN: not a number; e.g. $\sqrt{-1}$, $\infty - \infty$)
+(NaN: not a number; e.g. $\sqrt{-1}$, $\infty - \infty$​)
+
+![Screen Shot 2021-08-18 at 2.22.16 PM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-08-18%20at%202.22.16%20PM.png)
 
 #### Floating Point Representation → Value
 
