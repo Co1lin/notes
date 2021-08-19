@@ -142,6 +142,8 @@ a set of 16 *general-purpose registers* storing 64-bit values
 
 ![Screen Shot 2021-08-11 at 1.35.51 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%201.35.51%20AM.png)
 
+**`%rip` : program counter**
+
 ### Operand Speciﬁers
 
 ![image-20210811014731793](2%20Machine-Level%20Representation%20of%20Programs.assets/image-20210811014731793.png)
@@ -198,7 +200,7 @@ The stack pointer `%rsp` holds the address of the top stack element.
 
 ```assembly
 subq $8, %rsp			# Decrement stack pointer Store
-movq %rax, (%rsp)	# Store %rbp on stack
+movq %rax, (%rsp)	# Store %rax on stack
 ```
 
 `popq %rax` is equivalent to:
@@ -449,7 +451,7 @@ Features:
 
 call: 
 
-- <u>pushes</u> an address A (return address) onto the stack and <u>sets</u> the PC to the beginning of Q
+- <u>pushes</u> an address A (**return address**) onto the stack and <u>sets</u> the PC to the beginning of Q
 - return address is computed as the address of the instruction immediately <u>following</u> the call instruction
 
 ret:
@@ -506,15 +508,23 @@ The array reference `A[i]` is identical to the expression `*(A+i)`.
 
 Fix-sized:
 
-![Screen Shot 2021-08-16 at 8.15.57 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%208.19.42%20PM.png)
+![Screen Shot 2021-08-19 at 3.27.51 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%203.27.51%20PM.png)
 
 Variable-sized:
 
 ![Screen Shot 2021-08-16 at 8.20.17 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%208.20.17%20PM.png)
 
+### Variable-Size Stack Frames
+
+**Variable-sized arrays** needs the support of variable-size stack frames.
+
+![Screen Shot 2021-08-19 at 4.55.40 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%204.55.40%20PM.png)
+
+![Screen Shot 2021-08-19 at 4.56.28 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%204.56.28%20PM.png)
+
 ## Heterogeneous Data Structures
 
-All of the components of a structure are stored in a contiguous region of memory and a pointer to a structure is the address of its first byte.
+All of the components of a structure are stored in a contiguous region of memory and <u>a pointer to a structure is the address of its first byte</u>.
 
 ![Screen Shot 2021-08-16 at 9.46.05 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-16%20at%209.46.05%20PM.png)
 
@@ -532,6 +542,29 @@ The x86-64 hardware will work correctly regardless of the alignment of data. How
 ## Combining Control and Data in Machine-Level Programs
 
 The value of a function pointer is the address of the first instruction in the machine-code representation of the function.
+
+### Buffer Overflow
+
+Thwart:
+
+- Stack randomization (a kind of **ASLR**, address-space layout randomization)
+
+    - allocating a random amount of space between 0 and n bytes on the stack **at the**
+
+        **start of a program**
+
+- Stack protector
+
+    - Store a special **canary value** (guard value) in the stack frame between any local buffer and the rest of the stack state.
+    - Before restoring the register state and returning from the function, the program checks if the canary has been altered. (compare with the initial value)
+    - `-fno-stack-protector` prevent gcc from inserting stack protector.
+    - ![Screen Shot 2021-08-19 at 4.27.10 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%204.27.10%20PM.png)
+
+Attack:
+
+- nop (no operation) sequence (nop sled, i.e. **slides** through the sequence)
+
+
 
 
 
