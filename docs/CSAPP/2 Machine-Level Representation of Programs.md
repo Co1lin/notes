@@ -451,7 +451,7 @@ Features:
 
 call: 
 
-- <u>pushes</u> an address A (**return address**) onto the stack and <u>sets</u> the PC to the beginning of Q
+- <u>**pushes**</u> an address A (**return address**) onto the stack and <u>**sets**</u> the PC to the beginning of Q
 - return address is computed as the address of the instruction immediately <u>following</u> the call instruction
 
 ret:
@@ -558,7 +558,9 @@ Thwart:
     - Store a special **canary value** (guard value) in the stack frame between any local buffer and the rest of the stack state.
     - Before restoring the register state and returning from the function, the program checks if the canary has been altered. (compare with the initial value)
     - `-fno-stack-protector` prevent gcc from inserting stack protector.
-    - ![Screen Shot 2021-08-19 at 4.27.10 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%204.27.10%20PM.png)
+    - ![Screen Shot 2021-08-19 at 11.45.36 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%2011.45.36%20PM.png)
+      
+        ![Screen Shot 2021-08-19 at 4.27.10 PM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-19%20at%204.27.10%20PM.png)
 
 Attack:
 
