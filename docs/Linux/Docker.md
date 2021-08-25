@@ -54,7 +54,7 @@ Export is taking a snapshot of the container. **All informations about history a
 ### Save/Load
 
 ```shell
-sdocker save container_id > container.tar
+docker save container_id > container.tar
 docker load < hangge_server.tar
 ```
 
