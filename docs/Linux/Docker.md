@@ -39,6 +39,27 @@ docker run --name test -h hostname --network host -itd -v /abs/path:/abs/path im
 docker exec -it test bash
 ```
 
+## Saving
+
+### Export/Import
+
+```shell
+docker export <container_id> > container.tar
+docker import /path/to/container.tar
+```
+
+Export is taking a snapshot of the container. **All informations about history and layers will be lost!**
+
+
+### Save/Load
+
+```shell
+sdocker save container_id > container.tar
+docker load < hangge_server.tar
+```
+
+Informations about layers and history will be saved and loaded!
+
 ## Restart without killing containers
 
 https://stackoverflow.com/questions/63434189/does-restarting-docker-service-kills-all-containers
