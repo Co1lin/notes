@@ -117,7 +117,33 @@ Logical
 
 ![Screen Shot 2021-08-26 at 12.42.36 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%2012.42.36%20PM.png)
 
+### Pseudo-instruction
 
+![Screen Shot 2021-08-26 at 3.24.26 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%203.24.26%20PM.png)
+
+![Screen Shot 2021-08-26 at 3.24.38 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%203.24.38%20PM.png)
+
+## Exception
+
+Synchronous exception:
+
+- Traps: system call, break point, trap instruction → return to the next instruction
+
+- Faults: page fault → re-execute the instruction; Recoverable
+
+- Aborts: parity error (results from irregular changes to data), machine check → exist
+
+Asynchronous exception:
+
+- Interrupt: IO Interrupt, hard reset, soft reset
+
+Status Register
+
+![Screen Shot 2021-08-26 at 5.05.23 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%205.05.23%20PM.png)
+
+Cause Register
+
+![Screen Shot 2021-08-26 at 5.05.53 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%205.05.53%20PM.png)
 
 
 
