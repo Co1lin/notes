@@ -206,3 +206,38 @@ pigz -dk -p4 <archive.tar.gz>
 pigz -l <archive.tar.gz>
 ```
 
+## netplan
+
+```shell
+cd /etc/netplan
+sudo netplan generate
+```
+
+```yaml
+network:
+    ethernets:
+        enp1s0f0:
+            addresses:
+                - 192.168.2.222/24
+            gateway4: 192.168.2.1
+            nameservers:
+                addresses:
+                    - 8.8.8.8
+    version: 2
+```
+
+```shell
+sudo netplan apply
+```
+
+## iperf
+
+```shell
+iperf -s <ip>
+iperf -c <ip>
+```
+
+
+
+
+
