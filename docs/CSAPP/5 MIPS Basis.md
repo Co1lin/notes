@@ -42,6 +42,10 @@ The ﬂoating-point math coprocessor (ﬂoating-point accelerator, or FPU), if a
 
 ![Screen Shot 2021-08-26 at 12.49.31 AM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%2012.49.31%20AM.png)
 
+## Passing Arguments
+
+![Screen Shot 2021-09-07 at 5.09.08 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-09-07%20at%205.09.08%20PM.png)
+
 ![Screen Shot 2021-08-26 at 10.35.57 AM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%2010.35.57%20AM.png)
 
 ## Data Types
@@ -49,6 +53,8 @@ The ﬂoating-point math coprocessor (ﬂoating-point accelerator, or FPU), if a
 ![Screen Shot 2021-08-26 at 9.58.08 AM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%209.58.08%20AM.png)
 
 ## Coprocessor 0
+
+![Screen Shot 2021-09-07 at 5.05.38 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-09-07%20at%205.05.38%20PM.png)
 
 ```assembly
 mtc0	<register s of CPU>, <n_th register of CP0>	# Move to coprocessor 0
@@ -61,6 +67,10 @@ and		t0, <complement of bits to clear>
 or		t0, <bits to set>
 mtc0	t0, SR
 ```
+
+## Address Layout
+
+![Screen Shot 2021-09-07 at 5.06.00 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-09-07%20at%205.06.00%20PM.png)
 
 ## Instructions
 
