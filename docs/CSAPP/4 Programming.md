@@ -16,7 +16,7 @@
 .p2align 4, , 15
 # If doing the alignment would require skipping more bytes than the specified maximum, then the alignment is not done at all.
 
-.section .rdata # read-only code section
+.section .rodata # read-only code section
 LC0:	# local
 	.ascii	"Hello World\12\0"
 ```
@@ -86,6 +86,8 @@ When executing `int $0x80`,
 - More arguments are shored in a continuous area in memory which is pointed by `%rbx`.
 
 After calling, `%eax` stores the return value.
+
+
 
 ## Command Line Arguments
 

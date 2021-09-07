@@ -38,6 +38,8 @@ Write two's-complement form of given value:
 
 - Decide the sign bit, and use $x + 2^w$ for the remaining bits
 
+![Screen Shot 2021-09-07 at 9.48.30 AM](1%20Representing%20and%20Manipulating%20Information.assets/Screen%20Shot%202021-09-07%20at%209.48.30%20AM.png)
+
 ### Comparison
 
 If one of the number is unsigned, then compare the numbers by the unsigned rule. The same rule applies to other operations.
