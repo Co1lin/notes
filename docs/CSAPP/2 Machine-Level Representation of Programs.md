@@ -138,7 +138,7 @@ Combining assembly code with C programs
 
 ## Accessing Info.
 
-a set of 16 *general-purpose registers* storing 64-bit values
+x86-64 has a set of 16 *general-purpose registers* storing 64-bit values. (While x86-32 has only 8.)
 
 ![Screen Shot 2021-08-11 at 1.35.51 AM](2%20Machine-Level%20Representation%20of%20Programs.assets/Screen%20Shot%202021-08-11%20at%201.35.51%20AM.png)
 

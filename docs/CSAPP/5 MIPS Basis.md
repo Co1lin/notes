@@ -101,7 +101,7 @@ Load / Save
 
 ![Screen Shot 2021-08-26 at 12.00.33 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%2012.00.33%20PM.png)
 
-Load Link / Store Conditional
+Load Linked / Store Conditional
 
 ![Screen Shot 2021-08-26 at 12.11.42 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%2012.11.42%20PM.png)
 
@@ -131,7 +131,7 @@ Synchronous exception:
 
 - Faults: page fault → re-execute the instruction; Recoverable
 
-- Aborts: parity error (results from irregular changes to data), machine check → exist
+- Aborts: parity error (parity, the evenness or oddness of an integer; results from irregular changes to data), machine check → exist
 
 Asynchronous exception:
 
@@ -145,7 +145,41 @@ Cause Register
 
 ![Screen Shot 2021-08-26 at 5.05.53 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%205.05.53%20PM.png)
 
+## Virtual Memory
 
+### Page Fault
+
+> **Faults**: page fault → **re-execute** the instruction; Recoverable
+
+Address Translation:
+
+![Screen Shot 2021-08-31 at 1.42.38 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%201.42.38%20PM.png)
+
+![Screen Shot 2021-08-31 at 1.43.23 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%201.43.23%20PM.png)
+
+### Memory Management
+
+Virtual Page, Physical Page, Address Translation and Shared Library
+
+![Screen Shot 2021-08-31 at 2.38.43 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%202.38.43%20PM.png)
+
+![Screen Shot 2021-08-31 at 2.51.56 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%202.51.56%20PM.png)
+
+Protection: Access Permission
+
+![Screen Shot 2021-08-31 at 2.42.26 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%202.42.26%20PM.png)
+
+Translation Lookaside Buffer
+
+![Screen Shot 2021-08-31 at 2.54.38 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%202.54.38%20PM.png)
+
+![Screen Shot 2021-08-31 at 2.56.01 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%202.56.01%20PM.png)
+
+### MIPS Memory Management
+
+![Screen Shot 2021-08-31 at 4.33.15 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%204.33.15%20PM.png)
+
+![Screen Shot 2021-08-31 at 4.33.34 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-31%20at%204.33.34%20PM.png)
 
 
 
