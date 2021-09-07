@@ -123,6 +123,10 @@ Logical
 
 ![Screen Shot 2021-08-26 at 3.24.38 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-08-26%20at%203.24.38%20PM.png)
 
+### Syscall
+
+![Screen Shot 2021-09-07 at 4.36.44 PM](5%20MIPS%20Basis.assets/Screen%20Shot%202021-09-07%20at%204.36.44%20PM.png)
+
 ## Exception
 
 Synchronous exception:

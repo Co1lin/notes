@@ -113,6 +113,7 @@ strlen:
 	movb	$10, -1(%rbx)	# 10 is a new line
 	movq	$1, %rax	# system call
 	movq	$1, %rdi # write to stdout
+	syscall
 	jmp vnext
 exit:
 	movq	$60, %rax
