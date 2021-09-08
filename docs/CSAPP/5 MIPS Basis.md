@@ -145,7 +145,7 @@ Synchronous exception:
 
 - Faults: page fault → re-execute the instruction; Recoverable
 
-- Aborts: parity error (parity, the evenness or oddness of an integer; results from irregular changes to data), machine check → exist
+- Aborts: parity error (parity, the evenness or oddness of an integer; results from irregular changes to data), machine check → exit
 
 Asynchronous exception:
 
