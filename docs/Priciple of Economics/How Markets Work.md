@@ -1,6 +1,6 @@
 # How Markets Work
 
-## The Market Forces of Supply and Demand
+## Supply and Demand
 
 **Competitive Market**: a market in which there are **many** buyers and many sellers so that each has a **negligible** impact on the market price
 
@@ -97,6 +97,103 @@ Examples in real world:
 
 - 如果石油价格上升是由于供给不足，则一定会引起GDP增长下降。
 - 相反的，如果较高的石油价格反映的是强劲的需求，那么它就是健康的全球增长的结果（反向因果关系）。
+
+## Elasticity
+
+颐和园和电影院的区别
+
+需求收入弹性
+
+### The Elasticity of Demand
+
+**Elasticity**: a measure of the **responsiveness** of quantity demanded or quantity supplied to a change in one of its determinants
+
+**Price Elasticity of Demand** measures how much the quantity demanded responds to a change in price.
+$$
+\text{Price Elasticity of Demand} = { \text{percentage change in quantity demanded} \over \text{percentage change in price} }
+$$
+Two computing methods:
+
+- divided by starting point
+- **divided by midpoint, which is better**
+    ![Screen Shot 2021-09-27 at 6.53.39 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%206.53.39%20PM.png)
+
+#### Factors affect elasticity
+
+1. Necessities v.s. Luxuries
+
+- Necessities: inelastic demands
+- Luxuries: elastic demands
+
+2. **Narrowly** defined markets tend to have **more elastic** demand than broadly defined markets
+3. Goods tend to have **more elastic** demand over **longer** time horizons.
+    - Consumers can have more ways to avoid the effect if rising price given more time.
+
+#### Examples
+
+![Screen Shot 2021-09-27 at 8.19.25 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%208.19.25%20PM.png)
+
+![Screen Shot 2021-09-27 at 7.32.37 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%207.32.37%20PM.png)
+
+#### Total Revenue
+
+total revenue: the amount paid by buyers and received by sellers of a good, computed as <u>the price of the good times the quantity sold</u>
+
+![Screen Shot 2021-09-27 at 7.43.37 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%207.43.37%20PM.png)
+
+Price decrease and quantity increase:
+$$
+\begin{align}
+
+\end{align}
+$$
+
+
+### The Elasticity of Supply
+
+The price elasticity of supply measures how much the quantity supplied responds to changes in the price.
+
+![Screen Shot 2021-09-27 at 8.19.43 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%208.19.43%20PM.png)
+
+Because firms often have a maximum **capacity for production**, the elasticity of supply may be very high at low levels of quantity supplied and very low at high levels of quantity supplied.
+
+![Screen Shot 2021-09-27 at 8.21.34 PM](How%20Markets%20Work.assets/Screen%20Shot%202021-09-27%20at%208.21.34%20PM.png)
+
+### Other Elasticities
+
+#### Income Elasticity of Demand
+
+Necessities: income inelastic, $0 < e < 1$
+
+Luxuries: income elastic, $e > 1$
+
+#### Cross-Price Elasticity of Demand
+
+$$
+e = {\text{Percentage of change in demand of A} \over \text{Percentage of change in price of B}}
+$$
+
+Substitutes: $e > 0$; more similar, greater $e$
+
+Complements: $e < 0$
+
+## Supply, Demand, and Gov. Policies
+
+### Control on Prices
+
+price ceiling
+
+price floor
+
+### Taxes
+
+**Tax Incidence**: the manner in which the burden of a tax is shared among participants in a market
+
+**Taxes levied on sellers and taxes levied on buyers are equivalent.**
+
+**Distribution of taxes: who are more "elastic" or flexible have less tax burden; who are more dependent on a product or market have to shoulder more tax burden**
+
+
 
 
 
