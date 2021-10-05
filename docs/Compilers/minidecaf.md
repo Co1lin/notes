@@ -9,6 +9,7 @@ Steps for compiling:
 1. Lexical (relating to **words**) analysis (词法分析) → tokens
 2. Syntactic Analysis (according to **syntax**) / Parsing (句法分析) → Abstract Syntax Tree
     - `frontend/ast/tree.py`: defines the nodes of AST
+    - `frontend/parser/ply_parser.py`: define the rule of parser to generate AST nodes
 3. Semantic (relating to **meaning**) Analysis (go through the AST, checking the type correctness, etc.)
     - `frontend/typecheck/namer.py`: the namer phase; resolve all symbols defined in the AST and store them in symbol tables
 4. Generate intermediate code (e.g. **three-address code**) for code generation and optimization
