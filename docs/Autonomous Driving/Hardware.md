@@ -23,6 +23,7 @@ Different types:
 - Mechanical rotation (mostly used; easy to be broken, not reliable)
 - MEMS-mirror: just rotate a small mirror (reliable)
 - Optical phase array: doesn't move; use electricity to control the direction of laser; more challenging production (but more reliable)
+- Flash LiDAR
 
 Raw data:
 

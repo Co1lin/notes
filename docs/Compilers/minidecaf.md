@@ -18,8 +18,6 @@ Steps for compiling:
 5. Generate object code
     - `utils/riscv.py`: Convert TAC into RISCV code
 
-
-
 ## Stage 1
 
 ### Step 2
