@@ -1,5 +1,7 @@
 # Zhihu Notes
 
+[人工智能与量化投资](https://www.zhihu.com/column/intro-to-quant)
+
 ## Basis
 
 量化投资=数据+模型，包括：
@@ -46,6 +48,7 @@ portfolio ：
 - 收益：加权和
 
 - 风险：两两相乘的权重乘上对应协方差的总和
+  
     $$
     \begin{aligned}
     r_p &= \sum_{i=1}^n w_i r_i \\
@@ -68,9 +71,10 @@ portfolio ：
 
 
 目标：达到期望收益的情况下，最小化风险：
+
 $$
 \begin{aligned}
-\bold{w} = \arg\min_{} \text{var}(r_p) \text{ , s.t. } \mathbb{E}(r_p) \ge \mu
+\mathbf{w} = \arg\min_{} \text{var}(r_p) \text{ , s.t. } \mathbb{E}(r_p) \ge \mu
 \end{aligned}
 $$
 
@@ -97,10 +101,11 @@ Return 收益 - Risk 风险曲线（efficient frontier, Markowitz bullet）
 ### CAPM
 
 Capital Asset Pricing Model ，资本资产定价模型
+
 $$
 \begin{aligned}
 \mathbb{E}(r_s) &= r_f + \beta_s (\mathbb{E}(r_M) - r_f) \\
-\text{where } \beta_s &= {\text{cov}(r_s, r_M) \over \text{var}(r_M)}
+\text{where } \beta_s &= {\text{cov}(r_s, r_M) \over \text{var}(r_M)} = \rho_{s,M} {\sigma_s \over \sigma_M}
 \end{aligned}
 $$
 
