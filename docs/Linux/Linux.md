@@ -230,6 +230,17 @@ network:
 sudo netplan apply
 ```
 
+gateway to the Internet:
+
+```shell
+sudo sysctl -p
+#net.ipv4.ip_forward = 1
+sudo iptables -A FORWARD -i enp1s0f0 -j ACCEPT
+sudo iptables -A FORWARD -i enp1s0f1 -j ACCEPT
+sudo iptables -t nat -A POSTROUTING -o enp1s0f0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o enp1s0f1 -j MASQUERADE
+```
+
 ## iperf
 
 ```shell
