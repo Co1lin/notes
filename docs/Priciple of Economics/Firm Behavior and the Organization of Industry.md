@@ -234,6 +234,18 @@ For the first unit of production, MR = AR ⇒
 - If MC > MR, increase Q ⇒ decrease TR
 - ⇒ **MC = MR**
 
+#### The Relationship between MR and Price Elasticity of Demand
+
+![Fig-3.9-1](Firm%20Behavior%20and%20the%20Organization%20of%20Industry.assets/Fig-3.9-1.jpg)
+$$
+\begin{aligned}
+&MR := {\partial TR \over \partial Q}, ~ E_d := {\partial Q \over \partial P} \cdot {P \over Q} \\
+TR = PQ &\Rightarrow MR = {\partial TR \over \partial Q} = {\partial P \over \partial Q}Q + P \\
+&\Rightarrow MR = P(1+{1 \over E_d})
+
+\end{aligned}
+$$
+
 ### Welfare Cost
 
 ![Screen Shot 2021-10-27 at 5.57.44 PM](Firm%20Behavior%20and%20the%20Organization%20of%20Industry.assets/Screen%20Shot%202021-10-27%20at%205.57.44%20PM.png)
