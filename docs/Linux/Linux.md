@@ -248,6 +248,44 @@ iperf -s <ip>
 iperf -c <ip>
 ```
 
+## rsync
+
+```shell
+rsync -r src dst
+rsync -r source1 source2 destination
+
+# -a	to copy meta info (last updated time, permissions)
+rsync -a source destination
+
+# -n / --dry-run	simulate the result of operation
+# -v	verbose
+rsync -anv source/ destination
+
+# --delete	delete files only exist in dst
+rsync -av --delete source/ destination
+
+# --include '*.txt'
+# --exclude '*.txt'
+rsync -av --include="*.txt" --exclude='*' source/ destination
+```
+
+### Remote
+
+```shell
+# SSH protocol	username@host:/path/to/file
+rsync -av -e 'ssh -p port' source destination
+
+# rsync protocol	username@host::module/destination
+
+# --append --append-verify
+```
+
+
+
+
+
+
+
 
 
 
