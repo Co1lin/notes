@@ -1,5 +1,17 @@
 # Linux
 
+## Monitoring or Error Tracing
+
+```shell
+glances	# install by pip
+
+# display the system message buffer
+# can be used to find OOM message
+dmesg
+```
+
+
+
 ## tmux
 
 [Tmux 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/10/tmux.html)
