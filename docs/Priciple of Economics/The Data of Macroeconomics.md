@@ -108,8 +108,17 @@ $$
 \text{Inflation rate in year 2} = { \text{GDP deflator in year 2} - \text{GDP deflator in year 1} \over \text{GDP deflator in year 1} } \times 100
 $$
 
+### Meaning of GDP
 
+GDP does not directly measure those things that make life worthwhile, but it does measure our ability to obtain many of the inputs for a worthwhile life.
 
+GDP is not a *perfect* measure of well-being.
+
+## Measuring the Cost of Living
+
+### The Consumer Price Index
+
+**Consumer Price Index (CPI)**: a measure of <u>the overall cost</u> of the goods and services bought by a typical consumer
 
 
 
