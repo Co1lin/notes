@@ -43,7 +43,7 @@ $$
 Y = C + I + G + NX
 $$
 
-1. **Consumption**: spending by households on goods and services, with the exception of purchases of new housing
+1. **Consumption**: spending by households on goods and services, <u>with the exception of purchases of new housing</u>
 
 2. **Investment**: the purchase of **goods** (called capital goods) that will be used in the future to produce more goods and services
 
@@ -61,7 +61,7 @@ $$
 
         the landlord’s apartment building and a homeowner’s personal residence
 
-        (By convention, the purchase of a new house is the one type of household spending categorized as investment rather than consumption.)
+        (By convention, <u>the purchase of a new house</u> is the one type of household spending <u>categorized as investment</u> rather than consumption.)
 
     3. **Inventories**:
 
@@ -118,13 +118,49 @@ GDP is not a *perfect* measure of well-being.
 
 ### The Consumer Price Index
 
+#### Basis
+
 **Consumer Price Index (CPI)**: a measure of <u>the overall cost</u> of the goods and services bought by a typical consumer
 
+5 steps that the Bureau of Labor Statistics follows to calculate CPI:
 
+![Screen Shot 2021-11-20 at 5.17.55 PM](The%20Data%20of%20Macroeconomics.assets/Screen%20Shot%202021-11-20%20at%205.17.55%20PM.png)
+$$
+\text{CPI} = 100 \times { \text{Price of basket in current year} \over \text{Price of basket in base year} }
+$$
 
+$$
+\text{Inflation rate in year 2} = 100\% \times { \text{CPI in year 2 - CPI in year 1} \over \text{CPI in year 1} }
+$$
 
+**core CPI**: a measure of the overall cost of consumer goods and services <u>excluding food and energy</u>  (Because food and energy prices show substantial short-run volatility, the core CPI better reflects ongoing inflation trends.)
 
+**Producer Price Index (PPI)**: a measure of the cost of a basket of goods and services <u>bought by firms</u>
 
+Because firms eventually pass on their costs to consumers in the form of higher consumer prices, <u>changes in the PPI</u> are often thought to be useful in <u>predicting changes in the CPI</u>.
 
+#### Problems of CPI
 
+**Substitution Bias**: If a price index is computed assuming a fixed basket of goods, it ignores the possibility of consumer substitution and, therefore, <u>overstates the increase in the cost of living</u> from one year to the next.
 
+**Introduction of new goods**: 
+
+- When a new good is introduced, consumers have more variety from which to choose, and this in turn <u>reduces the cost</u> of maintaining the same level of economic well-being.
+- *the increased set of possible choices makes each dollar more valuable*
+
+**Unmeasured quality change**: If the quality rises from one year to the next, the value of a dollar rises.
+
+#### Comparison with GDP Deflator
+
+|                         GDP Deflator                         |                             CPI                              |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| the prices of all goods and services *produced domestically* | the prices of all goods and services *bought by **consumers*** |
+| compares the price of a *fixed* basket of goods and services | compares the price of *currently produced* goods and services |
+
+#### Indexation
+
+Indexation: the automatic correction by law or contract of a dollar amount for the effects of inflation
+
+The interest rate that measures the change in dollar amounts is called the **nominal interest rate**, and the interest rate corrected for inflation is called the **real interest rate**.
+
+Real interest rate = Nominal interest rate - Inflation rate.
