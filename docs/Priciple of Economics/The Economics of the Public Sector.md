@@ -72,4 +72,3 @@ Solutions:
 
 ### The Importance of Property Rights
 
-
