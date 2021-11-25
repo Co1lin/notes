@@ -1,7 +1,12 @@
 # OOP Notes for exam
+
 ## 基本写法
 
 ### Makefile
+
+!!! danger "Makefile needs tab instead of spaces!"
+    
+    下面的 Makefile 复制使用时可能会报错 `Makefile:23: *** missing separator.  Stop.` 。这是因为报错所在行不是用 Tab 缩进的，而用的是空格。此时需要改成 Tab 。
 
 常规版：
 
