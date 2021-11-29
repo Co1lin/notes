@@ -237,12 +237,12 @@ For the first unit of production, MR = AR ⇒
 #### The Relationship between MR and Price Elasticity of Demand
 
 ![Fig-3.9-1](Firm%20Behavior%20and%20the%20Organization%20of%20Industry.assets/Fig-3.9-1.jpg)
+
 $$
 \begin{aligned}
 &MR := {\partial TR \over \partial Q}, ~ E_d := {\partial Q \over \partial P} \cdot {P \over Q} \\
 TR = PQ &\Rightarrow MR = {\partial TR \over \partial Q} = {\partial P \over \partial Q}Q + P \\
 &\Rightarrow MR = P(1+{1 \over E_d})
-
 \end{aligned}
 $$
 
