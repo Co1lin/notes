@@ -28,7 +28,7 @@ SSL Handshake protocol 定义了 share secret key （共享秘钥） ； SSL Rec
 
 4-phase handshake:
 
-1. Establish security capabilities: version, random number, chip suite, encryption algorithm
+1. 2*hello: Establish security capabilities: version, random number, chip suite, encryption algorithm
 2. Server Authentication and Key Exchange:
     1. server sends its certificate
     2. server key exchange
@@ -37,7 +37,7 @@ SSL Handshake protocol 定义了 share secret key （共享秘钥） ； SSL Rec
     1. if requested, sends cert
     2. client key exchange
     3. cert verify
-4. Finish: change cipher spec
+4. 2*Finish: change cipher spec
 
 Master secret 不直接用于加密、认证，而是产生一系列秘钥： MAC 、加密、 IV
 
@@ -50,7 +50,7 @@ Master secret 不直接用于加密、认证，而是产生一系列秘钥： MA
 
 ### SSL 修改密码规约协议
 
-握手结束时发送，通知接收方，以后的记录将使 用刚才协商的密码算法和密钥进行加密/认证
+握手结束时发送，通知接收方，以后的记录将使用刚才协商的密码算法和密钥进行加密/认证
 
 ## Security Analysis of SSL
 
