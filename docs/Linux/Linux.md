@@ -96,6 +96,15 @@ apt-get -o Acquire::ForceIPv4=true update	# temperory
 nano /etc/apt/apt.conf.d/99force-ipv4	# permanent: add Acquire::ForceIPv4 "true";
 ```
 
+Ignore `The following signatures were invalid`:
+
+```shell
+# add [trusted=yes], e.g.
+echo "deb [trusted=yes]  http://dist.alphadrive.ai/apt ./" > /etc/apt/sources.list.d/alphadrive.list
+```
+
+
+
 ## SSH
 
 Public Key -> Servers you want to log in
