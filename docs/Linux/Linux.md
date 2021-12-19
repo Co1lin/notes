@@ -65,6 +65,7 @@ pane 相关：
 
 ```shell
 lsblk
+blkid
 
 fdisk -l
 
@@ -299,6 +300,13 @@ rsync -av -e 'ssh -p port' source destination
 # rsync protocol	username@host::module/destination
 
 # --append --append-verify
+```
+
+## User management
+
+```shell
+sudo adduser colin
+sudo usermod -aG sudo colin
 ```
 
 

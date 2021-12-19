@@ -164,3 +164,4 @@ Indexation: the automatic correction by law or contract of a dollar amount for t
 The interest rate that measures the change in dollar amounts is called the **nominal interest rate**, and the interest rate corrected for inflation is called the **real interest rate**.
 
 Real interest rate = Nominal interest rate - Inflation rate.
+
