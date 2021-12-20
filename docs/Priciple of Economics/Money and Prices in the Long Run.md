@@ -53,6 +53,8 @@ money multiplier: the amount of money the banking system generates with each dol
 $$
 \text{money multiplier} = {1 \over R}
 $$
+![image-20211220002457444](Money%20and%20Prices%20in%20the%20Long%20Run.assets/image-20211220002457444.png)
+
 ![Screen Shot 2021-12-19 at 3.03.00 PM](Money%20and%20Prices%20in%20the%20Long%20Run.assets/Screen%20Shot%202021-12-19%20at%203.03.00%20PM.png)
 
 leverage (杠杆): the use of borrowed money to supplement existing funds for purposes of investment
