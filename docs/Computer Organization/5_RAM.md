@@ -105,6 +105,15 @@ Miss 缺失： Miss Rate 缺失率， Miss Penalty 缺失损失
     - 当块大小相对于总大小太大时， cache 块数太少，缺失率反而 ↑
 - 数据块 ↑ ，需要更多时间装入数据块，缺失损失 ↑
 
+替换方式：
+
+- LFU: 一段时间内被访问次数最少的换出
+- Least Recently Used (LRU): 最近未访问的换出（时间局部性）
+- FIFO: 先换入的行换出（时间局部性）
+- RAND: 随机
+
+命中率： LRU 最好
+
 ### Others
 
 多级 cache
