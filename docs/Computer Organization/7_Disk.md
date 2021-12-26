@@ -153,6 +153,8 @@ Multi-level Cell
 - Block ：最小的<u>擦除</u>单位（2, 4, 8 MB; ms latency）
 - Page ：最小的<u>读写</u>单位（4, 8, 16 KB; us latency）
 
+**按块（大）擦除，按页（小）读写**
+
 SSD 写入：不会写入到原来的 Page ，而是在写之前擦除之（使之失效），然后写到一个新的 Page 中
 
 Flash Translation Layer

@@ -15,6 +15,9 @@ Harvard architecture : 指令、数据分开
 IAS by Von Neumann
 
 - 五大功能部件：控制、运算、存储、输入、输出
+- 第一台： EDSAC
+
+第一台通用电子计算机： ENIAC
 
 Parallelism 并行：多核 CPU 才能实现；
 
