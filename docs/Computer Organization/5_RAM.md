@@ -122,8 +122,6 @@ Miss 缺失： Miss Rate 缺失率， Miss Penalty 缺失损失
 
 指令 cache 与数据 cache
 
-
-
 cache 的接入方式：
 
 | 侧接                                                         | 隔断                                                         |
