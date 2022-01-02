@@ -309,6 +309,17 @@ sudo adduser colin
 sudo usermod -aG sudo colin
 ```
 
+## swap
+
+```shell
+swapon -s
+swapon -a
+dd if=/dev/zero of=/swapfile bs=1M count=32768
+mkswap /swapfile
+swapon /swapfile
+swapon -s
+```
+
 
 
 

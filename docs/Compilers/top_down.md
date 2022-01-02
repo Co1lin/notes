@@ -1,4 +1,4 @@
-# Top Down Semantic Analysis
+# Top-down Semantic Analysis
 
 语法分析：词法分析给出的单词符号序列是否正确
 
