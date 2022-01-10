@@ -12,3 +12,13 @@ src_username <src_mail> det_username <det_mail>
 git config --add --local core.sshCommand 'ssh -i /path/id_ed25519'
 ```
 
+In `.git/config` :
+
+```
+[core]
+        sshCommand = ssh -i /path/id_ed25519
+[user]
+        email = 
+        name = 
+```
+

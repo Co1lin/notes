@@ -320,6 +320,14 @@ swapon /swapfile
 swapon -s
 ```
 
+## curl
+
+```shell
+curl -C - -O link
+```
+
+
+
 
 
 
