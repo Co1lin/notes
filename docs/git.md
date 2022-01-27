@@ -15,6 +15,9 @@ git config --add --local core.sshCommand 'ssh -i /path/id_ed25519'
 In `.git/config` :
 
 ```
+[remote "origin"]
+        url = git@github.com:Co1lin/repo.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
 [core]
         sshCommand = ssh -i /path/id_ed25519
 [user]
