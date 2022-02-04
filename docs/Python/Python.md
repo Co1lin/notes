@@ -144,3 +144,62 @@ def myfunc1():
     pass
 ```
 
+## Special Symbols for Passing Args.
+
+### Non-keyword Args
+
+Use the symbol * to take in a variable number of arguments; *by convention*, it is often used with the word args.
+
+```python
+def myFun(*args):
+	for arg in args:
+    # here args is a tuple: ('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+		print (arg)
+
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+```
+
+Another usage of `*`:
+
+```python
+def foo1(a, b=None):
+    print(a, b)
+
+# * indicates the end of the positional arguments.
+# Every argument after that can only be specified by keyword.
+def foo2(a, *, b=None):
+    print(a, b)
+
+foo1(1, 2)
+foo2(1, 2)
+# TypeError: foo1() takes 1 positional argument but 2 were given
+foo2(1, b=2)
+```
+
+### Keyword Arguments
+
+The special syntax `**kwargs` in function definitions in python is used to pass a keyworded, variable-length argument list.
+
+```python
+def myFun(**kwargs):
+  # here kwargs is a dict
+	for key, value in kwargs.items():
+		print ("%s == %s" %(key, value))
+
+# Driver code
+myFun(first ='Geeks', mid ='for', last='Geeks')
+```
+
+### Together
+
+```python
+def myFun(*args, **kwargs):
+	print("args: ", args)
+	print("kwargs: ", kwargs)
+
+
+# Now we can use both *args ,**kwargs
+# to pass arguments to this function :
+myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks")
+```
+
