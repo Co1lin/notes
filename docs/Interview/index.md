@@ -8,5 +8,13 @@
 
 [ML - 大厂面经答案参考](https://www.jiangdabai.com/1655)
 
-https://zhuanlan.zhihu.com/p/60570461
+
+
+[leetcode常见题型](https://zhuanlan.zhihu.com/p/29731623)
+
+[字节跳动算法岗面经](https://zhuanlan.zhihu.com/p/60570461)
+
+[2018年机器学习算法工程师——秋招自我总结](https://blog.csdn.net/zichen_ziqi/article/details/83308809)
+
+[如何准备机器学习工程师的面试 ？](https://www.zhihu.com/question/23259302)
 
