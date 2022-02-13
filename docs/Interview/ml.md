@@ -188,6 +188,12 @@ A technique that *discourages learning a more complex or flexible model*, so as 
 
 
 
+**RNN and LSTM**
+
+RNN: $s_i = \sigma (U x_i + W s_{i-1} + b)$
+
+Long Short Term Memory: cell state (highway) + hidden state
+
 
 
 

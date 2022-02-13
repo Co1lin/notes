@@ -73,7 +73,7 @@ NP问题：能在多项式时间内验证得出正确解的问题。
 
 [2] $f(n) = O(n^{log_b a} \cdot log^k n) ~ \Rightarrow T(n) = \Theta(n^{log_b a} \cdot log^{k+1}n)$ 
 
-   e.g. Binary search: $T(n) = 1T(n/2)+O(1) = O(nlogn)$
+   e.g. Binary search: $T(n) = 1T(n/2)+O(1) = O(logn)$
 
    e.g. Merge Sort: $T(n) = 2T(n/2)+O(n) = O(nlogn)$
 
