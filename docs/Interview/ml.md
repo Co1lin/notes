@@ -196,5 +196,27 @@ Long Short Term Memory: cell state (highway) + hidden state
 
 
 
+**Why Cross-Entropy?**
 
+Entropy:
+$$
+H(X) = - \sum_{i=1}^n p_i \log p_i
+$$
+X 的取值分布越分散，熵越大
+
+Cross-entropy:
+$$
+C(y, \hat{y}) = - (y \log \hat{y} + (1-y) \log (1- \hat{y}))
+$$
+相比于 MSE 的好处：不会因为 sigmoid 在梯度平缓区而更新太慢
+$$
+{\partial C \over \partial w_j} = {1 \over n} \sum_x x_j (\sigma(z) - y)
+$$
+MSE:
+$$
+{\partial C \over \partial w} = (\hat{y} - y) \sigma'(z)x
+$$
+
+
+**Transformer**
 
