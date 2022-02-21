@@ -152,11 +152,13 @@ QuickSort(lo, hi):
 
 #### Partition
 
-随机选择一点作为pivot（轴点），让其就位。
+随机选择一点作为 pivot （轴点），让其就位。
 
-LUG版的Partition如图所示。始终有：L = [start, lo)，U = [lo, hi]，G = (hi, end]。
+LUG 版的 Partition 如图所示。始终有：L = [start, lo)，U = [lo, hi]，G = (hi, end]。
 
 ![image-20210106181124460](DSA_Review.assets/image-20210106181124460.png)
+
+随机一个数作为 pivot ，使其归位： $O(n)$
 
 ```pseudocode
 Partition(lo, hi):
@@ -168,12 +170,12 @@ Partition(lo, hi):
   {
   	while (lo < hi && pivot < data[hi])	// pivot小于G区间左边待拓展节点时
   		hi--	// 向左拓展G
-  	if (lo < hi)	// 这个判断可以删掉
+  	if (lo < hi)
   		data[lo++] = data[hi]	// 把G区间左边小于等于pivot的数放在L右端（相当于拓展L）
   	
   	while (lo < hi && data[lo] < pivot)	// pivot大于L区间右边待拓展节点时
   		lo++	// 向右拓展L
-  	if (lo < hi)	// 这个判断可以删掉
+  	if (lo < hi)
   		data[hi--] = data[lo]	// 把L区间右边大于等于pivot的数放在G左端（相当于拓展G）
   }	// 继续循环拓展G、L
   // assert: lo == hi
@@ -182,6 +184,14 @@ Partition(lo, hi):
 ```
 
 ### Quick Selection
+
+Select the k-th element: $O(n)$
+
+```c++
+std::nth_element(vec.begin(), k, v.end());
+```
+
+利用 qsort 中的 `partition` 算法，可以得到最坏 $O(n^2)$ 的算法：
 
 ```pseudocode
 QuickSelect(lo, hi, k):
@@ -203,6 +213,14 @@ QuickSelect(lo, hi, k):
 ```
 
 ![Screen Shot 2021-01-06 at 7.29.51 PM](DSA_Review.assets/Screen%20Shot%202021-01-06%20at%207.29.51%20PM.png)
+
+复杂度为 $O(n)$ 的算法：
+
+![Screen Shot 2022-02-14 at 11.00.37 PM](DSA_Review.assets/Screen%20Shot%202022-02-14%20at%2011.00.37%20PM.png)
+
+第 5 步，递归下去的问题的规模不超过当前规模的 75% ：
+
+![Screen Shot 2022-02-14 at 11.01.58 PM](DSA_Review.assets/Screen%20Shot%202022-02-14%20at%2011.01.58%20PM.png)
 
 ### HeapSort
 

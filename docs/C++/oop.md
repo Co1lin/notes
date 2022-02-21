@@ -936,7 +936,7 @@ class Greater
 {
 public:
 	bool operator()(const T &a, const T &b) const
-  {	// 重载()；用于排序的cmp函数的特点：三个const
+	{	// 重载()；用于排序的cmp函数的特点：三个const
 		return a > b;
 	}
 };

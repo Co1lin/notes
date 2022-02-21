@@ -62,6 +62,8 @@ fn main() {
 
 ### Types
 
+#### Tips
+
 - NO implicit conversion!
 
     `i32` for integers by default
@@ -149,7 +151,7 @@ fn main() {
 - Unicode supported
 
     ```rust
-    let x = '我';
+    let x: char = '我';
     println!("{}", std::mem::size_of_val(x)); // 4
     ```
 
@@ -165,7 +167,45 @@ fn main() {
     }
     ```
 
+- `enum` can have data:
+
+    ```rust
+    enum Message {
+        Quit,
+        Move { x: i32, y: i32 },
+        Write(String),
+        ChangeColor(i32, i32, i32),
+    }
+    ```
+
+-  `None` in `Option<T>` and `match`
+
+    ```rust
+    enum Option<T> {
+        Some(T),
+        None,
+    }
+    ```
+
+    ```rust
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None,
+            Some(i) => Some(i + 1),
+        }
+    }
+    ```
+
+- array
+
+    ```rust
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    let b = [3; 5]; // [3,3,3,3,3]
+    ```
+
     
+
+- 
 
 ## Statement
 
@@ -198,7 +238,7 @@ Statements and expressions are not the same!
 - a value will be freed when its owner is not in opening scopes
 - C++ behavior `std::move` by default! including assign, pass args or return values
 
-Transferring ownership is analog to `std::move` (`String` is stored in `heap`; it doesn't has `copy` trait!):
+Transferring ownership is analog to `std::move` (e.g. `String` is stored in `heap`; it doesn't has `copy` trait!):
 
 ```rust
 fn main() {
@@ -230,6 +270,7 @@ fn main() {
 }
 
 fn change(some_string: &mut String) {
+    // deref traits enables direct using of a reference when calling a method of the object
     some_string.push_str(", world");
 }
 
@@ -244,15 +285,15 @@ fn cal_len(s: &String) -> usize {
 fn main() {
     let mut s = String::from("hello");
  
-     let r1 = &s; 
-     let r2 = &s; 
-     println!("{} and {}", r1, r2);
+    let r1 = &s; 
+    let r2 = &s; 
+    println!("{} and {}", r1, r2);
     // r1, r2 are invalid at this point
  
-     let r3 = &mut s; 
-     println!("{}", r3);
-     // r3 is not invalid at this point
- }
+    let r3 = &mut s; 
+    println!("{}", r3);
+    // r3 is not invalid at this point
+}
 ```
 
 
