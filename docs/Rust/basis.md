@@ -537,7 +537,7 @@ enum Result<T, E> {
 }
 ```
 
-Restricting type parameter `T` to what can be added by `+` is needed:
+**Restricting** type parameter `T` to what can be added by `+` is needed:
 
 ```rust
 fn add<T: std::ops::Add<Output = T>>(a:T, b:T) -> T {
@@ -567,9 +567,9 @@ impl<T, U> Point<T, U> {
 
 ```rust
 fn largest<T: PartialOrd>(list: &[T]) -> &T {
-    let mut largest = &list[0];
+    let mut largest: &T = &list[0];
     
-    for item in list.iter() {
+    for item: &T in list.iter() {
         if item > largest {
             largest = item;
         }
@@ -577,6 +577,56 @@ fn largest<T: PartialOrd>(list: &[T]) -> &T {
     largest
 }
 ```
+
+## Trait
+
+- a collection of functions
+- trait object as a type: `Box<dyn MyStruct>` or `&dyn MyStruct`
+
+```rust
+trait Draw {
+    fn draw(&self) -> String;
+}
+
+struct Screen {
+    // trait object
+    components: Vec< Box<dyn Draw> >,
+}
+
+impl Draw for u8 {
+    fn draw(&self) -> String {
+        format!("u8: {}", *self)
+    }
+}
+
+impl Draw for f64 {
+    fn draw(&self) -> String {
+        format!("f64: {}", *self)
+    }
+}
+
+impl Screen {
+    fn run(&self) {
+        for comp in &self.components {
+            println!("{}", comp.draw());
+        }
+    }
+}
+
+fn main() {
+    let a = 4_u8;
+    let b = 6.54_f64;
+    let screen = Screen {
+        components: vec![
+            Box::new(a),
+            Box::new(b),
+        ]
+    };
+    screen.run();
+}
+```
+
+
 
 
 
