@@ -203,7 +203,46 @@ fn main() {
     let b = [3; 5]; // [3,3,3,3,3]
     ```
 
-- 
+#### Vector
+
+```rust
+let v: Vec<i32> = Vec::with_capacity(10);
+// get returns Option<&T>
+match v.get(2) {
+    Some(third) => println!("The 3rd one is {}", third),
+    None => println!("404 Not Found"),
+}
+```
+
+#### HashMap
+
+- `insert` may transfer the ownership if the `copy` trait is not implemented
+
+```rust
+use std::collections::HashMap;
+let mut map: HashMap<&str, i32> = HashMap::new();
+map.insert("key01", 1);
+let number: Option<&i32> = map.get("1");
+for (key, value) in &map {
+    println!("{}: {}", key, value);
+}
+let number: &mut i32 = map.entry("100").or_insert(100); // insert if not existed
+*number = 56; // "100": 56
+```
+
+build HashMap from Vector by `collect`:
+
+```rust
+let vec = vec![
+    ("1", 1),
+    ("2", 2),
+];
+let map: HashMap<_, _> = vec.into_iter().collect();
+// println!("vec: {:?}", vec); // illegal: vec is borrowed by into_iter
+println!("map: {:?}", map);
+```
+
+
 
 ## Statement
 
@@ -259,6 +298,21 @@ fn main() {
     The compiler will compute the ***smallest*** range for it.
 
     DIFFERENT from variable bindings!
+    
+- Use mutable ref. referring to a mutable ref. to change the value of the referred one:
+
+    ```rust
+    let mut a = String::from("hello");
+    let mut b = String::from("world");
+    let mut c = &mut a; // make a mutable by ref
+    *c = b.clone();
+    c = &mut b; // thanks to c's mutability; make b mutable by ref
+    *c = "hello".to_string();
+    println!("a: {}", a); // world
+    println!("b: {}", b); // hello
+    ```
+    
+    
 
 ```rust
 fn main() {
