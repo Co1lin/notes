@@ -80,6 +80,12 @@ fn main() {
     }
     ```
 
+- type conversion:
+    ```rust
+    let b: u16 = 100;
+    (b as i32)
+    ```
+    
 - Comparing by *traits* : `std::cmp::PartialEq` ; operators can be used to trigger them.
 
     `eq` assumes: symmetry, transitivity and reflexivity
@@ -680,7 +686,38 @@ fn main() {
 }
 ```
 
+## Error handling
 
+```rust
+panic!("crash and burn");
+
+// unwarp: Ok -> get the value; Err -> panic
+use std::net::IpAddr;
+let home: IpAddr = "127.0.0.1".parse().unwrap();
+
+// expect: output something when panic
+use std::fs::File;
+let f = File::open("hello.txt").expect("Failed to open hello.txt");
+```
+
+Use `?` to spread errors:
+
+```rust
+// Result<String, Box<dyn std::error::Error>>
+fn read_username_from_file() -> Result<String, io::Error> {
+    let mut s = String::new();
+    File::open("hello.txt")?.read_to_string(&mut s)?; // chain calling
+    Ok(s)
+}
+```
+
+Use `?` to spread `None`:
+
+```rust
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
+}
+```
 
 
 
