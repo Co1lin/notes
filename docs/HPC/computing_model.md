@@ -6,21 +6,32 @@ flop: floating point operation
 
 ## Hardware
 
-PU: Flynn's taxonomy
+### Flynn's taxonomy
 
-MEM: shared / distributed mem.
+- SIMD: one controller, multiple processing unit working on multiple data
+    - vector extensions of Intel CPU
+    - Single Instr. Multiple Threads of NVIDIA: 1 Warp contains 32 Cores
+
+### Mem: shared or distributed
 
 Shared mem. : same address space; direct access
 
 - Unified Mem. Access
+    - limited scalability
+
 - Non-Unified Mem. Access
+    - remote mem. access cost is higher
+    - e.g. multi-way CPU server
+
 
 Distributed mem. : independent address spaces; cannot directly access
 
-From processor's perspective:
+![Screen Shot 2022-03-03 at 3.03.17 PM](computing_model.assets/Screen%20Shot%202022-03-03%20at%203.03.17%20PM.png)
+
+### Processor's perspective
 
 - SMP: Symmetric Multiprocessor: shared mem.
-- CMP: Chip Multi Processor: apply techniques in SMP into a single processor; e.g. Intel i7 (multi-core)
+- CMP: Chip Multiprocessor: apply techniques in SMP into a single processor; e.g. Intel i7 (multi-core)
 
 ## Programming Models
 
@@ -48,7 +59,7 @@ Processes:
 - multi-processing
 - Message Passing Interface
 
-
+CPU <-> GPU
 
 
 ### Data Parallel
@@ -57,7 +68,7 @@ Processes:
     - SIMD
     - Distributed mem.
 
-SIMD
+SIMD: intel vector extensions
 
 MapReduce: map, shuffle, reduce
 

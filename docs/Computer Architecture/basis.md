@@ -15,5 +15,11 @@
 
 ![Screen Shot 2022-02-24 at 12.09.35 PM](basis.assets/Screen%20Shot%202022-02-24%20at%2012.09.35%20PM.png)
 
+Turning Point in Computer Arch:
+
+- instr. parallelization ->  threads and data parallelization
+
+
+
 
 
