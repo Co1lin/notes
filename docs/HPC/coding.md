@@ -24,7 +24,7 @@ omp directive:
     thread_count = omp_get_num_threads();
 }
 
-#pragma omp parallel for // env NUM_THREADS works here
+#pragma omp parallel for // env NUM_THREADS works here; or use num_threads(expr)
 for (int i = 0; i < n; i++)
 ```
 
@@ -33,11 +33,6 @@ for (int i = 0; i < n; i++)
 MPI:
 
 ```cpp
-#pragma omp parallel for
-for (int tid = 0; tid < N; ++tid) {
-    printf("[%d/%d] Hello\n", omp_get_thread_num(), omp_get_num_threads());
-}
-
 // init MPI system
 MPI_Init(nullptr, nullptr);
 
