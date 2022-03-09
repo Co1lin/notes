@@ -42,6 +42,7 @@ extra_javascript:
 
 plugins:
     - search
+    - git-revision-date-localized
     - add-number:
         strict_mode: False
         order: 2

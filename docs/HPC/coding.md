@@ -1,8 +1,8 @@
 # Coding
 
+## OpenMP
 
-
-Compile with openmp:
+Compile with OpenMP:
 
 ```makefile
 openmp_pow: openmp_pow.cpp
@@ -11,7 +11,9 @@ openmp_pow: openmp_pow.cpp
 
 omp directive:
 
-[Ref](https://www.ibm.com/docs/en/xl-c-and-cpp-linux/13.1.5?topic=parallelization-pragma-omp-parallel)
+[Ref from IBM](https://www.ibm.com/docs/en/xl-c-and-cpp-linux/13.1.5?topic=parallelization-pragma-omp-parallel)
+
+[Multithreading with OpenMP](https://ppc.cs.aalto.fi/ch3/)
 
 ```cpp
 // explicitly instructs the compiler to parallelize the chosen block of code.
@@ -25,12 +27,19 @@ omp directive:
 }
 
 #pragma omp parallel for // env NUM_THREADS works here; or use num_threads(expr)
-for (int i = 0; i < n; i++)
+for (int i = 0; i < n; i++) {}
+
+#pragma omp parallel for collapse(2)
+for (int i = 0; i < n; i++) {
+    for (int j = 0; i < n; j++) {
+        ;
+    }
+}
 ```
 
+## MPI
 
-
-MPI:
+### Basis
 
 ```cpp
 // init MPI system
@@ -49,10 +58,30 @@ if (my_rank == 0) {
     fflush(stdout);
 }
 
+auto start = std::chrono::system_clock::now();
+//
+auto end = std::chrono::system_clock::now();
+
+MPI_Finalize();
+
+long long duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count());
+```
+
+### P2P
+
+```cpp
+```
+
+
+
+### Collective
+
+#### Scatter and Gather
+
+```cpp
 // MPI_Barrier blocks all MPI processes in the given communicator
 // until they all call this routine.
 MPI_Barrier(MPI_COMM_WORLD);
-auto start = std::chrono::system_clock::now();
 
 // Process i get data of 
 // root_a[my_rank * (n / comm_sz) : (my_rank + 1) * (n / comm_sz))
@@ -74,6 +103,5 @@ MPI_Gather(
 );
 
 MPI_Barrier(MPI_COMM_WORLD);
-auto end = std::chrono::system_clock::now();
 ```
 
