@@ -29,6 +29,8 @@ jobs:
         with:
           command: |
             echo "Hi~"
+            source /root/.zshrc
+            where python
             cd /home/wwwroot/notes
             git pull
             /root/miniconda3/bin/mkdocs build
