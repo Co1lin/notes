@@ -16,6 +16,19 @@ Broadcast A from P1 to all of the processes. (1-to-all)
 
 ![Screen Shot 2022-03-09 at 5.22.36 PM](MPI.assets/Screen%20Shot%202022-03-09%20at%205.22.36%20PM.png)
 
+Flat Tree
+
+- (P - 1) sendings
+- Bandwidth waste
+
+Binomial Tree
+
+Van De Geijn: Bcast + Allgather
+
+
+
+
+
 Reduce data from all of the processes to P2 with sum op. (all-to-1)
 
 ![Screen Shot 2022-03-09 at 5.32.30 PM](MPI.assets/Screen%20Shot%202022-03-09%20at%205.32.30%20PM.png)
@@ -35,13 +48,42 @@ Gather: The root node gathers data from all of the processes. (all-to-1)
 
 ### All-X
 
+#### Allgather
+
 Allgather = Gather + Bcast
 
 ![Screen Shot 2022-03-09 at 5.38.17 PM](MPI.assets/Screen%20Shot%202022-03-09%20at%205.38.17%20PM.png)
 
-Allreduce = Reduce + Bcast
+Ring
+
+- (P - 1) steps
+- No bandwidth waste
+
+Bruck
+
+- 
+
+Recursive Doubling
+
+- 
+
+
+
+#### Allreduce
+
+Reduce + Bcast
 
 ![Screen Shot 2022-03-09 at 5.39.20 PM](MPI.assets/Screen%20Shot%202022-03-09%20at%205.39.20%20PM.png)
+
+Ring: Reduce-Scatter + Allgather
+
+
+
+#### Alltoall
+
+Irecv-Isend
+
+Pairwise
 
 **Alltoall**: Each process gathers different data from all of the processes. (n ✖️ Gather)
 
@@ -78,6 +120,79 @@ Collective IO
 - sync needed
 
 ![Screen Shot 2022-03-09 at 5.59.19 PM](MPI.assets/Screen%20Shot%202022-03-09%20at%205.59.19%20PM.png)
+
+
+
+
+
+local buffer
+
+blocking op. : buffer is available
+
+
+
+dead lock: data size > buffer size
+
+Solution:
+
+- order; potential risk: sequential! waste bandwidth
+- Sendrecv
+- Bsend
+- partially Async; potential risk: sequential! waste bandwidth
+- (Recommended) Isend + Irecv + waitall
+
+e.g. Mesh exchange
+
+-> Principle: delay sync op.
+
+
+
+Eager Protocol
+
+- send to buffer directly ; no confirmation required -> reduce sync delay
+- local copy needed
+- small message
+
+Rendezvous Protocol
+
+- send envelop first -> sync delay
+- no local data copy
+- big data
+
+
+
+Process Mapping: Map processes to physical devices reasonbly
+
+- Block
+- Cyclic
+
+Process Binding
+
+- reduce cost of switching, cache miss, and cross NUMA access
+
+
+
+Performance Model
+
+- alpha-beta model: Time = alpha (latency) + n * beta (cost per byte)
+    - 
+- 
+
+## Profiling
+
+PMPI
+
+
+
+OSU Benchmark
+
+
+
+https://panthema.net/2013/pmbw/index.html#downloads
+
+
+
+
 
 
 
