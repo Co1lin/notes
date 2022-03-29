@@ -1,5 +1,21 @@
 # Coding
 
+## Tricks
+
+Random number generation:
+
+```cpp
+#pragma omp parallel for
+for (int i = 0; i < n; i++) {
+    // Use std::hash as a parallel random number generatator
+    input[i] = std::hash<int>()(i);
+}
+```
+
+
+
+
+
 ## OpenMP
 
 Compile with OpenMP:

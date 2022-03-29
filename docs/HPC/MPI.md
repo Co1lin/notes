@@ -2,11 +2,124 @@
 
 SPMD: Single Program Multi. Data
 
-
-
 ## P2P Communication
 
+### Blocking
 
+`MPI_Send` will not return until **the send buffer is usable for new data again**.
+
+`MPI_Recv` will not return until **the receive buffer is available for reading**.
+
+System buffer???
+
+### Non-Blocking
+
+Wait or Test:
+
+```c++
+MPI_Request request;
+MPI_Status status;
+MPI_Isend(start, count, datatype, dest, tag, comm, &request);
+MPI_Irecv(start, count, datatype, dest, tag, comm, &request); MPI_Wait(&request, &status);
+MPI_Wait(&request, &status);
+MPI_Test(&request, &flag, &status);
+```
+
+### Dead lock
+
+Unsafe pattern below!!!
+
+![Screen Shot 2022-03-22 at 11.25.19](MPI.assets/Screen%20Shot%202022-03-22%20at%2011.25.19.png)
+
+- System buffer has a limited size.
+- Before Receiving, system buffer is used for storing data to send
+- When size of data to send > size of system buffer, the receiver has to provide space
+
+Solution:
+
+- re-order; potential risk: sequential! waste bandwidth
+
+    ```cpp
+    // process 0
+    Send(1);
+    Recv(1);
+    // Process 1
+    Recv(0);
+    Send(1);
+    ```
+
+- Sendrecv
+
+    ```cpp
+    // process 0
+    SendRecv(1);
+    // Process 1
+    SendRecv(0);
+    ```
+
+    `SendRecv` allows simultaneous sending and receiving.
+
+    It provides receive buffer when sending.
+
+- Bsend: self-provide buffer for sending.
+
+    ```cpp
+    // process 0
+    Bsend(1);
+    Recv(1);
+    // Process 1
+    Bsend(0);
+    Recv(0);
+    ```
+
+- partially Async; potential risk: sequential! waste bandwidth
+
+- (Recommended) Isend + Irecv + Waitall for both process
+
+e.g. Mesh exchange
+
+-> Principle and Lessons Learned: Delay Sync Operations
+
+### P2P Protocols
+
+Eager Protocol
+
+- **send to buffer directly** ; no confirmation required -> reduce sync delay
+- local copy needed
+- enough space required; small message
+
+Rendezvous Protocol
+
+- send envelop first for confirmation -> need time to sync
+- no local data copy
+- big data
+
+## Process Mapping
+
+Map processes to physical devices reasonably
+
+- Different communication needs in different processes
+- Different performance (bandwidth, delay) of different nodes in a cluster
+
+Problem Abstraction: Graph Mapping
+
+![Screen Shot 2022-03-22 at 11.41.23](MPI.assets/Screen%20Shot%202022-03-22%20at%2011.41.23.png)
+
+- NP-Complete Problem
+- Heuristic algorithm
+
+Two simple mapping ways:
+
+![Screen Shot 2022-03-22 at 11.42.56](MPI.assets/Screen%20Shot%202022-03-22%20at%2011.42.56.png)
+
+Why???
+
+- Block
+- Cyclic
+
+Process Binding
+
+- reduce cost of switching, cache miss, and cross NUMA access
 
 ## Collective Communication
 
@@ -123,64 +236,27 @@ Collective IO
 
 
 
+## Performance
 
+### Performance Model
 
-local buffer
+- **alpha-beta model**: Time = **alpha (latency)** + n * **beta (cost per byte)** = latency + n / bandwidth
 
-blocking op. : buffer is available
+    - For most cases, **alpha >> beta >> cost per FLOP**
 
+        **Cost of a big data < Cost of many small data** , e.g.
 
+        alpha + n * beta < n * (alpha + 1 * beta)
 
-dead lock: data size > buffer size
+    - **Computing to Communication Ratio should be large enough**, as cost per FLOP is small
 
-Solution:
+- **LogP Model**: Latency / overhead / gap / Proc
 
-- order; potential risk: sequential! waste bandwidth
-- Sendrecv
-- Bsend
-- partially Async; potential risk: sequential! waste bandwidth
-- (Recommended) Isend + Irecv + waitall
-
-e.g. Mesh exchange
-
--> Principle: delay sync op.
-
-
-
-Eager Protocol
-
-- send to buffer directly ; no confirmation required -> reduce sync delay
-- local copy needed
-- small message
-
-Rendezvous Protocol
-
-- send envelop first -> sync delay
-- no local data copy
-- big data
-
-
-
-Process Mapping: Map processes to physical devices reasonbly
-
-- Block
-- Cyclic
-
-Process Binding
-
-- reduce cost of switching, cache miss, and cross NUMA access
-
-
-
-Performance Model
-
-- alpha-beta model: Time = alpha (latency) + n * beta (cost per byte)
-    - 
-- 
-
-## Profiling
+### Profiling
 
 PMPI
+
+mpiP
 
 
 
@@ -189,6 +265,8 @@ OSU Benchmark
 
 
 https://panthema.net/2013/pmbw/index.html#downloads
+
+
 
 
 
