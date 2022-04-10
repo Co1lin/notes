@@ -107,7 +107,7 @@ rCore 实验中：
 
 ## Privileges
 
-![../_images/PrivilegeStack.png](intro.assets/PrivilegeStack.png)
+![../_images/PrivilegeStack.png](1_intro.assets/PrivilegeStack.png)
 
 OS 在 S-Mode
 
