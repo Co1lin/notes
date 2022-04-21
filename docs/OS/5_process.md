@@ -44,5 +44,79 @@ exec `pub fn sys_exec(path: &str) -> isize;`
 
 Kernel 初始化 ➡️ 加载并执行 initproc ➡️ initproc 中 fork 并 exec 来运行 user shell
 
+## Related Data Structures and Implementation of Process Management
 
+PidAllocator ：简单栈式分配策略
+
+进程对应的 KernelStack ：根据 PID 固定了一块 Virtual Address 连续的空间
+
+push_on_top？？？
+
+Process Control Block ： Kernel 管理 Process 的单位（由 TaskControlBlock 发展而来）
+
+Processor 维护 CPU 状态
+
+- 当前正在执行的进程
+- idle 控制流：尝试从 Task Manager 中选出一个任务放到 CPU 上执行
+    - 与 schedule 结合，实现任务的切换与调度
+
+base_size？？？
+
+创建进程：
+
+- 解析 ELF ，得到应用地址空间、用户栈、入口点
+- 分配 PID 以及 Kernel stack
+- 创建 TCB ，最后会返回之
+- 创建 Trap Context
+
+调度进程：
+
+- 主动 yield 或者时钟中断时
+- 通过 suspend_current_and_run_next 实现
+
+生成进程：
+
+- `fork/exec` 相结合来实现
+- fork
+    - `MapArea::from_another` 复制一个 MapArea ，但是逻辑段没有被真正 map 到 Physical Frame 上（之后通过 MemorySet 中的 push 调用 MapArea 中的 map 来实现）。
+    - `MemorySet::from_existed_user` 复制一个 MemorySet ，对应一个完全相同的 Address Space 。
+    - `TaskControlBlock::fork` 类似 `new` ，但是地址空间是复制的（不是解析 ELF 得到的）、需要维护父子关系。
+    - 修改子进程 TrapContext 中寄存器 a0 使其 fork 的返回值为 0 ；对于父进程， a0 设置为子进程的 PID 。
+    - 父进程从 fork 返回前要将子进程加入到 Task Manager 中。
+- exec ：用 ELF 中的内容替换现有的
+    - 解析 ELF ，生成新的 Address Space ，替换原来的；
+    - 修改新的空间中的 Trap Context 。
+    - 外层的 `sys_exec` ：通过应用名的起始地址，手动查页表，获得完整名称，进而获取应用数据。
+    - exec 之后原来的 TrapContext 失效，需要重新获取 `cx` 。
+
+
+
+user shell 的输入：
+
+- 调用 SBI 提供的 `console_getchar` ；
+- 如果有输入字符，每次只读取 1 个；
+- 将读到的字符写入 User Space （通过手动查页表得到 buffer ）
+
+
+
+进程资源回收
+
+- 退出：
+
+    - 修改状态为 Zombie ；向 TCB 中写入退出码；
+
+    - 将当前进程的 children 挂在 `initproc` 下面；
+
+    - 资源的早期回收：将 MemorySet 中的 areas 清空， i.e. User Space 被回收；
+
+        但存放页表的 Physical Frames 还未被回收；
+
+    - 通过 `schedule` 实现调度与切换；
+
+- `sys_waitpid` 父进程回收；
+
+    - 对于满足条件的 PID ，检查要被回收的子进程的 PCB 的引用计数，确保 RAII 释放其资源的正确性。
+    - 写入 exit code ，返回 PID 。
+
+## Scheduling
 
