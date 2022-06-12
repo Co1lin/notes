@@ -215,6 +215,60 @@ MLFQ ：动态调整进程的优先级，平衡「周转时间」和「响应时
 
 - 公平：对于进程不公平，但是对于用户公平，给各个用户均分资源
 
+### Realtime Task Scheduling
+
+要求满足实时性：不能错过 deadline 。
+
+if $\sum_{p_i} \frac{e_i}{p_i}\leq 1$ 可调度; otherwise 不可调度
+
+#### Rate Monotonic 速率单调
+
+RM：
+
+- 周期越短，优先级越高；优先级是固定的
+
+- 可能错过 deadline ！
+
+    ![image-20220612114648896](5_process.assets/image-20220612114648896.png)
+
+#### Earliest Deadline First 最早截止时间优先
+
+截止时间越短，优先级越高。
+
+![image-20220612115202042](5_process.assets/image-20220612115202042.png)
+
+#### Least Laxity First 最低松弛度优先
+
+- 松弛度 = deadline 时间戳 - 当前时间戳 - 本身还需要运行的时间长度
+- 松弛度越低，紧急度越高，优先级越高
+
+![image-20220612115707785](5_process.assets/image-20220612115707785.png)
+
+#### Priority Inheritance 优先级继承
+
+为了解决 Priority Inversion （优先级反置）的问题：
+
+- 低优先级的任务占用了高优先级需要的资源（e.g. mutex）
+
+- 此时中优先级的任务打断了低优先级的任务
+
+- 高优先级任务本不应等待中优先级任务，但现在在被迫等待
+
+    Priority: T1 > T2 > T3
+
+    ![image-20220612140955055](5_process.assets/image-20220612140955055.png)
+
+优先级继承：
+
+- 如果高优先级的任务请求某资源（前提），而此时低优先级的任务占有了该资源，则把低优先级任务的优先级设置成和高优先级任务相同。
+- 对任务执行流程的影响相对较小（与后述天花板相比）
+
+#### Priority Ceiling Protocol 优先级天花板协议
+
+- 无论是否有高优先级的任务在请求与等待，都把占用资源的任务的优先级设置为可能申请该资源的任务的最高优先级。 i.e. 一旦进入临界区，就升为最高优先级。
+
+
+
 ### 多处理器调度
 
 #### Single Queue Multiprocessor Scheduling
