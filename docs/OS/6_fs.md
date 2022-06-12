@@ -2,6 +2,12 @@
 
 目的：数据的持久存储；方法： App 只需要对「文件」这一抽象进行 R/W 即可。
 
+文件系统的层次：
+
+- 虚拟文件系统（Virtual File System，VFS），定义了一组所有文件系统都支持的数据结构和标准接口。
+- 磁盘的文件系统，它是直接把数据存储在磁盘中，比如 Ext 2/3/4、XFS。
+- 内存的文件系统，内存辅助数据结构 - 例如目录项。
+
 任务：在内核中添加文件系统：一级目录、 `open, read, write, close` 。
 
 1. 实现能操作文件的应用
@@ -76,6 +82,13 @@ Kernel 将所有文件无差别地看作字节序列。
 
 - FS 将：路径 --转化--> Inode 编号；从根目录出发，层层转换。
 
+链接
+
+- hard link 硬链接：类似于引用计数
+- soft/symbolic link 软链接：存储文件名以指向另一文件
+
+![image-20220611120855734](6_fs.assets/image-20220611120855734.png)
+
 FS
 
 - Virtual FS ：在一个 OS 中，可能有多个不同 FS 的持久存储设备；为了统一管理，通过 VFS 规定每种 FS 必须实现的抽象借口，再加上 Mount ，即可用统一的逻辑目录树结构一并管理。
@@ -90,7 +103,7 @@ System Calls
 
     `read` 返回读出的长度；如果读取的文件大小超过 buffer size ，则需要多次读取直到返回值为 0 。
 
-## EasyFS
+## Lab: EasyFS
 
 磁盘布局：在磁盘各扇区上
 
@@ -114,8 +127,8 @@ Block ID 从小到大，有 5 个区域：
 - Super Block ：Magic Number 做合法性检查；定位其它连续区域的位置
 - Index Node Bitmap ：
 - (Disk) Index Nodes ：存储 meta data 、对应数据块的索引信息
-    - 直接索引：直接索引数组，每个元素指向一个数据块
-    - 一级间接索引：直接索引装满后，指向一个数据块，这个块相当于一个直接索引数组，每个元素指向一个数据块
+    - 直接索引数组：每个元素指向一个数据块
+    - 一级间接索引：直接索引装满后，指向一个数据块，这个块相当于一个直接索引数组，每个元素指向一个包含文件数据的数据块
     - 二级间接索引：直接和一级间接索引装满后，指向一个数据块，这个块是一个一级间接索引的数组
 - Data Block Bitmap
 - Data Blocks
@@ -157,7 +170,7 @@ easy-fs 的使用步骤
 
 将应用程序的 ELF 读入，写入 EasyFS 镜像。
 
-## Kernel 接入 EasyFS
+## Lab: Kernel 接入 EasyFS
 
 OS Kernel 中对接 EasyFS 的各种结构；从下到上：
 
@@ -222,6 +235,100 @@ OS 中的索引节点 OSInode ：EasyFS 的 Inode 加上文件中与进程紧密
 - 通过 open_file 得到 app 文件的 OSInode
 - 通过 app_inode (OSInode) 读取应用程序的全部数据
 - 调用 `task.exec` 执行 app 的「数据」
+
+## FS Design
+
+![image-20220611151159381](6_fs.assets/image-20220611151159381.png)
+
+![image-20220611153219405](6_fs.assets/image-20220611153219405.png)
+
+### 文件分配
+
+#### 连续分配
+
+- 文件头指定起始块和长度，分配连续一段块
+- 分配策略（分配哪一连续块？）：最先匹配、最佳匹配……
+- 优点：顺序/随机读高效
+- 缺点：磁盘碎片多；增加文件内容开销大
+
+#### 链式分配
+
+- 优点: 创建、增大、缩小很容易；几乎没有碎片
+
+- 缺点：
+
+    - 随机访问效率低；可靠性差；
+    - 破坏一个链，后面的数据块就丢了
+
+- 链表的实现
+
+    - 显示连接：每个块最后存储指向下一个块的指针
+
+    - 隐式连接：每个磁盘拥有一个 File Allocation Table 常驻内存，存储每个块的下一个块，随机读写快
+
+        ![image-20220611145647689](6_fs.assets/image-20220611145647689.png)
+
+- 优点：外存利用率高，无碎片；增加文件内容容易。
+
+#### 索引分配
+
+![在这里插入图片描述](6_fs.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTg3NzQw,size_16,color_FFFFFF,t_70.png)
+
+- 目录中存储索引表所在的磁盘块号。
+
+- 优点：随机访问、增加文件内容高效。
+
+- 问题：文件太大，需要索引的块太多，一个磁盘块存不下太多索引项
+
+    - 索引块链接：必须按序读取索引块
+
+    - 多层索引：类似于多层页表
+
+        ![在这里插入图片描述](6_fs.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTg3NzQw,size_16,color_FFFFFF,t_70-20220611150800605.png)
+
+    - 混合索引：平衡小文件与大文件所需的磁盘 I/O 次数
+
+        ![image-20220611150940474](6_fs.assets/image-20220611150940474.png)
+
+### 分区
+
+多数磁盘划分为一个或多个分区，每个分区有一个独立的文件系统。
+
+![image-20220611155856431](6_fs.assets/image-20220611155856431.png)
+
+![image-20220611155843516](6_fs.assets/image-20220611155843516.png)
+
+### 崩溃一致性
+
+#### fsck
+
+对整个磁盘做扫描，检查合理性
+
+#### journaling
+
+write ahead logging ：所有数据先写入日志，再写入磁盘
+
+两种方式：
+
+- data journaling
+
+    ![image-20220611215930462](6_fs.assets/image-20220611215930462.png)
+
+    - 步骤：
+        - TxB, metadata, data 都落盘后写入 TxE (commit)
+        - data 和 metadata 都 log 
+        - journal 写完之后再写数据块
+    - 优点：可以完全恢复
+
+- metadata journaling
+
+    ![image-20220611224352053](6_fs.assets/image-20220611224352053.png)
+
+    - 
+
+- 
+
+
 
 
 
