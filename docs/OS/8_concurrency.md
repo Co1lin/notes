@@ -41,7 +41,7 @@
 - 线程有一个专有的用户态栈（和专有的内核栈）
 - 每个线程有一个独立的 TRAMPOLINE 跳板页（实现用户态到内核态到地址空间平滑转换）
 
-等待子线程并回收其在内核中的资源 `sys_waittid(tid: usize) -> isize`
+等待**子线程**并回收其在内核中的资源 `sys_waittid(tid: usize) -> isize`
 
 - 线程结束时调用 `exit` 退出，此时 kernel 回收用户态中的资源（栈、跳板页等）
 - 进程/主线程调用 `waittid` 回收剩余资源（内核栈、 TCB 等）
@@ -221,31 +221,38 @@ Why? 如何让某个线程等待某个条件？
 
 How? 条件变量
 
-- 在函数首尾加锁实现「管程」
-- B 释放「管程锁」，等待；A 唤醒条件变量，释放「管程锁」，退出。
+- 互斥：在函数首尾加锁实现「管程」
+- 唤醒：借助条件变量 wait 或 signal
 
-条件变量的意义？防止 deadlock （先执行 second ）：
+约束：
 
-```rust
-static mut A: usize = 0;
-unsafe fn first() -> ! {
-    mutex.lock();
-    A=1;
-    wakup(second);
-    mutex.unlock();
-    ...
-}
+- 任一时刻最多只有一个线程执行管程代码
+- 正在管程中的线程可临时放弃管程的互斥访问， 等待事件出现时恢复
 
-unsafe fn second() -> ! {
-    mutex.lock();
-    while A==0 {
-       wait();
-    };
-    mutex.unlock();
-}
-```
+组成：
 
-实现类似 Lock 。
+- 一个锁：控制管程代码的互斥访问
+- 0 个或者多个条件变量
+
+三个队列：
+
+- 入口等待队列：里面的线程竞争进入管程入口
+- 条件等待队列：里面的线程等待某个条件变量，等待 signal 被唤醒
+- 紧急等待队列：里面的线程为刚刚 signal ，把控制权给了另一个线程，等待其结束后继续执行的
+
+分类：
+
+- Hoare: T1 等待资源； T2 signal ； T2 暂停， T1 继续； T1 结束， T2 继续； T2 结束
+- Hansen: T1 等待资源； T2 在退出的同时 signal ； T1 继续； T1 结束
+- Mesa: T1 等待资源； T2 signal ； T2 继续， T1 加入公平竞争； T2 结束，所有线程竞争； T1 竞争成功，继续； T1 结束
+
+
+
+例子： Producer - Consumer
+
+![image-20220613182343783](8_concurrency.assets/image-20220613182343783.png)
+
+
 
 ## coroutine
 

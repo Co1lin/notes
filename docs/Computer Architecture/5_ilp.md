@@ -1,5 +1,13 @@
 # Instruction-Level Parallelism
 
+时间并行：采用**流水线**技术，使指令重叠并行执行
+
+空间并行：**重复设置多个处理部件**，让它们同时执行相邻或相近的多条指令
+
+静态调度：编译阶段，减少相关、冲突
+
+动态调度：执行过程中用硬件调度
+
 ## 指令的动态调度
 
 Out-of-order Execution & Out-of-order Completion
@@ -61,6 +69,8 @@ Out-of-order Execution & Out-of-order Completion
 
 ### Speculation and Re-order Buffer
 
+How? 对分支指令的结果进行猜测，并假设这个猜测总是对的
+
 在 Tomasulo 的基础上，拆分「写结果」和「指令完成」：
 
 - 写结果：将前瞻执行的结果写入 ROB ，并通过 CDB 在指令之前传送结果。
@@ -85,6 +95,19 @@ ROB 是 FIFO 的队列。
 - 写结果
     - 写入 ROB 项
 - 确认 in-order commit
+
+硬件支持精确中断的条件： in-order commit
+
+## Multiple Issue
+
+两种基本风格：
+
+- superscalar
+- very long instruction word: 流出指令包，显式并行
+
+超流水线：对流水段做进一步细分，每个时钟周期流出 n 条指令
+
+
 
 
 
