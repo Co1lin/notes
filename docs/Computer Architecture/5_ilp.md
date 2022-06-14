@@ -58,8 +58,11 @@ Out-of-order Execution & Out-of-order Completion
     - 预约目的寄存器：将目的寄存器设置为接收功能部件的结果。由于 in-order 流出，因此最后一次预约的结果将留下，解决了 WAW 。
 - 执行
     - 一旦操作数就绪就执行
+    - load/store 计算 effective address 有效地址，放入缓冲器
+    - 如果存储器就绪， load 在此存储
 - 写结果（out-of-order 完成）
     - 功能部件计算完毕后，将结果放在 CDB 上。
+    - store 写入存储器
 
 注意事项：
 
@@ -92,8 +95,12 @@ ROB 是 FIFO 的队列。
 - 流出 in-order issue ：
     - if 保留站和 ROB 都有空项
 - 执行
+    - load 计算有效地址、读取数据
+    - store 计算有效地址
+
 - 写结果
     - 写入 ROB 项
+    - 
 - 确认 in-order commit
 
 硬件支持精确中断的条件： in-order commit

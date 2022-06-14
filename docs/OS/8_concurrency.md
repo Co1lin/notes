@@ -70,6 +70,12 @@
 -  Fairness 公平性：竞争的线程是否有公平的机会获得锁
 - Performance 使用锁的性能
 
+### 临界区访问规则
+
+空闲则入、忙则等待、**有限**等待、让权等待（optional）
+
+
+
 ### 实现方式
 
 #### 用户态软件级方法
@@ -82,7 +88,7 @@ static mut turn : i32 = 0;         // 排号：轮到哪个线程? (线程 0 or 
 
 fn lock() {
     flag[self] = 1;             // 设置自己想取锁 self: 线程 ID
-    turn = 1 - self;            // 设置另外一个线程先排号
+    turn = 1 - self;            // 设置另外一个线程先排号 (孔融让梨：让另外一个先跑)
     while ((flag[1-self] == 1) && (turn == 1 - self)); // 忙等
   	// assert flag[1 - self] == 0 && flag[self] == 0 && turn == self
 }
@@ -221,8 +227,39 @@ Why? 如何让某个线程等待某个条件？
 
 How? 条件变量
 
-- 互斥：在函数首尾加锁实现「管程」
+- 互斥：在访问同一共享变量的临界区加锁实现「管程」
 - 唤醒：借助条件变量 wait 或 signal
+
+e.g. [Ref](https://www.zhihu.com/question/24116967/answer/26747608)
+
+```c
+// thread 1
+while (pass == 0)
+    pthread_cond_wait(...);
+// thread 2
+pass = 1;
+pthread_cond_signal(...);
+```
+
+上述操作不正确！可能导致 pass 已经被 thread 2 改为 1 并且 signal 后 thread 1 再去等待（signal miss）；因此需要在访问 pass 的区域加锁。
+
+```c
+pthread_mutex_lock(mtx);
+while(pass == 0)
+    pthread_cond_wait(...);
+pthread_mutex_unlock(mtx);
+
+pthread_mutex_lock(mtx);
+pass = 1;
+pthread_mutex_unlock(mtx);
+pthread_cond_signal(...);
+```
+
+于是，条件变量往往搭配一个 mutex 使用：
+
+- wait 之前拥有 mutex
+- wait 内部释放 mutex
+- 被 signal 之后重新获取 mutex
 
 约束：
 
@@ -245,8 +282,6 @@ How? 条件变量
 - Hoare: T1 等待资源； T2 signal ； T2 暂停， T1 继续； T1 结束， T2 继续； T2 结束
 - Hansen: T1 等待资源； T2 在退出的同时 signal ； T1 继续； T1 结束
 - Mesa: T1 等待资源； T2 signal ； T2 继续， T1 加入公平竞争； T2 结束，所有线程竞争； T1 竞争成功，继续； T1 结束
-
-
 
 例子： Producer - Consumer
 
@@ -351,7 +386,7 @@ How? 条件变量
 
 #### Avoidance 死锁避免
 
-利用额外的先验信息，在分配资源时判断是否会出现死锁，只在不会死锁时分配资源。
+利用额外的先验信息，在分配资源时判断是否会出现死锁，**只在不会死锁时分配资源**。
 
 避免死锁就是确保系统不会进入不安全状态。（不安全状态不一定导致死锁。）
 
@@ -363,23 +398,12 @@ Banker's Algorithm
 
 #### Detection & Recovery 检测和恢复
 
-检测到死锁后如何恢复？
+检测到死锁（已经发生）后如何恢复？
 
 - 终止所有死锁进程
 - 依次终止单个进程直到死锁消除
 - 选择被抢占的进程进行资源抢占
 - 进程回退：重启进程到安全状态
-
-
-
-
-
-
-
-
-
-
-
 
 
 

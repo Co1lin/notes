@@ -13,3 +13,16 @@ Write Through v.s. Write Back
     - 对于连续区域的写操作，采用绕写法时缺失率很高（100%），可以通过先读取一遍将内容加载至 cache 中。
 
 一般：写回搭配写分配；写直达搭配绕写。
+
+
+
+相联度 n ： n-way associative ；直接映射： n=1
+
+相联度对缺失率的影响：
+
+- Miss rate of (1-way, size N) = Miss rate of (2-way, size N/2)
+- Miss rate of (fully-associative, size N) ≈ Miss rate of (8-way, size N)
+- 增大 n 会增大 hit time 命中时间
+
+
+
