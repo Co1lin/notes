@@ -1,14 +1,27 @@
 # Fuzzing
 
+Introduction:
+
+- [The Fuzzing Book](https://www.fuzzingbook.org/html/Fuzzer.html)
+
+- [Fuzzing PDF Slides from Columbia University](https://www.cs.columbia.edu/~suman/security_2/fuzzing.pdf)
+
+Learning with Coding:
+
+- [libFuzzer Tutorial](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md)
+- [Tensorflow v2.0 compilation from source code and fuzzing (part2)](https://dongshuaike.github.io/tensorflow/2020/06/26/Tensorflow_v2.0_compilation_and_fuzzing_part_2.html)
+
+
+
 Blackbox fuzzing
 
-- feed random inputs to programs
+- feed <u>random</u> inputs to programs
 - see whether it exhibits incorrect behavior
 - Easy but inefficient
 
 Fuzzing
 
-- ???
+- generate inputs based on file or network
 
 Problem detection
 
@@ -42,8 +55,9 @@ Coverage-guided gray-box fuzzing
 
 Data-flow-guided fuzzing
 
-- Intercept the data flow, analyze the inputs of comparisons ???
+- Intercept the data flow, analyze the inputs of <u>comparisons</u> ???
 - Modify the test inputs, observe the effect on comparisons
+- [datAFLow: Towards a Data-Flow-Guided Fuzzer](https://www.ndss-symposium.org/wp-content/uploads/fuzzing2022_23001_paper.pdf)
 
 Differential testing/fuzzing
 

@@ -321,7 +321,25 @@ swapon -s
 ## curl
 
 ```shell
+# resume downloading
 curl -C - -O link
+# execute remote sh script
+curl -L link | bash
+bash <(curl -L link)
+
+       -L, --location
+              (HTTP)  If  the  server reports that the requested page has moved to a different
+              location (indicated with a Location: header and a 3XX response code),  this  op‐
+              tion will make curl redo the request on the new place.
+       -C, --continue-at <offset>
+              Continue/Resume a previous file transfer at the given offset. 
+              Use "-C -" to tell curl to automatically find out where/how to resume the transfer. It then uses the given output/input files to figure that out.
+       -O, --remote-name
+              Write output to a local file named like the remote file we get. (Only the file part of the remote file is used, the path is cut off.)
+
+              The file will be saved in the current working directory. If you want the file saved in a different directory, make sure you change the current working directory
+              before invoking curl with this option.
+
 ```
 
 ## htop configuaration
