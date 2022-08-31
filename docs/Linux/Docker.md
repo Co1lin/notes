@@ -20,6 +20,10 @@ docker image prune -a
 docker image prune -a --filter "until=24h"
 # delete stopped containers
 docker container prune
+# rm exited containers
+docker rm $(docker ps -a -f status=exited -q)
+# clean images
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
 
 ## Build
