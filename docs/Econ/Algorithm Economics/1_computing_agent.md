@@ -13,7 +13,7 @@ e.g. water sharing platform, no trade
 - no needs?
 - Pingzhong Tang (肾脏匹配)
 - apply an efficient algorithm -> many trade
-- Paper: Optimizing Trading Assignments in Water Right Markets
+- Paper: *Optimizing Trading Assignments in Water Right Markets*
 - 经济学角度：理想自由市场 -> 最大化总福利
 
 Why there's no trade
@@ -53,7 +53,7 @@ Why there's no trade
 
     - **equilibrium searching**: 
 
-        两个市场：计算代理市场、需要均衡计算服务的交易市场
+        两个市场：计算代理市场、需要**<u>均衡计算</u>服务**的交易市场
 
         e.g. 外卖市场：
 
@@ -62,6 +62,47 @@ Why there's no trade
         - 餐饮市场：商家、顾客、外卖配送员
 
             他们被平台「组织」起来工作；产生的附加问题：公司的边界
+
+## Value evaluation of computing-agent service
+
+Welfare:
+
+![image-20220926200225996](1_computing_agent.assets/image-20220926200225996.png)
+
+How to evaluate the algorithm?
+
+- efficiency
+- accuracy
+
+![image-20220926200307330](1_computing_agent.assets/image-20220926200307330.png)
+
+We need to model the natural process to compare it with proposed algorithm.
+
+- Note that there're multiple ways to model a natural process.
+
+What can affect the value of an algorithm?
+
+From demand side,
+
+- environment, market settings
+- complexity of the problem
+- size of the problem
+
+From supply side,
+
+Other factors -> cost structure -> pricing in the market:
+
+**<u>成本结构</u>** -(决定)-> 市场中的竞争和定价
+
+- hardware (一次性)
+- system maintenance (持续投入)
+- energy cost (持续投入)
+
+-> how to **decide the price of an algorithm**
+
+
+
+
 
 
 
