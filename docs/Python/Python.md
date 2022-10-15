@@ -55,6 +55,41 @@ The parameters substitute `{}` respectively in the original string.
 
 ## Decorator
 
+A flexible decorator:
+
+```python
+def decorator(*dec_args, **dec_kwargs):
+    import functools
+    def _inner_wrapper(*args, **kwargs):
+        print(f'dec args: {dec_args = } , {dec_kwargs = }')
+        ret = getattr(_inner_wrapper, 'func')(*args, **kwargs)
+        return ret
+    if dec_args and callable(dec_args[0]):
+        func = dec_args[0]
+        setattr(_inner_wrapper, 'func', func)
+        return functools.wraps(func)(_inner_wrapper)
+    else:
+        def _wrapper(func):
+            setattr(_inner_wrapper, 'func', func)
+            return functools.wraps(func)(_inner_wrapper)
+        return _wrapper
+
+
+@decorator
+def myfunc_0(x):
+    print(x)
+
+print(myfunc_0)
+myfunc_0(123)
+
+@decorator(1, 2, k=3)
+def myfunc_1(x):
+    print(x)
+
+print(myfunc_1)
+myfunc_1(456)
+```
+
 ### Function
 
 Naive style:
