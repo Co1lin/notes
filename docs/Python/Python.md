@@ -179,6 +179,40 @@ def myfunc1():
     pass
 ```
 
+### line profiler
+
+```python
+def profile(filename: str | None = None):
+    import sys, functools
+    from line_profiler import LineProfiler
+    def _inner_wrapper(*args, **kwargs):
+        profiler = LineProfiler()
+        lp_wrapper = profiler(getattr(_inner_wrapper, 'func'))
+        ret = lp_wrapper(*args, **kwargs)
+        if filename:
+            with open(filename, 'w') as f:
+                profiler.print_stats(stream=f)
+        else:
+            profiler.print_stats(stream=sys.stdout)
+        return ret
+    if filename and callable(filename):
+        func = filename
+        setattr(_inner_wrapper, 'func', func)
+        return functools.wraps(func)(_inner_wrapper)
+    else:
+        def _wrapper(func):
+            setattr(_inner_wrapper, 'func', func)
+            return functools.wraps(func)(_inner_wrapper)
+        return _wrapper
+
+@profile('profile.txt')
+def myfunc(x):
+    print(x)
+
+print(myfunc)
+myfunc(1)
+```
+
 ## Special Symbols for Passing Args.
 
 ### Non-keyword Args
