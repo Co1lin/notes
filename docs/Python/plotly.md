@@ -21,6 +21,7 @@ def draw_figure_pair(
         xaxis_title=xaxis_title,
         yaxis_title=yaxis_title,
         # margin=dict(l=0,r=0,b=0,t=0),
+      	font=dict(size=16),
     )
     fig.update_layout(
         legend=dict(
