@@ -320,3 +320,11 @@ for num in nextSquare():
 	print(num)
 ```
 
+## stuck monitoring
+
+```python
+# pip install hanging_threads
+from hanging_threads import start_monitoring
+start_monitoring(seconds_frozen=10, test_interval=100)
+```
+
