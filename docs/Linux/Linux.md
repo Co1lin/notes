@@ -373,6 +373,12 @@ right_meters=Tasks LoadAverage Uptime
 right_meter_modes=2 2 2
 ```
 
+## git
+
+```shell
+GIT_SSL_NO_VERIFY=1 git clone https://mydomain.com/myrepo.git
+```
+
 
 
 

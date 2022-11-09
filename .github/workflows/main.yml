@@ -31,10 +31,10 @@ jobs:
             echo "Hi~"
             source /root/.zshrc
             where python
-            cd /home/wwwroot/notes
+            cd /home/wwwroot/notes.co1in.me/notes
             git pull
-            /root/miniconda3/bin/mkdocs build
+            /opt/miniconda3/bin/mkdocs build
             echo "Bye~"
-          host: notes.valderfield.com
+          host: notes.co1in.me
           username: root
           privateKey: ${{ secrets.ALIYUN }}
