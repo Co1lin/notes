@@ -94,3 +94,10 @@ A Simple template:
 \end{document}
 ```
 
+## Presentation
+
+templates:
+
+https://www.overleaf.com/latex/templates/simpleplus-beamertheme/wfmfjhdcrdfx
+
+https://www.overleaf.com/latex/templates/elegant-slides/yfqyhpprvdmg

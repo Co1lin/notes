@@ -305,6 +305,9 @@ rsync -av -e 'ssh -p port' source destination
 ```shell
 sudo adduser colin
 sudo usermod -aG sudo colin
+
+sudo visudo
+$USER ALL=(ALL) NOPASSWD: ALL
 ```
 
 ## swap

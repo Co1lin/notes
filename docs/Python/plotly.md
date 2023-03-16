@@ -1,5 +1,16 @@
 # Plotly
 
+```python
+pip install plotly pandas nbformat kaleido
+```
+
+
+
+```python
+import plotly.graph_objects as go
+import plotly.express as px
+```
+
 ## draw multiple lines
 
 ```python
