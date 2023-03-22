@@ -1,5 +1,7 @@
 # Introduction
 
+https://zhuanlan.zhihu.com/p/126323808
+
 偏好理论对于「理性」的要求：
 
 1. completeness 完备性：任意两个对象可比较、可排序
