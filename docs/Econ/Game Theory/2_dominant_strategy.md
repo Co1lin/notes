@@ -1,4 +1,4 @@
-# 上策与下策
+# Strategy
 
 ## 上策 Dominant Strategy
 

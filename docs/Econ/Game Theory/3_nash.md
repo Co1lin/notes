@@ -1,4 +1,4 @@
-# 互为最优
+# Nash Equilibrium
 
 ## Concepts
 

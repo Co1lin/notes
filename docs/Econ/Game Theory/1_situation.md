@@ -1,4 +1,4 @@
-# 博弈格局的分析与描述
+# Situation, Normal form and Extensive form
 
 ## 博弈格局的分析
 
