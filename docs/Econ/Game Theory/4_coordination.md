@@ -1,21 +1,119 @@
 # Coordination Games
 
-a class of games with multiple pure-strategy Nash equilibria
+## 各种协调博弈
 
-closely linked to externalities, and in particular **positive network externalities**, the benefit reaped ...
+a class of games with **multiple pure-strategy Nash equilibria** 存在多个纯策略 NE
 
-行动一致？方向一致？
+closely linked to externalities, and in particular **positive network externalities**, the benefit reaped from being in the *same network* with others
 
-- 行动一致，方向不一致；主导权
+协调博弈：资源共享对大家都好，正外部性
+
+- stag hunt
+    - 产品标准化：其中一个 NE 是帕累托最优，协调容易
+- 交通博弈：两个 NE 相同，协调容易
+- 约会博弈
+    - 共同利益：两人喜欢在一块；冲突：双方对两种 NE 的偏好不同；协调不如交通博弈那么容易
+    - 麦琪的礼物
+
+行动一致，方向一致？
+
+- 行动一致，方向不一致；主导权决定最终方向
     - 约会博弈（芭蕾舞/足球赛）
     - 技术标准之争
-- 
 
-羊群效应：王健中
+真实案例
+
+- 羊群效应：股市黑嘴汪建中
+- 次贷危机中，高盛找巴菲特进行融资，因为他是全世界相信的投资人
+
+设计协调博弈：企业可以利用人们愿意行为保持一致来创造市场
+
+网络外部性（粘性）
+
+工业经济：生产领域可以产生规模效应，带来产能过剩，找不到市场的问题
+
+数字经济：把生产领域的规模效应和需求端的网络效应连接起来
+
+- 高效的仓储物流网络机制
+- 网红带货销售机制
+- 机制是否健康可持续？
+
+广场效应；从众心理
+
+## anti-coordination game 反协调博弈
+
+双方都不愿意保持一致
+
+- 资源竞争，采取与对方相同的行动会产生负外部性
+
+- hawk-dove game 鹰鸽博弈/胆小鬼博弈
+    - ![image-20230418090802961](4_coordination.assets/image-20230418090802961.png)
+    - 不同的 NE 代表双方不同的输赢结局，存在严重的利益冲突；现实中双方都想赢，往往双方都选择鹰派，两败俱伤。
+- 例：数据具有耗散性，构成竞争
+
+crowding games 拥挤博弈：反协调博弈拓展到多个玩家的情况
+
+- 负网络效应
+- 用户异质性，需要分层
+- The El farol bar problem 随机策略
+- the minority game 小众博弈
+- 假日安排（黄金周 v.s. 带薪休假）
+    - 在时间上存在协调博弈：一家人需要一起玩儿
+    - 在资源上是反协调博弈：拥挤
+    - 解决方案：长周末 + 带薪休假（背后逻辑：聚点解、轮流）
 
 
+### Discoordination 不协调博弈
+
+一方想协调，一方不想协调
+
+不存在纯策略 NE ，因此不属于协调博弈；只有混合策略纳什均衡
+
+例子：the matching pennies game
+
+-   |       | Heads  | Tails  |
+    | ----- | ------ | ------ |
+    | Heads | +1, −1 | −1, +1 |
+    | Tails | −1, +1 | +1, −1 |
+    
+- 如果 match ，参与人 1 赢得对方的 penny ；如果不 match ，参与人 2 赢得对方的 penny ；前者想行动一致，后者想行动不一致。
 
 
+## 解决多重均衡的途径
 
+### Focal Points 聚点解
 
+Social Norms
+
+在多重纳什均衡中⼈们预期最可能出现的均衡；之所以容易出现，是因为它符合普通人的行为习惯，最容易被预测到。
+
+### 交流
+
+约会博弈
+
+cheap talk 廉价交谈
+
+- 博弈之前的无成本沟通
+- 对协调博弈有效
+- 对反协调博弈无效（如鹰鸽博弈）
+
+### 效率原则 or 保险原则
+
+- 对手富有理性是确定的，帕累托占优
+- 对手富有理性是不确定的，风险占优
+
+### 相关均衡 correlated equilibrium
+
+一个比较有权威的第三方给双方一些合理的意见（不同 case 的概率分布），推荐他们应该怎么选，使得没有局中人想偏离推荐。
+
+- 站在每一方，计算不同选择的期望收益，看是否与推荐一致
+
+### 颤抖手均衡
+
+refinement of NE: 剔除某种标准下不合理/不稳定的均衡
+
+- 如果一方的手小概率地颤抖了一下，选择了次优策略，要求他有动机重新回到原来的均衡
+- 颤抖手均衡的充要条件：是纳什均衡，且没有一个局中人的策略是弱劣势策略
+
+恰当均衡：人们犯大错误的可能性低于犯小错误的可能性
 
