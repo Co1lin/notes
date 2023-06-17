@@ -1,5 +1,33 @@
 # Generative AI
 
+## ChatGPT
+
+[ChatGPT (可能)是怎麼煉成的 - GPT 社會化的過程](https://youtu.be/e0aKI2GGZNg)
+
+sibling model to InstructGPT
+
+1. 学习文字接龙：自监督学习；于是可以回答问题
+
+2. 人类引导接龙方向
+
+    问题：接龙的方向有很多，到底生成哪个？
+
+    解决：人类提供一些问题的答案
+
+3. 模仿人类的偏好
+
+    人类给不同答案评分
+
+    训练 Teacher Model 给 (question, answer) pair 打分
+
+    ![image-20230617201934583](gen_ai.assets/image-20230617201934583.png)
+
+4. RL 向人类学习
+
+    ![image-20230617201645079](gen_ai.assets/image-20230617201645079.png)
+
+总结：先训练语言能力，再引导它生成人类期待的内容。
+
 ## Basis
 
 [【生成式AI】ChatGPT 原理剖析 (3/3) — ChatGPT 所帶來的研究問題](https://youtu.be/UsaZhQ9bY2k)
@@ -49,7 +77,7 @@ Toolformer ：<u>无需大量人力</u>地教 LLM 使用工具
 - 微调（全部参数）
 - adapter 插件模组 adapterhub.ml
     - 只需要存储一份基础 LLM 来应对很多任务
-    - LoRA for diffusion: Low-Rank Adaptation
+    - LoRA for diffusion: Low-Rank Adaptation https://civitai.com/models/58390/detail-tweaker-lora-lora
 
 ## Prompting
 
@@ -79,6 +107,45 @@ Chain of Thought (CoT) Prompting
 
 自动寻找 Prompt
 
+- Hard Prompt (文字) v.s. Soft Prompt (implicit tensors which can be trained)
+- RL: generator LLM is the actor
+- 给出 I/O pair ，让 LLM 补全 instruction
 
+[【生成式AI】大模型 + 大資料 = 神奇結果？(1/3)：大模型的頓悟時刻](https://youtu.be/SaZTJJNOCOY)
 
+参数量的影响
 
+- OpenAI 2020, 参数量越大，或者数据集越大，预测下一个 token 的错误率越低
+- Emergent Ability: 参数量大到一定程度后，表现才会有明显提升，某些方法（如 CoT）的好处才能显现
+- Calibration: 参数量大到一定程度以后， token 的预测概率和 token 的正确率之间才有比较高的相关性；i.e. 大模型才知道自己是不是在瞎说
+- Inverse Scaling Prize; U-shaped: 在某些有「陷阱」的任务上，模型参数一开始增大时效果会下降（「一知半解」），但是足够大时效果会回升
+
+[【生成式AI】大模型 + 大資料 = 神奇結果？(2/3)：到底要多少資料才夠](https://youtu.be/qycxA-xX_OY)
+
+数据集大小的影响
+
+- LLM 学会「世界知识」所需的数据大于学会「语言知识」所需要的
+
+- 计算资源一定时，参数量和训练数据大小之间存在 trade-off ； DeepMind 找出了它们之前的大致关系。
+
+    ![image-20230617193211596](gen_ai.assets/image-20230617193211596.png)
+
+    （同一条虚线上算力相同）
+
+- Instruction-tuning: 改变训练数据，因为最后的任务并非预测下一个 token ；因此可以直接使用一些下游 NLP 任务进行 fine-tune ，然后用未见过的任务进行评测。（否则 LLM 可能不知道要做什么，读不懂 instruction 。）
+
+- Human Teaching: 先 pre-train ，再用人给反馈做 RL ，可以显著提升结果（ChatGPT），可以让小模型达到以前大模型的效果。
+
+    启示：用于训练/fine-tune 的数据很重要。一般的数据集中的任务不接近真实世界中人类的交互行为。
+
+    ![image-20230617194404555](gen_ai.assets/image-20230617194404555.png)
+
+[【生成式AI】GPT-4 來了! GPT-4 這次有什麼神奇的能力呢？](https://youtu.be/kslijcrYizE)
+
+GPT-4 Technical report
+
+- diversity 相比 ChatGPT 似乎下降了；对于三种动物的鸡兔同笼问题，可以列出正确的方程，但是解不对。
+- 会更多的（小众）语言
+- 在「陷阱」题上表现更强
+- Calibration: pre-train 之后不错；但是 RLHF 之后失去了很多 calibration 的能力
+- 输入图像：可能与 kosmos 有关（by MS）
