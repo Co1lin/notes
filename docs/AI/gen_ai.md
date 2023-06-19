@@ -208,7 +208,7 @@ GPT-4 Technical report
 
 也可以用于 speech ：WaveGrad
 
-效果好的可能原因：将 AR 加入到 NAR ，i.e. 「一次到位」改成「 N 次到位」；有很多其它基于相同 idea 的尝试
+**可能的效果好的核心原因/基本思想**：将 AR 加入到 NAR ，i.e. 「一次到位」改成「 N 次到位」；有很多其它基于相同 idea 的尝试
 
 - mask-predict: 文字生成，将一次 NAR 时 sample 出的概率低的 token mask 住，再进行后续的 NAR ；后续的 NAR 可以看到没 mask 的 context ，因此可以根据它们提供的「方向」生成，解决了方向不一致的问题。
 
