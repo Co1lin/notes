@@ -130,7 +130,7 @@ Chain of Thought (CoT) Prompting
 
     ![image-20230617193211596](gen_ai.assets/image-20230617193211596.png)
 
-    （同一条虚线上算力相同）
+    （同一条虚线上算力相同；[https://arxiv.org/abs/2203.15556](https://arxiv.org/abs/2203.15556)）
 
 - Instruction-tuning: 改变训练数据，因为最后的任务并非预测下一个 token ；因此可以直接使用一些下游 NLP 任务进行 fine-tune ，然后用未见过的任务进行评测。（否则 LLM 可能不知道要做什么，读不懂 instruction 。）
 
@@ -149,3 +149,143 @@ GPT-4 Technical report
 - 在「陷阱」题上表现更强
 - Calibration: pre-train 之后不错；但是 RLHF 之后失去了很多 calibration 的能力
 - 输入图像：可能与 kosmos 有关（by MS）
+
+## Vision
+
+[【生成式AI】速覽圖像生成常見模型](https://youtu.be/z83Edfvgd9g)
+
+根据文字进行图像生成的特点：文字的信息量少，图像的信息量大，因此需要「脑补」；这会影响 model 的设计。
+
+逐个击破 Auto-regressive 做法：逐个 pixel 生成； OpenAI, image GPT
+
+一次到位
+
+- 问题：对一个输入，「正确」输出有很多种，因此各个 pixel 在独立 sample 时可能方向不一致，导致输出混乱。
+
+- 解决：额外增加一个输入：从一个已知分布中 sample 出一个 tensor 。
+
+    输入文字 $y$ ，输出图像 $x$ ，从 $P(x|y)$ 中 sample 可以产生图像。
+
+    图像生成任务需要将 normal distribution 中的点对应到一个个图像上。
+
+常见方法
+
+- VAE (variational autoencoder)
+
+    用一个 encoder 产生 distribution ，再用 decoder 解码，形成 pair 进行训练
+
+    ![image-20230618094043342](gen_ai.assets/image-20230618094043342.png)
+
+- Flow-based
+
+    decoder 是 encoder 的逆运算
+
+    ![image-20230618094357312](gen_ai.assets/image-20230618094357312.png)
+
+- Diffusion （没有需要学习的 encoder）
+
+    ![image-20230618095753351](gen_ai.assets/image-20230618095753351.png)
+
+- GAN
+
+    与上面三种方法正交（是另一种思路），可以与它们结合使用
+
+如何评估图像生成的好坏？
+
+- FID, Frechet Inception Distance
+
+    - 过一个用于图像分类的 CNN 拿到 latent vector
+
+    - 评估生成的和真实的两组 latent vector 是否接近（假设高斯分布，评估二者之间的距离）
+
+    - 问题：需要 sample 很多 image
+
+- CLIP score: 文字和图像分别 encode ，评估是否匹配
+
+### Diffusion
+
+[【生成式AI】Diffusion Model 原理剖析 (4/4) (optional)](https://youtu.be/67_M2qP5ssY)
+
+也可以用于 speech ：WaveGrad
+
+效果好的可能原因：将 AR 加入到 NAR ，i.e. 「一次到位」改成「 N 次到位」；有很多其它基于相同 idea 的尝试
+
+- mask-predict: 文字生成，将一次 NAR 时 sample 出的概率低的 token mask 住，再进行后续的 NAR ；后续的 NAR 可以看到没 mask 的 context ，因此可以根据它们提供的「方向」生成，解决了方向不一致的问题。
+
+    ![image-20230619110408809](gen_ai.assets/image-20230619110408809.png)
+
+- 图片生成：
+
+    训练时，加入一些 mask ，训练一个 token decoder 网络预测被 mask 的 token 。
+
+    推理时，有两个 decoder 。一开始全都是 mask token ，用 token decoder 预测全部 token ，但只保留信心分数高的 token ，不断迭代，每次都会增加一些被保留的 token 。用 image decoder 根据预测的 token 生成图像。
+
+    观察迭代中的输出演变可知， AR 结构的多次 decode 可以不断改善生成质量。
+
+    ![image-20230619110432670](gen_ai.assets/image-20230619110432670.png)
+
+    ![image-20230619110512276](gen_ai.assets/image-20230619110512276.png)
+
+    
+
+#### Framework
+
+[【生成式AI】淺談圖像生成模型 Diffusion Model 原理](https://youtu.be/azBugJzmz-o)
+
+Reverse Process
+
+- shared denoise module
+
+- step index: noisy 的程度，作为输入的一部分
+
+    ![image-20230618100733923](gen_ai.assets/image-20230618100733923.png)
+
+
+
+denoise module
+
+- noise predictor: 预测在某一步，图片中的 noise 是什么
+- 输出图像是输入图像减去 predicted noise
+- 为什么不直接输出图像（end-to-end）？预测 noise 比直接预测图像简单
+
+Forward Process (Diffusion Process)
+
+- 不断地向现有图片添加从某个分布 sample 出的 noise
+- 形成了训练 denoise module 的数据
+
+Text-to-Image 如何引入文字？
+
+- denoise module 再额外接收文字描述作为输入
+- LAION 数据集：5.85B ，图片和多语言文字的对应
+
+[【生成式AI】Stable Diffusion、DALL-E、Imagen 背後共同的套路](https://youtu.be/JbfcAaBT66U)
+
+从文字到图像的三步：
+
+![image-20230618102204817](gen_ai.assets/image-20230618102204817.png)
+
+Text Encoder
+
+- 语言模型的大小会显著影响结果
+- Diffusion Model 的大小反而不太重要（增大没有什么帮助）
+
+Generation Model
+
+- 输入文字表示和随机 sample 的 noise ，生成中间产物
+- 训练时用 forward process 往中间产物（如 encoder 产生的 latent representation）上加 noise ，产生训练数据
+- 用 reverse process 产生中间产物，然后给 decoder 生成最终图片
+
+Decoder
+
+- 文字和图像对应的数据有限；只用图像训练 decoder
+- 如果中间产物是小图，可以 downsample 产生输入（Google, Imagent）
+- 如果中间产物是 latent representation ，可以用 auto-encoder 的方式训练，使输入输出接近（Stable Diffusion, DALI）
+
+#### Mathematics
+
+[【生成式AI】Diffusion Model 原理剖析 (1/4) (optional)](https://youtu.be/ifCDXFdeaaM)
+
+DDPM: Denoising Diffusion Probabilistic Models
+
+![image-20230618174533471](gen_ai.assets/image-20230618174533471.png)
+
