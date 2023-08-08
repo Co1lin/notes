@@ -274,7 +274,7 @@ iperf -c <ip>
 rsync -r src dst
 rsync -r source1 source2 destination
 
-# -a	to copy meta info (last updated time, permissions)
+# -a	to preserve every thing (archive mode), such as hidden files, meta info (last updated time, permissions)
 rsync -a source destination
 
 # -n / --dry-run	simulate the result of operation
@@ -293,11 +293,14 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 ```shell
 # SSH protocol	username@host:/path/to/file
+# -e specify the remote shell to use
 rsync -av -e 'ssh -p port' source destination
 
 # rsync protocol	username@host::module/destination
 
-# --append --append-verify
+# --append-verify (verify checksum of existing data), --append
+# -P = --partial + --progress ; --info=progress2 ???
+rsync -azhP --append-verify -e 'ssh -p 22022' user@somewhere:/path .
 ```
 
 ## User management
