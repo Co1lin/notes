@@ -300,7 +300,7 @@ rsync -av -e 'ssh -p port' source destination
 
 # --append-verify (verify checksum of existing data), --append
 # -P = --partial + --progress ; --info=progress2 ???
-rsync -azhP --append-verify -e 'ssh -p 22022' user@somewhere:/path .
+rsync -azhP --append-verify -e 'ssh -p xxxxx' user@somewhere:/path .
 ```
 
 ## User management
