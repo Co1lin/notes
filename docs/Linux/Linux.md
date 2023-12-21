@@ -35,6 +35,7 @@ tmux rename-session -t 0 <new-name>
 - `Ctrl+b d`：分离当前会话。
 - `Ctrl+b s`：列出所有会话。
 - `Ctrl+b $`：重命名当前会话。
+- `Ctrl+b D`：list all connected clients to detach
 
 划分窗格：
 
@@ -163,6 +164,12 @@ find . -type f
 
 ```shell
 find -type d -empty | xargs -n 1 rm -rf
+```
+
+Flatten files recursively
+
+```bash
+find original_dir -mindepth 1 -type f -name '*.js' -exec mv -i '{}' target_dir ';'
 ```
 
 ## xargs
@@ -383,6 +390,13 @@ right_meter_modes=2 2 2
 
 ```shell
 GIT_SSL_NO_VERIFY=1 git clone https://mydomain.com/myrepo.git
+```
+
+## bash profile
+
+```bash
+export SHELL=/bin/zsh
+exec /bin/zsh -l
 ```
 
 

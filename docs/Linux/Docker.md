@@ -60,6 +60,7 @@ Export is taking a snapshot of the container. **All informations about history a
 
 ```shell
 docker save container_id > container.tar
+docker save myimage:latest | gzip > myimage_latest.tar.gz
 docker load < hangge_server.tar
 ```
 
